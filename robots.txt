@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block crawling of any future admin/internal paths
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://usecaza.com/sitemap.xml
