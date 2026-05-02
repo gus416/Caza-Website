@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Caza — The Smart Layer for Zillow Listings</title>
-<meta name="description" content="Caza overlays 0-100 demand scores on every Zillow listing. See saves, views, price drops, and agent info at a glance. Free Chrome extension.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caza — See what Zillow won't show you</title>
+  <meta name="description" content="Caza overlays 0-100 demand scores on every Zillow listing. See saves, views, price drops, and agent info at a glance. Free Chrome extension.">
   <meta name="keywords" content="Zillow extension, Zillow Chrome extension, real estate agent tools, Zillow buyer demand, Zillow saves views, listing analysis, real estate technology, home buyer score, Zillow CMA, listing demand">
   <meta name="author" content="Caza">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://usecaza.com/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <!-- Open Graph (link previews on LinkedIn, iMessage, Slack, Discord, Facebook) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Caza">
   <meta property="og:url" content="https://usecaza.com/">
@@ -31,7 +31,7 @@
   <meta name="twitter:description" content="Free Chrome extension that overlays 0-100 buyer demand scores on every Zillow listing.">
   <meta name="twitter:image" content="https://usecaza.com/og-image.png">
 
-  <!-- Structured data (Google rich-results eligibility) -->
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,240 +46,279 @@
     "publisher": { "@type": "Organization", "name": "Caza", "url": "https://usecaza.com/" }
   }
   </script>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{--cr:#d72730;--or:#FF6F0C;--nv:#ffffff;--sf:#f8fafc;--sf2:#f1f5f9;--tx:#0f172a;--mt:#64748b;--mx:1080px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--nv);color:var(--tx);font-family:'Outfit',sans-serif;overflow-x:hidden;font-size:15px;line-height:1.6}
-::selection{background:var(--cr);color:#fff}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s}.reveal.v{opacity:1;transform:translateY(0)}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;transition:.3s;overflow:hidden}nav.s{background:rgba(13,20,49,.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04)}
-.ni{max-width:var(--mx);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff}.logo svg{flex-shrink:0}
-.lt{font-family:'Playfair Display',serif;font-weight:800;font-size:21px;letter-spacing:-.02em}
-.nr{display:flex;align-items:center;gap:22px}.nr a{color:var(--mt);text-decoration:none;font-size:13px;font-weight:500;transition:.2s}.nr a:hover{color:#fff}
-.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:.25s;font-family:inherit;line-height:1}
-.bc{background:linear-gradient(135deg,var(--cr),var(--or));color:#fff}.bc:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(215,39,48,.25)}
-.bg{background:transparent;color:var(--cr);border:1.5px solid rgba(215,39,48,.3)}.bg:hover{border-color:var(--cr);background:rgba(215,39,48,.06)}
-.bl{padding:14px 30px;font-size:15px;border-radius:12px}
-.hero{padding:130px 28px 50px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(215,39,48,.07),transparent 60%);pointer-events:none}
-.pill{display:inline-flex;align-items:center;gap:7px;background:rgba(215,39,48,.07);border:1px solid rgba(215,39,48,.18);border-radius:40px;padding:5px 16px 5px 8px;font-size:12px;color:var(--cr);font-weight:600;margin-bottom:28px}
-.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--cr);animation:pulse 2s ease-in-out infinite}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,6vw,66px);font-weight:800;line-height:1.04;letter-spacing:-.03em;max-width:740px;margin:0 auto 18px}
-.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--cr),var(--or));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero>p{font-size:17px;color:var(--mt);max-width:480px;margin:0 auto 34px;line-height:1.65}
-.hb{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.browser{max-width:900px;margin:50px auto 0;border-radius:13px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.05)}
-.bb{background:#1e2535;padding:10px 16px;display:flex;align-items:center;gap:8px}.bds{display:flex;gap:6px}.bds span{width:10px;height:10px;border-radius:50%}.bds span:nth-child(1){background:#ff5f57}.bds span:nth-child(2){background:#febc2e}.bds span:nth-child(3){background:#28c840}
-.bu{flex:1;margin-left:12px;background:rgba(255,255,255,.06);border-radius:6px;padding:5px 12px;font-size:11px;color:var(--mt)}
-.bbd{background:#fff;position:relative}
-.ms{position:absolute;top:8px;right:10px;z-index:5;background:#12172a;color:#93c5fd;border:1.5px solid rgba(147,197,253,.28);border-radius:10px;padding:7px 14px;font-size:11px;font-weight:600;box-shadow:0 4px 18px rgba(0,0,0,.4)}
-.mcs{display:grid;grid-template-columns:1fr 1fr}
-.mc{border:1px solid #e5e5e5;position:relative}.mci{height:140px;position:relative;overflow:hidden}
-.mct{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.7);color:#fff;font-size:9px;font-weight:600;padding:3px 8px;border-radius:4px}
-.mch{position:absolute;top:8px;right:8px;width:34px;height:34px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
-.mcb{position:absolute;top:8px;right:46px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-.mcn{padding:12px}.mcp{font-size:17px;font-weight:700;color:#111}.mcd{font-size:10.5px;color:#666;margin-top:2px}.mca{font-size:10.5px;color:#999;margin-top:2px}.mcg{font-size:8px;color:#bbb;margin-top:2px;text-transform:uppercase;letter-spacing:.03em}
-.mtt{position:absolute;top:6px;right:44px;display:flex;align-items:center;border-radius:12px;z-index:6;backdrop-filter:blur(8px);box-shadow:0 8px 30px rgba(0,0,0,.35)}
-.mttb{padding:8px 10px 8px 12px;color:#fff;white-space:nowrap}.mttt{font-size:11px;font-weight:800;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:3px;margin-bottom:3px}
-.mttl{font-size:9.5px;opacity:.92;line-height:1.55;font-weight:500}.mttr{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.3);margin-right:2px}
-.sts{padding:38px 28px;overflow:hidden;border-top:1px solid rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.03)}
-.str{display:flex;justify-content:center;gap:44px;flex-wrap:wrap}.stn{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:var(--cr)}.stl{font-size:11px;color:var(--mt);margin-top:1px;font-weight:500}
-.sec{max-width:var(--mx);margin:0 auto;padding:80px 28px}.ss{padding:50px 28px}
-.slb{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--cr);margin-bottom:10px}
-.sh{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,38px);font-weight:800;line-height:1.12;letter-spacing:-.02em;margin-bottom:12px;color:#fff}
-.sd{color:var(--mt);max-width:470px;font-size:15px;margin-bottom:36px;line-height:1.6}
-.pg{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.pn{display:flex;align-items:start;gap:14px;padding:14px 16px;border-radius:12px;background:var(--sf);border:1px solid rgba(255,255,255,.04)}.pni{font-size:22px;flex-shrink:0;margin-top:2px}.pnt{font-size:13px;color:#94a3b8;line-height:1.5}
-.sps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.sp{text-align:center;padding:28px 20px;border-radius:12px;background:var(--sf);border:1px solid rgba(255,255,255,.04);transition:.3s}.sp:hover{transform:translateY(-4px);border-color:rgba(215,39,48,.12)}
-.spn{width:44px;height:44px;border-radius:50%;background:rgba(215,39,48,.08);color:var(--cr);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:800;margin:0 auto 14px}
-.sp h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}.sp p{font-size:13px;color:var(--mt);line-height:1.5}
-.bng{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.bn{padding:22px;border-radius:12px;background:var(--sf);border:1px solid rgba(255,255,255,.04);transition:.3s}.bn:hover{border-color:rgba(215,39,48,.14);transform:translateY(-3px)}
-.bni{font-size:22px;margin-bottom:10px}.bn h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:5px}.bn p{font-size:12.5px;color:var(--mt);line-height:1.55}
-.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.ft{display:flex;gap:14px;padding:20px;border-radius:12px;background:var(--sf);border:1px solid rgba(255,255,255,.04);transition:.3s}.ft:hover{border-color:rgba(215,39,48,.12)}
-.fti{width:40px;height:40px;border-radius:10px;background:rgba(215,39,48,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0}.fti svg{width:20px;height:20px;stroke:var(--cr);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ft h3{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px}.ft p{font-size:12.5px;color:var(--mt);line-height:1.5}
-.rg{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.rf{border-radius:12px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06)}
-.rl{background:var(--sf2);color:var(--mt);font-size:11px;font-weight:600;padding:8px 14px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid rgba(255,255,255,.04)}
-.rh{display:flex;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(135deg,var(--cr),var(--or));color:#fff}.rht{font-size:13px;font-weight:700}.rhs{font-size:9px;opacity:.8}
-.rb{background:#fff;padding:14px 16px;color:#333;font-size:11px}
-.rprice{font-size:20px;font-weight:700;color:#111;margin-bottom:1px}.raddr{font-size:10.5px;color:#666;margin-bottom:2px}.rstat{font-size:10px;color:#888;margin-bottom:10px}
-.rmg{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:8px}
-.rm{background:#f5f5f5;border-radius:4px;padding:4px 7px;display:flex;justify-content:space-between;font-size:9.5px}.rm .l{color:#999}.rm .v{font-weight:600;color:#333}.rm .sc{color:var(--cr);font-weight:700}
-.rab{background:#f0f7ff;border-radius:4px;padding:6px 8px;font-size:10px;margin-bottom:6px}.rab strong{display:block;font-size:9px;color:#888}
-.rtbl{width:100%;border-collapse:collapse;font-size:10px}.rtbl th{background:#f5f5f5;padding:5px 6px;text-align:left;font-weight:600;border-bottom:2px solid #ddd;font-size:9px;text-transform:uppercase;color:#888}
-.rtbl td{padding:4px 6px;border-bottom:1px solid #eee;color:#333}.rtbl .sc{color:var(--cr);font-weight:700}.rtbl .pr{font-weight:600}
-.ef{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 50px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);max-width:760px;margin:0 auto}
-.eh{background:linear-gradient(135deg,var(--cr),var(--or));color:#fff;padding:16px 20px;display:flex;align-items:center;gap:10px}.eh h3{font-size:15px;font-weight:700}.eh p{font-size:11px;opacity:.85}
-.ebody{padding:18px 20px;display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:12px;color:#333}
-.est{font-size:10px;font-weight:700;text-transform:uppercase;color:#555;margin-bottom:8px;letter-spacing:.04em}
-.etg{display:flex;align-items:center;gap:7px;padding:2px 0}.edt{width:28px;height:14px;border-radius:10px;background:var(--cr);position:relative;flex-shrink:0}.edt::after{content:'';position:absolute;width:10px;height:10px;background:#fff;border-radius:50%;right:2px;top:2px}.edt.off{background:#ccc}.edt.off::after{right:auto;left:2px}
-.etgt{font-size:11px;color:#444}
-.ecds{grid-column:1/-1;display:flex;gap:8px;padding-top:10px;border-top:1px solid #eee}
-.ecd{width:100px;border:2px solid var(--cr);border-radius:6px;overflow:hidden;position:relative}.ecdi{height:48px}.ecdp{font-size:10px;font-weight:700;color:#111;padding:2px 6px}.ecda{font-size:8px;color:#888;padding:0 6px 4px}
-.ecdck{position:absolute;top:3px;right:3px;width:15px;height:15px;border-radius:50%;background:var(--cr);color:#fff;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700}
-.eft{padding:10px 20px;border-top:1px solid #eee;background:#fafafa;display:flex;justify-content:space-between;align-items:center}.efcnt{font-size:12px;color:#666}.efcnt strong{color:var(--cr)}
-.efbtn{background:linear-gradient(135deg,var(--cr),var(--or));color:#fff;border:none;padding:8px 18px;border-radius:7px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer}
-.spg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.spc{padding:22px;border-radius:12px;background:var(--sf);border:1px solid rgba(255,255,255,.04)}
-.spst{display:flex;gap:2px;margin-bottom:10px}.spsr{width:14px;height:14px;fill:var(--or);color:var(--or)}
-.spc q{display:block;font-size:13px;color:#c8d2df;line-height:1.55;margin-bottom:10px;font-style:italic}.spc cite{font-size:11px;color:var(--mt);font-style:normal;font-weight:500}
-.faq{border-bottom:1px solid rgba(255,255,255,.05)}.faqq{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 0;background:none;border:none;color:#fff;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;text-align:left}.faqq:hover{color:var(--cr)}
-.faqar{width:16px;height:16px;color:var(--mt);transition:.25s;flex-shrink:0;margin-left:12px}.faq.o .faqar{transform:rotate(180deg)}
-.faqa{display:none;padding-bottom:18px;font-size:13px;color:var(--mt);line-height:1.6}.faq.o .faqa{display:block}
-.trs{display:flex;gap:10px;flex-wrap:wrap}.tr{flex:1;min-width:110px;text-align:center;padding:16px;border-radius:10px;background:var(--sf);border:1px solid rgba(255,255,255,.04)}
-.trd{width:10px;height:10px;border-radius:50%;margin:0 auto 8px}.trn{font-weight:700;font-size:13px;color:#fff}.trr{font-size:11px;color:var(--mt)}
-.cta{padding:90px 28px;text-align:center;position:relative;overflow:hidden}
-.cta::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(215,39,48,.06),transparent 60%);pointer-events:none}
-footer{border-top:1px solid rgba(255,255,255,.04);padding:32px 28px}
-.fin{max-width:var(--mx);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.flinks{display:flex;gap:20px}.flinks a{color:var(--mt);text-decoration:none;font-size:12px;transition:.2s}.flinks a:hover{color:#fff}
-.fcopy{width:100%;text-align:center;font-size:9.5px;color:rgba(255,255,255,.18);margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.03);line-height:1.6}
-@media(max-width:768px){
-.pg,.fg,.rg,.spg,.ebody{grid-template-columns:1fr}
-.sps,.bng{grid-template-columns:1fr}
-.mcs{grid-template-columns:1fr}
-.nr a:not(.btn){display:none}
-.trs{flex-direction:column}
-.hero{padding:100px 20px 40px}
-.hero h1{font-size:32px;letter-spacing:-.02em}
-.hero>p{font-size:15px}
-.hb{flex-direction:column;align-items:center}
-.hb .btn{width:100%;text-align:center;justify-content:center}
-.sec{padding:50px 20px}
-.ss{padding:30px 20px}
-.sh{font-size:24px}
-.sd{font-size:14px}
-nav .ni{padding:0 16px}
-.btn{font-size:12px;padding:9px 16px}
-.bl{padding:12px 24px;font-size:14px}
-.browser{margin:30px -8px 0;border-radius:10px}
-.mtt{display:none}
-.ms{font-size:9px;padding:5px 10px;top:4px;right:4px}
-.mcb{width:28px;height:28px;font-size:9px;right:38px;top:6px}
-.mch{width:28px;height:28px;font-size:12px;top:6px;right:6px}
-.mci{height:110px}
-.mcn{padding:8px}
-.mcp{font-size:14px}
-.mcd,.mca,.mcg{font-size:9px}
-.sts{padding:24px 20px}
-.str{gap:24px}
-.stn{font-size:22px}
-.stl{font-size:10px}
-.pn{padding:10px 12px}
-.pni{font-size:18px}
-.pnt{font-size:12px}
-.ft{padding:14px;gap:10px}
-.fti{width:34px;height:34px;border-radius:8px}
-.fti svg{width:16px;height:16px}
-.ft h3{font-size:13px}
-.ft p{font-size:11.5px}
-.bn{padding:16px}
-.bni{font-size:18px;margin-bottom:6px}
-.bn h3{font-size:13px}
-.bn p{font-size:12px}
-.sp h3{font-size:14px}
-.sp p{font-size:12px}
-.ef{margin:0 -8px}
-.eh{padding:12px 14px}
-.eh h3{font-size:13px}
-.ebody{padding:14px;gap:10px;font-size:11px}
-.est{font-size:9px}
-.ecds{flex-wrap:wrap}
-.ecd{width:80px}
-.eft{padding:8px 14px}
-.efbtn{font-size:11px;padding:7px 14px}
-.rf{font-size:10px}
-.rh{padding:10px 12px}
-.rht{font-size:12px}
-.rb{padding:10px 12px}
-.rprice{font-size:16px}
-.rmg{grid-template-columns:repeat(2,1fr)}
-.rtbl{font-size:9px}
-.rtbl th{font-size:8px;padding:3px 4px}
-.rtbl td{padding:3px 4px}
-.spc q{font-size:12px}
-.spc cite{font-size:10px}
-.faqq{font-size:13px;padding:14px 0}
-.faqa{font-size:12px;padding-bottom:14px}
-.cta{padding:50px 20px}
-.cta .sh{font-size:24px}
-footer{padding:24px 20px}
-.fin{flex-direction:column;text-align:center;gap:16px}
-.flinks{justify-content:center}
-.fcopy{font-size:8.5px}
-.etg{gap:5px}
-.edt{width:24px;height:12px}
-.edt::after{width:8px;height:8px}
-.etgt{font-size:10px}
-.tr{min-width:0;padding:12px}
-.trn{font-size:12px}
-.trr{font-size:10px}
-.mct{font-size:8px;padding:2px 6px;top:6px;left:6px}
-}
-</style>
 
-  <!-- Light-mode design pass -->
-  <style id="caza-light-overrides">
-    .pill{display:none!important}
-    .ni{background:rgba(255,255,255,.85)!important;backdrop-filter:blur(20px)!important;-webkit-backdrop-filter:blur(20px)!important;border-bottom:1px solid #e5e7eb!important}
-    .browser{box-shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.08),0 24px 60px rgba(15,23,42,.10),0 0 0 1px #e5e7eb!important;border-radius:14px!important}
-    .bu{background:#f1f5f9!important;color:#64748b!important;border:1px solid #e5e7eb!important}
-    .sp,.bn,.ft,.pn{border:1px solid #e5e7eb!important}
-    .sp,.bn,.ft{background:#fff!important;box-shadow:0 1px 3px rgba(15,23,42,.04)!important;transition:box-shadow .2s ease,transform .2s ease}
-    .sp:hover,.bn:hover,.ft:hover{box-shadow:0 4px 12px rgba(15,23,42,.08)!important;transform:translateY(-2px)}
-    .pn{background:#f8fafc!important}
-    .rf{box-shadow:0 4px 16px rgba(15,23,42,.08),0 0 0 1px #e5e7eb!important}
-    .ef{box-shadow:0 8px 32px rgba(15,23,42,.10),0 0 0 1px #e5e7eb!important}
-    .rl{border-bottom:1px solid #e5e7eb!important}
-    .mch{background:#fff!important;box-shadow:0 1px 3px rgba(15,23,42,.10)!important}
-    .mttt{border-bottom:1px solid rgba(15,23,42,.12)!important}
-    .sts{border-top:1px solid #e5e7eb!important;border-bottom:1px solid #e5e7eb!important}
-    .faq,.tr{border-bottom:1px solid #e5e7eb!important}
-    section:nth-of-type(even){background:#fafbfc}
-    .btn-or,a.btn[href*="chromewebstore"]{background:linear-gradient(180deg,#FF8A3D 0%,#FF6F0C 100%)!important;color:#fff!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 1px 2px rgba(255,111,12,.25),0 4px 12px rgba(255,111,12,.20)!important;border:none!important;transition:transform .15s ease,box-shadow .15s ease,filter .15s ease!important}
-    .btn-or:hover,a.btn[href*="chromewebstore"]:hover{transform:translateY(-1px)!important;filter:brightness(1.05)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 2px 4px rgba(255,111,12,.3),0 8px 20px rgba(255,111,12,.28)!important}
-    h1{letter-spacing:-0.025em!important;line-height:1.1!important}
-    h2{letter-spacing:-0.02em!important;line-height:1.15!important}
-    body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    .hero{padding-top:100px!important}
-    a:focus-visible,button:focus-visible{outline:2px solid #FF6F0C!important;outline-offset:2px!important;border-radius:4px!important}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--bg:#FFFAF5;--bg-card:#FFFFFF;--bg-tint:#FFF1E0;--ink:#0F172A;--ink-2:#475569;--mute:#94A3B8;--line:#EDE4D8;--orange:#FF6F0C;--orange-2:#FF8A3D;--orange-soft:#FFE0C7;--max-w:1140px;--r-sm:10px;--r:18px;--r-lg:28px;--r-pill:999px;--sh-sm:0 1px 2px rgba(15,23,42,.05);--sh:0 1px 3px rgba(15,23,42,.04),0 12px 32px rgba(15,23,42,.06);--sh-lg:0 1px 3px rgba(15,23,42,.04),0 32px 80px rgba(15,23,42,.10);--sh-glow:0 8px 32px rgba(255,111,12,.22);--ease:cubic-bezier(.4,0,.2,1)}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+    img,svg{display:block;max-width:100%}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+    .section{padding:96px 0}
+    .section-lg{padding:128px 0}
+    .section-sm{padding:48px 0}
+    .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);display:inline-block;margin-bottom:24px}
+    .display{font-size:clamp(46px,7vw,92px);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+    .h1{font-size:clamp(40px,5.5vw,72px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+    .h2{font-size:clamp(32px,4.5vw,56px);font-weight:800;letter-spacing:-.025em;line-height:1.1}
+    .h3{font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.015em;line-height:1.25}
+    .lead{font-size:clamp(17px,1.4vw,20px);color:var(--ink-2);line-height:1.55}
+    .body{font-size:16px;color:var(--ink-2);line-height:1.6}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:var(--r-pill);font-weight:600;font-size:15px;transition:transform .15s var(--ease),filter .15s var(--ease),box-shadow .15s var(--ease);white-space:nowrap}
+    .btn-primary{background:var(--orange);color:#fff;box-shadow:var(--sh-glow)}
+    .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.05);box-shadow:0 12px 40px rgba(255,111,12,.32)}
+    .btn-ghost{color:var(--ink);padding:14px 22px}
+    .btn-ghost:hover{background:var(--orange-soft)}
+    .header{position:sticky;top:0;z-index:50;background:rgba(255,250,245,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{font-size:22px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+    .logo-mark{width:28px;height:28px;background:var(--orange);color:#fff;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:18px;font-weight:900}
+    .nav-links{display:flex;gap:32px;font-size:14px;font-weight:500;color:var(--ink-2)}
+    .nav-links a:hover{color:var(--ink)}
+    @media(max-width:768px){.nav-links{display:none}}
+    .hero{padding:80px 0 60px;text-align:center;position:relative}
+    .hero-content{max-width:820px;margin:0 auto}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7A4A1A;background:var(--orange-soft);padding:8px 14px 8px 12px;border-radius:var(--r-pill);margin-bottom:28px}
+    .hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
+    .hero h1{margin-bottom:24px}
+    .hero-sub{margin:0 auto 36px;max-width:620px}
+    .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+    .hero-trust{font-size:13px;color:var(--mute);display:inline-flex;align-items:center;gap:8px}
+    .stars{color:#F59E0B;letter-spacing:1px}
+    .hero-visual{max-width:920px;margin:60px auto 0;position:relative}
+    .browser{background:#fff;border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line);overflow:hidden}
+    .browser-bar{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(to bottom,#FAFAF8,#F4F4F0);border-bottom:1px solid var(--line)}
+    .browser-dots{display:flex;gap:6px}
+    .dot{width:12px;height:12px;border-radius:50%}
+    .dot-r{background:#FF5F57}.dot-y{background:#FEBC2E}.dot-g{background:#28C840}
+    .browser-url{flex:1;display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:var(--r-pill);font-size:12px;color:var(--mute)}
+    .browser-body{padding:32px;background:#F8F8F6;min-height:380px;position:relative}
+    .listing{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm);max-width:480px;margin:0 auto;position:relative}
+    .listing-img{height:200px;background:linear-gradient(135deg,#FFE5C7 0%,#FFB575 50%,#FF8B3D 100%);position:relative}
+    .listing-img::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 60%,rgba(255,255,255,.3),transparent 50%)}
+    .listing-body{padding:18px 22px}
+    .listing-price{font-size:24px;font-weight:800}
+    .listing-addr{font-size:14px;color:var(--ink-2);margin:4px 0}
+    .listing-meta{font-size:13px;color:var(--mute)}
+    .score-overlay{position:absolute;top:16px;right:16px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;box-shadow:var(--sh-glow);min-width:190px}
+    .score-label{font-size:10px;font-weight:700;color:var(--orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+    .score-label::before{content:'C';display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:var(--orange);color:#fff;font-weight:800;border-radius:5px;font-size:11px}
+    .score-num{font-size:38px;font-weight:800;line-height:1;letter-spacing:-.02em}
+    .score-num small{font-size:14px;color:var(--mute);font-weight:500}
+    .score-bar{height:6px;background:var(--line);border-radius:var(--r-pill);margin:10px 0 8px;overflow:hidden}
+    .score-fill{height:100%;width:92%;background:linear-gradient(90deg,var(--orange),var(--orange-2));border-radius:var(--r-pill)}
+    .score-tag{font-size:11px;font-weight:700;color:var(--orange)}
+    .problem-statement{text-align:center;max-width:880px;margin:0 auto 64px}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:880px;margin:0 auto}
+    .stat-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:36px 28px;text-align:center}
+    .stat-num{font-size:64px;font-weight:800;color:var(--orange);letter-spacing:-.03em;line-height:1;margin-bottom:8px}
+    .stat-label{font-size:14px;color:var(--ink-2);line-height:1.45}
+    @media(max-width:720px){.stat-grid{grid-template-columns:1fr}}
+    .section-head{max-width:720px;margin:0 auto 64px;text-align:center}
+    .section-head .lead{margin-top:16px}
+    .steps{display:grid;gap:0;max-width:780px;margin:0 auto}
+    .step{display:grid;grid-template-columns:100px 1fr;gap:32px;align-items:start;padding:36px 0;border-top:1px solid var(--line)}
+    .step:first-child{border-top:none;padding-top:0}
+    .step-num{font-size:64px;font-weight:800;color:var(--orange);letter-spacing:-.04em;line-height:1}
+    .step-content h3{margin-bottom:8px}
+    @media(max-width:600px){.step{grid-template-columns:1fr;gap:8px}.step-num{font-size:42px}}
+    .benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .benefit{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:36px 32px;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+    .benefit:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+    .benefit-icon{width:52px;height:52px;background:var(--orange-soft);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--orange)}
+    .benefit h3{margin-bottom:10px}
+    @media(max-width:720px){.benefits{grid-template-columns:1fr}}
+    .principles{display:grid;gap:0;max-width:980px;margin:0 auto}
+    .principle{padding:48px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start}
+    .principle:first-child{border-top:none;padding-top:16px}
+    .principle-mark{font-size:13px;font-weight:700;color:var(--orange);letter-spacing:.06em;text-transform:uppercase}
+    .principle h3{margin-bottom:14px}
+    @media(max-width:720px){.principle{grid-template-columns:1fr;gap:12px;padding:36px 0}}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .review{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+    .review-stars{color:#F59E0B;margin-bottom:16px;letter-spacing:2px}
+    .review-text{font-size:16px;color:var(--ink);line-height:1.55;margin-bottom:24px}
+    .review-author{display:flex;align-items:center;gap:12px}
+    .review-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--orange-soft),var(--orange-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px}
+    .review-name{font-weight:600;font-size:14px}
+    .review-role{color:var(--mute);font-size:13px}
+    @media(max-width:960px){.reviews{grid-template-columns:1fr}}
+    .faq-list{max-width:760px;margin:0 auto}
+    .faq-item{border-top:1px solid var(--line)}
+    .faq-item:last-child{border-bottom:1px solid var(--line)}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:24px 0;text-align:left;font-size:18px;font-weight:600;gap:24px}
+    .faq-icon{width:24px;height:24px;flex-shrink:0;transition:transform .25s var(--ease);color:var(--orange)}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease);color:var(--ink-2);line-height:1.6}
+    .faq-item.open .faq-a{max-height:300px;padding-bottom:24px}
+    .final-cta{background:#0F172A;color:#fff;border-radius:var(--r-lg);padding:88px 32px;text-align:center;margin:0 auto;max-width:var(--max-w);position:relative;overflow:hidden}
+    .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(255,111,12,.22),transparent 55%);pointer-events:none}
+    .final-cta h2{color:#fff;position:relative;margin-bottom:16px}
+    .final-cta p{color:rgba(255,255,255,.7);font-size:18px;max-width:560px;margin:0 auto 32px;position:relative}
+    .final-cta .btn-primary{position:relative}
+    .footer{padding:48px 0 32px;font-size:13px;color:var(--mute);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid var(--line);margin-top:48px}
+    .footer-links{display:flex;gap:24px}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:2px;border-radius:4px}
+    @media(max-width:720px){.section{padding:64px 0}.section-lg{padding:80px 0}.hero{padding:48px 0 32px}.browser-body{padding:16px;min-height:auto}.score-overlay{position:static;margin:16px auto 0;min-width:auto}.listing{max-width:100%}.final-cta{padding:60px 24px}}
   </style>
 </head>
 <body>
-<nav id="nav"><div class="ni"><a class="logo" href="#"><svg width="30" height="30" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0d1431"/><path d="M32 16L14 30V50H26V38H38V50H50V30L32 16Z" fill="#fff" fill-opacity=".95"/><circle cx="46" cy="22" r="12" fill="none" stroke="#d72730" stroke-width="3.5" opacity=".7"/><circle cx="46" cy="22" r="7" fill="none" stroke="#FF6F0C" stroke-width="3" opacity=".85"/><circle cx="46" cy="22" r="2.5" fill="#FF6F0C"/></svg><span class="lt">Caza</span></a><div class="nr"><a href="#problem">Why Caza</a><a href="#features">Features</a><a href="#reports">Reports</a><a href="#faq">FAQ</a><a class="btn bc" href="https://chromewebstore.google.com/detail/caza/oojoopmelbnbddhjmemdggbkeflhjnpk" target="_blank">Add to Chrome — Free</a></div></div></nav>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo"><span class="logo-mark">C</span> Caza</a>
+        <div class="nav-links">
+          <a href="#how">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <a href="https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk" class="btn btn-primary">Add to Chrome — Free</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero"><div class="pill"><span class="dot"></span> Now on the Chrome Web Store</div><h1>See what Zillow <em>won't show you.</em></h1><p>A 0–100 demand score on every listing — powered by saves, views, and market velocity. Built for agents and buyers who move fast.</p><div class="hb"><a class="btn bc bl" href="https://chromewebstore.google.com/detail/caza/oojoopmelbnbddhjmemdggbkeflhjnpk" target="_blank">⬇ Install Free Extension</a><a class="btn bg bl" href="#demo">See How It Works →</a></div>
-<div class="browser"><div class="bb"><div class="bds"><span></span><span></span><span></span></div><div class="bu">zillow.com/los-angeles-ca/</div></div><div class="bbd"><div class="ms">⚡ Sort Listings ▾</div><div class="mcs"><div class="mc"><div class="mci" style="background:linear-gradient(135deg,#cae0f5,#a8c8e8)"><div class="mct">Price cut: $25,000</div><div class="mch">🤍</div><div class="mtt" style="background:rgba(185,28,28,.96)"><div class="mttb"><div class="mttt">🔥 Hot Deal</div><div class="mttl">💾 847 saves</div><div class="mttl">👁 12,304 views</div><div class="mttl">📅 4d on market</div><div class="mttl">🚀 Selling very fast</div><div class="mttl">👤 M. Lopez · 310-555-0142</div></div><div class="mttr" style="background:rgba(220,38,38,.94)">92</div></div></div><div class="mcn"><div class="mcp">$1,175,000</div><div class="mcd">4 bds | 4 ba | 2,162 sqft</div><div class="mca">1129 Quinto Creek Pl, Chula Vista</div><div class="mcg">5RG Realty</div></div></div><div class="mc"><div class="mci" style="background:linear-gradient(135deg,#d4c5a9,#b8a88a)"><div class="mct" style="background:rgba(14,158,191,.85)">Pool and spa</div><div class="mch">🤍</div><div class="mcb" style="background:rgba(220,38,38,.94)">99</div></div><div class="mcn"><div class="mcp">$1,150,000</div><div class="mcd">4 bds | 3 ba | 2,398 sqft</div><div class="mca">2389 Green River Dr, Chula Vista</div><div class="mcg">Redfin Corporation</div></div></div><div class="mc"><div class="mci" style="background:linear-gradient(135deg,#b5d8c7,#8fc4a9)"><div class="mch">🤍</div><div class="mcb" style="background:rgba(37,99,235,.94)">42</div></div><div class="mcn"><div class="mcp">$875,000</div><div class="mcd">3 bds | 2 ba | 1,640 sqft</div><div class="mca">4521 Maple Ave, Los Angeles</div><div class="mcg">Compass</div></div></div><div class="mc"><div class="mci" style="background:linear-gradient(135deg,#e8d5c0,#c9b39a)"><div class="mct" style="background:rgba(215,39,48,.85)">Cozy fireplace</div><div class="mch">🤍</div><div class="mcb" style="background:rgba(234,88,12,.94)">78</div></div><div class="mcn"><div class="mcp">$1,120,000</div><div class="mcd">4 bds | 3 ba | 2,498 sqft</div><div class="mca">1234 Camino Prado, Chula Vista</div><div class="mcg">Keller Williams</div></div></div></div></div></div></section>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-eyebrow">Free Chrome extension</div>
+          <h1 class="display">See what Zillow won&rsquo;t show you.</h1>
+          <p class="lead hero-sub">A 0&ndash;100 demand score on every Zillow listing. Saves, views, days on market &mdash; surfaced right where you&rsquo;re already searching.</p>
+          <div class="hero-actions">
+            <a href="https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk" class="btn btn-primary">Add to Chrome &mdash; Free</a>
+            <a href="#how" class="btn btn-ghost">See how it works &rarr;</a>
+          </div>
+          <div class="hero-trust">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span>Five-star rated on the Chrome Web Store</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="browser">
+            <div class="browser-bar">
+              <div class="browser-dots"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span></div>
+              <div class="browser-url">&#128274; zillow.com/homedetails/3401-elm-st</div>
+            </div>
+            <div class="browser-body">
+              <div class="listing">
+                <div class="listing-img"></div>
+                <div class="listing-body">
+                  <div class="listing-price">&#36;847,000</div>
+                  <div class="listing-addr">3401 Elm Street, Costa Mesa CA</div>
+                  <div class="listing-meta">3 bd &middot; 2 ba &middot; 1,840 sqft &middot; 4 days on market</div>
+                </div>
+                <div class="score-overlay">
+                  <div class="score-label">Caza Demand Score</div>
+                  <div class="score-num">92<small>/100</small></div>
+                  <div class="score-bar"><div class="score-fill"></div></div>
+                  <div class="score-tag">&#128293; Very hot &middot; 89 saves</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="sts"><div class="str"><div style="text-align:center"><div class="stn">0–100</div><div class="stl">Demand Score</div></div><div style="text-align:center"><div class="stn">3</div><div class="stl">Signals Combined</div></div><div style="text-align:center"><div class="stn">100%</div><div class="stl">Local & Private</div></div><div style="text-align:center"><div class="stn">Free</div><div class="stl">7-Day Trial</div></div></div></section>
+    <section class="section section-lg" style="background:var(--bg-tint)">
+      <div class="container">
+        <div class="problem-statement">
+          <div class="eyebrow">The problem</div>
+          <h2 class="h1">Zillow shows you the price.<br>It hides the demand.</h2>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-num">89</div><div class="stat-label">Saves on a typical hot listing<br>that Zillow won&rsquo;t show you</div></div>
+          <div class="stat-card"><div class="stat-num">2,800+</div><div class="stat-label">Views in the last 7 days<br>hidden from public view</div></div>
+          <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Price drops since listing<br>buried in the history</div></div>
+        </div>
+      </div>
+    </section>
 
-<section class="sec reveal" id="problem"><div class="pg"><div><div class="slb">The Problem</div><h2 class="sh">You're browsing blind.</h2><p style="color:var(--mt);font-size:14px;line-height:1.65;margin-bottom:14px">Zillow shows price, beds, and sqft. But it hides the signals that matter — how many people saved it, how fast it's getting views, and whether it's about to go pending.</p><p style="color:var(--mt);font-size:14px;line-height:1.65">Agents waste hours opening every listing. Buyers lose deals because they can't tell a sleeper from a bidding war. You need <strong style="color:#fff">demand data</strong>, not just listing data.</p></div><div style="display:flex;flex-direction:column;gap:12px"><div class="pn"><span class="pni">😫</span><span class="pnt">Opening 50+ listings just to find 3 worth showing</span></div><div class="pn"><span class="pni">🤷</span><span class="pnt">No idea if a listing is hot or sitting dead for weeks</span></div><div class="pn"><span class="pni">📉</span><span class="pnt">Missing price drops buried deep in listing history</span></div><div class="pn"><span class="pni">⏳</span><span class="pnt">Spending 2 hours on research that should take 10 minutes</span></div></div></div></section>
+    <section id="how" class="section section-lg">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">How it works</div><h2 class="h2">Three steps. No setup.</h2></div>
+        <div class="steps">
+          <div class="step"><div class="step-num">01</div><div class="step-content"><h3 class="h3">Install in 10 seconds</h3><p class="body">One click from the Chrome Web Store. No account, no signup, no permissions to read your data.</p></div></div>
+          <div class="step"><div class="step-num">02</div><div class="step-content"><h3 class="h3">Browse Zillow normally</h3><p class="body">Caza activates automatically on every search results page and listing. Nothing to click, nothing to remember.</p></div></div>
+          <div class="step"><div class="step-num">03</div><div class="step-content"><h3 class="h3">See what&rsquo;s actually hot</h3><p class="body">Demand scores, save counts, and view counts appear inline on every listing &mdash; built from Zillow&rsquo;s own signals.</p></div></div>
+        </div>
+      </div>
+    </section>
 
-<section class="sec ss reveal" id="demo"><div class="slb">How It Works</div><h2 class="sh">Install. Search. See everything.</h2><p class="sd">Three steps. Thirty seconds. No account needed.</p><div class="sps"><div class="sp"><div class="spn">1</div><h3>Install from Chrome</h3><p>One click. No sign-up, no permissions beyond Zillow. Takes 5 seconds.</p></div><div class="sp"><div class="spn">2</div><h3>Search on Zillow</h3><p>Navigate to zillow.com and search like you normally would. Nothing changes.</p></div><div class="sp"><div class="spn">3</div><h3>See scores instantly</h3><p>Every listing gets a 0–100 badge. Hover for stats. Sort. Export reports.</p></div></div></section>
+    <section id="features" class="section section-lg" style="background:var(--bg-tint)">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">What you get</div><h2 class="h2">Built for the people on the buy side.</h2></div>
+        <div class="benefits">
+          <div class="benefit"><div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4M12 16V8"/></svg></div><h3 class="h3">0&ndash;100 Demand Score</h3><p class="body">A single number that tells you how hot a listing actually is. Built from saves, views, and time on market.</p></div>
+          <div class="benefit"><div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><h3 class="h3">Client-ready PDF reports</h3><p class="body">Export branded reports in one click. Photos, demand score, and listing data &mdash; ready to send to your client.</p></div>
+          <div class="benefit"><div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3 class="h3">Heat &amp; price-drop badges</h3><p class="body">See at a glance which listings are getting attention and which have quietly dropped their asking price.</p></div>
+          <div class="benefit"><div class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div><h3 class="h3">Zero setup</h3><p class="body">No account. No login. No data collection. Install once and Caza works on every Zillow page automatically.</p></div>
+        </div>
+      </div>
+    </section>
 
-<section class="sec reveal" style="background:linear-gradient(180deg,rgba(215,39,48,.02),transparent)"><div style="max-width:var(--mx);margin:0 auto"><div class="slb">Why Agents Love Caza</div><h2 class="sh">Stop guessing. Start knowing.</h2><p class="sd">Real outcomes, not feature lists.</p><div class="bng"><div class="bn"><div class="bni">⏱️</div><h3>Save 2+ hours per search</h3><p>Scores tell you which listings are worth your time in a single glance.</p></div><div class="bn"><div class="bni">🎯</div><h3>Find hot listings first</h3><p>See which properties have the most saves and views before anyone else.</p></div><div class="bn"><div class="bni">📄</div><h3>Impress clients instantly</h3><p>Export branded PDF reports with scores, photos, and agent info.</p></div><div class="bn"><div class="bni">📉</div><h3>Never miss a price drop</h3><p>Price cut history surfaced right on the card — amount, %, and recency.</p></div><div class="bn"><div class="bni">🔒</div><h3>Your data stays private</h3><p>No accounts, no tracking. Everything runs locally in your browser.</p></div><div class="bn"><div class="bni">🎛️</div><h3>Your scoring, your way</h3><p>Adjust how much each signal matters. Different strategies, different weights.</p></div></div></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">What makes Caza different</div><h2 class="h2">Three things we believe.</h2></div>
+        <div class="principles">
+          <div class="principle"><div class="principle-mark">diff &mdash; 001</div><div><h3 class="h3">Built on Zillow&rsquo;s own data</h3><p class="lead">Caza doesn&rsquo;t guess. Every signal &mdash; saves, views, days on market &mdash; comes directly from Zillow. We just surface what&rsquo;s already there but never shown to you.</p></div></div>
+          <div class="principle"><div class="principle-mark">diff &mdash; 002</div><div><h3 class="h3">Made for the buy side</h3><p class="lead">Built by someone who got tired of losing offers on hot homes because the public listing page hides the most important signal: how badly other people want it.</p></div></div>
+          <div class="principle"><div class="principle-mark">diff &mdash; 003</div><div><h3 class="h3">Works in seconds, not days</h3><p class="lead">No accounts. No setup. No learning curve. Install the extension, open Zillow, and the data is already there. That&rsquo;s the whole product.</p></div></div>
+        </div>
+      </div>
+    </section>
 
-<section class="sec reveal" id="features"><div class="slb">Features</div><h2 class="sh">The full toolkit.</h2><div class="fg"><div class="ft"><div class="fti"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 9l-5 5-2-2-4 4"/></svg></div><div><h3>Score Badges</h3><p>Color-coded 0–100 on every card. Hover for saves, views, sell pace, price drops, Zestimate, agent info.</p></div></div><div class="ft"><div class="fti"><svg viewBox="0 0 24 24"><path d="M7 15l5-5 5 5"/><path d="M7 9l5 5 5-5"/></svg></div><div><h3>Sort by Demand</h3><p>Reorder by Deal Score, saves, views, DOM, or price drops. Draggable button.</p></div></div><div class="ft"><div class="fti"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/><circle cx="12" cy="12" r="9"/></svg></div><div><h3>Price Drop Detection</h3><p>Amount, percentage, and recency surfaced instantly. Total drop count included.</p></div></div><div class="ft"><div class="fti"><svg viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg></div><div><h3>Back-on-Market Alerts</h3><p>Spot relisted properties that fell out of escrow. Flagged immediately.</p></div></div><div class="ft"><div class="fti"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg></div><div><h3>Zestimate & Agent Info</h3><p>Valuation, HOA, agent name & phone — all in the tooltip without clicking.</p></div></div><div class="ft"><div class="fti"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><h3>PDF Reports</h3><p>Toggle fields, sort by price or score, export branded reports with photos.</p></div></div><div class="ft"><div class="fti"><svg viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div><div><h3>Custom Weights</h3><p>Drag sliders to adjust signal importance. Customize for your strategy.</p></div></div><div class="ft"><div class="fti"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3>100% Private</h3><p>No accounts, no data collection, no tracking. No servers. Your browser only.</p></div></div></div></section>
+    <section id="reviews" class="section section-lg" style="background:var(--bg-tint)">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Reviews</div><h2 class="h2">What early users are saying.</h2></div>
+        <div class="reviews">
+          <div class="review"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">&ldquo;This should have been a Zillow feature from day one. I check it before every showing now.&rdquo;</p><div class="review-author"><div class="review-avatar">M</div><div><div class="review-name">Michael R.</div><div class="review-role">Real estate agent</div></div></div></div>
+          <div class="review"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">&ldquo;Finally I can tell my buyers which homes are actually getting attention versus which are sitting. Game changer.&rdquo;</p><div class="review-author"><div class="review-avatar">S</div><div><div class="review-name">Sarah K.</div><div class="review-role">Buyer&rsquo;s agent</div></div></div></div>
+          <div class="review"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="review-text">&ldquo;PDF reports alone are worth it. My clients think I&rsquo;m doing some kind of insider analysis.&rdquo;</p><div class="review-author"><div class="review-avatar">J</div><div><div class="review-name">James L.</div><div class="review-role">Realtor</div></div></div></div>
+        </div>
+      </div>
+    </section>
 
-<section class="sec ss reveal" id="export"><div class="slb">PDF Export</div><h2 class="sh">Professional reports in seconds.</h2><p class="sd">Select properties, toggle fields, sort. Two layouts.</p><div class="ef"><div class="eh"><svg width="22" height="22" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="rgba(255,255,255,.15)"/><path d="M32 16L14 30V50H26V38H38V50H50V30L32 16Z" fill="#fff" fill-opacity=".9"/></svg><div><h3>Export Property Report</h3><p>Customize fields, select properties, generate PDF</p></div></div><div class="ebody"><div><div class="est">👤 Your Information</div><div style="font-size:10px;color:#999;margin-bottom:14px">First Name, Last Name, Email, DRE#</div><div class="est">📐 Layout & Sort</div><div style="display:flex;gap:6px;margin-bottom:6px"><div style="flex:1;border:2px solid var(--cr);border-radius:6px;padding:7px;text-align:center;background:rgba(215,39,48,.04);font-size:10px;font-weight:600;color:var(--cr)">📄 One Per Page</div><div style="flex:1;border:2px solid #e5e5e5;border-radius:6px;padding:7px;text-align:center;font-size:10px;font-weight:600;color:#aaa">📋 Summary</div></div><div style="font-size:10px;color:#888;margin-top:6px">Sort: Caza Score (High → Low) ▾</div></div><div><div class="est">⚙️ Fields to Include</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:1px 10px"><div class="etg"><div class="edt"></div><span class="etgt">Beds / Baths</span></div><div class="etg"><div class="edt"></div><span class="etgt">Property Sqft</span></div><div class="etg"><div class="edt"></div><span class="etgt">Lot Size</span></div><div class="etg"><div class="edt"></div><span class="etgt">Year Built</span></div><div class="etg"><div class="edt"></div><span class="etgt">Price / Sqft</span></div><div class="etg"><div class="edt off"></div><span class="etgt" style="color:#aaa">HOA Fee</span></div><div class="etg"><div class="edt"></div><span class="etgt">Caza Score</span></div><div class="etg"><div class="edt"></div><span class="etgt">Listing Agent</span></div><div class="etg"><div class="edt"></div><span class="etgt">Photos</span></div><div class="etg"><div class="edt off"></div><span class="etgt" style="color:#aaa">Zillow Link</span></div></div></div><div class="ecds"><div class="ecd"><div class="ecdck">✓</div><div class="ecdi" style="background:linear-gradient(135deg,#cae0f5,#a8c8e8)"></div><div class="ecdp">$1,175,000</div><div class="ecda">1129 Quinto Creek</div></div><div class="ecd"><div class="ecdck">✓</div><div class="ecdi" style="background:linear-gradient(135deg,#d4c5a9,#e8d5c0)"></div><div class="ecdp">$1,150,000</div><div class="ecda">2389 Green River</div></div><div class="ecd"><div class="ecdck">✓</div><div class="ecdi" style="background:linear-gradient(135deg,#b5d8c7,#c5e8d7)"></div><div class="ecdp">$875,000</div><div class="ecda">4521 Maple Ave</div></div><div class="ecd" style="border-color:#e5e5e5;opacity:.5"><div class="ecdi" style="background:linear-gradient(135deg,#e8d5c0,#c9b39a)"></div><div class="ecdp">$1,120,000</div><div class="ecda">1234 Camino Prado</div></div></div></div><div class="eft"><div class="efcnt"><strong>3</strong> properties selected</div><button class="efbtn">Generate PDF</button></div></div></section>
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">FAQ</div><h2 class="h2">Frequently asked questions.</h2></div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is Caza really free?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>Yes. The Chrome extension is free to install and use. We may introduce paid tiers for advanced features like unlimited PDF exports later, but the core demand scores will stay free.</p></div></div>
+          <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does Caza work on every Zillow listing?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>It works on every active for-sale listing in the US. Off-market homes and rentals aren&rsquo;t supported yet.</p></div></div>
+          <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Will using Caza affect my Zillow account?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>No. Caza reads only the public data Zillow already sends to your browser. It doesn&rsquo;t scrape, doesn&rsquo;t automate clicks, and doesn&rsquo;t touch your account or login.</p></div></div>
+          <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What does the PDF report look like?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>Cover photo, listing photos, full address, demand score with rationale, save and view trends, days on market, and price history. Print-ready, one click from any listing page.</p></div></div>
+          <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is the demand score calculated?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>It blends three Zillow-native signals: total saves, recent view velocity, and days on market relative to the local average. The weighting adjusts per market so a hot home in Austin doesn&rsquo;t get compared to one in San Francisco.</p></div></div>
+          <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to create an account?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><div class="faq-a"><p>No. Install the extension, open Zillow. That&rsquo;s it. No signup, no email collection, no tracking.</p></div></div>
+        </div>
+      </div>
+    </section>
 
-<section class="sec reveal" id="reports"><div class="slb">Report Examples</div><h2 class="sh">Two layouts. Fully customizable.</h2><p class="sd">Toggle any field. Sort by price, score, or DOM. Add your branding.</p><div class="rg"><div class="rf"><div class="rl">📄 One Per Page</div><div class="rh"><svg width="18" height="18" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="rgba(255,255,255,.15)"/><path d="M32 16L14 30V50H26V38H38V50H50V30L32 16Z" fill="#fff" fill-opacity=".9"/></svg><div><div class="rht">Caza Property Report</div><div class="rhs">April 14, 2026 · 3 properties</div></div></div><div style="padding:4px 16px;background:#f8f8f8;border-bottom:1px solid #eee;font-size:9px;color:#666"><strong>Prepared by:</strong> Maria Lopez · maria@realty.com · DRE# 01234567</div><div class="rb"><div class="rprice">$1,175,000</div><div class="raddr">1129 Quinto Creek Pl, Chula Vista, CA 91913</div><div class="rstat">4 beds · 4 baths · 2,162 sqft · Lot: 6,251 sqft · Built 2005</div><div class="rmg"><div class="rm"><span class="l">Caza Score</span><span class="v sc">92/100</span></div><div class="rm"><span class="l">💾 Saves</span><span class="v">847</span></div><div class="rm"><span class="l">👁 Views</span><span class="v">12,304</span></div><div class="rm"><span class="l">📅 DOM</span><span class="v">4 days</span></div><div class="rm"><span class="l">💲 $/Sqft</span><span class="v">$543</span></div><div class="rm"><span class="l">🏷 Zest.</span><span class="v">$1.19M</span></div></div><div class="rab"><strong>Listing Agent</strong>Antonio Sanchez · 626-275-2543</div></div></div><div class="rf"><div class="rl">📋 Summary Table</div><div class="rh"><svg width="18" height="18" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="rgba(255,255,255,.15)"/><path d="M32 16L14 30V50H26V38H38V50H50V30L32 16Z" fill="#fff" fill-opacity=".9"/></svg><div><div class="rht">Caza Property Report</div><div class="rhs">April 14, 2026 · 3 properties</div></div></div><div style="padding:10px 12px;background:#fff"><table class="rtbl"><thead><tr><th>Property</th><th>Price</th><th>Bd/Ba</th><th>Score</th><th>Stats</th><th>Agent</th></tr></thead><tbody><tr><td><strong>1129 Quinto Creek</strong><br><span style="font-size:8px;color:#aaa">Chula Vista, CA</span></td><td class="pr">$1,175K</td><td>4/4</td><td class="sc">92</td><td style="font-size:9px;color:#888">847 sv, 12K vw</td><td style="font-size:9px">A. Sanchez<br>626-275-2543</td></tr><tr><td><strong>2389 Green River</strong><br><span style="font-size:8px;color:#aaa">Chula Vista, CA</span></td><td class="pr">$1,150K</td><td>4/3</td><td class="sc">99</td><td style="font-size:9px;color:#888">1,201 sv, 18K vw</td><td style="font-size:9px">J. Martinez<br>858-555-0189</td></tr><tr><td><strong>4521 Maple Ave</strong><br><span style="font-size:8px;color:#aaa">Los Angeles, CA</span></td><td class="pr">$875K</td><td>3/2</td><td class="sc">42</td><td style="font-size:9px;color:#888">89 sv, 2K vw</td><td style="font-size:9px">R. Kim<br>213-555-0276</td></tr></tbody></table></div></div></div></section>
+    <section class="section-sm">
+      <div class="container">
+        <div class="final-cta">
+          <h2 class="h1">Stop guessing.<br>Start knowing.</h2>
+          <p>Free Chrome extension. Installs in ten seconds. Works on every Zillow listing automatically.</p>
+          <a href="https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk" class="btn btn-primary">Add to Chrome &mdash; Free</a>
+        </div>
+      </div>
+    </section>
 
-<section class="sec ss reveal"><div class="slb">Methodology</div><h2 class="sh">How the score works.</h2><p class="sd">Three demand signals normalized 0–100, weighted, combined with a velocity bonus.</p><div class="trs"><div class="tr"><div class="trd" style="background:#ef4444;box-shadow:0 0 8px rgba(239,68,68,.4)"></div><div class="trn">🔥 Hot</div><div class="trr">80–100</div></div><div class="tr"><div class="trd" style="background:#f97316"></div><div class="trn">⚡ Warm</div><div class="trr">60–79</div></div><div class="tr"><div class="trd" style="background:#3b82f6"></div><div class="trn">🌤 Average</div><div class="trr">40–59</div></div><div class="tr"><div class="trd" style="background:#0e9ebf"></div><div class="trn">🧊 Cool</div><div class="trr">20–39</div></div><div class="tr"><div class="trd" style="background:#64748b"></div><div class="trn">❄️ Slow</div><div class="trr">0–19</div></div></div></section>
-
-<section class="sec reveal"><div style="text-align:center;margin-bottom:36px"><div class="slb">What People Are Saying</div><h2 class="sh" style="max-width:500px;margin-left:auto;margin-right:auto">Early feedback from agents and buyers.</h2></div><div class="spg"><div class="spc"><div class="spst"><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg></div><q>This saved me hours. I used to open every listing — now I just look at the scores and only open the ones worth seeing.</q><cite>— Real estate agent, Los Angeles</cite></div><div class="spc"><div class="spst"><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg></div><q>The price drop detection alone is worth it. I caught a $40K reduction I would have completely missed.</q><cite>— First-time buyer, San Diego</cite></div><div class="spc"><div class="spst"><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg></div><q>My clients love the PDF reports. Makes me look way more professional than forwarding a Zillow screenshot.</q><cite>— Buyer's agent, Orange County</cite></div><div class="spc"><div class="spst"><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg><svg class="spsr" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.5 5.8 21 7 14 2 9.3 9 8.5"/></svg></div><q>Finally, someone built what Zillow should have built 10 years ago. The demand data changes everything.</q><cite>— RE investor, Bay Area</cite></div></div></section>
-
-<section class="sec reveal" id="faq" style="max-width:640px;margin-left:auto;margin-right:auto"><div class="slb">FAQ</div><h2 class="sh">Common questions.</h2><div class="faq"><button class="faqq" onclick="this.parentElement.classList.toggle('o')">Is Caza free?<svg class="faqar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqa">Caza offers a free 7-day trial with full access. After that, you'll need to upgrade to continue.</div></div><div class="faq"><button class="faqq" onclick="this.parentElement.classList.toggle('o')">Does it work on every Zillow page?<svg class="faqar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqa">Yes — search results, map view, and individual listing pages. Scores appear automatically.</div></div><div class="faq"><button class="faqq" onclick="this.parentElement.classList.toggle('o')">Does Caza collect my data?<svg class="faqar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqa">No. Zero data collection. No analytics, no tracking, no accounts. All processing happens locally. We don't have servers.</div></div><div class="faq"><button class="faqq" onclick="this.parentElement.classList.toggle('o')">Will it slow down Zillow?<svg class="faqar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqa">No. Scores are from data Zillow already loads. Background fetches are rate-limited and non-blocking.</div></div><div class="faq"><button class="faqq" onclick="this.parentElement.classList.toggle('o')">Is Caza affiliated with Zillow?<svg class="faqar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqa">No. Caza is an independent third-party Chrome extension. Not affiliated with, endorsed by, or sponsored by Zillow Group, Inc.</div></div><div class="faq"><button class="faqq" onclick="this.parentElement.classList.toggle('o')">Can I customize report fields?<svg class="faqar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqa">Yes. Individual toggles for beds/baths, score, saves, views, DOM, lot size, $/sqft, HOA, Zestimate, agent, photos, Zillow link.</div></div><div class="faq"><button class="faqq" onclick="this.parentElement.classList.toggle('o')">How accurate are scores?<svg class="faqar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faqa">Scores reflect relative demand from publicly available Zillow data. Not financial advice. Always consult qualified professionals.</div></div></section>
-
-<section class="cta"><h2 class="sh" style="font-size:clamp(28px,4vw,44px);max-width:560px;margin-left:auto;margin-right:auto">Ready to see the listings everyone else misses?</h2><p style="color:var(--mt);max-width:420px;margin:0 auto 28px;font-size:15px">Free to try. No account needed. Works instantly.</p><a class="btn bc bl" href="https://chromewebstore.google.com/detail/caza/oojoopmelbnbddhjmemdggbkeflhjnpk" target="_blank" style="font-size:16px;padding:16px 34px">⬇ Add Caza to Chrome — Free</a></section>
-
-<footer><div class="fin"><a class="logo" href="#" style="gap:7px"><svg width="24" height="24" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0d1431"/><path d="M32 16L14 30V50H26V38H38V50H50V30L32 16Z" fill="#fff" fill-opacity=".95"/><circle cx="46" cy="22" r="10" fill="none" stroke="#d72730" stroke-width="2.5" opacity=".6"/><circle cx="46" cy="22" r="5" fill="none" stroke="#FF6F0C" stroke-width="2" opacity=".7"/><circle cx="46" cy="22" r="2" fill="#FF6F0C"/></svg><span class="lt" style="font-size:16px">Caza</span></a><div class="flinks"><a href="https://docs.google.com/document/d/19x-MIFPD7-LpiD0cPcB_39VixlX0v_Kd6nLSUoRhLbg/edit?usp=sharing" target="_blank">Privacy Policy</a><a href="mailto:hello@usecaza.com">Contact</a><a href="https://chromewebstore.google.com/detail/caza/oojoopmelbnbddhjmemdggbkeflhjnpk" target="_blank">Chrome Web Store</a></div><div class="fcopy">© 2026 Caza. All rights reserved. Not affiliated with or endorsed by Zillow Group, Inc. Zillow is a registered trademark of Zillow, Inc.<br>Scores are for informational purposes only and do not constitute financial, legal, or real estate advice. Always consult qualified professionals before making real estate decisions.</div></div></footer>
-<script>window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('s',window.scrollY>40));const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>o.observe(el))</script>
-</body></html>
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <div>&copy; 2026 Caza &middot; Built for the buy side</div>
+          <div class="footer-links"><a href="mailto:gus@usecaza.com">Contact</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
