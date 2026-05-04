@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caza Blog — Zillow data, demand signals, and what listings really mean</title>
+  <meta name="description" content="Practical guides for real estate agents and home buyers: how Zillow data actually works, how to read demand signals, and how to win in a competitive market.">
+  <meta name="theme-color" content="#FF6F0C">
+  <link rel="canonical" href="https://usecaza.com/blog.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://usecaza.com/blog.html">
+  <meta property="og:title" content="Caza Blog — Zillow data, demand signals, and what listings really mean">
+  <meta property="og:description" content="Practical guides for real estate agents and home buyers.">
+  <meta property="og:image" content="https://usecaza.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--bg:#FFFAF5;--bg-card:#FFFFFF;--bg-tint:#FFF1E0;--ink:#0F172A;--ink-2:#475569;--mute:#94A3B8;--line:#EDE4D8;--orange:#FF6F0C;--orange-2:#FF8A3D;--orange-soft:#FFE0C7;--max-w:760px;--r:18px;--r-pill:999px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:var(--orange);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{display:block;max-width:100%}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+    .container-wide{max-width:1140px;margin:0 auto;padding:0 24px}
+    .header{position:sticky;top:0;z-index:50;background:rgba(255,250,245,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{font-size:22px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;color:var(--ink)}
+    .logo-mark{width:32px;height:32px;border-radius:8px;display:inline-block;object-fit:contain}
+    .nav-links{display:flex;gap:32px;font-size:14px;font-weight:500;color:var(--ink-2)}
+    .nav-links a{color:var(--ink-2)}
+    .nav-links a:hover{color:var(--ink);text-decoration:none}
+    @media(max-width:768px){.nav-links{display:none}}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--r-pill);font-weight:600;font-size:14px;background:var(--orange);color:#fff;box-shadow:0 8px 32px rgba(255,111,12,.22);transition:transform .15s ease,filter .15s ease}
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.05);text-decoration:none;color:#fff}
+    .blog-hero{padding:80px 0 40px;text-align:center}
+    .eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);display:inline-block;margin-bottom:20px}
+    .blog-hero h1{font-size:clamp(36px,5vw,56px);font-weight:800;letter-spacing:-.025em;line-height:1.1;max-width:680px;margin:0 auto 16px}
+    .blog-hero p{font-size:18px;color:var(--ink-2);max-width:560px;margin:0 auto}
+    .index-section{padding:32px 0 96px}
+    .article-cards{display:grid;gap:16px}
+    .article-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:32px;transition:transform .2s ease,box-shadow .2s ease;display:block;color:inherit}
+    .article-card:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(15,23,42,.06);text-decoration:none;color:inherit}
+    .article-meta{font-size:13px;color:var(--mute);display:flex;gap:12px;margin-bottom:12px}
+    .article-card h2{font-size:24px;font-weight:700;letter-spacing:-.015em;line-height:1.25;margin-bottom:10px}
+    .article-card p{color:var(--ink-2);font-size:15px}
+    .article-tag{display:inline-block;padding:3px 10px;background:var(--orange-soft);color:#7A4A1A;border-radius:var(--r-pill);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
+    article.post{padding:64px 0;border-top:1px solid var(--line)}
+    article.post:first-of-type{border-top:none}
+    article.post .post-meta{font-size:13px;color:var(--mute);margin-bottom:14px;display:flex;gap:12px;flex-wrap:wrap}
+    article.post h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:24px}
+    article.post h3{font-size:22px;font-weight:700;letter-spacing:-.01em;margin:36px 0 14px}
+    article.post p{margin-bottom:18px;font-size:17px}
+    article.post ul,article.post ol{margin:0 0 22px 24px}
+    article.post li{margin-bottom:8px;font-size:17px;line-height:1.6}
+    article.post strong{font-weight:600;color:var(--ink)}
+    .callout{background:var(--bg-tint);border-left:3px solid var(--orange);padding:20px 24px;border-radius:0 var(--r) var(--r) 0;margin:28px 0}
+    .callout p:last-child{margin-bottom:0}
+    .post-cta{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);padding:28px;text-align:center;margin:40px 0 0}
+    .post-cta p{font-size:16px;margin-bottom:16px}
+    .back-link{display:inline-block;color:var(--ink-2);font-size:14px;margin-bottom:32px;font-weight:500}
+    .back-link:hover{color:var(--ink);text-decoration:none}
+    footer{padding:48px 0 32px;font-size:13px;color:var(--mute);border-top:1px solid var(--line);margin-top:48px;text-align:center}
+    @media(max-width:600px){.blog-hero{padding:48px 0 24px}article.post{padding:48px 0}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container-wide">
+      <nav class="nav">
+        <a href="/" class="logo"><img class="logo-mark" src="/favicon.svg" alt="Caza" width="32" height="32"> Caza</a>
+        <div class="nav-links">
+          <a href="/#how">How it works</a>
+          <a href="/#features">Features</a>
+          <a href="/blog.html">Blog</a>
+          <a href="/#faq">FAQ</a>
+        </div>
+        <a href="https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk" class="btn">Add to Chrome</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <div class="eyebrow">Caza Blog</div>
+        <h1>Zillow data, demand signals, and what listings really mean.</h1>
+        <p>Plain-English guides for real estate agents and home buyers. No fluff, no SEO bait — just the things we wish were in the Zillow help docs.</p>
+      </div>
+    </section>
+
+    <section class="index-section">
+      <div class="container">
+        <div class="article-cards">
+          <a href="#how-to-see-zillow-saves" class="article-card">
+            <div class="article-meta"><span>Buyer guide</span><span>•</span><span>5 min read</span></div>
+            <h2>How to see how many people saved a Zillow listing</h2>
+            <p>Zillow tracks saves. They just don&rsquo;t show them. Here&rsquo;s where the data lives and how to surface it on every listing.</p>
+          </a>
+          <a href="#days-on-market-meaning" class="article-card">
+            <div class="article-meta"><span>Buyer guide</span><span>•</span><span>4 min read</span></div>
+            <h2>What does &ldquo;days on market&rdquo; actually mean on Zillow?</h2>
+            <p>It&rsquo;s the single most misread number on a listing page. We break down what counts, what resets it, and why agents game it.</p>
+          </a>
+          <a href="#agents-buyer-demand-data" class="article-card">
+            <div class="article-meta"><span>For agents</span><span>•</span><span>6 min read</span></div>
+            <h2>How real estate agents use buyer demand data to win listings</h2>
+            <p>The pitch isn&rsquo;t price &mdash; it&rsquo;s evidence. How top agents use saves, views, and DOM to close listings clients trust.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <article class="post" id="how-to-see-zillow-saves">
+        <div class="post-meta"><span class="article-tag">Buyer guide</span><span>5 min read</span><span>•</span><span>Updated May 2026</span></div>
+        <h2>How to see how many people saved a Zillow listing</h2>
+
+        <p>Zillow knows exactly how many people have saved any given listing. They just don&rsquo;t show you the number. For most listings you&rsquo;ll see &ldquo;15 minutes ago&rdquo; activity timestamps and a vague &ldquo;Hot Home&rdquo; badge if the listing is moving fast &mdash; but the actual save count, the most direct signal of buyer demand on the platform, sits hidden.</p>
+
+        <p>This matters more than people realize. A home with 12 saves and one with 142 saves look identical on the search results page. The 142-save home is going to get multiple offers, probably above asking. The 12-save home will likely sit, and you have leverage to negotiate. Same listing photo, completely different game.</p>
+
+        <h3>Where the save data actually lives</h3>
+
+        <p>Zillow ships save and view counts to your browser as part of the listing page&rsquo;s underlying data. They just don&rsquo;t render them in the visible UI. If you open browser dev tools (Cmd+Option+I on Mac, F12 on Windows) and look at the page source, you&rsquo;ll find values like <strong>favoriteCount</strong> and <strong>viewCount</strong> sitting in the inline JSON.</p>
+
+        <p>This is fine for one listing if you&rsquo;re comfortable in dev tools. It&rsquo;s impractical for browsing 30 listings on a Saturday morning.</p>
+
+        <h3>Three ways to surface the data</h3>
+
+        <ol>
+          <li><strong>Manual dev tools lookup.</strong> Right-click any Zillow listing, select &ldquo;Inspect&rdquo;, switch to the Console tab, and paste in a search for <code>favoriteCount</code>. Free, but tedious.</li>
+          <li><strong>Browser extensions.</strong> Several Chrome extensions surface this data inline on listings. Caza is one (we built it because we got tired of the dev tools dance) &mdash; it shows a 0&ndash;100 demand score that combines saves, views, and time on market.</li>
+          <li><strong>Ask the listing agent.</strong> Listing agents can see the data on their MLS dashboard. Most won&rsquo;t volunteer it &mdash; but if you&rsquo;re working with a buyer&rsquo;s agent, they can ask directly.</li>
+        </ol>
+
+        <h3>What the numbers mean</h3>
+
+        <p>Save counts don&rsquo;t exist in a vacuum. A listing with 50 saves in Austin means something different than 50 saves in rural Nebraska. What matters is the <em>ratio</em> of saves to time on market, calibrated to local norms.</p>
+
+        <div class="callout">
+          <p>Rough rule of thumb in active urban markets: <strong>under 20 saves per week of listing</strong> means the home is sitting. <strong>50+ saves per week</strong> means you&rsquo;re competing. <strong>100+ saves in the first three days</strong> means write your strongest offer or skip it.</p>
+        </div>
+
+        <h3>Why Zillow hides this</h3>
+
+        <p>Officially, Zillow has never given a clear public reason. Unofficially, the consensus among real-estate folks is that surfacing this data would create a feedback loop &mdash; popular listings would get more attention, unpopular ones less, and the platform would feel less &ldquo;flat.&rdquo; That&rsquo;s great for sellers and listing agents. For buyers, it leaves you guessing.</p>
+
+        <div class="post-cta">
+          <p><strong>Want save counts visible on every Zillow listing automatically?</strong></p>
+          <a href="https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk" class="btn">Get the Caza Chrome extension &mdash; free</a>
+        </div>
+      </article>
+
+      <article class="post" id="days-on-market-meaning">
+        <div class="post-meta"><span class="article-tag">Buyer guide</span><span>4 min read</span><span>•</span><span>Updated May 2026</span></div>
+        <h2>What does &ldquo;days on market&rdquo; actually mean on Zillow?</h2>
+
+        <p>The number labeled &ldquo;Days on Zillow&rdquo; on a listing page is the most misread metric on the site. Buyers think it tells them how long the home has been for sale. It does &mdash; but with caveats that change the entire interpretation.</p>
+
+        <h3>The official definition</h3>
+
+        <p>Zillow&rsquo;s &ldquo;Days on Zillow&rdquo; (sometimes called DOM) counts the number of days the listing has been active on Zillow specifically. This is not the same as how long the home has been for sale in the broader market.</p>
+
+        <p>Listings come to Zillow through MLS feeds. If an agent lists on the MLS today, it shows up on Zillow within a few hours and the clock starts ticking. If the same home was for sale six months ago, taken off the market, and re-listed yesterday, the counter resets. To you, &ldquo;Days on Zillow: 1&rdquo; reads as a fresh listing. In reality, it could be a stale home with a new MLS entry.</p>
+
+        <h3>What resets the counter</h3>
+
+        <ul>
+          <li><strong>Re-listing.</strong> Pulling the home off the market and re-listing it &mdash; even at the same price &mdash; resets the clock. This is by far the most common reset trick.</li>
+          <li><strong>Switching listing agents.</strong> If the seller changes brokerages, the new MLS entry typically resets the counter on Zillow.</li>
+          <li><strong>Status changes.</strong> Going from &ldquo;Pending&rdquo; back to &ldquo;Active&rdquo; (when a deal falls through) sometimes resets the visible DOM, sometimes doesn&rsquo;t.</li>
+        </ul>
+
+        <div class="callout">
+          <p>The fix: look at <strong>price history</strong> on the listing page. If you see a date six months ago listed as &ldquo;Listed for $X&rdquo; followed by &ldquo;Listing removed,&rdquo; the home has been on the market longer than the counter shows. The price history is harder to game than the DOM.</p>
+        </div>
+
+        <h3>Why DOM matters for negotiation</h3>
+
+        <p>Real DOM &mdash; the actual time a home has been trying to sell &mdash; is one of the strongest negotiation signals you have as a buyer. Homes that have been sitting for 60+ days in a normal market almost always come down 3&ndash;8% from list. Homes sitting for 90+ days are negotiable on terms (closing costs, repairs, contingencies) even if the seller won&rsquo;t budge on price.</p>
+
+        <p>Conversely, a home that&rsquo;s been on the market for under 7 days with high save counts is one where you should write your strongest offer or move on. Trying to negotiate a fresh hot listing wastes everyone&rsquo;s time and can cost you the home.</p>
+
+        <h3>How to read DOM correctly</h3>
+
+        <ol>
+          <li>Check &ldquo;Days on Zillow&rdquo; for the surface number.</li>
+          <li>Scroll to &ldquo;Price history&rdquo; and find the earliest listing date. Subtract that from today &mdash; that&rsquo;s the real DOM.</li>
+          <li>Combine that with save count. A home with 90 real DOM and 8 saves is sitting. A home with 90 real DOM and 200 saves was probably overpriced and the seller is now anchored to an unreal expectation.</li>
+        </ol>
+
+        <div class="post-cta">
+          <p><strong>Caza shows real DOM and price history at a glance, on every listing.</strong></p>
+          <a href="https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk" class="btn">Add Caza to Chrome &mdash; free</a>
+        </div>
+      </article>
+
+      <article class="post" id="agents-buyer-demand-data">
+        <div class="post-meta"><span class="article-tag">For agents</span><span>6 min read</span><span>•</span><span>Updated May 2026</span></div>
+        <h2>How real estate agents use buyer demand data to win listings</h2>
+
+        <p>The standard listing pitch hasn&rsquo;t changed in decades. The agent walks in with comps, suggests a price, talks about marketing. The seller signs because they like the agent&rsquo;s vibe or because their cousin recommended them. Pricing strategy is intuition dressed up as analysis.</p>
+
+        <p>Top-producing agents have quietly moved past this. The pitch they bring isn&rsquo;t about price &mdash; it&rsquo;s about <strong>evidence of demand</strong>. And the evidence is sitting in plain sight on every Zillow listing in the seller&rsquo;s neighborhood.</p>
+
+        <h3>The new listing pitch</h3>
+
+        <p>Instead of opening with &ldquo;I think we should price this at $850K,&rdquo; the demand-data pitch opens with: <em>&ldquo;Let me show you what&rsquo;s actually selling in your zip code right now, and what&rsquo;s sitting.&rdquo;</em></p>
+
+        <p>You bring three things to the meeting:</p>
+        <ol>
+          <li>The five most recently sold homes in the immediate area, with their save counts and time on market.</li>
+          <li>The five currently active listings most similar to the seller&rsquo;s home, with their demand scores.</li>
+          <li>One specific competitor listing &mdash; ideally a home priced exactly where the seller wants to be &mdash; that&rsquo;s sitting with low saves.</li>
+        </ol>
+
+        <p>The story tells itself. &ldquo;Here&rsquo;s what hot looks like &mdash; 240 saves, 8 days on market, sold above asking. Here&rsquo;s what sitting looks like &mdash; 14 saves, 73 days on market, two price drops. We have a choice about which one we want to be.&rdquo;</p>
+
+        <h3>Why this works</h3>
+
+        <p>Sellers don&rsquo;t want to hear that their home is overpriced. They want to be the agent&rsquo;s partner in figuring out what the market is telling them. Demand data turns the pricing conversation from confrontation into observation. You&rsquo;re both looking at the same numbers.</p>
+
+        <div class="callout">
+          <p>The shift in language matters. Stop saying &ldquo;the market won&rsquo;t support that price.&rdquo; Start saying &ldquo;listings priced like that in your zip code are getting 18 saves a week. Listings priced 4% below are getting 60+. We can pick our pace.&rdquo;</p>
+        </div>
+
+        <h3>The follow-up move</h3>
+
+        <p>Once you&rsquo;ve set up demand data as the lens, you can use it through the entire transaction:</p>
+
+        <ul>
+          <li><strong>Pricing strategy:</strong> &ldquo;Let&rsquo;s list at $X &mdash; that&rsquo;s the price point getting 50+ saves in week one.&rdquo;</li>
+          <li><strong>First-week response:</strong> &ldquo;We have 80 saves and 2,400 views in the first 6 days. That&rsquo;s the upper third of homes in this range.&rdquo;</li>
+          <li><strong>Price-drop conversations:</strong> &ldquo;Saves have plateaued at 22. The market has told us where the ceiling is.&rdquo;</li>
+          <li><strong>Offer review:</strong> &ldquo;Three homes priced like this in this neighborhood ended up selling at 96% of list. That&rsquo;s the data, not my opinion.&rdquo;</li>
+        </ul>
+
+        <h3>What you need to make this work</h3>
+
+        <p>Demand data is most powerful when you can pull it up in seconds, on any listing the seller mentions. If you have to open Excel, switch to the MLS, copy-paste numbers, and build a chart, you lose the conversational momentum.</p>
+
+        <p>The agents we&rsquo;ve seen do this best have the data overlaid right on Zillow itself, where they&rsquo;re already searching. They open a listing, the demand score is there, the save count is there, the price history context is there. They can pivot a conversation in real time.</p>
+
+        <div class="post-cta">
+          <p><strong>Caza is the Chrome extension we built for exactly this workflow.</strong></p>
+          <a href="https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk" class="btn">Try Caza &mdash; free for agents</a>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <div class="container-wide">&copy; 2026 Caza &middot; <a href="/">Home</a> &middot; <a href="mailto:gus@usecaza.com">Contact</a></div>
+    </footer>
+  </main>
+</body>
+</html>
