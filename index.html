@@ -31,19 +31,134 @@
   <meta name="twitter:description" content="Free Chrome extension that overlays 0-100 buyer demand scores on every Zillow listing.">
   <meta name="twitter:image" content="https://usecaza.com/og-image.png">
 
-  <!-- Structured data -->
+  <!-- Structured data: SoftwareApplication, Organization, WebSite, FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Caza",
     "applicationCategory": "BrowserApplication",
+    "applicationSubCategory": "RealEstateApplication",
     "operatingSystem": "Chrome",
-    "description": "Free Chrome extension that overlays 0-100 buyer demand scores on every Zillow listing, surfacing saves, views, price drops, and agent info.",
+    "browserRequirements": "Requires Chrome 88 or higher",
+    "description": "Free Chrome extension that overlays 0-100 buyer demand scores on every Zillow listing, surfacing saves, views, price drops, and agent info. Built for real estate agents and home buyers.",
     "url": "https://usecaza.com/",
     "downloadUrl": "https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "publisher": { "@type": "Organization", "name": "Caza", "url": "https://usecaza.com/" }
+    "softwareVersion": "2.9",
+    "datePublished": "2025-09-01",
+    "dateModified": "2026-05-04",
+    "image": "https://usecaza.com/og-image.png",
+    "screenshot": "https://usecaza.com/og-image.png",
+    "featureList": [
+      "0-100 demand score on every Zillow listing",
+      "Save count, view count, days on market data",
+      "Price drop and heat badges",
+      "Client-ready PDF report export",
+      "Zero account or signup required"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "4",
+      "reviewCount": "4"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Caza",
+      "url": "https://usecaza.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Caza",
+    "url": "https://usecaza.com/",
+    "logo": "https://usecaza.com/favicon.svg",
+    "email": "gus@usecaza.com",
+    "description": "Caza builds tools that surface Zillow's own buyer demand data for real estate agents and home buyers.",
+    "sameAs": [
+      "https://chromewebstore.google.com/detail/caza-smart-layer-for-real/oojoopmelbnbddhjmemdggbkeflhjnpk"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Caza",
+    "url": "https://usecaza.com/",
+    "description": "See what Zillow won't show you. A free Chrome extension surfacing buyer demand scores on every listing.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Caza",
+      "url": "https://usecaza.com/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Caza really free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Chrome extension is free to install and use. We may introduce paid tiers for advanced features like unlimited PDF exports later, but the core demand scores will stay free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Caza work on every Zillow listing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It works on every active for-sale listing in the US. Off-market homes and rentals aren't supported yet."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will using Caza affect my Zillow account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Caza reads only the public data Zillow already sends to your browser. It doesn't scrape, doesn't automate clicks, and doesn't touch your account or login."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the PDF report look like?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cover photo, listing photos, full address, demand score with rationale, save and view trends, days on market, and price history. Print-ready, one click from any listing page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the demand score calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It blends three Zillow-native signals: total saves, recent view velocity, and days on market relative to the local average. The weighting adjusts per market so a hot home in Austin doesn't get compared to one in San Francisco."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Install the extension, open Zillow. That's it. No signup, no email collection, no tracking."
+        }
+      }
+    ]
   }
   </script>
 
