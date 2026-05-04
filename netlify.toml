@@ -1,0 +1,66 @@
+# Pretty URLs (so /blog and /blog.html both work)
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
+
+# Security headers - applied to all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-DNS-Prefetch-Control = "on"
+
+# Long-cache static assets (favicons, future images)
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Sitemap and robots: short cache, allow updates
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "application/xml"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Redirect non-canonical hosts to apex (helps with link equity)
+[[redirects]]
+  from = "https://www.usecaza.com/*"
+  to = "https://usecaza.com/:splat"
+  status = 301
+  force = true
+
+# Redirect Netlify subdomain to apex (no SEO bleed)
+[[redirects]]
+  from = "https://usecaza.netlify.app/*"
+  to = "https://usecaza.com/:splat"
+  status = 301
+  force = true
+
+# Trailing slash on root
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
