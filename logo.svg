@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Caza">
+  <rect width="128" height="128" rx="24" fill="#0D1430"/>
+  <path d="M61 15 L104 50 H96 V96 H25 V50 H17.5 Z" fill="#FFFFFF"/>
+  <rect x="54.5" y="76" width="13.5" height="22" rx="4.5" fill="#0D1430"/>
+  <circle cx="99" cy="34" r="25.5" fill="#0D1430"/>
+  <circle cx="99" cy="34" r="19.5" fill="none" stroke="#F4DCE3" stroke-width="7"/>
+  <path d="M79.5 34 A19.5 19.5 0 0 1 99 14.5" fill="none" stroke="#D93A2B" stroke-width="7"/>
+  <circle cx="99" cy="34" r="7" fill="#F0771C"/>
+</svg>
