@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Caza Privacy Policy</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Caza privacy policy and terms of use. Caza runs in your browser, has no servers, accounts, analytics or advertising, and only loads pages from zillow.com.">
 <style>
 :root {
@@ -28,7 +30,8 @@ body {
 }
 .wrap { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
 header { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
-.mark { width: 14px; height: 14px; border-radius: 3px; background: var(--brand); }
+.home { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.home img { width: 32px; height: 32px; border-radius: 7px; display: block; }
 .brand { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
 main { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 32px 28px; }
 h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.01em; }
@@ -62,27 +65,27 @@ footer { color: var(--sub); font-size: 14px; margin-top: 24px; text-align: cente
 </head>
 <body>
 <div class="wrap">
-<header><span class="mark" aria-hidden="true"></span><span class="brand">Caza</span></header>
+<header><a class="home" href="/"><img src="/logo.svg" width="32" height="32" alt=""><span class="brand">Caza</span></a></header>
 <main>
 <h1>Privacy Policy &amp; Terms of Use</h1>
-<p class="updated">Last updated: October 19, 2026 (version 2.8.0)</p>
+<p class="updated">Last updated: October 21, 2026 (version 2.8.0)</p>
 
 <div class="summary">
-<p><strong>Summary.</strong> Caza runs entirely in your browser. It has no servers, no accounts, no analytics and no advertising. Nothing you do in Caza is sent to Caza or to any third party. The only network requests Caza causes are ordinary page loads from zillow.com, described below.</p>
+<p><strong>Summary.</strong> Caza runs entirely in your browser. It has no servers, no accounts, no analytics and no advertising. Nothing you do in Caza is sent to Caza or to any third party. The only network requests Caza causes are ordinary page loads from Zillow, described below.</p>
 </div>
 
 <h2>What Caza reads</h2>
 <p>Caza reads listing data already loaded on the Zillow pages you visit (saves, views, days on market, price, size, property type, location, listing description, and similar fields) to calculate scores, comps and investor numbers. Listing descriptions are read on your device to find unit counts, rents and condition words, and on rental listings to find stated concessions (for example "1 month free") and lease length; the text itself is never stored or sent anywhere.</p>
 <p>On rental listings and Zillow's rentals search, Caza reads the asking rent, bedrooms, bathrooms, size, days listed, rent changes, required monthly fees and apartment-building floor-plan prices that the page shows. Rental comps use active for-rent listings only, never past leases. Caza does not read, show or filter anything about schools, crime, demographics, source of income or familial status.</p>
 
-<h2>Network requests (all to zillow.com)</h2>
+<h2>Network requests (all to Zillow)</h2>
 <ul>
 <li><strong>Scores on results pages.</strong> To read saves and views, Caza loads the Zillow page of listings that are on screen or about one screen away, a few at a time and at least 300 ms apart. Listings read in the last 24 hours are not loaded again. If Zillow answers with an access-denied or rate-limit response, Caza stops these requests for 10 minutes. Caza never interacts with a "confirm you're a person" check.</li>
 <li><strong>Sales comps.</strong> Only when you click Sales comps (on a listing, or View Sales Comps in a score tooltip), Caza opens Zillow's own Recently Sold search page in a new tab, the same page you could open yourself, and reads the sold homes that page shows. Widen the distance and Older sales are another click that loads a wider Recently Sold search page.</li>
 <li><strong>Rental comps.</strong> Only when you click Rental comps (on a listing, a rental listing or an apartment building page), or click Find asking rents in the popup's Compare my rent, Caza opens Zillow's own rentals search page around that place in a new tab, the same page you could open yourself, and reads the active rentals that page shows. Widening the search is another click that loads the wider rentals search page.</li>
 <li><strong>Get details for these comps</strong> (for multifamily also <strong>Get unit mix for these comps</strong>). Only when you click it and confirm, Caza loads the Zillow listing pages of the comps shown, plus any sales left out only because their estimated unit count differs, at most 12, one at a time about 1.5 seconds apart, and stops at once if Zillow blocks a request. What it reads (unit count, unit mix, condition and sale-type words) is kept with the 24-hour listing cache below.</li>
 </ul>
-<p>Nothing is sent to Caza or to any third party.</p>
+<p>Comps and PDF reports also show listing photos. Your browser loads them directly from Zillow's image servers (zillowstatic.com), using the photo links Zillow already shows on the listing; Caza adds nothing to those requests. Nothing is sent to Caza or to any third party.</p>
 
 <h2>What Caza stores, and where</h2>
 <p>Everything below stays on your device. Reset or remove the extension to delete it.</p>
@@ -108,7 +111,7 @@ footer { color: var(--sub); font-size: 14px; margin-top: 24px; text-align: cente
 <tr><td><code>caza_rent_pending</code></td><td>The listing, building floor plan or unit you asked rental comps for (address, beds, baths, size, property type, location, the listing's rent and fees for a rental, unit bedroom counts you entered, for a for-sale listing the same fields as <code>caza_comps_pending</code>, or for Compare my rent the beds, baths, size, type, the address you typed or the map centre, and the optional report label you typed), kept at most 5 minutes and removed as soon as the rentals tab uses it</td></tr>
 <tr><td><code>caza_rent_snaps</code></td><td>Numbers from rental comps you opened, per listing or building floor plan: comps count, median and middle-half rents by bedroom count, the listing's position among them (for example "Higher than 9 of 12"), whether its rent is far below them, and the rent you chose with "Use this rent". No addresses or listing text. Up to 40 listings, each kept 7 days. Nothing is kept for Compare my rent</td></tr>
 <tr><td><code>caza_cd_ui</code></td><td>Comps drawer display settings: row density, whether the summary is open, drawer width</td></tr>
-<tr><td><code>caza_export_properties</code>, <code>agentInfo</code></td><td>The listings you selected for a PDF export and the agent details you typed on the export page</td></tr>
+<tr><td><code>caza_export_properties</code>, <code>agentInfo</code></td><td>The listings you selected for a PDF export and the agent details you typed on the export page (first and last name, email and license number)</td></tr>
 </tbody>
 </table>
 </div>
@@ -126,6 +129,7 @@ footer { color: var(--sub); font-size: 14px; margin-top: 24px; text-align: cente
 
 <h2>Third parties</h2>
 <p>None. No analytics, advertising, tracking or data sale. The "Rate Caza" button opens the Chrome Web Store review page only when you click it. Links in the rental comps drawer (the FTC's advice on rental listings, and official rent-cap sources for California, Santa Ana and Los Angeles) open those sites only when you click them.</p>
+<p><strong>Limited Use.</strong> Caza's use of information it reads from Zillow pages or that you type adheres to the <a href="https://developer.chrome.com/docs/webstore/program-policies/policies">Chrome Web Store User Data Policy</a>, including the Limited Use requirements. Caza uses this information only to provide its single purpose: showing buyer-demand scores, comps and investor numbers on Zillow. It does not transfer it to anyone, does not use or sell it for advertising, personalized or re-targeted ads, creditworthiness or lending, and no person at Caza can read it, because it never leaves your device.</p>
 
 <h2>Important disclaimers</h2>
 <h3>Not financial, legal or real estate advice</h3>
@@ -136,7 +140,7 @@ footer { color: var(--sub); font-size: 14px; margin-top: 24px; text-align: cente
 <h3>Limitation of liability</h3>
 <p>To the maximum extent permitted by law, you use Caza at your own risk, and we are not liable for any losses or decisions arising from its use.</p>
 <h3>Not affiliated with Zillow</h3>
-<p>Caza is an independent browser extension and is not affiliated with, endorsed by, or sponsored by Zillow Group, Inc. Zillow is a registered trademark of Zillow, Inc.</p>
+<p>Caza is an independent browser extension and is not affiliated with, endorsed by, or sponsored by Zillow Group, Inc. Zillow is a trademark of Zillow, Inc.</p>
 <h3>Age</h3>
 <p>You must be at least 18 years old to use Caza.</p>
 <h3>Changes</h3>
@@ -145,9 +149,9 @@ footer { color: var(--sub); font-size: 14px; margin-top: 24px; text-align: cente
 <p>These terms are governed by the laws of the United States and the State of California.</p>
 
 <h2>Contact</h2>
-<p>Questions? Email <a href="mailto:hello@usecaza.com">hello@usecaza.com</a></p>
+<p>Questions? Email <a href="mailto:gus@usecaza.com">gus@usecaza.com</a></p>
 </main>
-<footer>Caza · usecaza.com</footer>
+<footer><a href="/">usecaza.com</a></footer>
 </div>
 </body>
 </html>
