@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cap rate and cash flow check on a Zillow listing | Caza Guides</title>
+<meta name="description" content="Screen a Zillow listing as a rental in five minutes: rent from comps, NOI with vacancy, taxes and management, then cap rate, cash flow, DSCR and cash-on-cash. Worked example.">
+<link rel="canonical" href="https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing">
+<meta property="og:title" content="Cap rate and cash flow check on a Zillow listing">
+<meta property="og:description" content="Screen a Zillow listing as a rental in five minutes: rent from comps, NOI with vacancy, taxes and management, then cap rate, cash flow, DSCR and cash-on-cash. Worked example.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cap rate and cash flow check on a Zillow listing">
+<meta name="twitter:description" content="Screen a Zillow listing as a rental in five minutes: rent from comps, NOI with vacancy, taxes and management, then cap rate, cash flow, DSCR and cash-on-cash. Worked example.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing#article",
+   "url": "https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing",
+   "mainEntityOfPage": "https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing",
+   "headline": "How to run a quick cap rate and cash flow check on a Zillow listing",
+   "description": "Screen a Zillow listing as a rental in five minutes: rent from comps, NOI with vacancy, taxes and management, then cap rate, cash flow, DSCR and cash-on-cash. Worked example.",
+   "datePublished": "2026-10-23",
+   "dateModified": "2026-10-23",
+   "wordCount": 804,
+   "image": "https://usecaza.com/og-image.png",
+   "inLanguage": "en-US",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://usecaza.com/#org",
+    "name": "Caza",
+    "url": "https://usecaza.com/"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "articleSection": "For investors",
+   "keywords": "cap rate, cash flow, NOI, DSCR, cash on cash return, rental property calculator, Zillow investment analysis, Zillow investor extension",
+   "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://usecaza.com/#app",
+    "name": "Caza"
+   },
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://usecaza.com/blog#blog",
+    "name": "Caza Guides",
+    "url": "https://usecaza.com/blog"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://usecaza.com/blog"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How to run a quick cap rate and cash flow check on a Zillow listing",
+     "item": "https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/blog">Guides</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=guides">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/blog">Guides</a> · For investors</p>
+    <h1>How to run a quick cap rate and cash flow check on a Zillow listing</h1>
+    <p class="lede">Screen a Zillow listing as a rental in five minutes: rent from comps, NOI with vacancy, taxes and management, then cap rate, cash flow, DSCR and cash-on-cash. Worked example.</p>
+  </div></div>
+
+  <div class="wrap">
+    <article class="post post-page">
+      <div class="post-meta"><span class="tag">For investors</span><span>7 min read</span><span>Updated October 2026</span></div>
+
+<p><strong>Short answer:</strong> estimate the rent from comps, subtract vacancy and operating costs to get net operating income (NOI), divide NOI by the price for the cap rate, and subtract the annual loan payment for cash flow. Five inputs and a calculator get you a screen in minutes. Here&rsquo;s the order, a worked example, and the mistakes that flip the answer.</p>
+
+<h2>The four numbers</h2>
+
+<ul>
+  <li><strong>NOI (net operating income):</strong> rent collected minus operating costs, before the loan.</li>
+  <li><strong>Cap rate:</strong> NOI &divide; purchase price. What the property earns as a percentage of its price if you paid cash.</li>
+  <li><strong>Cash flow:</strong> NOI minus annual debt service (your loan payments). What&rsquo;s left in your pocket.</li>
+  <li><strong>DSCR (debt service coverage ratio):</strong> NOI &divide; annual debt service. Lenders on investor loans typically look for roughly 1.2 or better; below 1.0 the rent doesn&rsquo;t cover the mortgage.</li>
+</ul>
+
+<p>Cash-on-cash return is cash flow divided by the cash you put in (down payment plus closing costs). It&rsquo;s the number that tells you whether the money is working.</p>
+
+<h2>Step 1: Rent</h2>
+
+<p>Pull <a href="/guides/zillow-rental-comps-estimate-rent">rental comps</a> and use the median asking rent for the unit, converted to effective rent if concessions are common. For a multifamily building, estimate each unit type separately and add them up. If the listing reports current rents, use those for the as-is case and the comp median for the upside case.</p>
+
+<h2>Step 2: Operating costs</h2>
+
+<ul>
+  <li><strong>Vacancy:</strong> 5&ndash;8 percent of gross rent is a common screening assumption.</li>
+  <li><strong>Property taxes:</strong> start from the listing&rsquo;s tax history, then correct it. Many states reassess at sale. In California the new bill is roughly 1.1&ndash;1.25 percent of your purchase price, not the seller&rsquo;s old bill. In Texas, effective rates are often around 2 percent. When in doubt, use your state&rsquo;s typical effective rate on the asking price.</li>
+  <li><strong>Insurance:</strong> a state average is fine for a screen; get a quote before you write an offer, especially in wind, wildfire or flood areas.</li>
+  <li><strong>Maintenance and repairs:</strong> 5&ndash;10 percent of rent, higher for older buildings.</li>
+  <li><strong>Management:</strong> 8&ndash;10 percent of rent if you&rsquo;ll hire it out. Include it even if you self-manage; your time isn&rsquo;t free.</li>
+  <li><strong>HOA dues, utilities you pay, landscaping, trash:</strong> whatever the listing or the HOA says.</li>
+</ul>
+
+<h2>Step 3: The loan</h2>
+
+<p>Down payment, rate and term. For a quick monthly principal-and-interest figure, any mortgage calculator works. Investor loans usually carry a higher rate and a bigger down payment than owner-occupied loans, so don&rsquo;t screen with the rate you saw advertised for a primary residence.</p>
+
+<h2>A worked example (sample numbers)</h2>
+
+<p>Say a house is listed at $500,000 and similar 3-beds nearby are asking $2,800 a month.</p>
+
+<ul>
+  <li>Gross rent: $2,800 &times; 12 = $33,600</li>
+  <li>Vacancy at 5%: &minus;$1,680 &rarr; $31,920</li>
+  <li>Taxes (1.1% of price): &minus;$5,500</li>
+  <li>Insurance: &minus;$1,500</li>
+  <li>Maintenance at 8%: &minus;$2,688</li>
+  <li>Management at 8%: &minus;$2,688</li>
+  <li><strong>NOI: $19,544</strong></li>
+  <li><strong>Cap rate: $19,544 &divide; $500,000 = 3.9%</strong></li>
+</ul>
+
+<p>Now the loan: 25% down ($125,000), $375,000 financed at 6.75% over 30 years is about $2,432 a month, or $29,187 a year.</p>
+
+<ul>
+  <li><strong>Cash flow: $19,544 &minus; $29,187 = &minus;$9,643 a year (about &minus;$800 a month)</strong></li>
+  <li><strong>DSCR: $19,544 &divide; $29,187 = 0.67</strong></li>
+</ul>
+
+<p>That&rsquo;s a listing that doesn&rsquo;t work as a rental at this price with this loan, and you found out in five minutes. To get to break-even you&rsquo;d need rent closer to $3,800, a much lower price, or a lot more cash down. Run the same arithmetic on three or four candidates and the one that clears is obvious.</p>
+
+<div class="callout">
+  <p>A cap rate is only comparable when everyone builds NOI the same way. If a listing brochure quotes a cap rate, ask whether it includes vacancy, management and a reassessed tax bill. Many don&rsquo;t, and the real number is a point or two lower.</p>
+</div>
+
+<h2>The mistakes that flip the answer</h2>
+
+<ul>
+  <li><strong>Using the seller&rsquo;s tax bill</strong> in a state that reassesses at sale.</li>
+  <li><strong>Using the Rent Zestimate for a whole building,</strong> or for a unit where comps say otherwise.</li>
+  <li><strong>Forgetting HOA dues</strong> on condos and townhomes. They can erase the cash flow by themselves.</li>
+  <li><strong>Skipping management</strong> because you&rsquo;ll self-manage, then selling to a buyer who won&rsquo;t.</li>
+  <li><strong>Counting appreciation.</strong> It may come, but it isn&rsquo;t cash flow and it won&rsquo;t pay the mortgage this year.</li>
+</ul>
+
+<h2>Do it faster with Caza</h2>
+
+<p>Caza is a free Chrome extension for Zillow. Click <strong>Investor numbers</strong> on any listing and it builds cap rate, monthly cash flow, DSCR and cash-on-cash from the listing&rsquo;s price, a rent you pick from the rental comps, and taxes and insurance that start from state estimates you can edit. Every input carries a tag that says where it came from: reported on the listing, a Zillow estimate, an assumption, a state average, or a number you typed. Your down payment, rate and term save as defaults. On 2&ndash;4 unit and 5+ unit buildings it shows price per unit and GRM, and never uses the Rent Zestimate for building income.</p>
+
+      <div class="post-cta">
+        <p><strong>Caza runs cap rate, cash flow and DSCR on the listing, with every input labeled.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=guide-cap-rate-cash-flow-zillow-listing" class="btn">Try Caza free</a>
+      </div>
+      <p class="fine">Caza is independent and not affiliated with Zillow. Comps and rents come from public Zillow pages and are a starting point, not an appraisal.</p>
+      <div class="related">
+        <h3>Related guides</h3>
+<p><a href="/guides/zillow-rental-comps-estimate-rent">How to estimate rent for a listing with rental comps on Zillow</a></p>
+<p><a href="/guides/how-to-pull-comps-on-zillow">How to pull comps on Zillow (without the MLS)</a></p>
+        <p><a href="/blog">All guides</a> · <a href="/">What Caza adds to a Zillow listing</a></p>
+      </div>
+    </article>
+    <a class="back" href="/blog">Back to all guides</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/blog">Guides</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+</body>
+</html>
