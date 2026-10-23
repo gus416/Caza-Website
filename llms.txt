@@ -20,6 +20,7 @@ Listing agents, buyer's agents, real estate investors and brokers, landlords and
 ## Pages
 
 - [Home](https://usecaza.com/): features, who it's for, how it works, where the numbers come from, FAQ.
+- [Examples](https://usecaza.com/examples): four example walkthroughs with sample data (not customer stories): a buyer's agent replying to a client's Zillow link, a listing agent printing a comps PDF for a seller meeting, an investor screening a house as a rental, a renter checking all-in cost and a far-below-market caution.
 - [Guides index](https://usecaza.com/blog)
 - [How to pull comps on Zillow](https://usecaza.com/guides/how-to-pull-comps-on-zillow): Sold filter, drawn boundary, matching rules, median price per square foot, where Zillow comps go wrong.
 - [How to estimate rent with rental comps on Zillow](https://usecaza.com/guides/zillow-rental-comps-estimate-rent): active asking rents, median, concessions, stale listings, multifamily by unit type.

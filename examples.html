@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Caza works on a real listing: four example walkthroughs</title>
+<meta name="description" content="Four example scenarios with sample data: a buyer's agent replying to a client's Zillow link, a listing agent printing comps for a seller meeting, an investor screening a rental, and a renter checking the all-in cost.">
+<link rel="canonical" href="https://usecaza.com/examples">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/examples">
+<meta property="og:title" content="How Caza works on a real listing: four example walkthroughs">
+<meta property="og:description" content="Example scenarios with sample data: what an agent, an investor and a renter click on a Zillow listing, what Caza shows, and what they do next.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Caza works on a real listing: four example walkthroughs">
+<meta name="twitter:description" content="Example scenarios with sample data: what an agent, an investor and a renter click on a Zillow listing, what Caza shows, and what they do next.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://usecaza.com/examples#article",
+   "url": "https://usecaza.com/examples",
+   "mainEntityOfPage": "https://usecaza.com/examples",
+   "headline": "How Caza works on a real listing: four example walkthroughs",
+   "description": "Four example scenarios with sample data: a buyer's agent replying to a client's Zillow link, a listing agent printing comps for a seller meeting, an investor screening a rental, and a renter checking the all-in cost.",
+   "datePublished": "2026-10-23",
+   "dateModified": "2026-10-23",
+   "image": "https://usecaza.com/og-image.png",
+   "inLanguage": "en-US",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://usecaza.com/#org",
+    "name": "Caza",
+    "url": "https://usecaza.com/"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://usecaza.com/#app",
+    "name": "Caza"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Examples",
+     "item": "https://usecaza.com/examples"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples" aria-current="page">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=examples">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker">Examples</p>
+    <h1>How it works on a real listing</h1>
+    <p class="lede">Four example scenarios, each with sample data: what an agent, an investor and a renter click on a Zillow listing, what Caza shows them, and what they do next. The addresses and numbers are made up; the clicks are the real ones.</p>
+  </div></div>
+
+  <div class="wrap">
+    <nav class="ex-nav" aria-label="Walkthroughs">
+      <a href="#buyers-agent"><span class="kicker">1 · Buyer's agent</span>Replying to a client's Zillow link</a>
+      <a href="#listing-agent"><span class="kicker">2 · Listing agent</span>Comps for a seller meeting</a>
+      <a href="#investor"><span class="kicker">3 · Small investor</span>Screening a house as a rental</a>
+      <a href="#renter"><span class="kicker">4 · Renter</span>The all-in cost of an apartment</a>
+    </nav>
+
+    <article class="post post-page ex" id="buyers-agent">
+      <p class="ex-label">Example scenario · sample data</p>
+      <div class="post-meta"><span class="tag">Buyer's agent</span><span>Demand Score · Sales comps · Copy summary</span></div>
+      <h2>A client texts a Zillow link the night before a showing</h2>
+
+      <p><strong>The situation.</strong> A buyer's agent gets a text at 8 pm: a Zillow link for 418 Maple Ave, a 3-bed, 2-bath single-family home listed at $595,000, and the question &ldquo;Can we see this tomorrow? Is it priced OK?&rdquo; The showing is at 10 am. The agent wants to reply tonight with something better than &ldquo;sure.&rdquo;</p>
+
+      <h3>What they click, and what they see</h3>
+      <ol class="ex-steps">
+        <li><strong>Open the link.</strong> Caza&rsquo;s card sits under the price: <strong>100 &middot; Hot</strong>, 270 saves, 3,793 views, 9 days on market, 30 saves a day, and a flag that the price was cut 4.0% ($25K) five days ago. Hovering the score shows which of the three signals is driving it.</li>
+        <li><strong>Click Sales comps.</strong> Caza opens Zillow&rsquo;s own Recently Sold search centered on the home in a new tab and reads the sold rows on that page. The drawer shows 8 single-family sales within 0.5 mi from the last 12 months, median $592,000 and $363 per square foot, with the subject pinned as row one at $363 per square foot: 5th lowest of 9, with best comps sold both higher and lower.</li>
+        <li><strong>Read the stars.</strong> Caza stars the three closest matches: 137 Cedar Ave ($596,000, 0.2 mi), 100 Elm St ($588,000, 0.1 mi) and 174 Birch Ln ($579,000, 0.2 mi), all 3-bed homes within about 60 square feet of the subject and sold in the last two months.</li>
+        <li><strong>Click Copy summary.</strong> A plain-text summary of the drawer lands on the clipboard. The agent pastes it into their notes for the morning.</li>
+      </ol>
+
+      <figure class="ex-shot">
+        <img src="/img/listing-card.webp" width="1564" height="270" loading="lazy" alt="Caza's card on the sample listing: 100 Hot, 270 saves, 3,793 views, 9 days, 30 saves a day, a price cut of 4.0% five days ago, and buttons for Sales comps, Investor numbers and Rental comps.">
+        <figcaption>The card on the sample listing. Sample data.</figcaption>
+      </figure>
+
+      <h3>What they do next</h3>
+      <p>The agent writes the client a text in their own words. With these numbers it might read:</p>
+      <div class="ex-text">
+        <p>Yes, 10 am works. Heads up: this one is drawing a crowd on Zillow. 270 saves in 9 days, and they trimmed the price $25K last week. The 8 nearest sales from the past year ran right around $363 a square foot, which is where it&rsquo;s listed now, with the closest three closing between $579K and $596K. If you like it in person, we should be ready to move the same day. I&rsquo;ll bring the comps.</p>
+      </div>
+      <p>Nothing in that text is a promise about what the home will sell for. It&rsquo;s what Zillow shows, said plainly. Before the showing the agent checks the three starred sales in the MLS, since Zillow can lag on recent closings and misses some entirely.</p>
+      <p class="fine">Copy summary is written for the agent, not the client. A client-ready text in one click is on the list for the next update; today the agent writes it.</p>
+
+      <h3>By hand, for comparison</h3>
+      <p>By hand this is the Sold filter, a drawn boundary, sorting a dozen results by type and size, and dividing eight sale prices by eight square footages: a laptop job, and not one most agents will do from the couch at 8 pm. In Caza it is two clicks, and the rest is reading.</p>
+
+      <figure class="ex-shot ex-shot-tall">
+        <img src="/img/sales-comps.webp" width="800" height="1192" loading="lazy" alt="Caza's Sales comps drawer for the sample listing: 8 comps, median $592,000 and $363 per square foot, the subject pinned as row one, and the three starred best matches at the top.">
+        <figcaption>The Sales comps drawer for the same sample listing.</figcaption>
+      </figure>
+    </article>
+
+    <article class="post post-page ex" id="listing-agent">
+      <p class="ex-label">Example scenario · sample data</p>
+      <div class="post-meta"><span class="tag">Listing agent</span><span>Sales comps · Keep and remove · PDF report</span></div>
+      <h2>Comps for a seller meeting, with the agent&rsquo;s name on the report</h2>
+
+      <p><strong>The situation.</strong> Same sample home, other side of the table. A listing agent has 418 Maple Ave on the market at $595,000 after a $25K price cut. The seller wants to meet Thursday and asks the fair question: &ldquo;Are we priced right now?&rdquo; The agent wants to walk in with the nearby sales in one clean page rather than a stack of printouts.</p>
+
+      <h3>What they click, and what they see</h3>
+      <ol class="ex-steps">
+        <li><strong>Open the listing and click Sales comps.</strong> The drawer reads Zillow&rsquo;s Recently Sold page around the home: 8 single-family sales within 0.5 mi, last 12 months, median $592,000 and $363 per square foot. Condos and townhomes never enter a single-family set.</li>
+        <li><strong>Check the stars.</strong> Caza scores each sale 0 to 100 on distance, months since sale, size, bed and bath difference and year built (price is never part of the score) and stars the top three: 137 Cedar Ave (93), 100 Elm St (90) and 174 Birch Ln (89).</li>
+        <li><strong>Keep and remove.</strong> The agent clicks the check mark on 137 Cedar Ave to pin it to the top, since it is the sale the seller will remember. A comp that doesn&rsquo;t fit gets the &times;; it moves to an Excluded list the report still mentions, so nothing disappears quietly. If the set looks thin, Widen to 1 mi or Older sales: 24 mo adds more.</li>
+        <li><strong>Click Print / Save PDF.</strong> The agent types their name and &ldquo;Your Brokerage &middot; (555) 010-0123&rdquo; into the Prepared by fields once; Caza saves them on the device for every report after this.</li>
+      </ol>
+
+      <figure class="ex-shot">
+        <img src="/img/comps-report.webp" width="1200" height="1523" loading="lazy" alt="Page one of the sample Caza comparable sales report for 418 Maple Ave: prepared by Your Name, Your Brokerage, (555) 010-0123; median sold $592,000; median $363 per square foot; a strip chart placing the subject among 8 comps; a distance sketch; and a table of the comps with match scores.">
+        <figcaption>The report, page one. Sample data; the name and phone are placeholders.</figcaption>
+      </figure>
+
+      <h3>What the report says</h3>
+      <p>One US Letter page. The header has the address and the agent&rsquo;s details. A snapshot shows median sold $592,000, median $363 per square foot, and sales between June and October 2026. A strip chart puts the subject at $363 among the eight comps, with a line of text underneath: 5th lowest of 9, 4 comps lower and 4 higher, list price about equal to the comps&rsquo; median. A schematic shows where each comp sits by distance. Then the table, with the three best comps marked and a reason line under each. The footer lists the filters used, anything set aside, how the match score works, and &ldquo;Not an appraisal.&rdquo;</p>
+
+      <h3>What they do next</h3>
+      <p>Before Thursday the agent opens the MLS and checks the eight sales against it, adding any closing Zillow hasn&rsquo;t caught up on. In the meeting, the report does the talking: here are the sales, here is where we sit among them, here is why these three are the closest matches. The seller sees the agent&rsquo;s name on it, not a portal&rsquo;s. Comps print the same way for rentals, so a landlord client gets the same one-pager with asking rents.</p>
+
+      <h3>By hand, for comparison</h3>
+      <p>A comps page built by hand means a spreadsheet, a screenshot of a map, eight sale prices typed in and divided, and a layout in Word or Canva. The drawer plus the PDF is a few clicks, and the MLS check is the same either way.</p>
+    </article>
+
+    <article class="post post-page ex" id="investor">
+      <p class="ex-label">Example scenario · sample data</p>
+      <div class="post-meta"><span class="tag">Small investor</span><span>Rental comps · Investor numbers · Edited inputs</span></div>
+      <h2>Screening a $310,000 house as a rental</h2>
+
+      <p><strong>The situation.</strong> An investor with one rental already is scrolling Zillow on a Sunday. 27 Orchard Rd comes up: a 3-bed, 2-bath, 1,450-square-foot house at $310,000, 14 days on the market. The question is whether it deserves a second look at all, before a spreadsheet, a lender call or a drive-by.</p>
+
+      <h3>What they click, and what they see</h3>
+      <ol class="ex-steps">
+        <li><strong>Read the card.</strong> 74 &middot; Warm, 41 saves, 980 views, 14 days, 2.9 saves a day. Steady interest, not a stampede.</li>
+        <li><strong>Click Rental comps.</strong> Caza reads Zillow&rsquo;s active rentals within 0.5 mi and keeps the 3-bed ones (bathrooms are shown on each row, not matched): 10 asking rents, typical range $2,380 to $2,490, median $2,418 a month and $1.63 per square foot, median 17 days listed. Each comp is listed by address, rent, size and distance. A banner says what these are: asking rents for active listings, not signed leases.</li>
+        <li><strong>Click Use this rent.</strong> The $2,418 median goes into the investor numbers, tagged &ldquo;Rental comps (asking).&rdquo; The investor could have picked a single comp instead, or typed a rent of their own.</li>
+        <li><strong>Open Investor numbers.</strong> The strip reads: Rent $2,418/mo &middot; 25% down &middot; 7.75% (Assumed) &middot; 30 yr. Cap rate 4.5%. Monthly cash flow &minus;$510, with a range of &minus;$780 to &minus;$240 if rent moves 10% or the rate half a point. Taxes $5,735 a year and insurance $2,728 a year are both tagged Estimate (state avg). HOA: none.</li>
+        <li><strong>Click Edit.</strong> The investor replaces the assumed 7.75% with the rate their lender quoted last month and types the insurance figure from their existing rental. Each tag flips to Yours, the cap rate and cash flow recalculate on the spot, and &ldquo;Use as my default for this state&rdquo; keeps the insurance figure for the next listing. Vacancy, management, repairs and CapEx percentages sit in the same panel if the defaults don&rsquo;t match how they run things.</li>
+      </ol>
+
+      <figure class="ex-shot">
+        <img src="/img/investor-numbers.webp" width="1400" height="878" loading="lazy" alt="Caza's Investor numbers on the sample $310,000 listing: 74 Warm, rent $2,418 a month from rental comps, 25% down, 7.75% assumed, 30 years; cap rate 4.5%; monthly cash flow minus $510 with a range of minus $780 to minus $240; taxes $5,735 and insurance $2,728 a year tagged Estimate (state avg).">
+        <figcaption>Investor numbers before the investor edits anything. Sample data.</figcaption>
+      </figure>
+
+      <h3>What they do next</h3>
+      <p>At the median asking rent and 25% down, this house doesn&rsquo;t cover its own mortgage. That is the answer the investor came for, and it took a few clicks. They don&rsquo;t need to build a model to know this one only works with a bigger down payment, a lower price, or a rent at the top of the range, so they note it and keep scrolling. On the next listing the state tax estimate and their saved insurance default are already in place.</p>
+      <p>On a 2&ndash;4 unit listing the same panel shows price per unit, GRM and cap rate, with income from what the listing reports or from rental comps by unit type, never from a Rent Zestimate, and 5+ unit sales never mixed in.</p>
+
+      <h3>By hand, for comparison</h3>
+      <p>Done by hand: search rentals, open ten of them, note the rents, find the median, look up the county&rsquo;s tax rate, guess at insurance, then a mortgage calculator and a spreadsheet for the operating costs. A lot of work for a house that turns out to be a pass. In Caza the first read is a few clicks, and the inputs that matter are labeled so nothing is trusted by accident.</p>
+      <p class="fine">Estimates for discussion only, based on listing data, Zillow estimates and your own assumptions. Not a guarantee of income or return. Not an appraisal.</p>
+    </article>
+
+    <article class="post post-page ex" id="renter">
+      <p class="ex-label">Example scenario · sample data</p>
+      <div class="post-meta"><span class="tag">Renter</span><span>Renter card · Rental comps · Far-below-market caution</span></div>
+      <h2>Two apartments, the real monthly number, and one that doesn&rsquo;t add up</h2>
+
+      <p><strong>The situation.</strong> A renter has two Zillow tabs open on a Saturday morning. Tab one is a 2-bed apartment at $2,450 a month with a &ldquo;6 weeks free&rdquo; banner. Tab two is a 2-bed, 2-bath condo, 77 Lake Ave Unit 4, at $1,200 a month, which looks too good. They want to know what each one really costs and whether either is out of line with the area before they fill out an application and pay a fee.</p>
+
+      <h3>Tab one: the $2,450 apartment</h3>
+      <ol class="ex-steps">
+        <li><strong>Read the renter card.</strong> On a rental listing Caza swaps its agent card for a renter one: Rent $2,450/mo &middot; $1.96/sqft &middot; 12 days listed. Below it, <strong>All-in $2,575/mo</strong> with required monthly fees (+$125 for the items the listing says are mandatory), and <strong>Effective $2,167/mo</strong> after 6 weeks free spread across a 12-month lease. A flag notes the rent was cut $100 (3.9%) seven days ago.</li>
+        <li><strong>Read the comparison line.</strong> &ldquo;Higher than 9 of 12 similar 2-bed rentals nearby (asking) &middot; median $2,300.&rdquo; So the sticker is above most of what is asking nearby, but the concession brings the effective number under the median for the first year.</li>
+        <li><strong>Click Rental comps</strong> to see the twelve listings behind that line, each with rent, size, days listed and distance, before deciding whether $2,575 a month out the door is fine.</li>
+      </ol>
+
+      <figure class="ex-shot">
+        <img src="/img/renter-card.webp" width="762" height="159" loading="lazy" alt="Caza's renter card on the sample $2,450 listing: all-in $2,575 a month with required fees, effective $2,167 a month after 6 weeks free on a 12-month lease, a rent cut of $100 seven days ago, and higher than 9 of 12 similar 2-bed rentals nearby with a median of $2,300.">
+        <figcaption>The renter card on the first sample listing.</figcaption>
+      </figure>
+
+      <h3>Tab two: the $1,200 condo</h3>
+      <ol class="ex-steps">
+        <li><strong>Click Rental comps.</strong> Six active 2-bed rentals within 0.5 mi: middle half $2,256 to $2,338, median $2,288 a month. The asking rent of $1,200 is lower than 6 of 6.</li>
+        <li><strong>Read the caution.</strong> Caza prints it in a box: &ldquo;Rent is far below nearby asking rents. Verify the listing before paying anything,&rdquo; with a link to the FTC&rsquo;s advice on rental listings.</li>
+      </ol>
+
+      <figure class="ex-shot ex-shot-narrow">
+        <img src="/img/renter-comps.webp" width="500" height="700" loading="lazy" alt="Caza's Rental comps drawer for the sample $1,200 condo: six asking rents for similar 2-bed rentals with a median of $2,288, lower than 6 of 6, and a caution that the rent is far below nearby asking rents and to verify the listing before paying anything.">
+        <figcaption>The drawer on the second sample listing, with the caution.</figcaption>
+      </figure>
+
+      <h3>What they do next</h3>
+      <p>For the $1,200 condo, the renter does what the box says: they don&rsquo;t send a deposit or an application fee to anyone they haven&rsquo;t met, and they ask to see the unit with someone who can prove they manage it. A rent at half the area&rsquo;s asking range isn&rsquo;t always a problem, but it is always a reason to check. For the $2,450 apartment, they go in knowing the first-year number is $2,167 a month and the second-year number, if the fees stay, is $2,575, and they ask about both at the tour.</p>
+
+      <h3>By hand, for comparison</h3>
+      <p>Adding up required fees from the fine print, working out what six free weeks come to over a year, and opening a dozen nearby listings to see where $2,450 falls is a chore per apartment, and most people skip it. Caza shows all three numbers on the card as the page loads, and the comps are one click.</p>
+      <p class="fine">Rents shown are asking rents for active Zillow listings, not signed leases, and the comparison is to similar listings by bedrooms and property type only.</p>
+    </article>
+
+    <div class="post post-page">
+      <div class="post-cta">
+        <p><strong>Every walkthrough above is a few clicks on a listing you already have open.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=examples" class="btn">Try Caza free</a>
+      </div>
+      <p class="fine">These are example scenarios with sample data, not customer stories. Caza is independent and not affiliated with Zillow. Comps and rents come from public Zillow pages and are a starting point, not an appraisal. Free right now.</p>
+      <div class="related">
+        <h3>Do it by hand</h3>
+        <p><a href="/guides/how-to-pull-comps-on-zillow">How to pull comps on Zillow</a></p>
+        <p><a href="/guides/zillow-rental-comps-estimate-rent">How to estimate rent with rental comps</a></p>
+        <p><a href="/guides/cap-rate-cash-flow-zillow-listing">Cap rate and cash flow on a listing</a></p>
+        <p><a href="/blog">All guides</a> · <a href="/">What Caza adds to a Zillow listing</a></p>
+      </div>
+    </div>
+    <a class="back" href="/">Back to the home page</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+</body>
+</html>
