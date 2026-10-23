@@ -32,6 +32,18 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Stylesheet: a day, revalidate after (the file name doesn't change)
+[[headers]]
+  for = "/site.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+
+
 # Sitemap and robots: short cache, allow updates
 [[headers]]
   for = "/sitemap.xml"

@@ -1,319 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caza · Buyer demand scores for real estate agents</title>
-  <meta name="description" content="Caza adds a 0-100 buyer demand score to Zillow® home listings and turns any listing into a client-ready PDF. A Chrome extension for real estate agents. Free to try.">
-  <meta name="keywords" content="Zillow extension, Zillow Chrome extension, real estate agent tools, Zillow buyer demand, Zillow saves views, listing analysis, real estate technology, home buyer score, Zillow CMA, listing demand">
-  <meta name="author" content="Caza">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#FF6F0C">
-  <link rel="canonical" href="https://usecaza.com/">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Caza">
-  <meta property="og:url" content="https://usecaza.com/">
-  <meta property="og:title" content="Caza · Buyer demand scores for real estate agents">
-  <meta property="og:description" content="A Chrome extension that adds a 0-100 buyer demand score to Zillow® home listings. Built for real estate agents. Free to try.">
-  <meta property="og:image" content="https://usecaza.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Caza overlays buyer demand scores on Zillow listings">
-  <meta property="og:locale" content="en_US">
-
-  <!-- Twitter / X card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://usecaza.com/">
-  <meta name="twitter:title" content="Caza · Buyer demand scores for real estate agents">
-  <meta name="twitter:description" content="A Chrome extension that adds a 0-100 buyer demand score to Zillow® home listings. Free to try.">
-  <meta name="twitter:image" content="https://usecaza.com/og-image.png">
-
-  <!-- Structured data: SoftwareApplication, Organization, WebSite, FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Caza",
-    "applicationCategory": "BrowserApplication",
-    "applicationSubCategory": "RealEstateApplication",
-    "operatingSystem": "Chrome",
-    "browserRequirements": "Requires Chrome 88 or higher",
-    "description": "Chrome extension that adds a 0-100 buyer demand score to Zillow® home listings in the US and turns any listing into a client-ready PDF. Built for real estate agents.",
-    "url": "https://usecaza.com/",
-    "downloadUrl": "https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk",
-    "softwareVersion": "2.9",
-    "datePublished": "2025-09-01",
-    "dateModified": "2026-05-04",
-    "image": "https://usecaza.com/og-image.png",
-    "screenshot": "https://usecaza.com/og-image.png",
-    "featureList": [
-      "0-100 demand score on Zillow home listings",
-      "Save count, view count, days on market data",
-      "Price drop and heat badges",
-      "Client-ready PDF report export",
-      "No sign-up to start"
-    ],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "4",
-      "reviewCount": "4"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Caza",
-      "url": "https://usecaza.com/"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Caza",
-    "url": "https://usecaza.com/",
-    "logo": "https://usecaza.com/favicon.svg",
-    "email": "gus@usecaza.com",
-    "description": "Caza builds tools that surface Zillow's own buyer demand data for real estate agents and home buyers.",
-    "sameAs": [
-      "https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Caza",
-    "url": "https://usecaza.com/",
-    "description": "Buyer demand scores for real estate agents. A Chrome extension that adds a 0-100 demand score to Zillow® home listings. Free to try.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Caza",
-      "url": "https://usecaza.com/"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Which Zillow listings does Caza work on?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It works on Zillow® home listings in the US. Off-market homes and rentals aren't supported yet."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will using Caza affect my Zillow account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Caza reads activity shown on the public listing page, like saves, views and days on market. It does the math in your browser and never touches your Zillow account or login."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does the PDF report look like?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Cover photo, listing photos, full address, demand score with rationale, save and view trends, days on market, and price history. Print-ready, one click from any listing page."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is the demand score calculated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It combines three signals from the public listing page: total saves, recent views and days on market. Caza does the math in your browser."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Caza is free to try. Paid plans are coming, and there will be a free plan alongside them."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#FFFAF5;--bg-card:#FFFFFF;--bg-tint:#FFF1E0;--bg-warm:#FFEFD9;--bg-dark:#0F172A;--bg-dark-2:#1E293B;--ink:#0F172A;--ink-2:#475569;--ink-3:#64748B;--ink-on-dark:#F8FAFC;--ink-on-dark-2:#CBD5E1;--mute:#94A3B8;--line:#EDE4D8;--line-dark:#334155;--orange:#FF6F0C;--orange-2:#FF8A3D;--orange-soft:#FFE0C7;--terracotta:#C7541F;--terracotta-soft:#F4E1D2;--green:#16A34A;--mute-2:#94A3B8;--r:18px;--r-lg:24px;--r-pill:999px;--max-w:1180px}
-html{scroll-behavior:smooth}
-body{font-family:Outfit,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--orange);color:#fff}
-img{display:block;max-width:100%}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-.container-narrow{max-width:760px;margin:0 auto;padding:0 24px}
-.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
-.section-dark .eyebrow{color:var(--orange-2)}
-.header{position:sticky;top:0;z-index:50;background:rgba(255,250,245,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
-.logo-mark{width:32px;height:32px;border-radius:8px;display:inline-block;object-fit:contain}
-.nav-links{display:flex;gap:32px;font-size:14px;font-weight:500;color:var(--ink-2)}
-.nav-links a:hover{color:var(--ink)}
-@media(max-width:880px){.nav-links{display:none}}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:var(--r-pill);font-weight:600;font-size:14px;transition:transform .15s,filter .15s,box-shadow .15s;cursor:pointer;border:0;font-family:inherit}
-.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 32px rgba(255,111,12,.22)}
-.btn-primary:hover{transform:translateY(-1px);filter:brightness(1.05)}
-.btn-ghost{color:var(--ink);border:1px solid var(--line);background:transparent}
-.btn-ghost:hover{background:var(--bg-tint);border-color:var(--orange-soft)}
-.btn-on-dark{background:var(--orange);color:#fff;box-shadow:0 12px 40px rgba(255,111,12,.45)}
-.btn-on-dark:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btn-large{padding:16px 28px;font-size:16px}
-.hero{padding:96px 0 72px;text-align:center}
-.hero .pill-row{display:flex;justify-content:center;gap:8px;margin-bottom:22px;align-items:center;flex-wrap:wrap}
-.hero h1{font-size:clamp(44px,6.4vw,86px);font-weight:900;letter-spacing:-.035em;line-height:1.02;margin:0 auto 22px;max-width:920px}
-.hero h1 .accent{color:var(--orange)}
-.hero p.lead{font-size:19px;color:var(--ink-2);max-width:580px;margin:0 auto 32px;line-height:1.55}
-.hero .cta-row{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:18px}
-.hero .micro{font-size:13px;color:var(--ink-3);display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
-.hero .micro .dot{width:4px;height:4px;border-radius:50%;background:var(--mute)}
-.stars-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:var(--r-pill);background:var(--orange-soft);font-size:11px;font-weight:800;color:#7A4A1A;letter-spacing:.06em;text-transform:uppercase}
-.stars-pill .stars{color:var(--orange);letter-spacing:-.05em}
-.section{padding:96px 0}
-.section.tight{padding:64px 0}
-.section.section-dark{background:var(--bg-dark);color:var(--ink-on-dark)}
-.section-title{font-size:clamp(34px,4.2vw,54px);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-bottom:18px;max-width:760px}
-.section-title.center{margin-left:auto;margin-right:auto;text-align:center}
-.section-sub{font-size:18px;color:var(--ink-2);max-width:620px;margin-bottom:56px;line-height:1.55}
-.section-sub.center{margin-left:auto;margin-right:auto;text-align:center}
-.showcase{background:var(--bg-warm);padding:72px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.showcase .frame{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px;box-shadow:0 30px 80px -30px rgba(15,23,42,.18)}
-.showcase .frame img{display:block;width:100%;height:auto;border-radius:14px}
-.showcase .placeholder{aspect-ratio:24/10;background:linear-gradient(135deg,var(--bg-tint),#fff);border-radius:14px;display:flex;align-items:center;justify-content:center;color:var(--ink-3);font-size:14px;font-weight:600;text-align:center;padding:24px}
-.showcase .annotations{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
-@media(max-width:760px){.showcase .annotations{grid-template-columns:1fr}}
-.annotation{padding:8px 4px}
-.annotation .num{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:13px;align-items:center;justify-content:center;margin-bottom:12px}
-.annotation h4{font-size:17px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
-.annotation p{font-size:14.5px;color:var(--ink-2);line-height:1.55}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-@media(max-width:760px){.steps{grid-template-columns:1fr}}
-.step{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px}
-.step .step-num{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--orange);margin-bottom:20px;display:block;text-transform:uppercase}
-.step h3{font-size:22px;font-weight:800;letter-spacing:-.015em;line-height:1.2;margin-bottom:10px}
-.step p{font-size:15px;color:var(--ink-2);line-height:1.55}
-.audience-split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
-@media(max-width:760px){.audience-split{grid-template-columns:1fr}}
-.audience-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-lg);padding:40px}
-.audience-card.dark{background:var(--bg-dark);color:var(--ink-on-dark);border-color:var(--bg-dark-2)}
-.audience-card .label{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.audience-card.dark .label{color:var(--orange-2)}
-.audience-card h3{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px}
-.audience-card .lead-2{font-size:16px;color:var(--ink-2);margin-bottom:24px;line-height:1.55}
-.audience-card.dark .lead-2{color:var(--ink-on-dark-2)}
-.audience-card ul{list-style:none;padding:0;margin:0}
-.audience-card li{padding:12px 0;font-size:15px;color:var(--ink);display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line)}
-.audience-card li:first-child{border-top:0}
-.audience-card.dark li{color:var(--ink-on-dark);border-top-color:var(--line-dark)}
-.audience-card li .arr{color:var(--orange);font-weight:800;flex-shrink:0}
-.score-anatomy{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;margin-top:48px}
-@media(max-width:900px){.score-anatomy{grid-template-columns:1fr;gap:32px}}
-.score-anatomy h2{font-size:clamp(30px,3.6vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px}
-.score-anatomy .copy{font-size:17px;color:var(--ink-2);margin-bottom:32px;line-height:1.55}
-.signals{display:grid;gap:14px}
-.signal-row{display:flex;gap:16px;padding:18px;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r);align-items:flex-start}
-.signal-row .icon{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--orange-soft);color:var(--terracotta);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800}
-.signal-row h4{font-size:16px;font-weight:700;margin-bottom:4px}
-.signal-row p{font-size:14px;color:var(--ink-2);line-height:1.5}
-.score-viz{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;box-shadow:0 20px 60px -30px rgba(15,23,42,.15)}
-.score-viz .score-label{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
-.score-viz .score-num{font-size:96px;font-weight:900;letter-spacing:-.04em;line-height:1;color:var(--ink)}
-.score-viz .score-num .small{font-size:24px;color:var(--ink-3);margin-left:4px;font-weight:700}
-.score-viz .score-tag{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:var(--orange)}
-.score-viz .score-bar{margin:24px 0 16px;height:10px;background:var(--line);border-radius:5px;overflow:hidden}
-.score-viz .score-bar-fill{height:100%;width:88%;background:linear-gradient(90deg,var(--orange-2),var(--orange));border-radius:5px}
-.score-viz .meta{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;font-size:13px;color:var(--ink-2)}
-.score-viz .meta strong{color:var(--ink);font-weight:700;display:block;font-size:18px;margin-bottom:2px}
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
-@media(max-width:880px){.reviews{grid-template-columns:1fr}}
-.review{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column}
-.review .stars-row{color:var(--orange);font-size:16px;letter-spacing:1px;margin-bottom:14px}
-.review .quote{font-size:17px;line-height:1.55;color:var(--ink);margin-bottom:24px;font-weight:500;flex:1}
-.review .author{display:flex;align-items:center;gap:12px}
-.review .avatar{width:40px;height:40px;border-radius:50%;background:var(--orange-soft);color:var(--terracotta);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
-.review .author-meta{font-size:13px;line-height:1.4}
-.review .author-meta strong{display:block;color:var(--ink);font-weight:700;margin-bottom:2px}
-.review .author-meta span{color:var(--ink-3)}
-.compare{margin-top:48px;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
-.compare-head,.compare-row{display:grid;grid-template-columns:1.4fr repeat(3,1fr);border-bottom:1px solid var(--line)}
-.compare-row:last-child{border-bottom:0}
-.compare-cell{padding:18px 16px;font-size:14px}
-.compare-cell.feature{font-weight:600;color:var(--ink);background:var(--bg-tint)}
-.compare-cell.col-head{font-weight:800;font-size:13px;letter-spacing:.04em;text-align:center}
-.compare-cell.col-head.us{background:var(--orange);color:#fff}
-.compare-cell.value{text-align:center;color:var(--ink-2)}
-.compare-cell.value.yes{color:var(--green);font-weight:700}
-.compare-cell.value.no{color:var(--mute)}
-.compare-cell.value.partial{color:var(--ink-2);font-weight:500}
-.compare-cell.value.us{background:rgba(255,111,12,.05);color:var(--ink);font-weight:700}
-@media(max-width:880px){.compare-head{display:none}.compare-row{grid-template-columns:1fr}.compare-cell{padding:10px 16px}.compare-cell.feature{font-weight:800;font-size:16px;padding:14px 16px}.compare-cell.value{text-align:left}.compare-cell.value::before{content:attr(data-label) " — ";font-weight:700;color:var(--ink-3);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.compare-cell.value.us::before{color:var(--orange)}}
-.faq-list{margin-top:40px;max-width:760px}
-.faq-item{border-top:1px solid var(--line)}
-.faq-item:last-child{border-bottom:1px solid var(--line)}
-.faq-item summary{padding:22px 0;font-size:17px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;list-style:none}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";font-weight:300;font-size:24px;color:var(--orange);transition:transform .2s}
-.faq-item details[open] summary::after{transform:rotate(45deg)}
-.faq-item .answer{padding:0 0 22px;font-size:16px;color:var(--ink-2);line-height:1.65;max-width:640px}
-.final-cta{background:var(--bg-dark);border-radius:var(--r-lg);padding:72px 40px;text-align:center;color:var(--ink-on-dark);margin:80px 0;position:relative;overflow:hidden}
-.final-cta::before{content:"";position:absolute;top:-200px;right:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,111,12,.18),transparent 60%);pointer-events:none}
-.final-cta::after{content:"";position:absolute;bottom:-150px;left:-150px;width:400px;height:400px;background:radial-gradient(circle,rgba(199,84,31,.12),transparent 60%);pointer-events:none}
-.final-cta > *{position:relative;z-index:1}
-.final-cta h2{font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-.025em;margin-bottom:14px;line-height:1.1;max-width:720px;margin-left:auto;margin-right:auto}
-.final-cta p{font-size:17px;color:var(--ink-on-dark-2);margin-bottom:32px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.55}
-.site-footer{background:var(--bg);border-top:1px solid var(--line);padding:64px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:48px;margin-bottom:48px}
-@media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}}
-.footer-brand .logo{margin-bottom:16px}
-.footer-brand p{font-size:14px;color:var(--ink-2);max-width:280px;line-height:1.55}
-.footer-col h5{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:16px}
-.footer-col ul{list-style:none;padding:0;margin:0}
-.footer-col li{padding:5px 0}
-.footer-col a{font-size:14px;color:var(--ink-2)}
-.footer-col a:hover{color:var(--orange)}
-.footer-bottom{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--mute);flex-wrap:wrap;gap:16px}
-.footer-bottom a{color:var(--mute)}
-.footer-bottom a:hover{color:var(--ink)}
-@media(max-width:600px){.hero{padding:64px 0 48px}.section{padding:64px 0}.audience-card{padding:28px}.final-cta{padding:48px 24px;margin:48px 0}}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caza: demand, comps and investor numbers for Zillow listings</title>
+<meta name="description" content="A Chrome extension that adds buyer demand, sales comps, asking rents and investor numbers to Zillow listings, plus a comps report with your name on it. Free right now.">
+<link rel="canonical" href="https://usecaza.com/">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://usecaza.com/">
+<meta property="og:title" content="Caza: the numbers behind every Zillow listing">
+<meta property="og:description" content="Buyer demand, sales comps, asking rents and investor numbers on the Zillow listings you already browse.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://usecaza.com/#org","name":"Caza","url":"https://usecaza.com/","logo":"https://usecaza.com/favicon.svg","email":"gus@usecaza.com"},
+{"@type":"SoftwareApplication","name":"Caza","applicationCategory":"BrowserApplication","operatingSystem":"Chrome (desktop)","url":"https://usecaza.com/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://usecaza.com/#org"}}
+]}
+</script>
 </head>
-<body>
-<header class="header"><div class="container"><nav class="nav"><a href="/" class="logo"><img class="logo-mark" src="/logo.svg" alt="Caza" width="32" height="32"> Caza</a><div class="nav-links"><a href="#how">How it works</a><a href="#for-who">Who it's for</a><a href="#reviews">Reviews</a><a href="/blog.html">Blog</a><a href="#faq">FAQ</a></div><a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=nav" class="btn btn-primary">Add to Chrome</a></nav></div></header>
-<section class="hero"><div class="container"><h1>Know which homes buyers want <span class="accent">before your client asks.</span></h1><p class="lead">Caza adds a 0-100 buyer demand score to Zillow® home listings, built from saves, views and days on market. Turn any listing into a client-ready PDF in one click.</p><div class="cta-row"><a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=home" class="btn btn-primary btn-large">Try Caza free</a><a href="#how" class="btn btn-ghost btn-large">See how it works</a></div><div class="micro"><span>Free to try.</span><span class="dot"></span><span>No sign-up to start.</span><span class="dot"></span><span>Chrome on desktop.</span></div></div></section>
-<section class="showcase"><div class="container"><div style="background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:14px;box-shadow:0 30px 80px -30px rgba(15,23,42,.22)"><img src="/caza-zillow.png?v=1" alt="Caza overlaying buyer demand scores on a Zillow Beverly Hills search. Listings show 0–100 demand scores like 88, 79, 74. The 88-score home displays a Hot Deal panel with 52 saves, 1,089 views, 3 days on market, $519 per square foot, and a Selling fast indicator." width="1600" height="698" loading="eager" fetchpriority="high" decoding="async" style="display:block;width:100%;height:auto;border-radius:14px"></div><div class="annotations"><div class="annotation"><span class="num">1</span><h4>A 0–100 score on each listing</h4><p>One glance and you know how hot a home is. Updates as Zillow’s data updates.</p></div><div class="annotation"><span class="num">2</span><h4>The Hot Deal panel</h4><p>Click any score for the breakdown: saves, views, days on market, $/sqft, listing agent.</p></div><div class="annotation"><span class="num">3</span><h4>Map and list view</h4><p>Scores show in both the map and the list of results.</p></div></div></div></section>
-<section id="how" class="section"><div class="container"><div class="eyebrow">How it works</div><h2 class="section-title">Three minutes from install to insight.</h2><p class="section-sub">No sign-up to start. Caza does the math in your browser and never collects which homes you look at.</p><div class="steps"><div class="step"><span class="step-num">Step 01</span><h3>Install from the Chrome Web Store</h3><p>One click. The code is unobfuscated and asks for the minimum permissions Chrome allows.</p></div><div class="step"><span class="step-num">Step 02</span><h3>Open any Zillow search</h3><p>Caza activates only on Zillow listing pages. Nothing changes anywhere else in your browser.</p></div><div class="step"><span class="step-num">Step 03</span><h3>See demand scores instantly</h3><p>Each listing shows a 0–100 score. Click it for the full breakdown.</p></div></div></div></section>
-<section id="for-who" class="section" style="padding-top:0"><div class="container"><div class="eyebrow">Who it’s for</div><h2 class="section-title">Built for agents who hate guessing.</h2><div class="audience-split"><div class="audience-card"><div class="label">For buyer’s agents</div><h3>Tell clients when to move fast.</h3><p class="lead-2">Tell clients which homes need a fast offer and which have room to negotiate.</p><ul><li><span class="arr">→</span><span>See demand on the homes your clients are touring</span></li><li><span class="arr">→</span><span>Send a client-ready PDF in one click</span></li></ul></div><div class="audience-card dark"><div class="label">For listing agents</div><h3>Pitch with evidence, not opinions.</h3><p class="lead-2">Show sellers how much attention their home is getting next to the competition.</p><ul><li><span class="arr">→</span><span>Compare a listing’s saves and views with nearby homes</span></li><li><span class="arr">→</span><span>Bring a PDF report to your listing presentation</span></li></ul></div></div><p class="section-sub" style="margin:32px 0 0">Buying a home yourself? Caza works for you too. See how much interest a home is getting before you make an offer.</p></div></section>
-<section class="section tight" style="background:var(--bg-tint)"><div class="container"><div class="score-anatomy"><div><div class="eyebrow">Anatomy of a demand score</div><h2>Three signals Zillow already collects. We make them visible.</h2><p class="copy">The score combines saves, recent views and days on market into one number from 0 to 100.</p><div class="signals"><div class="signal-row"><div class="icon">♥</div><div><h4>Saves</h4><p>How many people clicked the heart on Zillow. The strongest demand signal Zillow tracks.</p></div></div><div class="signal-row"><div class="icon">●</div><div><h4>Views</h4><p>Total page views and view velocity over the past 7 days.</p></div></div><div class="signal-row"><div class="icon">◷</div><div><h4>Days on market</h4><p>How long the home has been on the market.</p></div></div></div></div><div class="score-viz"><div class="score-label">Demand score</div><div class="score-num">88<span class="small">/100</span></div><div class="score-tag">🔥 Hot Deal · Selling fast</div><div class="score-bar"><div class="score-bar-fill"></div></div><div class="meta"><span><strong>52</strong>saves</span><span><strong>1,089</strong>views</span><span><strong>3d</strong>on market</span><span><strong>$519</strong>per sqft</span></div></div></div></div></section>
-<section id="reviews" class="section"><div class="container"><div class="eyebrow">From real users</div><h2 class="section-title">Five-star average. Real names.</h2><p class="section-sub">★ 5.0 average across all Chrome Web Store reviews. Real names, real brokerages, not solicited.</p><div class="reviews"><div class="review"><div class="stars-row">★★★★★</div><p class="quote">"This makes finding good properties simple and saves time."</p><div class="author"><div class="avatar">L</div><div class="author-meta"><strong>Lauren Carter</strong><span>Agent · Pinpoint Properties · Newport Beach</span></div></div></div><div class="review"><div class="stars-row">★★★★★</div><p class="quote">"Super cool tool! Love using this while house hunting!"</p><div class="author"><div class="avatar">R</div><div class="author-meta"><strong>Ryan Loria</strong><span>Triqor Group · Newport Beach</span></div></div></div><div class="review"><div class="stars-row">★★★★★</div><p class="quote">"Solid. Makes scrolling way faster — cuts through the noise."</p><div class="author"><div class="avatar">J</div><div class="author-meta"><strong>Jack “Baja” Atkinson</strong><span>Verified Chrome Web Store reviewer</span></div></div></div></div></div></section>
-<section class="section tight"><div class="container"><div class="eyebrow">How Caza compares</div><h2 class="section-title">Every other path takes longer. Or costs more. Or both.</h2><div class="compare"><div class="compare-head"><div class="compare-cell"></div><div class="compare-cell col-head us">Caza</div><div class="compare-cell col-head">MLS comps</div><div class="compare-cell col-head">Guessing</div></div><div class="compare-row"><div class="compare-cell feature">Real demand data</div><div class="compare-cell value yes us" data-label="Caza">Yes</div><div class="compare-cell value partial" data-label="MLS">Partial</div><div class="compare-cell value no" data-label="Guess">No</div></div><div class="compare-row"><div class="compare-cell feature">Shown on the Zillow listing page</div><div class="compare-cell value yes us" data-label="Caza">Yes</div><div class="compare-cell value no" data-label="MLS">No</div><div class="compare-cell value no" data-label="Guess">No</div></div><div class="compare-row"><div class="compare-cell feature">Time to result</div><div class="compare-cell value yes us" data-label="Caza">Instant</div><div class="compare-cell value partial" data-label="MLS">10 minutes</div><div class="compare-cell value no" data-label="Guess">Wrong</div></div><div class="compare-row"><div class="compare-cell feature">PDF report you can share</div><div class="compare-cell value yes us" data-label="Caza">One click</div><div class="compare-cell value partial" data-label="MLS">Manual export</div><div class="compare-cell value no" data-label="Guess">No</div></div></div></div></section>
-<section id="faq" class="section"><div class="container"><div class="eyebrow">FAQ</div><h2 class="section-title">Questions, before you ask.</h2><div class="faq-list"><div class="faq-item"><details><summary>Which Zillow listings does Caza work on?</summary><div class="answer">It works on Zillow® home listings in the US. Off-market homes and rentals aren’t supported yet.</div></details></div><div class="faq-item"><details><summary>Will using Caza affect my Zillow account?</summary><div class="answer">No. Caza reads activity shown on the public listing page, like saves, views and days on market. It does the math in your browser and never touches your Zillow account or login.</div></details></div><div class="faq-item"><details><summary>What does the PDF report look like?</summary><div class="answer">Cover photo, listing photos, full address, demand score with rationale, save and view trends, days on market, and price history. Print-ready, one click from any listing page.</div></details></div><div class="faq-item"><details><summary>How is the demand score calculated?</summary><div class="answer">It combines three signals from the public listing page: total saves, recent views and days on market. Caza does the math in your browser.</div></details></div><div class="faq-item"><details><summary>Is it free?</summary><div class="answer">Caza is free to try. Paid plans are coming, and there will be a free plan alongside them.</div></details></div></div></div></section>
-<section><div class="container"><div class="final-cta"><h2>Stop guessing which homes buyers want.</h2><p>Works on Zillow® home listings in the US. Free to try. Installs in under a minute.</p><a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=closing" class="btn btn-on-dark btn-large">Try Caza free</a></div></div></section>
-<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="/" class="logo"><img class="logo-mark" src="/logo.svg" alt="Caza" width="32" height="32"> Caza</a><p>Buyer demand scores for real estate agents. A Chrome extension that works on Zillow® home listings.</p></div><div class="footer-col"><h5>Product</h5><ul><li><a href="#how">How it works</a></li><li><a href="#for-who">Who it's for</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a></li></ul></div><div class="footer-col"><h5>Resources</h5><ul><li><a href="/blog.html">Blog</a></li><li><a href="/blog.html#how-to-see-zillow-saves">Zillow saves guide</a></li><li><a href="/blog.html#days-on-market-meaning">Days on market explained</a></li><li><a href="/blog.html#agents-buyer-demand-data">For agents</a></li></ul></div><div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:gus@usecaza.com">gus@usecaza.com</a></li><li><a href="/privacy">Privacy policy</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 Caza. All rights reserved.</span><span>Caza is independent. We are not affiliated with Zillow.</span></div></div></footer>
+<body class="home">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#who">Who it's for</a>
+      <a href="/blog">Guides</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm btn-orange" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=nav">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-head">
+    <h1>The numbers behind every Zillow listing.</h1>
+    <div class="hero-side">
+      <p class="lede">A Chrome extension that adds buyer demand, sales comps, asking rents and investor math to the listings you already browse, then puts it all in a report with your name on it.</p>
+      <div class="hero-cta">
+        <a class="btn btn-lg btn-orange" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=home">Add to Chrome</a>
+        <a class="link link-light" href="#features">See what it adds</a>
+      </div>
+      <p class="proof">Free right now <span aria-hidden="true">·</span> Works on Chrome desktop <span aria-hidden="true">·</span> No account</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="plat" id="plat">
+      <svg class="map" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="fade" cx="50%" cy="50%" r="62%"><stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#000"/></radialGradient>
+          <mask id="m"><rect width="1200" height="640" fill="url(#fade)"/></mask>
+          <pattern id="blocks" width="160" height="112" patternUnits="userSpaceOnUse">
+            <path d="M0 0H160M0 0V112" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+            <rect x="14" y="12" width="132" height="88" fill="none" stroke="#fff" stroke-opacity=".16"/>
+            <path d="M47 12V100M80 12V100M113 12V100M14 56H146" stroke="#fff" stroke-opacity=".07"/>
+          </pattern>
+        </defs>
+        <g mask="url(#m)">
+          <rect width="1200" height="640" fill="url(#blocks)"/>
+          <path d="M-40 560 L1240 110" stroke="#fff" stroke-opacity=".22" stroke-width="5"/>
+          <path d="M-40 574 L1240 124 M-40 546 L1240 96" stroke="#fff" stroke-opacity=".10"/>
+          <path d="M120 -20 C 190 180, 60 330, 150 660" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="12"/>
+          <rect x="494" y="236" width="33" height="44" fill="#FF6F0C" fill-opacity=".28"/>
+          <rect x="690" y="348" width="33" height="44" fill="#FF6F0C" fill-opacity=".16"/>
+          <rect x="334" y="460" width="33" height="44" fill="#FF6F0C" fill-opacity=".12"/>
+          <rect x="850" y="124" width="33" height="44" fill="#FF6F0C" fill-opacity=".12"/>
+        </g>
+      </svg>
+      <div class="plat-stage">
+        <ul class="notes notes-top">
+          <li class="note" data-target="0.081,0.152" style="--x:0%"><b>Demand Score</b> 0–100, from saves, views and days on market</li>
+          <li class="note" data-target="0.335,0.17" style="--x:36%"><b>The listing's activity</b> straight from the page, with the pace of new saves</li>
+        </ul>
+        <div class="card-shot">
+          <img src="/img/listing-card.webp" width="1564" height="270" alt="Caza's card on a Zillow listing: a 100 Hot Demand Score, 270 saves, 3,793 views, 9 days, a 4% price cut flag, and buttons for Sales comps, Investor numbers and Rental comps." fetchpriority="high">
+        </div>
+        <ul class="notes notes-bottom">
+          <li class="note" data-target="0.101,0.826" style="--x:0%"><b>Sales comps</b> nearby sales in a side drawer, best matches starred</li>
+          <li class="note" data-target="0.275,0.826" style="--x:34%"><b>Investor numbers</b> cap rate and cash flow, every input labeled</li>
+          <li class="note" data-target="0.448,0.826" style="--x:68%"><b>Rental comps</b> asking rents for similar active rentals</li>
+        </ul>
+        <svg class="leaders" aria-hidden="true"></svg>
+        <span class="pin pin-tl" aria-hidden="true"></span><span class="pin pin-tr" aria-hidden="true"></span><span class="pin pin-bl" aria-hidden="true"></span><span class="pin pin-br" aria-hidden="true"></span>
+        <span class="plat-label" aria-hidden="true">Lot 1 · Caza card · sample data</span>
+      </div>
+      <figcaption>Caza's card on a Zillow listing. Sample data shown. On a phone, scroll the card sideways.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band" id="features" aria-labelledby="features-h">
+  <div class="wrap">
+    <div class="section-intro">
+      <h2 id="features-h" class="section-h">What Caza adds to a listing</h2>
+      <p class="section-lede">Four things, on the page you're already looking at. No tabs to switch, nothing to export.</p>
+    </div>
+
+    <article class="feature feature-wide">
+      <div class="feature-text">
+        <p class="kicker">Demand Score</p>
+        <h3>See which listings buyers are circling</h3>
+        <p>A 0–100 Demand Score on every listing in your search, built from saves, page views and days on market, with a small bonus when saves and views are coming in fast. Hover a score for the breakdown, then sort the whole page by it.</p>
+        <ul class="specs">
+          <li>Price cuts and back-on-market listings flagged</li>
+          <li>Sort by score, saves, views, days on market or price drops</li>
+          <li>Listing agent and phone in the hover card</li>
+        </ul>
+      </div>
+      <div class="feature-shot">
+        <img src="/img/search-tooltip.webp" width="1400" height="460" loading="lazy" alt="A Zillow search result with Caza's hover card: Hot, price dropped 4% five days ago, 270 saves, 3,793 views, 9 days on market, $363 per square foot, built 1998, and a View Sales Comps button.">
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band moment" aria-labelledby="comps-h">
+  <div class="wrap">
+    <div class="moment-head">
+      <p class="kicker">Sales comps and the report</p>
+      <h2 id="comps-h">Comps without leaving the listing, and a report with your name on it.</h2>
+    </div>
+    <div class="moment-stage">
+      <div class="moment-drawer">
+        <img src="/img/sales-comps.webp" width="800" height="1192" loading="lazy" alt="Caza's Sales comps drawer: 8 comps, median $592,000 and $363 per square foot, the subject listing pinned as the first row, and starred best matches.">
+      </div>
+      <div class="moment-report">
+        <img src="/img/comps-report.webp" width="1200" height="1523" loading="lazy" alt="Page one of a Caza comparable sales report for 418 Maple Ave: median sold $592,000, median $363 per square foot, a chart placing the subject among 8 comps, and a table of the comps.">
+      </div>
+    </div>
+    <div class="moment-cols">
+      <div>
+        <h3>The drawer</h3>
+        <p>Click Sales comps and Caza reads Zillow's own Recently Sold search around the home. Your listing stays pinned as row one, the closest matches are starred, and every sale says how it compares.</p>
+        <ul class="specs">
+          <li>Condos, houses, 2–4 units and 5+ units never mixed</li>
+          <li>Widen to a mile or add older sales in one click</li>
+          <li>Add a sale Caza left out, or drop one that doesn't fit</li>
+        </ul>
+      </div>
+      <div>
+        <h3>The report</h3>
+        <p>Print a one- or two-page PDF from any comps drawer: the median sold price and $/sqft, where your listing sits among the sales, a distance sketch, and every comp with the reason it was picked. Your name, brokerage and phone go in the header.</p>
+        <p>Rental comps print the same way, and Copy summary gives you plain text for an email or a text.</p>
+        <p class="fine">Not an appraisal. Sale prices can be missing in some states, and Caza says so. Check your MLS before client use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="rents-h">
+  <div class="wrap">
+    <article class="feature">
+      <div class="feature-text">
+        <p class="kicker">Rental comps</p>
+        <h3 id="rents-h">Asking rents, with every comp shown</h3>
+        <p>From a for-sale listing or a rental, Caza pulls similar active rentals nearby, matched on bedrooms and property type, and shows the typical range. These are asking rents for active listings, not signed leases.</p>
+        <ul class="specs">
+          <li>Send the median, or one comp, to the investor numbers</li>
+          <li>Compare my rent, in the toolbar popup, for your own unit</li>
+          <li>California listings note where rent caps may apply</li>
+        </ul>
+      </div>
+      <div class="feature-shot tall">
+        <img src="/img/rental-comps.webp" width="800" height="1186" loading="lazy" alt="Caza's Rental comps drawer: 10 asking rents for similar 3-bed rentals, a typical range of $2,380 to $2,490, a median of $2,418 and a Use this rent button.">
+      </div>
+    </article>
+
+    <article class="feature flip">
+      <div class="feature-text">
+        <p class="kicker">Investor numbers</p>
+        <h3>The math, with every input labeled</h3>
+        <p>Cap rate and monthly cash flow on homes; price per unit, GRM and cap rate on multifamily. Taxes and insurance start from state estimates you can edit, and every figure says where it came from.</p>
+        <ul class="specs">
+          <li>Debt coverage and cash-on-cash return</li>
+          <li>Your down payment, rate and term, saved as defaults</li>
+          <li>Interest-only loans; multifamily income never uses the Rent Zestimate</li>
+        </ul>
+      </div>
+      <div class="feature-shot">
+        <img src="/img/investor-numbers.webp" width="1400" height="878" loading="lazy" alt="Caza's Investor numbers: a 4.5% cap rate and minus $510 a month cash flow from a $2,418 asking rent, with taxes and insurance marked Estimate (state avg).">
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band navy renters" id="renters" aria-labelledby="renters-h">
+  <div class="wrap renters-grid">
+    <div class="renters-text">
+      <p class="kicker">For renters</p>
+      <h2 id="renters-h">Know the real monthly number before you apply.</h2>
+      <p>On a rental listing, Caza adds the all-in monthly cost with the required fees, then shows how the rent compares with similar places nearby, using asking rents for active listings.</p>
+      <ul class="specs specs-light">
+        <li>All-in cost: rent plus required monthly fees, and the effective rent after any free weeks</li>
+        <li>Higher or lower than similar rentals nearby, with the median and each comp listed</li>
+        <li>A rent far below the area gets a reminder to verify the listing before paying anything</li>
+      </ul>
+    </div>
+    <div class="renters-shots">
+      <div class="renters-card">
+        <img src="/img/renter-card.webp" width="762" height="159" loading="lazy" alt="Caza's card on a rental listing: rent $2,450 a month, all-in $2,575 with required monthly fees, effective $2,167 after 6 weeks free, a rent cut flag, and Higher than 9 of 12 similar 2-bed rentals nearby.">
+      </div>
+      <div class="renters-drawer">
+        <img src="/img/renter-comps.webp" width="500" height="700" loading="lazy" alt="Caza's Rental comps drawer for a $1,200 condo: six asking rents for similar 2-bed rentals with a median of $2,288, and a notice that the rent is far below nearby asking rents, verify the listing before paying anything.">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <h2 id="who-h" class="section-h">Who it's for</h2>
+    <div class="who">
+      <div>
+        <h3>Listing agents</h3>
+        <p>Walk into the appointment with the comps, your listing ranked among them, and a report with your name on it.</p>
+      </div>
+      <div>
+        <h3>Buyer's agents</h3>
+        <p>Know which homes are drawing a crowd and which have cut their price before your client asks.</p>
+      </div>
+      <div>
+        <h3>Investors and brokers</h3>
+        <p>Price per unit, cap rate and cash flow on every listing, with 2–4 unit and 5+ unit buildings kept apart.</p>
+      </div>
+      <div>
+        <h3>Landlords and managers</h3>
+        <p>See what similar units are asking nearby, and where your rent falls among them.</p>
+      </div>
+      <div>
+        <h3>Renters</h3>
+        <p>The all-in monthly cost with required fees, and how the rent compares nearby.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band vellum" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 id="how-h" class="section-h">How it works</h2>
+    <ol class="steps">
+      <li><span class="step-n" aria-hidden="true">1</span><h3>Add Caza to Chrome</h3><p>From the Chrome Web Store. There's no account to create.</p></li>
+      <li><span class="step-n" aria-hidden="true">2</span><h3>Open Zillow</h3><p>Scores appear on search results, and the Caza card sits on each listing.</p></li>
+      <li><span class="step-n" aria-hidden="true">3</span><h3>Click what you need</h3><p>Sales comps, Rental comps or Investor numbers. Print the report or copy a summary.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="source-h">
+  <div class="wrap source">
+    <div>
+      <h2 id="source-h" class="section-h">Where the numbers come from</h2>
+      <p>Caza reads the Zillow page you're on and Zillow's own Recently Sold and rentals searches. It never guesses quietly: every input in the investor numbers carries one of five tags.</p>
+    </div>
+    <dl class="tags">
+      <div><dt><span class="tag">Reported</span></dt><dd>Stated on the listing</dd></div>
+      <div><dt><span class="tag">Zillow est.</span></dt><dd>Zillow's own estimate</dd></div>
+      <div><dt><span class="tag tag-dot">Assumed</span></dt><dd>A default you can change</dd></div>
+      <div><dt><span class="tag tag-dot">Estimate (state avg)</span></dt><dd>Taxes or insurance from state averages</dd></div>
+      <div><dt><span class="tag tag-you">Yours</span></dt><dd>A number you typed</dd></div>
+    </dl>
+    <div class="privacy-note">
+      <h3>Private by design</h3>
+      <p>No account, no Caza servers, no tracking. Your settings stay in your browser, and Caza only loads pages from zillow.com. <a href="/privacy">Read the privacy policy</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band vellum" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <h2 id="faq-h" class="section-h">Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Which listings does Caza work on?</summary>
+        <p>Zillow listings in the US: houses, condos, townhomes, 2–4 unit and 5+ unit buildings, manufactured homes, land, and rental listings, including apartment buildings.</p>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <p>Caza is free right now.</p>
+      </details>
+      <details>
+        <summary>Is the comps report an appraisal?</summary>
+        <p>No. It shows sales as Zillow shows them, with the filters used and anything set aside. Treat it as a starting point and check your MLS before client use.</p>
+      </details>
+      <details>
+        <summary>What about states where sale prices aren't public?</summary>
+        <p>In Texas and other non-disclosure states, Zillow often has no sale price. Caza says so plainly instead of filling the gap, and Texas reports include the state's required notice.</p>
+      </details>
+      <details>
+        <summary>Does Caza touch my Zillow account?</summary>
+        <p>No. It reads public listing pages in your browser and never signs in or changes anything on Zillow.</p>
+      </details>
+      <details>
+        <summary>Are the rents real leases?</summary>
+        <p>No. They're asking rents for active listings on Zillow, and Caza labels them that way everywhere they appear.</p>
+      </details>
+      <details>
+        <summary>Can I use my own loan terms and costs?</summary>
+        <p>Yes. Change the down payment, rate, term and costs on any listing, and save your taxes and insurance as the default for that state.</p>
+      </details>
+      <details>
+        <summary>Is Caza made by Zillow?</summary>
+        <p>No. Caza is independent and isn't affiliated with or endorsed by Zillow Group.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap closing-row">
+    <h2>Open a listing.<br>Get the numbers.</h2>
+    <div class="closing-side">
+      <a class="btn btn-lg btn-orange" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=closing">Add to Chrome</a>
+      <p class="proof">Free right now <span aria-hidden="true">·</span> Works on Chrome desktop <span aria-hidden="true">·</span> No account</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="#features">Features</a>
+      <a href="/blog">Guides</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var stage = document.querySelector('.plat-stage');
+  if (!stage) return;
+  var svg = stage.querySelector('.leaders');
+  var img = stage.querySelector('.card-shot img');
+  var NS = 'http://www.w3.org/2000/svg';
+  function draw() {
+    svg.innerHTML = '';
+    if (getComputedStyle(svg).display === 'none') return;
+    var s = stage.getBoundingClientRect(), i = img.getBoundingClientRect();
+    svg.setAttribute('viewBox', '0 0 ' + s.width + ' ' + s.height);
+    stage.querySelectorAll('.note').forEach(function (n, k) {
+      var t = n.getAttribute('data-target').split(',').map(Number);
+      var tx = i.left - s.left + t[0] * i.width, ty = i.top - s.top + t[1] * i.height;
+      var r = n.getBoundingClientRect();
+      var top = n.parentNode.classList.contains('notes-top');
+      var nx = r.left - s.left + 1, ny = top ? r.bottom - s.top + 6 : r.top - s.top - 6;
+      var mid = top ? ny + 10 : ny - 10;
+      var d = 'M' + nx + ',' + ny + ' L' + nx + ',' + mid + ' L' + tx + ',' + mid + ' L' + tx + ',' + ty;
+      var p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', d); p.style.setProperty('--d', k);
+      var len = Math.abs(ny - mid) + Math.abs(nx - tx) + Math.abs(mid - ty);
+      p.style.strokeDasharray = len; p.style.strokeDashoffset = stage.classList.contains('drawn') ? 0 : len;
+      svg.appendChild(p);
+      var c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', tx); c.setAttribute('cy', ty); c.setAttribute('r', 3.5); c.style.setProperty('--d', k);
+      svg.appendChild(c);
+    });
+    requestAnimationFrame(function () { stage.classList.add('drawn'); svg.querySelectorAll('path').forEach(function (p) { p.style.strokeDashoffset = 0; }); });
+  }
+  if (img.complete) draw(); else img.addEventListener('load', draw);
+  var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(draw, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+})();
+</script>
 </body>
 </html>
