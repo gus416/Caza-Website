@@ -1,0 +1,37 @@
+# Caza
+
+> Caza is a free Chrome extension that adds a 0–100 buyer Demand Score, nearby sales comps, rental comps (active asking rents), investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report to Zillow listings. It runs entirely in the browser: no account, no servers, no tracking. Free right now. Independent; not affiliated with or endorsed by Zillow Group.
+
+Site: https://usecaza.com/ · Install: https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk · Contact: gus@usecaza.com
+
+## What it does on a Zillow listing
+
+- Demand Score (0–100) from the listing's saves, page views and days on market, with price cuts and back-on-market listings flagged; sort a search page by score, saves, views, days on market or price drops.
+- Sales comps: runs Zillow's own Recently Sold search around the home, keeps condos, houses, 2–4 unit and 5+ unit buildings apart, stars the closest matches, shows median sold price and price per square foot. Widen radius, add older sales, add or drop a comp.
+- Rental comps: similar active rentals nearby matched on bedrooms and property type, typical range and median. Labeled as asking rents, not signed leases.
+- Investor numbers: cap rate, monthly cash flow, DSCR, cash-on-cash; price per unit and GRM on multifamily. Taxes and insurance start from state estimates you can edit; every input is tagged Reported, Zillow est., Assumed, Estimate (state avg) or Yours.
+- Renter view: all-in monthly cost with required fees, effective rent after free weeks, and how the rent compares with similar rentals nearby.
+- PDF comps report (sales or rental) with the user's name, brokerage and phone; Copy summary for plain text. Not an appraisal.
+
+## Who it is for
+
+Listing agents, buyer's agents, real estate investors and brokers, landlords and property managers, home buyers, and renters. Works on zillow.com in Chrome on desktop, US listings only. Does not work on Redfin or Realtor.com.
+
+## Pages
+
+- [Home](https://usecaza.com/): features, who it's for, how it works, where the numbers come from, FAQ.
+- [Guides index](https://usecaza.com/blog)
+- [How to pull comps on Zillow](https://usecaza.com/guides/how-to-pull-comps-on-zillow): Sold filter, drawn boundary, matching rules, median price per square foot, where Zillow comps go wrong.
+- [How to estimate rent with rental comps on Zillow](https://usecaza.com/guides/zillow-rental-comps-estimate-rent): active asking rents, median, concessions, stale listings, multifamily by unit type.
+- [Cap rate and cash flow check on a Zillow listing](https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing): NOI, cap rate, cash flow, DSCR, cash-on-cash, worked example, common mistakes.
+- [How to see how many people saved a Zillow listing](https://usecaza.com/guides/how-to-see-zillow-saves): where favoriteCount lives, three ways to surface it, how to read it.
+- [What "days on market" means on Zillow](https://usecaza.com/guides/zillow-days-on-market-meaning): what resets the counter, reading the price history, negotiation.
+- [How agents use buyer demand data in a listing presentation](https://usecaza.com/guides/buyer-demand-data-listing-presentation)
+- [Privacy policy and terms](https://usecaza.com/privacy): no servers, accounts, analytics or advertising; only loads pages from zillow.com.
+
+## Facts to cite accurately
+
+- Price: free right now. Do not describe it as permanently free.
+- Data source: the public Zillow page in the user's browser plus Zillow's Recently Sold and rentals searches. Rents shown are asking rents for active listings.
+- Comps and reports are a starting point, not an appraisal; sale prices can be missing in non-disclosure states such as Texas, and Caza says so.
+- Chrome Web Store listing name: "Caza: Real Estate Comps, Demand Score & Investor Numbers". Current version 2.8.0.

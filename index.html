@@ -10,20 +10,188 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Caza">
 <meta property="og:url" content="https://usecaza.com/">
 <meta property="og:title" content="Caza: the numbers behind every Zillow listing">
-<meta property="og:description" content="Buyer demand, sales comps, asking rents and investor numbers on the Zillow listings you already browse.">
+<meta property="og:description" content="Buyer demand, sales comps, asking rents and investor numbers on the Zillow listings you already browse. A free Chrome extension.">
 <meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caza: the numbers behind every Zillow listing">
+<meta name="twitter:description" content="Buyer demand, sales comps, asking rents and investor numbers on the Zillow listings you already browse. A free Chrome extension.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://usecaza.com/#org","name":"Caza","url":"https://usecaza.com/","logo":"https://usecaza.com/favicon.svg","email":"gus@usecaza.com"},
-{"@type":"SoftwareApplication","name":"Caza","applicationCategory":"BrowserApplication","operatingSystem":"Chrome (desktop)","url":"https://usecaza.com/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://usecaza.com/#org"}}
-]}
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://usecaza.com/#org",
+   "name": "Caza",
+   "url": "https://usecaza.com/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://usecaza.com/apple-touch-icon.png"
+   },
+   "email": "gus@usecaza.com",
+   "sameAs": [
+    "https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://usecaza.com/#website",
+   "url": "https://usecaza.com/",
+   "name": "Caza",
+   "description": "A free Chrome extension that adds a Demand Score, sales comps, rental comps and investor numbers to Zillow listings.",
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "inLanguage": "en-US"
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://usecaza.com/#app",
+   "name": "Caza",
+   "alternateName": "Caza: Real Estate Comps, Demand Score & Investor Numbers",
+   "url": "https://usecaza.com/",
+   "description": "Caza is a free Chrome extension for Zillow. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report. No account, no servers.",
+   "applicationCategory": "BrowserApplication",
+   "applicationSubCategory": "Real estate",
+   "operatingSystem": "Chrome (desktop)",
+   "browserRequirements": "Requires Google Chrome on desktop",
+   "softwareVersion": "2.8.0",
+   "isAccessibleForFree": true,
+   "installUrl": "https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk",
+   "downloadUrl": "https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk",
+   "screenshot": "https://usecaza.com/img/listing-card.webp",
+   "image": "https://usecaza.com/og-image.png",
+   "featureList": [
+    "0–100 Demand Score from saves, views and days on market",
+    "Sales comps from Zillow's Recently Sold search",
+    "Rental comps from active asking rents",
+    "Investor numbers: cap rate, cash flow, DSCR, cash-on-cash, price per unit, GRM",
+    "All-in monthly rent for renters",
+    "PDF comps report with your name and brokerage"
+   ],
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk"
+   },
+   "author": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "audience": {
+    "@type": "Audience",
+    "audienceType": "Real estate agents, investors, landlords, home buyers and renters"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://usecaza.com/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is Caza?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Caza is a free Chrome extension for Zillow. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, and investor numbers such as cap rate, cash flow and DSCR. It also prints a PDF comps report. It runs in your browser with no account and no servers."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which listings does Caza work on?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Zillow listings in the US: houses, condos, townhomes, 2–4 unit and 5+ unit buildings, manufactured homes, land, and rental listings, including apartment buildings."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Caza work on Redfin or Realtor.com?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Caza works on zillow.com only, in Chrome on desktop."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does it cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Caza is free right now."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is the Demand Score calculated?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "From the listing's own saves, page views and days on market, with a small bonus when saves and views are arriving quickly. Hover any score to see the breakdown. It measures buyer attention on Zillow, not the home's condition or price."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is the comps report official?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not an appraisal, and not a CMA. It shows sales as Zillow shows them, with the filters used and anything set aside. Treat it as a starting point and check your MLS before client use."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What about states where sale prices aren't public?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In Texas and other non-disclosure states, Zillow often has no sale price. Caza says so plainly instead of filling the gap, and Texas reports include the state's required notice."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Caza touch my Zillow account?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It reads public listing pages in your browser and never signs in or changes anything on Zillow."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Are the rents real leases?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. They're asking rents for active listings on Zillow, and Caza labels them that way everywhere they appear."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I use my own loan terms and costs?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Change the down payment, rate, term and costs on any listing, and save your taxes and insurance as the default for that state."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Caza made by Zillow?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Caza is independent and isn't affiliated with or endorsed by Zillow Group."
+     }
+    }
+   ]
+  }
+ ]
+}
 </script>
 </head>
 <body class="home">
@@ -106,7 +274,7 @@
   <div class="wrap">
     <div class="section-intro">
       <h2 id="features-h" class="section-h">What Caza adds to a listing</h2>
-      <p class="section-lede">Four things, on the page you're already looking at. No tabs to switch, nothing to export.</p>
+      <p class="section-lede">Caza is a free Chrome extension for Zillow. Open any listing and it adds four things on the page you're already looking at: a Demand Score, sales comps, rental comps and investor numbers. No tabs to switch, nothing to export.</p>
     </div>
 
     <article class="feature feature-wide">
@@ -279,21 +447,51 @@
   </div>
 </section>
 
+<section class="band" id="guides" aria-labelledby="guides-h">
+  <div class="wrap">
+    <div class="section-intro">
+      <h2 id="guides-h" class="section-h">Guides</h2>
+      <p class="section-lede">How to get the same numbers by hand, and where they go wrong. Each guide works without Caza.</p>
+    </div>
+    <div class="guides-home">
+      <a href="/guides/how-to-pull-comps-on-zillow"><p class="kicker">For agents</p><h3>How to pull comps on Zillow</h3><p>The Sold filter, a drawn boundary, four matching rules and the median price per square foot.</p></a>
+      <a href="/guides/zillow-rental-comps-estimate-rent"><p class="kicker">For investors and landlords</p><h3>How to estimate rent with rental comps</h3><p>Active asking rents, the median, concessions and stale listings.</p></a>
+      <a href="/guides/cap-rate-cash-flow-zillow-listing"><p class="kicker">For investors</p><h3>Cap rate and cash flow on a listing</h3><p>NOI, cap rate, cash flow and DSCR in five minutes, with a worked example.</p></a>
+      <a href="/guides/how-to-see-zillow-saves"><p class="kicker">Buyer guide</p><h3>How to see how many people saved a Zillow listing</h3><p>Where the save count lives and three ways to surface it.</p></a>
+      <a href="/guides/zillow-days-on-market-meaning"><p class="kicker">Buyer guide</p><h3>What &ldquo;days on market&rdquo; means on Zillow</h3><p>What resets the clock and how to find the real number.</p></a>
+      <a href="/guides/buyer-demand-data-listing-presentation"><p class="kicker">For agents</p><h3>Buyer demand data in a listing presentation</h3><p>Bring evidence of demand, not just a price.</p></a>
+    </div>
+    <p class="fine" style="margin-top:20px"><a href="/blog">All guides</a></p>
+  </div>
+</section>
+
 <section class="band vellum" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
     <h2 id="faq-h" class="section-h">Questions</h2>
     <div class="faq">
       <details>
+        <summary>What is Caza?</summary>
+        <p>Caza is a free Chrome extension for Zillow. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, and investor numbers such as cap rate, cash flow and DSCR. It also prints a PDF comps report. It runs in your browser with no account and no servers.</p>
+      </details>
+      <details>
         <summary>Which listings does Caza work on?</summary>
         <p>Zillow listings in the US: houses, condos, townhomes, 2–4 unit and 5+ unit buildings, manufactured homes, land, and rental listings, including apartment buildings.</p>
+      </details>
+      <details>
+        <summary>Does Caza work on Redfin or Realtor.com?</summary>
+        <p>No. Caza works on zillow.com only, in Chrome on desktop.</p>
       </details>
       <details>
         <summary>What does it cost?</summary>
         <p>Caza is free right now.</p>
       </details>
       <details>
-        <summary>Is the comps report an appraisal?</summary>
-        <p>No. It shows sales as Zillow shows them, with the filters used and anything set aside. Treat it as a starting point and check your MLS before client use.</p>
+        <summary>How is the Demand Score calculated?</summary>
+        <p>From the listing's own saves, page views and days on market, with a small bonus when saves and views are arriving quickly. Hover any score to see the breakdown. It measures buyer attention on Zillow, not the home's condition or price.</p>
+      </details>
+      <details>
+        <summary>Is the comps report official?</summary>
+        <p>Not an appraisal, and not a CMA. It shows sales as Zillow shows them, with the filters used and anything set aside. Treat it as a starting point and check your MLS before client use.</p>
       </details>
       <details>
         <summary>What about states where sale prices aren't public?</summary>

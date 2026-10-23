@@ -3,84 +3,161 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Caza Guides: Zillow data, demand signals, and what listings really mean</title>
-<meta name="description" content="Practical guides for real estate agents and home buyers: how Zillow data actually works, how to read demand signals, and how to win in a competitive market.">
+<title>Caza Guides: Zillow saves, days on market, comps, rents and investor numbers</title>
+<meta name="description" content="Plain-English guides for agents, buyers, investors and renters: Zillow saves, days on market, pulling comps, estimating rent and checking cap rate on a listing.">
 <link rel="canonical" href="https://usecaza.com/blog">
 <meta name="theme-color" content="#0D1430">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Caza">
 <meta property="og:url" content="https://usecaza.com/blog">
-<meta property="og:title" content="Caza Guides: Zillow data, demand signals, and what listings really mean">
-<meta property="og:description" content="Practical guides for real estate agents and home buyers.">
+<meta property="og:title" content="Caza Guides">
+<meta property="og:description" content="Plain-English guides for agents, buyers, investors and renters: Zillow saves, days on market, pulling comps, estimating rent and checking cap rate on a listing.">
 <meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caza Guides">
+<meta name="twitter:description" content="Plain-English guides for agents, buyers, investors and renters: Zillow saves, days on market, pulling comps, estimating rent and checking cap rate on a listing.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
 <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BlogPosting",
-        "@id": "https://usecaza.com/blog#how-to-see-zillow-saves",
-        "url": "https://usecaza.com/blog#how-to-see-zillow-saves",
-        "mainEntityOfPage": "https://usecaza.com/blog#how-to-see-zillow-saves",
-        "headline": "How to see how many people saved a Zillow listing",
-        "description": "Zillow tracks saves but doesn't show them. Here's where the data lives, three ways to surface it, and what the numbers mean.",
-        "datePublished": "2026-05-04",
-        "dateModified": "2026-05-04",
-        "wordCount": 700,
-        "image": "https://usecaza.com/og-image.png",
-        "author": {"@type": "Organization", "name": "Caza", "url": "https://usecaza.com/"},
-        "publisher": {"@type": "Organization", "name": "Caza", "url": "https://usecaza.com/", "logo": {"@type": "ImageObject", "url": "https://usecaza.com/favicon.svg"}},
-        "articleSection": "Buyer guide",
-        "keywords": "Zillow saves, buyer demand, Zillow data, hot listing"
-      },
-      {
-        "@type": "BlogPosting",
-        "@id": "https://usecaza.com/blog#days-on-market-meaning",
-        "url": "https://usecaza.com/blog#days-on-market-meaning",
-        "mainEntityOfPage": "https://usecaza.com/blog#days-on-market-meaning",
-        "headline": "What does \u201cdays on market\u201d actually mean on Zillow?",
-        "description": "The most misread metric on Zillow. What counts, what resets it, why agents game it, and how to read DOM correctly for negotiation leverage.",
-        "datePublished": "2026-05-04",
-        "dateModified": "2026-05-04",
-        "wordCount": 600,
-        "image": "https://usecaza.com/og-image.png",
-        "author": {"@type": "Organization", "name": "Caza", "url": "https://usecaza.com/"},
-        "publisher": {"@type": "Organization", "name": "Caza", "url": "https://usecaza.com/", "logo": {"@type": "ImageObject", "url": "https://usecaza.com/favicon.svg"}},
-        "articleSection": "Buyer guide",
-        "keywords": "days on market, DOM Zillow, listing reset, real estate negotiation"
-      },
-      {
-        "@type": "BlogPosting",
-        "@id": "https://usecaza.com/blog#agents-buyer-demand-data",
-        "url": "https://usecaza.com/blog#agents-buyer-demand-data",
-        "mainEntityOfPage": "https://usecaza.com/blog#agents-buyer-demand-data",
-        "headline": "How real estate agents use buyer demand data to win listings",
-        "description": "The listing pitch isn't price, it's evidence. How to use Zillow saves, views, and DOM in a listing presentation.",
-        "datePublished": "2026-05-04",
-        "dateModified": "2026-05-04",
-        "wordCount": 850,
-        "image": "https://usecaza.com/og-image.png",
-        "author": {"@type": "Organization", "name": "Caza", "url": "https://usecaza.com/"},
-        "publisher": {"@type": "Organization", "name": "Caza", "url": "https://usecaza.com/", "logo": {"@type": "ImageObject", "url": "https://usecaza.com/favicon.svg"}},
-        "articleSection": "For agents",
-        "keywords": "real estate agent, listing presentation, buyer demand data, CMA"
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usecaza.com/"},
-          {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://usecaza.com/blog"}
-        ]
-      }
+   "@type": "CollectionPage",
+   "@id": "https://usecaza.com/blog#page",
+   "url": "https://usecaza.com/blog",
+   "name": "Caza Guides",
+   "description": "Plain-English guides on Zillow data: saves, days on market, sales comps, rental comps and investor numbers.",
+   "isPartOf": {
+    "@id": "https://usecaza.com/#website"
+   },
+   "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://usecaza.com/guides/how-to-see-zillow-saves",
+      "name": "How to see how many people saved a Zillow listing"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://usecaza.com/guides/zillow-days-on-market-meaning",
+      "name": "What does “days on market” actually mean on Zillow?"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://usecaza.com/guides/buyer-demand-data-listing-presentation",
+      "name": "How real estate agents use buyer demand data to win listings"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://usecaza.com/guides/how-to-pull-comps-on-zillow",
+      "name": "How to pull comps on Zillow (without the MLS)"
+     },
+     {
+      "@type": "ListItem",
+      "position": 5,
+      "url": "https://usecaza.com/guides/zillow-rental-comps-estimate-rent",
+      "name": "How to estimate rent for a listing with rental comps on Zillow"
+     },
+     {
+      "@type": "ListItem",
+      "position": 6,
+      "url": "https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing",
+      "name": "How to run a quick cap rate and cash flow check on a Zillow listing"
+     }
     ]
+   }
+  },
+  {
+   "@type": "Blog",
+   "@id": "https://usecaza.com/blog#blog",
+   "url": "https://usecaza.com/blog",
+   "name": "Caza Guides",
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "blogPost": [
+    {
+     "@type": "BlogPosting",
+     "@id": "https://usecaza.com/guides/how-to-see-zillow-saves#article",
+     "url": "https://usecaza.com/guides/how-to-see-zillow-saves",
+     "headline": "How to see how many people saved a Zillow listing",
+     "datePublished": "2026-05-04",
+     "dateModified": "2026-10-23"
+    },
+    {
+     "@type": "BlogPosting",
+     "@id": "https://usecaza.com/guides/zillow-days-on-market-meaning#article",
+     "url": "https://usecaza.com/guides/zillow-days-on-market-meaning",
+     "headline": "What does “days on market” actually mean on Zillow?",
+     "datePublished": "2026-05-04",
+     "dateModified": "2026-10-23"
+    },
+    {
+     "@type": "BlogPosting",
+     "@id": "https://usecaza.com/guides/buyer-demand-data-listing-presentation#article",
+     "url": "https://usecaza.com/guides/buyer-demand-data-listing-presentation",
+     "headline": "How real estate agents use buyer demand data to win listings",
+     "datePublished": "2026-05-04",
+     "dateModified": "2026-10-23"
+    },
+    {
+     "@type": "BlogPosting",
+     "@id": "https://usecaza.com/guides/how-to-pull-comps-on-zillow#article",
+     "url": "https://usecaza.com/guides/how-to-pull-comps-on-zillow",
+     "headline": "How to pull comps on Zillow (without the MLS)",
+     "datePublished": "2026-10-23",
+     "dateModified": "2026-10-23"
+    },
+    {
+     "@type": "BlogPosting",
+     "@id": "https://usecaza.com/guides/zillow-rental-comps-estimate-rent#article",
+     "url": "https://usecaza.com/guides/zillow-rental-comps-estimate-rent",
+     "headline": "How to estimate rent for a listing with rental comps on Zillow",
+     "datePublished": "2026-10-23",
+     "dateModified": "2026-10-23"
+    },
+    {
+     "@type": "BlogPosting",
+     "@id": "https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing#article",
+     "url": "https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing",
+     "headline": "How to run a quick cap rate and cash flow check on a Zillow listing",
+     "datePublished": "2026-10-23",
+     "dateModified": "2026-10-23"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://usecaza.com/blog"
+    }
+   ]
   }
-  </script>
+ ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -94,194 +171,57 @@
       <a href="/blog">Guides</a>
       <a href="/#faq">FAQ</a>
     </nav>
-    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=blog">Add to Chrome</a>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=guides">Add to Chrome</a>
   </div>
 </header>
 
 <main id="main">
   <div class="page-band"><section class="wrap page-head">
     <p class="kicker">Guides</p>
-    <h1>Zillow data, demand signals, and what listings really mean.</h1>
-    <p class="lede">Plain-English guides for agents and home buyers: the things we wish Zillow explained on the listing page.</p>
+    <h1>Zillow data, comps and investor numbers, explained.</h1>
+    <p class="lede">Plain-English guides for agents, buyers, investors and renters: the things we wish Zillow explained on the listing page. Each one works without Caza, and ends with how Caza does it faster.</p>
   </section></div>
 
   <section class="wrap" aria-label="Guides">
     <div class="index">
-      <a href="#how-to-see-zillow-saves">
+      <a href="/guides/how-to-see-zillow-saves" id="how-to-see-zillow-saves">
         <div class="meta">Buyer guide<br>5 min read</div>
         <div><h2>How to see how many people saved a Zillow listing</h2>
-        <p>Zillow tracks saves. They just don&rsquo;t show them. Here&rsquo;s where the data lives and how to surface it on every listing.</p></div>
+        <p>Zillow counts saves and views on every listing but doesn't show them. Where the numbers live, three ways to surface them, and how to read them.</p></div>
       </a>
-      <a href="#days-on-market-meaning">
+      <a href="/guides/zillow-days-on-market-meaning" id="days-on-market-meaning">
         <div class="meta">Buyer guide<br>4 min read</div>
         <div><h2>What does &ldquo;days on market&rdquo; actually mean on Zillow?</h2>
-        <p>It&rsquo;s the single most misread number on a listing page. We break down what counts, what resets it, and why agents game it.</p></div>
+        <p>“Days on Zillow” counts time on Zillow, not time for sale. What resets the clock, how to find the real number in the price history, and how to use it when you negotiate.</p></div>
       </a>
-      <a href="#agents-buyer-demand-data">
+      <a href="/guides/buyer-demand-data-listing-presentation" id="agents-buyer-demand-data">
         <div class="meta">For agents<br>6 min read</div>
         <div><h2>How real estate agents use buyer demand data to win listings</h2>
-        <p>The pitch isn&rsquo;t price &mdash; it&rsquo;s evidence. How to use saves, views, and DOM in a listing presentation.</p></div>
+        <p>The listing pitch isn't a price, it's evidence. How to use Zillow saves, views and days on market in the listing presentation, the first-week update and the price-cut talk.</p></div>
+      </a>
+      <a href="/guides/how-to-pull-comps-on-zillow">
+        <div class="meta">For agents<br>6 min read</div>
+        <div><h2>How to pull comps on Zillow (without the MLS)</h2>
+        <p>Find comparable sales on Zillow in ten minutes: the Sold filter, a drawn boundary, four matching rules, median price per square foot, and where Zillow comps go wrong.</p></div>
+      </a>
+      <a href="/guides/zillow-rental-comps-estimate-rent">
+        <div class="meta">For investors and landlords<br>6 min read</div>
+        <div><h2>How to estimate rent for a listing with rental comps on Zillow</h2>
+        <p>Turn Zillow rental listings into a rent estimate: the rentals map, matching rules, the median asking rent, concessions, stale listings, and why asking rents aren't leases.</p></div>
+      </a>
+      <a href="/guides/cap-rate-cash-flow-zillow-listing">
+        <div class="meta">For investors<br>7 min read</div>
+        <div><h2>How to run a quick cap rate and cash flow check on a Zillow listing</h2>
+        <p>Screen a Zillow listing as a rental in five minutes: rent from comps, NOI with vacancy, taxes and management, then cap rate, cash flow, DSCR and cash-on-cash. Worked example.</p></div>
       </a>
     </div>
-  </section>
-
-  <section class="wrap">
-      <article class="post" id="how-to-see-zillow-saves">
-        <div class="post-meta"><span class="tag">Buyer guide</span><span>5 min read</span><span>Updated October 2026</span></div>
-        <h2>How to see how many people saved a Zillow listing</h2>
-
-        <p>Zillow knows exactly how many people have saved any given listing. They just don&rsquo;t show you the number. For most listings you&rsquo;ll see &ldquo;15 minutes ago&rdquo; activity timestamps and a vague &ldquo;Hot Home&rdquo; badge if the listing is moving fast &mdash; but the actual save count, the most direct signal of buyer demand on the platform, sits hidden.</p>
-
-        <p>This matters more than people realize. A home with 12 saves and one with 142 saves look identical on the search results page. The 142-save home is the one buyers are competing for. The 12-save home is the one where you have room to negotiate. Same listing photo, completely different game.</p>
-
-        <h3>Where the save data actually lives</h3>
-
-        <p>Zillow ships save and view counts to your browser as part of the listing page&rsquo;s underlying data. They just don&rsquo;t render them in the visible UI. If you open browser dev tools (Cmd+Option+I on Mac, F12 on Windows) and look at the page source, you&rsquo;ll find values like <strong>favoriteCount</strong> and <strong>viewCount</strong> sitting in the inline JSON.</p>
-
-        <p>This is fine for one listing if you&rsquo;re comfortable in dev tools. It&rsquo;s impractical for browsing 30 listings on a Saturday morning.</p>
-
-        <h3>Three ways to surface the data</h3>
-
-        <ol>
-          <li><strong>Manual dev tools lookup.</strong> Right-click any Zillow listing, select &ldquo;Inspect&rdquo;, switch to the Console tab, and paste in a search for <code>favoriteCount</code>. Free, but tedious.</li>
-          <li><strong>Browser extensions.</strong> Several Chrome extensions surface this data inline on listings. Caza is one (we built it because we got tired of the dev tools dance) &mdash; it shows a 0&ndash;100 demand score that combines saves, views, and time on market.</li>
-          <li><strong>Ask the listing agent.</strong> The listing agent can usually see how much traffic their own listing is getting. Most won&rsquo;t volunteer it, but if you&rsquo;re working with a buyer&rsquo;s agent, they can ask.</li>
-        </ol>
-
-        <h3>What the numbers mean</h3>
-
-        <p>Save counts don&rsquo;t exist in a vacuum. A listing with 50 saves in Austin means something different than 50 saves in rural Nebraska. What matters is the <em>ratio</em> of saves to time on market, calibrated to local norms.</p>
-
-        <div class="callout">
-          <p>There is no universal cutoff. Compare a listing&rsquo;s <strong>saves per day on market</strong> with the other listings in the same search: the ones well above the pack are the ones you&rsquo;re competing for, and the ones well below have been passed over.</p>
-        </div>
-
-        <h3>Why Zillow hides this</h3>
-
-        <p>Zillow hasn&rsquo;t said. One plausible reason is that showing the number would create a feedback loop &mdash; popular listings would get more attention, unpopular ones less, and the platform would feel less &ldquo;flat.&rdquo; That&rsquo;s great for sellers and listing agents. For buyers, it leaves you guessing.</p>
-
-        <div class="post-cta">
-          <p><strong>Want save counts shown on Zillow listings automatically?</strong></p>
-          <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=blog" class="btn">Try the Caza Chrome extension free</a>
-        </div>
-
-        <div class="related">
-          <h4>Related guides</h4>
-          <p><a href="#days-on-market-meaning">What does &ldquo;days on market&rdquo; actually mean on Zillow?</a> &mdash; the other most-misread metric on a listing.</p>
-          <p><a href="#agents-buyer-demand-data">How real estate agents use buyer demand data to win listings</a> &mdash; if you&rsquo;re an agent, here&rsquo;s how to put save counts to work.</p>
-        </div>
-      </article>
-
-      <article class="post" id="days-on-market-meaning">
-        <div class="post-meta"><span class="tag">Buyer guide</span><span>4 min read</span><span>Updated October 2026</span></div>
-        <h2>What does &ldquo;days on market&rdquo; actually mean on Zillow?</h2>
-
-        <p>The number labeled &ldquo;Days on Zillow&rdquo; on a listing page is the most misread metric on the site. Buyers think it tells them how long the home has been for sale. It does &mdash; but with caveats that change the entire interpretation.</p>
-
-        <h3>The official definition</h3>
-
-        <p>Zillow&rsquo;s &ldquo;Days on Zillow&rdquo; (sometimes called DOM) counts the number of days the listing has been active on Zillow specifically. This is not the same as how long the home has been for sale in the broader market.</p>
-
-        <p>Listings come to Zillow through MLS feeds. If an agent lists on the MLS today, it shows up on Zillow within a few hours and the clock starts ticking. If the same home was for sale six months ago, taken off the market, and re-listed yesterday, the counter resets. To you, &ldquo;Days on Zillow: 1&rdquo; reads as a fresh listing. In reality, it could be a stale home with a new MLS entry.</p>
-
-        <h3>What resets the counter</h3>
-
-        <ul>
-          <li><strong>Re-listing.</strong> Pulling the home off the market and re-listing it &mdash; even at the same price &mdash; resets the clock. This is the most common reset.</li>
-          <li><strong>Switching listing agents.</strong> If the seller changes brokerages, the new MLS entry typically resets the counter on Zillow.</li>
-          <li><strong>Status changes.</strong> Going from &ldquo;Pending&rdquo; back to &ldquo;Active&rdquo; (when a deal falls through) sometimes resets the visible DOM, sometimes doesn&rsquo;t.</li>
-        </ul>
-
-        <div class="callout">
-          <p>The fix: look at <strong>price history</strong> on the listing page. If you see a date six months ago listed as &ldquo;Listed for $X&rdquo; followed by &ldquo;Listing removed,&rdquo; the home has been on the market longer than the counter shows. The price history is harder to game than the DOM.</p>
-        </div>
-
-        <h3>Why DOM matters for negotiation</h3>
-
-        <p>Real DOM &mdash; the actual time a home has been trying to sell &mdash; is one of the strongest negotiation signals you have as a buyer. A home that has been sitting for months is more likely to take a lower price, and a seller who won&rsquo;t move on price will often move on terms (closing costs, repairs, contingencies).</p>
-
-        <p>Conversely, a home that&rsquo;s been on the market for under 7 days with high save counts is one where you should write your strongest offer or move on. Trying to negotiate a fresh hot listing wastes everyone&rsquo;s time and can cost you the home.</p>
-
-        <h3>How to read DOM correctly</h3>
-
-        <ol>
-          <li>Check &ldquo;Days on Zillow&rdquo; for the surface number.</li>
-          <li>Scroll to &ldquo;Price history&rdquo; and find the earliest listing date. Subtract that from today &mdash; that&rsquo;s the real DOM.</li>
-          <li>Combine that with save count. A home with 90 real DOM and 8 saves is sitting. A home with 90 real DOM and 200 saves drew plenty of interest and still didn&rsquo;t sell, which usually points to price.</li>
-        </ol>
-
-        <div class="post-cta">
-          <p><strong>Caza puts days on market, saves and price cuts on every Zillow listing.</strong></p>
-          <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=blog" class="btn">Try Caza free</a>
-        </div>
-
-        <div class="related">
-          <h4>Related guides</h4>
-          <p><a href="#how-to-see-zillow-saves">How to see how many people saved a Zillow listing</a> &mdash; the demand signal that pairs with DOM.</p>
-          <p><a href="#agents-buyer-demand-data">How real estate agents use buyer demand data to win listings</a> &mdash; turning DOM into a pricing conversation.</p>
-        </div>
-      </article>
-
-      <article class="post" id="agents-buyer-demand-data">
-        <div class="post-meta"><span class="tag">For agents</span><span>6 min read</span><span>Updated October 2026</span></div>
-        <h2>How real estate agents use buyer demand data to win listings</h2>
-
-        <p>The standard listing pitch hasn&rsquo;t changed in decades. The agent walks in with comps, suggests a price, talks about marketing. The seller signs because they like the agent&rsquo;s vibe or because their cousin gave them a name. Pricing strategy is intuition dressed up as analysis.</p>
-
-        <p>A better pitch isn&rsquo;t about price &mdash; it&rsquo;s about <strong>evidence of demand</strong>. And the evidence is sitting in plain sight on every Zillow listing in the seller&rsquo;s neighborhood.</p>
-
-        <h3>The new listing pitch</h3>
-
-        <p>Instead of opening with &ldquo;I think we should price this at $850K,&rdquo; the demand-data pitch opens with: <em>&ldquo;Let me show you what&rsquo;s actually selling in your zip code right now, and what&rsquo;s sitting.&rdquo;</em></p>
-
-        <p>You bring three things to the meeting:</p>
-        <ol>
-          <li>The five most recently sold homes in the immediate area, with their save counts and time on market.</li>
-          <li>The five currently active listings most similar to the seller&rsquo;s home, with their demand scores.</li>
-          <li>One specific competitor listing &mdash; ideally a home priced exactly where the seller wants to be &mdash; that&rsquo;s sitting with low saves.</li>
-        </ol>
-
-        <p>The story tells itself. &ldquo;Here&rsquo;s what hot looks like &mdash; 240 saves, 8 days on market, sold above asking. Here&rsquo;s what sitting looks like &mdash; 14 saves, 73 days on market, two price drops. We have a choice about which one we want to be.&rdquo;</p>
-
-        <h3>Why this works</h3>
-
-        <p>Sellers don&rsquo;t want to hear that their home is overpriced. They want to be the agent&rsquo;s partner in figuring out what the market is telling them. Demand data turns the pricing conversation from confrontation into observation. You&rsquo;re both looking at the same numbers.</p>
-
-        <div class="callout">
-          <p>The shift in language matters. Stop saying &ldquo;the market won&rsquo;t support that price.&rdquo; Start saying &ldquo;listings priced like that in your zip code are getting 18 saves a week. Listings priced 4% below are getting 60+. We can pick our pace.&rdquo;</p>
-        </div>
-
-        <h3>The follow-up move</h3>
-
-        <p>Once you&rsquo;ve set up demand data as the lens, you can use it through the entire transaction:</p>
-
-        <ul>
-          <li><strong>Pricing strategy:</strong> &ldquo;Let&rsquo;s list at $X &mdash; that&rsquo;s the price point getting 50+ saves in week one.&rdquo;</li>
-          <li><strong>First-week response:</strong> &ldquo;We have 80 saves and 2,400 views in the first 6 days. That&rsquo;s ahead of most of the homes we&rsquo;re competing with.&rdquo;</li>
-          <li><strong>Price-drop conversations:</strong> &ldquo;Saves have plateaued at 22. The market has told us where the ceiling is.&rdquo;</li>
-          <li><strong>Offer review:</strong> &ldquo;Three homes priced like this in this neighborhood ended up selling at 96% of list. That&rsquo;s the data, not my opinion.&rdquo;</li>
-        </ul>
-
-        <h3>What you need to make this work</h3>
-
-        <p>Demand data is most useful when you can pull it up on the spot, on any listing the seller mentions. If you have to open Excel, switch to the MLS, copy-paste numbers, and build a chart, you lose the conversational momentum.</p>
-
-        <p>The simplest setup is to have the data on Zillow itself, where you&rsquo;re already searching. Open a listing and the demand score, the save count and the price cuts are right there, so you can answer a seller&rsquo;s question while they&rsquo;re still asking it.</p>
-
-        <div class="post-cta">
-          <p><strong>Caza is the Chrome extension we built for exactly this workflow.</strong></p>
-          <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=blog" class="btn">Try Caza free</a>
-        </div>
-
-        <div class="related">
-          <h4>Related guides</h4>
-          <p><a href="#how-to-see-zillow-saves">How to see how many people saved a Zillow listing</a> &mdash; the underlying demand signal.</p>
-          <p><a href="#days-on-market-meaning">What does &ldquo;days on market&rdquo; actually mean on Zillow?</a> &mdash; how to read DOM honestly when pitching sellers.</p>
-        </div>
-      </article>
+    <p class="fine">Caza is a free Chrome extension that adds a Demand Score, sales comps, rental comps and investor numbers to Zillow listings. <a href="/">See what it adds</a>.</p>
     <a class="back" href="/">Back to the Caza homepage</a>
   </section>
 </main>
+<script>
+(function(){var m={"how-to-see-zillow-saves": "how-to-see-zillow-saves", "days-on-market-meaning": "zillow-days-on-market-meaning", "agents-buyer-demand-data": "buyer-demand-data-listing-presentation"};var h=location.hash.slice(1);if(m[h])location.replace('/guides/'+m[h]);})();
+</script>
 
 <footer class="foot">
   <div class="wrap foot-row">

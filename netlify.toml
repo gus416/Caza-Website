@@ -44,6 +44,13 @@
     Cache-Control = "public, max-age=86400, must-revalidate"
 
 
+# llms.txt: plain text, short cache
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "text/plain; charset=utf-8"
+
 # Sitemap and robots: short cache, allow updates
 [[headers]]
   for = "/sitemap.xml"
@@ -76,3 +83,17 @@
   to = "/"
   status = 301
   force = true
+
+# Guides hub: /guides and /guides/ land on the index at /blog
+[[redirects]]
+  from = "/guides"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/guides/"
+  to = "/blog"
+  status = 301
+
+# Old single-page blog anchors (/blog#how-to-see-zillow-saves etc.) are handled
+# client-side in blog.html, since fragments never reach the server.

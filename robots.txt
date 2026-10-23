@@ -1,8 +1,64 @@
+# usecaza.com
+# Everyone may crawl the site. Search and AI crawlers are listed explicitly
+# so there is no ambiguity about search, answer and user-fetch access.
+
 User-agent: *
 Allow: /
-
-# Block crawling of any future admin/internal paths
 Disallow: /admin/
 Disallow: /private/
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# AI search and answer engines (citations in ChatGPT, Claude, Perplexity, Copilot, Gemini)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+# AI training crawlers (allowed; the site is public marketing and guides)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 Sitemap: https://usecaza.com/sitemap.xml
