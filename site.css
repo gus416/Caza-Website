@@ -353,3 +353,23 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
 .examples-home{grid-template-columns:repeat(4,1fr)}
 @media (max-width:900px){.ex-nav,.examples-home{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.ex-nav,.examples-home{grid-template-columns:1fr}}
+
+/* Guides index: audience tabs and sections */
+.aud{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
+.aud a{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--rule);border-radius:999px;font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;background:#fff}
+.aud a:hover{border-color:var(--navy);color:var(--navy)}
+.aud a[aria-current="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.aud a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.aud-sec{margin-top:48px;scroll-margin-top:24px}
+.aud-sec[hidden]{display:none}
+.aud-sec h2{font-size:28px;letter-spacing:-0.02em}
+.aud-sec .aud-intro{color:var(--sub);max-width:62ch;margin-top:8px;font-size:17px}
+.aud-sec .index{margin-top:20px}
+.index h3{font-size:24px;margin-bottom:6px;line-height:1.25}
+.index a:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--orange)}
+/* Guide tables (worked examples) */
+.post table{border-collapse:collapse;width:100%;font-size:15px;margin:0 0 22px}
+.post caption{text-align:left;font-size:14px;color:var(--sub);padding:0 0 8px;caption-side:top}
+.post th,.post td{text-align:left;padding:9px 10px 9px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.post th:last-child,.post td:last-child{text-align:right;white-space:nowrap;padding-right:0}
+.post thead th{font-size:13px;color:var(--sub);font-weight:600;letter-spacing:.02em;text-transform:uppercase}
