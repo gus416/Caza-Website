@@ -26,6 +26,7 @@ Listing agents, buyer's agents, real estate investors and brokers, landlords and
 - [How to estimate rent with rental comps on Zillow](https://usecaza.com/guides/zillow-rental-comps-estimate-rent): active asking rents, median, concessions, stale listings, multifamily by unit type.
 - [Cap rate and cash flow check on a Zillow listing](https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing): NOI, cap rate, cash flow, DSCR, cash-on-cash, worked example, common mistakes.
 - [How to see how many people saved a Zillow listing](https://usecaza.com/guides/how-to-see-zillow-saves): where favoriteCount lives, three ways to surface it, how to read it.
+- [How to spot a Zillow listing that will take a low offer](https://usecaza.com/guides/zillow-listings-that-take-low-offers): five stale-listing signals, when not to offer low, writing a below-asking offer backed by sales.
 - [What "days on market" means on Zillow](https://usecaza.com/guides/zillow-days-on-market-meaning): what resets the counter, reading the price history, negotiation.
 - [How agents use buyer demand data in a listing presentation](https://usecaza.com/guides/buyer-demand-data-listing-presentation)
 - [Renter guides](https://usecaza.com/blog#renters): the three guides below, plus the rental comps guide read from the renter's side.
