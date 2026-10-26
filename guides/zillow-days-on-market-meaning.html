@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css?v=20261023c">
+<link rel="stylesheet" href="/site.css?v=20261026a">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -36,7 +36,7 @@
    "headline": "What does “days on market” actually mean on Zillow?",
    "description": "“Days on Zillow” counts time on Zillow, not time for sale. What resets the clock, how to find the real number in the price history, and how to use it when you negotiate.",
    "datePublished": "2026-05-04",
-   "dateModified": "2026-10-23",
+   "dateModified": "2026-10-26",
    "wordCount": 525,
    "image": "https://usecaza.com/og-image.png",
    "inLanguage": "en-US",
@@ -118,7 +118,7 @@
     <article class="post post-page">
       <div class="post-meta"><span class="tag">Buyer guide</span><span>4 min read</span><span>Updated October 2026</span></div>
 
-<p><strong>Short answer:</strong> &ldquo;Days on Zillow&rdquo; is how many days the current listing has been active on Zillow. It resets when a home is re-listed, so the real time on market is often longer. The price history on the listing page shows the true timeline.</p>
+<p><strong>Short answer:</strong> &ldquo;Days on Zillow&rdquo; is how many days the current listing has been active on Zillow. Depending on the listing source and how the home was relisted, it can reset, so time on market can be longer than the counter shows. The price history on the listing page lets you rebuild the current selling attempt.</p>
 
 <p>The number labeled &ldquo;Days on Zillow&rdquo; is the most misread metric on the site. Buyers think it tells them how long the home has been for sale. It does, with caveats that change the whole interpretation.</p>
 
@@ -126,12 +126,12 @@
 
 <p>Zillow&rsquo;s &ldquo;Days on Zillow&rdquo; (often shortened to DOM, for days on market) counts the days the listing has been active on Zillow specifically. This is not the same as how long the home has been for sale.</p>
 
-<p>Listings reach Zillow through MLS feeds. If an agent lists on the MLS today, it shows up on Zillow within hours and the clock starts. If the same home was for sale six months ago, taken off the market, and re-listed yesterday, the counter resets. To you, &ldquo;Days on Zillow: 1&rdquo; reads as a fresh listing. In reality, it could be a stale home with a new MLS entry.</p>
+<p>Listings reach Zillow through MLS feeds. If an agent lists on the MLS today, it shows up on Zillow within hours and the clock starts. If the same home was for sale months ago, taken off the market for a while, and re-listed yesterday under a new listing, the counter can start over. The rules depend on the listing source: for MLS-fed listings it generally follows the MLS on-market date, and a quick relist by the same agent doesn&rsquo;t always reset it. To you, &ldquo;Days on Zillow: 1&rdquo; reads as a fresh listing. In reality, it could be a stale home with a new MLS entry.</p>
 
 <h2>What resets the counter</h2>
 
 <ul>
-  <li><strong>Re-listing.</strong> Pulling the home off the market and re-listing it, even at the same price, resets the clock. This is the most common reset.</li>
+  <li><strong>Re-listing.</strong> Pulling the home off the market and re-listing it can reset the clock, especially after a longer break or under a new listing number. It doesn&rsquo;t always: the rules vary by listing source and local MLS.</li>
   <li><strong>Switching listing agents.</strong> If the seller changes brokerages, the new MLS entry typically resets the counter on Zillow.</li>
   <li><strong>Status changes.</strong> Going from &ldquo;Pending&rdquo; back to &ldquo;Active&rdquo; when a deal falls through sometimes resets the visible DOM, sometimes doesn&rsquo;t.</li>
 </ul>
@@ -150,8 +150,8 @@
 
 <ol>
   <li>Check &ldquo;Days on Zillow&rdquo; for the surface number.</li>
-  <li>Open &ldquo;Price history&rdquo; and find the earliest listing date. Subtract it from today. That&rsquo;s the real DOM.</li>
-  <li>Combine that with the save count. A home with 90 real DOM and 8 saves is sitting. A home with 90 real DOM and 200 saves drew plenty of interest and still didn&rsquo;t sell, which usually points to price.</li>
+  <li>Open &ldquo;Price history&rdquo; and find when the current selling attempt began. Skip anything before the last sale, and note withdrawn or pending stretches. The time since that start is the best public estimate; your agent can confirm the official DOM and cumulative DOM in the MLS.</li>
+  <li>Combine that with the save count. A home 90 days into its current selling attempt with 8 saves is sitting. One at 90 days with 200 saves drew plenty of interest and still didn&rsquo;t sell, which often points to price or condition.</li>
 </ol>
 
 <h2>Do it faster with Caza</h2>

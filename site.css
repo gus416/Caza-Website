@@ -17,7 +17,7 @@ a{color:var(--rust);text-decoration:underline;text-decoration-thickness:1px;text
 a:hover{color:var(--rust-deep)}
 b,strong{font-weight:700}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.88em;background:var(--vellum);padding:1px 5px;border-radius:3px;overflow-wrap:anywhere}
-:focus-visible{outline:2px solid var(--orange);outline-offset:3px;border-radius:2px}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px;border-radius:2px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter)}
 .skip{position:absolute;left:var(--gutter);top:-100px;z-index:100;background:var(--ink);color:#fff;padding:10px 14px;border-radius:4px;text-decoration:none}
 .skip:focus{top:12px}
@@ -359,7 +359,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
 .aud a{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--rule);border-radius:999px;font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;background:#fff}
 .aud a:hover{border-color:var(--navy);color:var(--navy)}
 .aud a[aria-current="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-.aud a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.aud a:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
 .aud-sec{margin-top:48px;scroll-margin-top:24px}
 .aud-sec[hidden]{display:none}
 .aud-sec h2{font-size:28px;letter-spacing:-0.02em}
