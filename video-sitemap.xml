@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://usecaza.com/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d1-comps-poster.webp</video:thumbnail_loc>
+      <video:title>How to pull comps on Zillow in 42 seconds</video:title>
+      <video:description>Caza opens Zillow's Recently Sold search around a listing, stars the closest matches, shows median sold price and price per square foot, and prints a two-page comps report with the agent's name on it. Sample data. Not an appraisal.</video:description>
+      <video:content_loc>https://usecaza.com/video/d1-comps-16x9.mp4</video:content_loc>
+      <video:duration>42</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://usecaza.com/examples</loc>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d2-score-poster.webp</video:thumbnail_loc>
+      <video:title>Reading the Caza Demand Score on a Zillow listing</video:title>
+      <video:description>What the 0–100 Demand Score is built from (saves, views, days on market and a pace bonus), the hover breakdown, and sorting a Zillow search page by score. Sample data.</video:description>
+      <video:content_loc>https://usecaza.com/video/d2-score-16x9.mp4</video:content_loc>
+      <video:duration>35</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d1-comps-poster.webp</video:thumbnail_loc>
+      <video:title>How to pull comps on Zillow in 42 seconds</video:title>
+      <video:description>Caza opens Zillow's Recently Sold search around a listing, stars the closest matches, shows median sold price and price per square foot, and prints a two-page comps report with the agent's name on it. Sample data. Not an appraisal.</video:description>
+      <video:content_loc>https://usecaza.com/video/d1-comps-16x9.mp4</video:content_loc>
+      <video:duration>42</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d4-duplex-poster.webp</video:thumbnail_loc>
+      <video:title>Cap rate and cash flow on a Zillow duplex listing</video:title>
+      <video:description>Investor numbers on a 2-unit listing: taxes and insurance prefilled from state averages, rent per unit typed in, then down payment, rate and rent edited while cap rate, cash flow, DSCR and cash-on-cash update. Every input tagged. Sample data.</video:description>
+      <video:content_loc>https://usecaza.com/video/d4-duplex-16x9.mp4</video:content_loc>
+      <video:duration>38</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d5-renter-poster.webp</video:thumbnail_loc>
+      <video:title>Is this rent fair? Caza’s renter view on a Zillow rental</video:title>
+      <video:description>The all-in monthly cost of a rental (rent plus required fees, free weeks spread over the lease), and how the asking rent compares with similar 2-bed rentals nearby. Active asking rents only. Sample data.</video:description>
+      <video:content_loc>https://usecaza.com/video/d5-renter-16x9.mp4</video:content_loc>
+      <video:duration>36</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://usecaza.com/guides/how-to-pull-comps-on-zillow</loc>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d1-comps-poster.webp</video:thumbnail_loc>
+      <video:title>How to pull comps on Zillow in 42 seconds</video:title>
+      <video:description>Caza opens Zillow's Recently Sold search around a listing, stars the closest matches, shows median sold price and price per square foot, and prints a two-page comps report with the agent's name on it. Sample data. Not an appraisal.</video:description>
+      <video:content_loc>https://usecaza.com/video/d1-comps-16x9.mp4</video:content_loc>
+      <video:duration>42</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://usecaza.com/guides/zillow-rental-comps-estimate-rent</loc>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d3-rent-poster.webp</video:thumbnail_loc>
+      <video:title>How to estimate rent with rental comps on Zillow</video:title>
+      <video:description>Rental comps for a home for sale: similar 3-bed active rentals within half a mile, median asking rent and typical range, then one click sends that rent into the investor numbers. Asking rents, not signed leases. Sample data.</video:description>
+      <video:content_loc>https://usecaza.com/video/d3-rent-16x9.mp4</video:content_loc>
+      <video:duration>38</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing</loc>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d4-duplex-poster.webp</video:thumbnail_loc>
+      <video:title>Cap rate and cash flow on a Zillow duplex listing</video:title>
+      <video:description>Investor numbers on a 2-unit listing: taxes and insurance prefilled from state averages, rent per unit typed in, then down payment, rate and rent edited while cap rate, cash flow, DSCR and cash-on-cash update. Every input tagged. Sample data.</video:description>
+      <video:content_loc>https://usecaza.com/video/d4-duplex-16x9.mp4</video:content_loc>
+      <video:duration>38</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://usecaza.com/guides/how-to-see-zillow-saves</loc>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d2-score-poster.webp</video:thumbnail_loc>
+      <video:title>Reading the Caza Demand Score on a Zillow listing</video:title>
+      <video:description>What the 0–100 Demand Score is built from (saves, views, days on market and a pace bonus), the hover breakdown, and sorting a Zillow search page by score. Sample data.</video:description>
+      <video:content_loc>https://usecaza.com/video/d2-score-16x9.mp4</video:content_loc>
+      <video:duration>35</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://usecaza.com/guides/how-to-tell-if-rent-is-fair</loc>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d5-renter-poster.webp</video:thumbnail_loc>
+      <video:title>Is this rent fair? Caza’s renter view on a Zillow rental</video:title>
+      <video:description>The all-in monthly cost of a rental (rent plus required fees, free weeks spread over the lease), and how the asking rent compares with similar 2-bed rentals nearby. Active asking rents only. Sample data.</video:description>
+      <video:content_loc>https://usecaza.com/video/d5-renter-16x9.mp4</video:content_loc>
+      <video:duration>36</video:duration>
+      <video:publication_date>2026-10-23</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+</urlset>

@@ -62,3 +62,4 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://usecaza.com/sitemap.xml
+Sitemap: https://usecaza.com/video-sitemap.xml

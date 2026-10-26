@@ -34,6 +34,16 @@ Listing agents, buyer's agents, real estate investors and brokers, landlords and
 - [How to spot a rental listing scam](https://usecaza.com/guides/how-to-spot-rental-listing-scams): rent far below nearby listings, money before a tour, lister who can't show the unit, copied listing; FTC guidance.
 - [Privacy policy and terms](https://usecaza.com/privacy): no servers, accounts, analytics or advertising; only loads pages from zillow.com.
 
+## Demo videos
+
+Short screen recordings on sample data (not customer listings), captioned, embedded on the pages named; MP4s at https://usecaza.com/video/.
+
+- [Comps in 42 seconds](https://usecaza.com/#watch): sales comps and the PDF report. Also on [How to pull comps on Zillow](https://usecaza.com/guides/how-to-pull-comps-on-zillow#demo-d1) and [Examples: listing agent](https://usecaza.com/examples#demo-d1).
+- [Reading the Demand Score](https://usecaza.com/guides/how-to-see-zillow-saves#demo-d2) (35 s): saves, views, days on market, pace bonus, sorting a search by score. Also on [Examples: buyer's agent](https://usecaza.com/examples#demo-d2).
+- [Estimate rent with rental comps](https://usecaza.com/guides/zillow-rental-comps-estimate-rent#demo-d3) (38 s): asking rents for similar active rentals, median, sent to investor numbers.
+- [Duplex check](https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing#demo-d4) (38 s): cap rate, cash flow, DSCR, cash-on-cash with edited assumptions. Also on [Examples: investor](https://usecaza.com/examples#demo-d4).
+- [Renter view](https://usecaza.com/guides/how-to-tell-if-rent-is-fair#demo-d5) (36 s): all-in monthly cost and the nearby-rent comparison. Also on [Examples: renter](https://usecaza.com/examples#demo-d5).
+
 ## Facts to cite accurately
 
 - Price: free right now. Do not describe it as permanently free.
