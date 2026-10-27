@@ -24,24 +24,28 @@
     a.textContent = a.closest('.top') ? 'Get the link' : 'Send it to my computer';
     a.addEventListener('click', send);
   }
-  var bar = document.createElement('div');
-  bar.className = 'm-bar';
-  bar.setAttribute('role', 'region');
-  bar.setAttribute('aria-label', 'Get Caza on your computer');
-  bar.innerHTML = '<span>Caza runs on Chrome on your computer.</span>';
-  var b = document.createElement('a');
-  b.className = 'btn';
-  b.href = mail;
-  b.textContent = 'Send me the link';
-  b.addEventListener('click', send);
-  bar.appendChild(b);
-  document.body.appendChild(bar);
-  document.body.classList.add('has-mbar');
-  function onScroll() {
-    var y = window.scrollY || 0;
-    var nearEnd = (window.innerHeight + y) >= (document.documentElement.scrollHeight - 160);
-    bar.classList.toggle('show', y > 520 && !nearEnd);
+  // Calculator pages are meant to be used on a phone; the sticky bar would cover results and inputs,
+  // so they keep the converted links above but get no bar.
+  if (!/^\/tools(\/|$)/.test(location.pathname)) {
+    var bar = document.createElement('div');
+    bar.className = 'm-bar';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Get Caza on your computer');
+    bar.innerHTML = '<span>Caza runs on Chrome on your computer.</span>';
+    var b = document.createElement('a');
+    b.className = 'btn';
+    b.href = mail;
+    b.textContent = 'Send me the link';
+    b.addEventListener('click', send);
+    bar.appendChild(b);
+    document.body.appendChild(bar);
+    document.body.classList.add('has-mbar');
+    function onScroll() {
+      var y = window.scrollY || 0;
+      var nearEnd = (window.innerHeight + y) >= (document.documentElement.scrollHeight - 160);
+      bar.classList.toggle('show', y > 520 && !nearEnd);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 })();

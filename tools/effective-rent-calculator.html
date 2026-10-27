@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css?v=20261027b">
+<link rel="stylesheet" href="/site.css?v=20261027c">
 <style>
 .tool{max-width:760px;padding:48px 0 0}
 .tool-card{border:1px solid var(--rule);border-radius:12px;padding:24px;background:#fff}
@@ -132,9 +132,9 @@
         <div class="tool-grid">
 <div class="tool-f"><label for="rent">Advertised monthly rent</label><input id="rent" name="rent" type="text" inputmode="decimal" placeholder="$2,400" value="" autocomplete="off"></div>
 <div class="tool-f"><label for="months">Lease length (months)</label><input id="months" name="months" type="text" inputmode="decimal" placeholder="12" value="12" autocomplete="off"></div>
-<div class="tool-f"><label for="freeWeeks">Free weeks <span class="opt">(optional)</span></label><input id="freeWeeks" name="freeWeeks" type="text" inputmode="decimal" placeholder="6" value="" autocomplete="off"><span class="hint">Optional.</span></div>
-<div class="tool-f"><label for="freeMonths">Free months <span class="opt">(optional)</span></label><input id="freeMonths" name="freeMonths" type="text" inputmode="decimal" placeholder="1" value="" autocomplete="off"><span class="hint">Optional. Counted with free weeks.</span></div>
-<div class="tool-f tool-wide"><label for="concession">One-time concession ($) <span class="opt">(optional)</span></label><input id="concession" name="concession" type="text" inputmode="decimal" placeholder="$500" value="" autocomplete="off"><span class="hint">Gift card, credit or waived fee. Optional.</span></div>
+<div class="tool-f"><label for="freeWeeks">Free weeks <span class="opt">(optional)</span></label><input id="freeWeeks" name="freeWeeks" type="text" inputmode="decimal" placeholder="6" value="" autocomplete="off"><span class="hint">Enter weeks or months; both are added together.</span></div>
+<div class="tool-f"><label for="freeMonths">Free months <span class="opt">(optional)</span></label><input id="freeMonths" name="freeMonths" type="text" inputmode="decimal" placeholder="1" value="" autocomplete="off"><span class="hint">Enter weeks or months; both are added together.</span></div>
+<div class="tool-f tool-wide"><label for="concession">One-time concession <span class="opt">(optional)</span></label><input id="concession" name="concession" type="text" inputmode="decimal" placeholder="$500" value="" autocomplete="off"><span class="hint">Gift card, credit or waived fee.</span></div>
 <div class="tool-f"><label for="parking">Parking per month <span class="opt">(optional)</span></label><input id="parking" name="parking" type="text" inputmode="decimal" placeholder="$75" value="" autocomplete="off"></div>
 <div class="tool-f"><label for="pet">Pet rent per month <span class="opt">(optional)</span></label><input id="pet" name="pet" type="text" inputmode="decimal" placeholder="$35" value="" autocomplete="off"></div>
 <div class="tool-f"><label for="trash">Trash or valet per month <span class="opt">(optional)</span></label><input id="trash" name="trash" type="text" inputmode="decimal" placeholder="$25" value="" autocomplete="off"></div>
@@ -188,30 +188,44 @@
 (function (root) {
   function num(v) {
     if (v === null || v === undefined) return null;
-    var s = String(v).replace(/[$,%\s]/g, '');
+    var s = String(v).replace(/[$,%\s]/g, '').toLowerCase();
     if (s === '') return null;
+    var mult = 1;
+    if (/k$/.test(s)) { mult = 1e3; s = s.slice(0, -1); } else if (/m$/.test(s)) { mult = 1e6; s = s.slice(0, -1); }
     if (!/^\d*\.?\d+$|^\d+\.$/.test(s)) return NaN;
-    return parseFloat(s);
+    return Math.round(parseFloat(s) * mult * 1e6) / 1e6;
+  }
+  function fail(field, msg) { return { ok: false, field: field, error: msg }; }
+  function unread(field, label, raw, eg) {
+    return fail(field, 'Couldn\u2019t read the ' + label + ' (\u201c' + String(raw).trim().slice(0, 24) + '\u201d). Enter digits, for example ' + eg + '.');
   }
   function calc(inp) {
     var rent = num(inp.rent), months = num(inp.months), fw = num(inp.freeWeeks), fm = num(inp.freeMonths), conc = num(inp.concession);
-    var keys = ['parking', 'pet', 'trash', 'amenity', 'utilities'], fees = {}, feeTotal = 0, i;
-    if (rent === null || isNaN(rent) || rent <= 0) return { ok: false, error: 'Enter the advertised monthly rent above $0.' };
-    if (rent > 1e7) return { ok: false, error: 'Enter a monthly rent under $10 million.' };
+    var keys = ['parking', 'pet', 'trash', 'amenity', 'utilities'], names = { parking: 'parking fee', pet: 'pet rent', trash: 'trash or valet fee', amenity: 'amenity fee', utilities: 'utilities charge' };
+    var fees = {}, feeTotal = 0, i;
+    if (rent !== null && isNaN(rent)) return unread('rent', 'advertised rent', inp.rent, '2,400');
+    if (rent === null || rent <= 0) return fail('rent', 'Enter the advertised monthly rent, above $0.');
+    if (rent > 1e7) return fail('rent', 'Enter a monthly rent under $10 million.');
     if (months === null) months = 12;
-    if (isNaN(months) || months < 1 || months > 60) return { ok: false, error: 'Enter the lease length in months, from 1 to 60.' };
+    if (isNaN(months)) return unread('months', 'lease length', inp.months, '12');
+    if (months < 1 || months > 60) return fail('months', 'Enter the lease length in months, from 1 to 60.');
     if (fw === null) fw = 0; if (fm === null) fm = 0; if (conc === null) conc = 0;
-    if (isNaN(fw) || isNaN(fm) || fw < 0 || fm < 0) return { ok: false, error: 'Enter free weeks and free months as numbers, or leave them blank.' };
-    if (isNaN(conc) || conc < 0) return { ok: false, error: 'Enter the one-time concession as a dollar amount, or leave it blank.' };
+    if (isNaN(fw)) return unread('freeWeeks', 'free weeks', inp.freeWeeks, '6');
+    if (isNaN(fm)) return unread('freeMonths', 'free months', inp.freeMonths, '1');
+    if (fw < 0) return fail('freeWeeks', 'Free weeks can\u2019t be negative.');
+    if (fm < 0) return fail('freeMonths', 'Free months can\u2019t be negative.');
+    if (isNaN(conc)) return unread('concession', 'one-time concession', inp.concession, '500');
+    if (conc < 0) return fail('concession', 'The one-time concession can\u2019t be negative.');
     for (i = 0; i < keys.length; i++) {
       var v = num(inp[keys[i]]);
-      if (isNaN(v) || (v !== null && v < 0)) return { ok: false, error: 'Enter each monthly fee as a dollar amount, or leave it blank.' };
+      if (isNaN(v)) return unread(keys[i], names[keys[i]], inp[keys[i]], '75');
+      if (v !== null && v < 0) return fail(keys[i], 'The ' + names[keys[i]] + ' can\u2019t be negative.');
       fees[keys[i]] = v || 0; feeTotal += v || 0;
     }
     var freeMonths = fm + fw * 12 / 52;
-    if (freeMonths >= months) return { ok: false, error: 'The free time can\u2019t be as long as the lease.' };
-    var gross = rent * months, paid = rent * (months - freeMonths) - conc;
-    if (paid < 0) return { ok: false, error: 'The concession can\u2019t be larger than the rent you would pay.' };
+    if (freeMonths >= months) return fail(fw >= fm ? 'freeWeeks' : 'freeMonths', 'The free time can\u2019t be as long as the lease.');
+    var paid = rent * (months - freeMonths) - conc;
+    if (paid < 0) return fail('concession', 'The concession can\u2019t be larger than the rent you would pay.');
     var eff = paid / months, allIn = eff + feeTotal;
     return { ok: true, rent: rent, months: months, freeMonths: freeMonths, concession: conc, effective: eff, feeTotal: feeTotal,
       allIn: allIn, concessionPerMonth: rent - eff, yearlyDiff: (allIn - rent) * 12, leaseTotal: allIn * months, fees: fees };
@@ -228,10 +242,23 @@
   function val(id) { return document.getElementById(id).value; }
   function wire(readInputs, build) {
     var form = document.getElementById('toolform'), out = document.getElementById('out');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function clearInvalid() { [].forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) { el.removeAttribute('aria-invalid'); }); }
     function render(show) {
       var r = C.calc(readInputs());
-      if (!r.ok) { if (!show) { out.hidden = true; return; } out.hidden = false; out.innerHTML = '<p class="tool-err">' + esc(r.error) + '</p>'; return; }
+      clearInvalid();
+      if (!r.ok) {
+        if (!show) { out.hidden = true; return; }
+        out.hidden = false; out.innerHTML = '<p class="tool-err">' + esc(r.error) + '</p>';
+        var f = r.field && document.getElementById(r.field);
+        if (f) { f.setAttribute('aria-invalid', 'true'); f.focus(); }
+        return;
+      }
       out.hidden = false; out.innerHTML = build(r);
+      if (show) {
+        if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+        out.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
+      }
     }
     form.addEventListener('submit', function (e) { e.preventDefault(); render(true); });
     form.addEventListener('input', function () { render(false); });
@@ -240,18 +267,18 @@
       parking: val('parking'), pet: val('pet'), trash: val('trash'), amenity: val('amenity'), utilities: val('utilities') }; }, function (r) {
     var yd = Math.round(r.yearlyDiff);
     var h = '<p class="est">Estimate</p><dl class="tool-nums">' +
-      '<div><dt>Effective monthly rent</dt><dd>' + usd2(r.effective) + '</dd></div>' +
-      '<div><dt>All-in monthly cost</dt><dd>' + usd2(r.allIn) + '</dd></div>' +
-      '<div style="grid-column:1/-1"><dt>Versus the advertised ' + usd(r.rent) + ' a month</dt><dd>' +
+      '<div><dt>Effective monthly rent</dt><dd>' + usd(r.effective) + '</dd><p class="fine" style="margin-top:4px">After free rent and concessions, spread over the lease.</p></div>' +
+      '<div><dt>All-in monthly cost</dt><dd>' + usd(r.allIn) + '</dd></div>' +
+      '<div><dt>Versus the advertised ' + usd(r.rent) + ' a month</dt><dd>' +
       (yd === 0 ? 'No difference' : usd(Math.abs(yd)) + ' a year ' + (yd > 0 ? 'more' : 'less')) + '</dd></div></dl>';
     h += '<p><strong>The math:</strong> (' + usd(r.rent) + ' \u00d7 (' + r.months + ' months \u2212 ' + (Math.round(r.freeMonths * 100) / 100) + ' free months) \u2212 ' + usd(r.concession) +
       ' concession) \u00f7 ' + r.months + ' months = ' + usd2(r.effective) + ' effective rent. Then add ' + usd2(r.feeTotal) + ' a month in required fees.</p>';
-    h += '<p class="fine">Free weeks are counted as 12/52 of a month each. Deposits, application fees and one-time move-in fees are not included. Fees and concessions vary by building, so check them on the lease. This is an estimate.</p>';
+    h += '<p class="fine">Figures above are rounded to whole dollars. Free weeks are counted as 12/52 of a month each. Deposits, application fees and one-time move-in fees are not included. Fees and concessions vary by building, so check them on the lease. This is an estimate.</p>';
     return h;
   });
 })();
 </script>
-<script src="/m.js?v=20261026a" defer></script>
+<script src="/m.js?v=20261027c" defer></script>
 <script src="/ga.js?v=20261027b" defer></script>
 </body>
 </html>
