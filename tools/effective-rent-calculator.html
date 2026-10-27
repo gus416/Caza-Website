@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Effective rent calculator: what you really pay | Caza</title>
+<meta name="description" content="Turn free weeks, one-time concessions and required monthly fees into an effective rent and an all-in monthly cost. Enter the advertised rent to start.">
+<link rel="canonical" href="https://usecaza.com/tools/effective-rent-calculator">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/tools/effective-rent-calculator">
+<meta property="og:title" content="Effective rent calculator">
+<meta property="og:description" content="Turn free weeks, one-time concessions and required monthly fees into an effective rent and an all-in monthly cost. Enter the advertised rent to start.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Effective rent calculator">
+<meta name="twitter:description" content="Turn free weeks, one-time concessions and required monthly fees into an effective rent and an all-in monthly cost. Enter the advertised rent to start.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261026c">
+<style>
+.tool{max-width:760px;padding:48px 0 0}
+.tool-card{border:1px solid var(--rule);border-radius:12px;padding:24px;background:#fff}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.tool-f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tool-f label{font-weight:700;font-size:16px}
+.tool-f .opt{font-weight:500;color:var(--sub)}
+.tool-f input,.tool-f select{width:100%;min-height:48px;padding:10px 12px;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--lot);border-radius:7px}
+.tool-f input:focus-visible,.tool-f select:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.tool-f .hint{font-size:14px;color:var(--sub);line-height:1.4}
+.tool-wide{grid-column:1/-1}
+.tool-actions{margin-top:22px}
+.tool-actions .btn{min-height:48px;cursor:pointer;font-family:inherit}
+.tool-out{margin-top:24px;padding:22px;background:var(--vellum);border-radius:12px}
+.tool-out[hidden]{display:none}
+.tool-err{color:var(--rust-deep);font-weight:700;margin:0}
+.tool-nums{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin:0 0 18px}
+.tool-nums div{min-width:0}
+.tool-nums dt{font-size:14px;color:var(--sub);font-weight:600}
+.tool-nums dd{margin:2px 0 0;font-size:28px;font-weight:800;letter-spacing:-0.02em;overflow-wrap:anywhere}
+.tool-out p{margin:0 0 12px}
+.tool-out .fine{margin-top:6px}
+.tool-out .est{font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:.04em}
+@media (max-width:560px){.tool-grid,.tool-nums{grid-template-columns:1fr}.tool-card{padding:18px}.tool{padding-top:32px}.tool-nums dd{font-size:26px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://usecaza.com/tools/effective-rent-calculator#tool",
+   "url": "https://usecaza.com/tools/effective-rent-calculator",
+   "name": "Effective rent calculator",
+   "description": "Turn free weeks, one-time concessions and required monthly fees into an effective rent and an all-in monthly cost. Enter the advertised rent to start.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (web browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Tools",
+     "item": "https://usecaza.com/tools"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Effective rent calculator",
+     "item": "https://usecaza.com/tools/effective-rent-calculator"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-effective-rent-calculator">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/tools">Tools</a> · For renters</p>
+    <h1>Effective rent calculator</h1>
+    <p class="lede">See what an apartment really costs after free rent, concessions and required fees.</p>
+  </div></div>
+
+  <div class="wrap">
+    <div class="tool">
+      <form class="tool-card" id="toolform" novalidate autocomplete="off">
+        <div class="tool-grid">
+<div class="tool-f"><label for="rent">Advertised monthly rent</label><input id="rent" name="rent" type="text" inputmode="decimal" placeholder="$2,400" value="" autocomplete="off"></div>
+<div class="tool-f"><label for="months">Lease length (months)</label><input id="months" name="months" type="text" inputmode="decimal" placeholder="12" value="12" autocomplete="off"></div>
+<div class="tool-f"><label for="freeWeeks">Free weeks <span class="opt">(optional)</span></label><input id="freeWeeks" name="freeWeeks" type="text" inputmode="decimal" placeholder="6" value="" autocomplete="off"><span class="hint">Optional.</span></div>
+<div class="tool-f"><label for="freeMonths">Free months <span class="opt">(optional)</span></label><input id="freeMonths" name="freeMonths" type="text" inputmode="decimal" placeholder="1" value="" autocomplete="off"><span class="hint">Optional. Counted with free weeks.</span></div>
+<div class="tool-f tool-wide"><label for="concession">One-time concession ($) <span class="opt">(optional)</span></label><input id="concession" name="concession" type="text" inputmode="decimal" placeholder="$500" value="" autocomplete="off"><span class="hint">Gift card, credit or waived fee. Optional.</span></div>
+<div class="tool-f"><label for="parking">Parking per month <span class="opt">(optional)</span></label><input id="parking" name="parking" type="text" inputmode="decimal" placeholder="$75" value="" autocomplete="off"></div>
+<div class="tool-f"><label for="pet">Pet rent per month <span class="opt">(optional)</span></label><input id="pet" name="pet" type="text" inputmode="decimal" placeholder="$35" value="" autocomplete="off"></div>
+<div class="tool-f"><label for="trash">Trash or valet per month <span class="opt">(optional)</span></label><input id="trash" name="trash" type="text" inputmode="decimal" placeholder="$25" value="" autocomplete="off"></div>
+<div class="tool-f"><label for="amenity">Amenity fee per month <span class="opt">(optional)</span></label><input id="amenity" name="amenity" type="text" inputmode="decimal" placeholder="$50" value="" autocomplete="off"></div>
+<div class="tool-f"><label for="utilities">Required utilities per month <span class="opt">(optional)</span></label><input id="utilities" name="utilities" type="text" inputmode="decimal" placeholder="$120" value="" autocomplete="off"><span class="hint">Only charges the lease requires.</span></div>
+        </div>
+        <div class="tool-actions"><button class="btn" type="submit">Calculate</button></div>
+        <div class="tool-out" id="out" role="status" aria-live="polite" hidden></div>
+      </form>
+      <p class="fine">Estimates only. Based on the numbers you enter, not a lease. Confirm fees, free rent and concessions with the building. Nothing you enter leaves your browser.</p>
+    </div>
+
+    <article class="post post-page" style="padding-top:24px">
+      <h2>The advertised rent is not what you pay</h2>
+      <p>&ldquo;Six weeks free&rdquo; sounds like a discount on the rent, but it is spread over the lease. And required monthly fees for parking, pets, trash, amenities or utilities push the real cost back up. This calculator shows both effects in one number.</p>
+      <p>Effective rent is the rent you actually pay across the lease, divided by its months. Add required monthly fees and you get the all-in monthly cost. Compare that figure, not the advertised rent, between apartments.</p>
+      <h2>Is it a good price?</h2>
+      <p>Once you have the all-in number, check it against similar listings. The <a href="/guides/real-monthly-cost-of-an-apartment">real monthly cost guide</a> walks through a worked example, <a href="/guides/how-to-tell-if-rent-is-fair">Is this rent fair?</a> shows how to compare with nearby listings, and the <a href="/guides/zillow-rental-comps-estimate-rent">rental comps guide</a> explains active asking rents and why they are not signed leases.</p>
+      <div class="post-cta">
+        <p><strong>Caza adds rental comps from active asking rents to Zillow listings.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-effective-rent-calculator" class="btn">Try Caza free</a>
+      </div>
+      <p class="fine">Caza is independent and not affiliated with Zillow. These are estimates, not financial, tax or legal advice.</p>
+    </article>
+    <a class="back" href="/tools">Back to all tools</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script id="calc">
+(function (root) {
+  function num(v) {
+    if (v === null || v === undefined) return null;
+    var s = String(v).replace(/[$,%\s]/g, '');
+    if (s === '') return null;
+    if (!/^\d*\.?\d+$|^\d+\.$/.test(s)) return NaN;
+    return parseFloat(s);
+  }
+  function calc(inp) {
+    var rent = num(inp.rent), months = num(inp.months), fw = num(inp.freeWeeks), fm = num(inp.freeMonths), conc = num(inp.concession);
+    var keys = ['parking', 'pet', 'trash', 'amenity', 'utilities'], fees = {}, feeTotal = 0, i;
+    if (rent === null || isNaN(rent) || rent <= 0) return { ok: false, error: 'Enter the advertised monthly rent above $0.' };
+    if (rent > 1e7) return { ok: false, error: 'Enter a monthly rent under $10 million.' };
+    if (months === null) months = 12;
+    if (isNaN(months) || months < 1 || months > 60) return { ok: false, error: 'Enter the lease length in months, from 1 to 60.' };
+    if (fw === null) fw = 0; if (fm === null) fm = 0; if (conc === null) conc = 0;
+    if (isNaN(fw) || isNaN(fm) || fw < 0 || fm < 0) return { ok: false, error: 'Enter free weeks and free months as numbers, or leave them blank.' };
+    if (isNaN(conc) || conc < 0) return { ok: false, error: 'Enter the one-time concession as a dollar amount, or leave it blank.' };
+    for (i = 0; i < keys.length; i++) {
+      var v = num(inp[keys[i]]);
+      if (isNaN(v) || (v !== null && v < 0)) return { ok: false, error: 'Enter each monthly fee as a dollar amount, or leave it blank.' };
+      fees[keys[i]] = v || 0; feeTotal += v || 0;
+    }
+    var freeMonths = fm + fw * 12 / 52;
+    if (freeMonths >= months) return { ok: false, error: 'The free time can\u2019t be as long as the lease.' };
+    var gross = rent * months, paid = rent * (months - freeMonths) - conc;
+    if (paid < 0) return { ok: false, error: 'The concession can\u2019t be larger than the rent you would pay.' };
+    var eff = paid / months, allIn = eff + feeTotal;
+    return { ok: true, rent: rent, months: months, freeMonths: freeMonths, concession: conc, effective: eff, feeTotal: feeTotal,
+      allIn: allIn, concessionPerMonth: rent - eff, yearlyDiff: (allIn - rent) * 12, leaseTotal: allIn * months, fees: fees };
+  }
+  root.RentCalc = { calc: calc, num: num };
+})(typeof window !== 'undefined' ? window : globalThis);
+</script>
+<script>
+(function () {
+  var C = window.RentCalc;
+  function usd(n) { return (n < 0 ? '-' : '') + '$' + Math.round(Math.abs(n)).toLocaleString('en-US'); }
+  function usd2(n) { return (n < 0 ? '-' : '') + '$' + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function val(id) { return document.getElementById(id).value; }
+  function wire(readInputs, build) {
+    var form = document.getElementById('toolform'), out = document.getElementById('out');
+    function render(show) {
+      var r = C.calc(readInputs());
+      if (!r.ok) { if (!show) { out.hidden = true; return; } out.hidden = false; out.innerHTML = '<p class="tool-err">' + esc(r.error) + '</p>'; return; }
+      out.hidden = false; out.innerHTML = build(r);
+    }
+    form.addEventListener('submit', function (e) { e.preventDefault(); render(true); });
+    form.addEventListener('input', function () { render(false); });
+  }
+  wire(function () { return { rent: val('rent'), months: val('months'), freeWeeks: val('freeWeeks'), freeMonths: val('freeMonths'), concession: val('concession'),
+      parking: val('parking'), pet: val('pet'), trash: val('trash'), amenity: val('amenity'), utilities: val('utilities') }; }, function (r) {
+    var yd = Math.round(r.yearlyDiff);
+    var h = '<p class="est">Estimate</p><dl class="tool-nums">' +
+      '<div><dt>Effective monthly rent</dt><dd>' + usd2(r.effective) + '</dd></div>' +
+      '<div><dt>All-in monthly cost</dt><dd>' + usd2(r.allIn) + '</dd></div>' +
+      '<div style="grid-column:1/-1"><dt>Versus the advertised ' + usd(r.rent) + ' a month</dt><dd>' +
+      (yd === 0 ? 'No difference' : usd(Math.abs(yd)) + ' a year ' + (yd > 0 ? 'more' : 'less')) + '</dd></div></dl>';
+    h += '<p><strong>The math:</strong> (' + usd(r.rent) + ' \u00d7 (' + r.months + ' months \u2212 ' + (Math.round(r.freeMonths * 100) / 100) + ' free months) \u2212 ' + usd(r.concession) +
+      ' concession) \u00f7 ' + r.months + ' months = ' + usd2(r.effective) + ' effective rent. Then add ' + usd2(r.feeTotal) + ' a month in required fees.</p>';
+    h += '<p class="fine">Free weeks are counted as 12/52 of a month each. Deposits, application fees and one-time move-in fees are not included. Fees and concessions vary by building, so check them on the lease. This is an estimate.</p>';
+    return h;
+  });
+})();
+</script>
+<script src="/m.js?v=20261026a" defer></script>
+</body>
+</html>

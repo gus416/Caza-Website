@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate drop vs price cut calculator: which saves more? | Caza</title>
+<meta name="description" content="Find the price cut that equals a 0.5-point mortgage rate drop on your monthly payment. Enter price, down payment and rate to compare.">
+<link rel="canonical" href="https://usecaza.com/tools/rate-drop-vs-price-cut-calculator">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/tools/rate-drop-vs-price-cut-calculator">
+<meta property="og:title" content="Rate drop vs price cut calculator">
+<meta property="og:description" content="Find the price cut that equals a 0.5-point mortgage rate drop on your monthly payment. Enter price, down payment and rate to compare.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rate drop vs price cut calculator">
+<meta name="twitter:description" content="Find the price cut that equals a 0.5-point mortgage rate drop on your monthly payment. Enter price, down payment and rate to compare.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261026c">
+<style>
+.tool{max-width:760px;padding:48px 0 0}
+.tool-card{border:1px solid var(--rule);border-radius:12px;padding:24px;background:#fff}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.tool-f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tool-f label{font-weight:700;font-size:16px}
+.tool-f .opt{font-weight:500;color:var(--sub)}
+.tool-f input,.tool-f select{width:100%;min-height:48px;padding:10px 12px;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--lot);border-radius:7px}
+.tool-f input:focus-visible,.tool-f select:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.tool-f .hint{font-size:14px;color:var(--sub);line-height:1.4}
+.tool-wide{grid-column:1/-1}
+.tool-actions{margin-top:22px}
+.tool-actions .btn{min-height:48px;cursor:pointer;font-family:inherit}
+.tool-out{margin-top:24px;padding:22px;background:var(--vellum);border-radius:12px}
+.tool-out[hidden]{display:none}
+.tool-err{color:var(--rust-deep);font-weight:700;margin:0}
+.tool-nums{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin:0 0 18px}
+.tool-nums div{min-width:0}
+.tool-nums dt{font-size:14px;color:var(--sub);font-weight:600}
+.tool-nums dd{margin:2px 0 0;font-size:28px;font-weight:800;letter-spacing:-0.02em;overflow-wrap:anywhere}
+.tool-out p{margin:0 0 12px}
+.tool-out .fine{margin-top:6px}
+.tool-out .est{font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:.04em}
+@media (max-width:560px){.tool-grid,.tool-nums{grid-template-columns:1fr}.tool-card{padding:18px}.tool{padding-top:32px}.tool-nums dd{font-size:26px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://usecaza.com/tools/rate-drop-vs-price-cut-calculator#tool",
+   "url": "https://usecaza.com/tools/rate-drop-vs-price-cut-calculator",
+   "name": "Rate drop vs price cut calculator",
+   "description": "Find the price cut that equals a 0.5-point mortgage rate drop on your monthly payment. Enter price, down payment and rate to compare.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (web browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Tools",
+     "item": "https://usecaza.com/tools"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Rate drop vs price cut calculator",
+     "item": "https://usecaza.com/tools/rate-drop-vs-price-cut-calculator"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-rate-drop-vs-price-cut-calculator">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/tools">Tools</a> · For buyers</p>
+    <h1>Rate drop vs price cut</h1>
+    <p class="lede">Which lowers your payment more: a half-point lower rate or a price cut? Enter your numbers to compare.</p>
+  </div></div>
+
+  <div class="wrap">
+    <div class="tool">
+      <form class="tool-card" id="toolform" novalidate autocomplete="off">
+        <div class="tool-grid">
+<div class="tool-f"><label for="price">Home price</label><input id="price" name="price" type="text" inputmode="decimal" placeholder="$650,000" value="" autocomplete="off"></div>
+<div class="tool-f"><label for="dp">Down payment %</label><input id="dp" name="dp" type="text" inputmode="decimal" placeholder="20" value="20" autocomplete="off"></div>
+<div class="tool-f"><label for="rate">Current mortgage rate %</label><input id="rate" name="rate" type="text" inputmode="decimal" placeholder="6.75" value="" autocomplete="off"></div>
+<div class="tool-f"><label for="drop">Rate drop to compare (points)</label><input id="drop" name="drop" type="text" inputmode="decimal" placeholder="0.5" value="0.5" autocomplete="off"><span class="hint">Default is half a point. Try 0.25 or 1.</span></div>
+<div class="tool-f"><label for="term">Loan term</label><select id="term" name="term"><option value="30" selected>30 years</option><option value="15">15 years</option></select></div>
+<div class="tool-f"><label for="cut">Price cut to compare % <span class="opt">(optional)</span></label><input id="cut" name="cut" type="text" inputmode="decimal" placeholder="3" value="" autocomplete="off"><span class="hint">Optional. Shows the rate drop that would match it.</span></div>
+        </div>
+        <div class="tool-actions"><button class="btn" type="submit">Compare</button></div>
+        <div class="tool-out" id="out" role="status" aria-live="polite" hidden></div>
+      </form>
+      <p class="fine">Estimates only. Principal and interest on a fixed-rate loan; excludes tax, insurance, mortgage insurance and fees. Confirm numbers with your lender. Nothing you enter leaves your browser.</p>
+    </div>
+
+    <article class="post post-page" style="padding-top:24px">
+      <h2>A lower rate or a lower price?</h2>
+      <p>Both lower the monthly payment, but they work differently. A rate drop reduces the interest charged on the whole loan. A price cut reduces the loan itself. This calculator turns one into the other, so you can see what a half-point drop is worth in price, and what a 3% cut is worth in rate.</p>
+      <p>Payments come from the standard fixed-rate amortization formula. It covers principal and interest only, so property tax, insurance and mortgage insurance are left out, and your lender&rsquo;s quote will differ.</p>
+      <h2>Using it in an offer</h2>
+      <p>A seller who will not cut the price may still pay for a rate buydown, and the reverse is also true. Knowing the matching number helps you decide which to ask for. The <a href="/guides/zillow-price-cut-meaning">price-cut guide</a> explains what a cut says about a seller, the <a href="/guides/zillow-listings-that-take-low-offers">low-offers guide</a> covers how to write the offer, and the <a href="/guides/zillow-days-on-market-meaning">days-on-market guide</a> shows how long a listing has really been for sale.</p>
+      <div class="post-cta">
+        <p><strong>Caza shows days on market, price cuts and nearby sales on Zillow listings.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-rate-drop-vs-price-cut-calculator" class="btn">Try Caza free</a>
+      </div>
+      <p class="fine">Caza is independent and not affiliated with Zillow. These are estimates, not financial, tax or legal advice.</p>
+    </article>
+    <a class="back" href="/tools">Back to all tools</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script id="calc">
+(function (root) {
+  function num(v) {
+    if (v === null || v === undefined) return null;
+    var s = String(v).replace(/[$,%\s]/g, '');
+    if (s === '') return null;
+    if (!/^\d*\.?\d+$|^\d+\.$/.test(s)) return NaN;
+    return parseFloat(s);
+  }
+  function f(rPct, n) { var r = rPct / 1200; return r === 0 ? 1 / n : r / (1 - Math.pow(1 + r, -n)); }
+  function calc(inp) {
+    var price = num(inp.price), dp = num(inp.dp), rate = num(inp.rate), drop = num(inp.drop), cut = num(inp.cut);
+    var years = parseInt(inp.term, 10); if (years !== 15 && years !== 30) years = 30;
+    var n = years * 12;
+    if (price === null || isNaN(price) || price <= 0) return { ok: false, error: 'Enter a purchase price above $0.' };
+    if (price > 1e10) return { ok: false, error: 'Enter a purchase price under $10 billion.' };
+    if (dp === null) dp = 20;
+    if (isNaN(dp) || dp < 0 || dp > 99) return { ok: false, error: 'Enter the down payment as a percent from 0 to 99.' };
+    if (rate === null || isNaN(rate) || rate < 0 || rate > 25) return { ok: false, error: 'Enter your current mortgage rate as a percent, for example 6.75.' };
+    if (drop === null) drop = 0.5;
+    if (isNaN(drop) || drop < 0) return { ok: false, error: 'Enter the rate drop in percentage points, for example 0.5.' };
+    if (drop > rate) return { ok: false, error: 'The rate drop can\u2019t be larger than the current rate.' };
+    if (cut !== null && (isNaN(cut) || cut <= 0 || cut >= 100)) return { ok: false, error: 'Enter the price cut as a percent between 0 and 100, for example 3.' };
+    var loan = price * (1 - dp / 100);
+    var fCur = f(rate, n), fLow = f(rate - drop, n);
+    var payCur = loan * fCur, payLow = loan * fLow;
+    var cutPct = (1 - fLow / fCur) * 100;
+    var r = { ok: true, years: years, price: price, dp: dp, rate: rate, drop: drop, loan: loan, payCur: payCur, payLow: payLow,
+      saveMonthly: payCur - payLow, equivCutPct: cutPct, equivCutDollar: price * cutPct / 100,
+      interestDiff: (payCur - payLow) * n, cut: cut, rev: null };
+    if (cut !== null) {
+      var payCut = price * (1 - cut / 100) * (1 - dp / 100) * fCur;
+      var target = fCur * (1 - cut / 100), lo = 0, hi = rate, reach = true;
+      if (target < f(0, n)) { reach = false; }
+      else { for (var i = 0; i < 80; i++) { var mid = (lo + hi) / 2; if (f(mid, n) < target) lo = mid; else hi = mid; } }
+      r.rev = { cutDollar: price * cut / 100, payCut: payCut, saveMonthly: payCur - payCut,
+        reachable: reach, dropPts: reach ? rate - (lo + hi) / 2 : null };
+    }
+    return r;
+  }
+  root.RateCalc = { calc: calc, num: num, f: f };
+})(typeof window !== 'undefined' ? window : globalThis);
+</script>
+<script>
+(function () {
+  var C = window.RateCalc;
+  function usd(n) { return (n < 0 ? '-' : '') + '$' + Math.round(Math.abs(n)).toLocaleString('en-US'); }
+  function usd2(n) { return (n < 0 ? '-' : '') + '$' + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function val(id) { return document.getElementById(id).value; }
+  function wire(readInputs, build) {
+    var form = document.getElementById('toolform'), out = document.getElementById('out');
+    function render(show) {
+      var r = C.calc(readInputs());
+      if (!r.ok) { if (!show) { out.hidden = true; return; } out.hidden = false; out.innerHTML = '<p class="tool-err">' + esc(r.error) + '</p>'; return; }
+      out.hidden = false; out.innerHTML = build(r);
+    }
+    form.addEventListener('submit', function (e) { e.preventDefault(); render(true); });
+    form.addEventListener('input', function () { render(false); });
+  }
+  wire(function () { return { price: val('price'), dp: val('dp'), rate: val('rate'), drop: val('drop'), term: val('term'), cut: val('cut') }; }, function (r) {
+    var h = '<p class="est">Estimate</p><dl class="tool-nums">' +
+      '<div><dt>Payment at ' + r.rate.toFixed(2) + '%</dt><dd>' + usd(r.payCur) + '</dd></div>' +
+      '<div><dt>Payment at ' + (r.rate - r.drop).toFixed(2) + '%</dt><dd>' + usd(r.payLow) + '</dd></div>' +
+      '<div style="grid-column:1/-1"><dt>A ' + r.drop + '-point rate drop saves</dt><dd>' + usd(r.saveMonthly) + ' a month</dd>' +
+      '<p class="fine" style="margin-top:4px">About ' + usd(r.interestDiff) + ' less over the full ' + r.years + '-year term if you keep the loan that long.</p></div></dl>';
+    h += '<p><strong>The same payment from a price cut:</strong> a ' + r.equivCutPct.toFixed(2) + '% cut, about ' + usd(r.equivCutDollar) + ' off the ' + usd(r.price) + ' price, gives the same payment as the lower rate (estimate, same down payment percent).</p>';
+    if (r.rev) {
+      h += '<p><strong>A ' + r.cut + '% price cut</strong> (' + usd(r.rev.cutDollar) + ') lowers the payment by about ' + usd(r.rev.saveMonthly) + ' a month. ' +
+        (r.rev.reachable ? 'That equals a rate drop of about ' + r.rev.dropPts.toFixed(2) + ' points (estimate).' : 'That is more than a drop to a 0% rate would save.') + '</p>';
+    }
+    h += '<p class="fine">Principal and interest only. This excludes property tax, insurance, mortgage insurance and fees, and assumes a fixed-rate loan and a down payment that stays the same percent of the price. Lenders\u2019 numbers will differ.</p>';
+    return h;
+  });
+})();
+</script>
+<script src="/m.js?v=20261026a" defer></script>
+</body>
+</html>

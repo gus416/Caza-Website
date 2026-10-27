@@ -116,16 +116,5 @@
   to = "/blog"
   status = 301
 
-# Tools hub: /tools and /tools/ land on the guides index (Tools section)
-[[redirects]]
-  from = "/tools"
-  to = "/blog#tools"
-  status = 301
-
-[[redirects]]
-  from = "/tools/"
-  to = "/blog#tools"
-  status = 301
-
 # Old single-page blog anchors (/blog#how-to-see-zillow-saves etc.) are handled
 # client-side in blog.html, since fragments never reach the server.

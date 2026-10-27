@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comps price per square foot calculator: median and range | Caza</title>
+<meta name="description" content="Enter a home's square footage and three to six comparable sales to get each price per square foot, the median, and an implied value range.">
+<link rel="canonical" href="https://usecaza.com/tools/comps-price-per-square-foot">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/tools/comps-price-per-square-foot">
+<meta property="og:title" content="Comps price per square foot calculator">
+<meta property="og:description" content="Enter a home's square footage and three to six comparable sales to get each price per square foot, the median, and an implied value range.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comps price per square foot calculator">
+<meta name="twitter:description" content="Enter a home's square footage and three to six comparable sales to get each price per square foot, the median, and an implied value range.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261026c">
+<style>
+.tool{max-width:760px;padding:48px 0 0}
+.tool-card{border:1px solid var(--rule);border-radius:12px;padding:24px;background:#fff}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.tool-f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tool-f label{font-weight:700;font-size:16px}
+.tool-f .opt{font-weight:500;color:var(--sub)}
+.tool-f input,.tool-f select{width:100%;min-height:48px;padding:10px 12px;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--lot);border-radius:7px}
+.tool-f input:focus-visible,.tool-f select:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.tool-f .hint{font-size:14px;color:var(--sub);line-height:1.4}
+.tool-wide{grid-column:1/-1}
+.tool-actions{margin-top:22px}
+.tool-actions .btn{min-height:48px;cursor:pointer;font-family:inherit}
+.tool-out{margin-top:24px;padding:22px;background:var(--vellum);border-radius:12px}
+.tool-out[hidden]{display:none}
+.tool-err{color:var(--rust-deep);font-weight:700;margin:0}
+.tool-nums{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin:0 0 18px}
+.tool-nums div{min-width:0}
+.tool-nums dt{font-size:14px;color:var(--sub);font-weight:600}
+.tool-nums dd{margin:2px 0 0;font-size:28px;font-weight:800;letter-spacing:-0.02em;overflow-wrap:anywhere}
+.tool-out p{margin:0 0 12px}
+.tool-out .fine{margin-top:6px}
+.tool-out .est{font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:.04em}
+@media (max-width:560px){.tool-grid,.tool-nums{grid-template-columns:1fr}.tool-card{padding:18px}.tool{padding-top:32px}.tool-nums dd{font-size:26px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://usecaza.com/tools/comps-price-per-square-foot#tool",
+   "url": "https://usecaza.com/tools/comps-price-per-square-foot",
+   "name": "Comps price per square foot calculator",
+   "description": "Enter a home's square footage and three to six comparable sales to get each price per square foot, the median, and an implied value range.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (web browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Tools",
+     "item": "https://usecaza.com/tools"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Comps price per square foot calculator",
+     "item": "https://usecaza.com/tools/comps-price-per-square-foot"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-comps-price-per-square-foot">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/tools">Tools</a> · For agents and buyers</p>
+    <h1>Comps price per square foot</h1>
+    <p class="lede">Enter a home and three to six comparable sales to get the median price per square foot and a value range.</p>
+  </div></div>
+
+  <div class="wrap">
+    <div class="tool">
+      <form class="tool-card" id="toolform" novalidate autocomplete="off">
+        <div class="tool-grid">
+<div class="tool-f tool-wide"><label for="sqft">Subject home square feet</label><input id="sqft" name="sqft" type="text" inputmode="decimal" placeholder="1,900" value="" autocomplete="off"></div>
+<div class="tool-f"><label for="cp1">Comp 1 sale price</label><input id="cp1" name="cp1" type="text" inputmode="decimal" placeholder="$640,000" autocomplete="off"></div><div class="tool-f"><label for="cs1">Comp 1 square feet</label><input id="cs1" name="cs1" type="text" inputmode="decimal" placeholder="1,850" autocomplete="off"></div>
+<div class="tool-f"><label for="cp2">Comp 2 sale price</label><input id="cp2" name="cp2" type="text" inputmode="decimal" placeholder="$640,000" autocomplete="off"></div><div class="tool-f"><label for="cs2">Comp 2 square feet</label><input id="cs2" name="cs2" type="text" inputmode="decimal" placeholder="1,850" autocomplete="off"></div>
+<div class="tool-f"><label for="cp3">Comp 3 sale price</label><input id="cp3" name="cp3" type="text" inputmode="decimal" placeholder="$640,000" autocomplete="off"></div><div class="tool-f"><label for="cs3">Comp 3 square feet</label><input id="cs3" name="cs3" type="text" inputmode="decimal" placeholder="1,850" autocomplete="off"></div>
+<div class="tool-f"><label for="cp4">Comp 4 sale price <span class="opt">(optional)</span></label><input id="cp4" name="cp4" type="text" inputmode="decimal" placeholder="$640,000" autocomplete="off"></div><div class="tool-f"><label for="cs4">Comp 4 square feet <span class="opt">(optional)</span></label><input id="cs4" name="cs4" type="text" inputmode="decimal" placeholder="1,850" autocomplete="off"></div>
+<div class="tool-f"><label for="cp5">Comp 5 sale price <span class="opt">(optional)</span></label><input id="cp5" name="cp5" type="text" inputmode="decimal" placeholder="$640,000" autocomplete="off"></div><div class="tool-f"><label for="cs5">Comp 5 square feet <span class="opt">(optional)</span></label><input id="cs5" name="cs5" type="text" inputmode="decimal" placeholder="1,850" autocomplete="off"></div>
+<div class="tool-f"><label for="cp6">Comp 6 sale price <span class="opt">(optional)</span></label><input id="cp6" name="cp6" type="text" inputmode="decimal" placeholder="$640,000" autocomplete="off"></div><div class="tool-f"><label for="cs6">Comp 6 square feet <span class="opt">(optional)</span></label><input id="cs6" name="cs6" type="text" inputmode="decimal" placeholder="1,850" autocomplete="off"></div>
+        </div>
+        <div class="tool-actions"><button class="btn" type="submit">Calculate</button></div>
+        <div class="tool-out" id="out" role="status" aria-live="polite" hidden></div>
+      </form>
+      <p class="fine">Estimates only. Simple arithmetic on the numbers you enter; it is not an appraisal or a broker price opinion. Nothing you enter leaves your browser.</p>
+    </div>
+
+    <article class="post post-page" style="padding-top:24px">
+      <h2>Price per square foot, quickly</h2>
+      <p>Price per square foot puts sales of different sizes on one scale. Divide each comp&rsquo;s sale price by its square feet, take the median, and multiply by the subject home&rsquo;s square feet. The median is steadier than the average when one sale is unusual.</p>
+      <p>Use comps of the same property type, nearby and sold recently. This tool does the arithmetic only. It does not adjust for condition, lot, age or date, so a rough range is the right way to read it.</p>
+      <h2>Where to use it</h2>
+      <p>The <a href="/guides/how-to-pull-comps-on-zillow">pull-comps guide</a> shows how to find matching sales on Zillow. The <a href="/guides/zillow-listings-that-take-low-offers">low-offers guide</a> uses sales to back a below-asking offer, and the <a href="/guides/zillow-price-cut-meaning">price-cut guide</a> shows how to read a cut against them.</p>
+      <div class="post-cta">
+        <p><strong>Caza pulls nearby sales of the same property type and shows the median price per square foot on the listing.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-comps-price-per-square-foot" class="btn">Try Caza free</a>
+      </div>
+      <p class="fine">Caza is independent and not affiliated with Zillow. These are estimates, not financial, tax or legal advice.</p>
+    </article>
+    <a class="back" href="/tools">Back to all tools</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script id="calc">
+(function (root) {
+  function num(v) {
+    if (v === null || v === undefined) return null;
+    var s = String(v).replace(/[$,%\s]/g, '');
+    if (s === '') return null;
+    if (!/^\d*\.?\d+$|^\d+\.$/.test(s)) return NaN;
+    return parseFloat(s);
+  }
+  function median(a) { var s = a.slice().sort(function (x, y) { return x - y; }), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
+  function calc(inp) {
+    var sf = num(inp.sqft), rows = inp.comps || [], psf = [], list = [], i;
+    if (sf === null || isNaN(sf) || sf <= 0) return { ok: false, error: 'Enter the subject home\u2019s square footage above 0.' };
+    if (sf > 1e6) return { ok: false, error: 'Enter a square footage under 1,000,000.' };
+    for (i = 0; i < rows.length; i++) {
+      var p = num(rows[i].price), s = num(rows[i].sqft);
+      if (p === null && s === null) continue;
+      if (p === null || s === null || isNaN(p) || isNaN(s) || p <= 0 || s <= 0)
+        return { ok: false, error: 'Comp ' + (i + 1) + ': enter both a sale price and square feet above 0, or clear the row.' };
+      var v = p / s; psf.push(v); list.push({ n: i + 1, price: p, sqft: s, psf: v });
+    }
+    if (psf.length < 3) return { ok: false, error: 'Enter at least 3 comps, each with a sale price and square feet.' };
+    var sum = 0, lo = Infinity, hi = -Infinity;
+    for (i = 0; i < psf.length; i++) { sum += psf[i]; lo = Math.min(lo, psf[i]); hi = Math.max(hi, psf[i]); }
+    var med = median(psf), avg = sum / psf.length;
+    return { ok: true, sqft: sf, comps: list, count: psf.length, median: med, average: avg, low: lo, high: hi,
+      valueLow: lo * sf, valueMedian: med * sf, valueHigh: hi * sf };
+  }
+  root.CompsCalc = { calc: calc, num: num, median: median };
+})(typeof window !== 'undefined' ? window : globalThis);
+</script>
+<script>
+(function () {
+  var C = window.CompsCalc;
+  function usd(n) { return (n < 0 ? '-' : '') + '$' + Math.round(Math.abs(n)).toLocaleString('en-US'); }
+  function usd2(n) { return (n < 0 ? '-' : '') + '$' + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function val(id) { return document.getElementById(id).value; }
+  function wire(readInputs, build) {
+    var form = document.getElementById('toolform'), out = document.getElementById('out');
+    function render(show) {
+      var r = C.calc(readInputs());
+      if (!r.ok) { if (!show) { out.hidden = true; return; } out.hidden = false; out.innerHTML = '<p class="tool-err">' + esc(r.error) + '</p>'; return; }
+      out.hidden = false; out.innerHTML = build(r);
+    }
+    form.addEventListener('submit', function (e) { e.preventDefault(); render(true); });
+    form.addEventListener('input', function () { render(false); });
+  }
+  var ids = [1, 2, 3, 4, 5, 6];
+  wire(function () { return { sqft: val('sqft'), comps: ids.map(function (i) { return { price: val('cp' + i), sqft: val('cs' + i) }; }) }; }, function (r) {
+    var h = '<p class="est">Estimate</p><dl class="tool-nums">' +
+      '<div><dt>Median per square foot</dt><dd>' + usd2(r.median) + '</dd></div>' +
+      '<div><dt>Average per square foot</dt><dd>' + usd2(r.average) + '</dd></div>' +
+      '<div style="grid-column:1/-1"><dt>Implied value range for ' + r.sqft.toLocaleString('en-US') + ' sq ft (estimate)</dt><dd>' + usd(r.valueLow) + ' to ' + usd(r.valueHigh) + '</dd>' +
+      '<p class="fine" style="margin-top:4px">Middle (median) value: ' + usd(r.valueMedian) + '. Low and high use the lowest and highest comp.</p></div></dl>';
+    h += '<p><strong>Each comp:</strong></p><ul style="margin:0 0 12px 20px;padding:0">' + r.comps.map(function (c) {
+      return '<li>Comp ' + c.n + ': ' + usd(c.price) + ' for ' + c.sqft.toLocaleString('en-US') + ' sq ft = ' + usd2(c.psf) + ' per sq ft</li>'; }).join('') + '</ul>';
+    h += '<p class="fine">This does not adjust for condition, lot size, age, upgrades, location or sale date, so treat the range as a starting point. Confirm with an agent or appraiser.</p>';
+    return h;
+  });
+})();
+</script>
+<script src="/m.js?v=20261026a" defer></script>
+</body>
+</html>
