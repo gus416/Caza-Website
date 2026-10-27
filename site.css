@@ -356,9 +356,16 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
 .ex-shot-tall figcaption,.ex-shot-narrow figcaption{text-align:center}
 .ex-text{background:var(--vellum);border-radius:12px 12px 12px 4px;padding:18px 22px;margin:0 0 18px;max-width:52ch;font-size:16px}
 .ex-text p{margin:0}
-.examples-home{grid-template-columns:repeat(4,1fr)}
-@media (max-width:900px){.ex-nav,.examples-home{grid-template-columns:repeat(2,1fr)}}
+.examples-home{grid-template-columns:repeat(2,1fr)}
+@media (min-width:1100px){.examples-home{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:900px){.ex-nav{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.ex-nav,.examples-home{grid-template-columns:1fr}}
+.examples-home a{height:100%}
+/* Tools hub: cards and CTA share the full column; fine print wraps at a readable width */
+.tool-hub{padding:48px 0 64px}
+.tool-hub .fine,.tool .fine{max-width:70ch}
+.tool-hub .post-cta p{max-width:60ch}
+@media (max-width:560px){.tool-hub{padding:32px 0 48px}}
 
 /* Guides index: audience tabs and sections */
 .aud{display:flex;flex-wrap:wrap;gap:8px;margin-top:40px}
