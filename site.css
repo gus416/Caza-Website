@@ -417,6 +417,7 @@ body.has-mbar .foot{padding-bottom:84px}
   #how,
   section[aria-labelledby="source-h"]{display:none}
   #guides .guides-home a:nth-child(n+4){display:none}
+  #calculators .guides-home a:nth-child(n+3){display:none}
   .moment-stage{padding-bottom:20px}
   .band{padding:48px 0}
   section[aria-labelledby="rents-h"] .feature-shot.tall img{max-height:420px;object-fit:cover;object-position:top}
