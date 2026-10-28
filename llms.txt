@@ -1,6 +1,6 @@
 # Caza
 
-> Caza is a free Chrome extension that adds a 0–100 buyer Demand Score, nearby sales comps, rental comps (active asking rents), investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report to Zillow listings. The extension runs entirely in the browser: no account, no servers, no tracking. (This website, usecaza.com, uses Google Analytics.) Free right now. Independent; not affiliated with or endorsed by Zillow Group.
+> Caza is a free Chrome extension that adds a 0–100 buyer Demand Score, nearby sales comps, rental comps (active asking rents), investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report to Zillow listings. The extension runs in the browser: no account, no Caza servers, and no background upload of listing data. (This website, usecaza.com, uses Google Analytics.) Free right now. Independent; not affiliated with or endorsed by Zillow Group.
 
 Site: https://usecaza.com/ · Install: https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk · Contact: gus@usecaza.com
 
@@ -41,7 +41,7 @@ Listing agents, buyer's agents, real estate investors and brokers, landlords and
 - [Is this rent fair? Compare an apartment's rent with similar Zillow listings](https://usecaza.com/guides/how-to-tell-if-rent-is-fair): match beds, baths, size and building type, active asking rents, effective rent after concessions, median and count.
 - [The real monthly cost of an apartment](https://usecaza.com/guides/real-monthly-cost-of-an-apartment): required monthly fees, effective rent formula for "weeks free", worked example with sample numbers.
 - [How to spot a rental listing scam](https://usecaza.com/guides/how-to-spot-rental-listing-scams): rent far below nearby listings, money before a tour, lister who can't show the unit, copied listing; FTC guidance.
-- [Privacy policy and terms](https://usecaza.com/privacy): the extension has no servers, accounts, analytics or advertising and only loads pages from zillow.com; the website uses Google Analytics with Google Signals and ad personalization off.
+- [Privacy policy and terms](https://usecaza.com/privacy): the extension has no accounts, advertising or Caza servers and never uploads listing data in the background; click-only exceptions (Google Maps links, the usecaza.com/map page) and opt-in usage counts are listed; the website uses Google Analytics with Google Signals and ad personalization off.
 
 ## Demo videos
 
