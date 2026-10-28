@@ -120,7 +120,7 @@ body{overflow:hidden}
       }
       comps.sort(function (p, q) { return p.n - q.n || p.ord - q.ord; });
       if (!comps.length) return null;
-      return { t: d.t === 'rent' ? 'rent' : 'sale', s: { a: str(d.s.a, 200), y: d.s.y, x: d.s.x }, c: comps };
+      return { t: d.t === 'rent' ? 'rent' : 'sale', s: { a: str(d.s.a, 200), y: d.s.y, x: d.s.x, p: numOrNull(d.s.p), q: numOrNull(d.s.q), d: /^\d{4}-\d{2}-\d{2}$/.test(d.s.d || '') ? d.s.d : '', u: str(d.s.u, 400) }, c: comps };
     } catch (e) { return null; }
   }
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -134,10 +134,17 @@ body{overflow:hidden}
   document.title = (rent ? 'Rental comps map' : 'Sales comps map') + ' | Caza';
   document.getElementById('title').textContent = rent ? 'Rental comps' : 'Sales comps';
   document.getElementById('sub').textContent = data.c.length + ' comp' + (data.c.length === 1 ? '' : 's') + ' with a location';
-  var items = [{ n: 0, subject: true, a: data.s.a, y: data.s.y, x: data.s.x }].concat(data.c);
+  var items = [{ n: 0, subject: true, a: data.s.a, y: data.s.y, x: data.s.x, p: data.s.p, q: data.s.q, d: data.s.d, u: data.s.u }].concat(data.c);
   function priceText(it) { return it.p == null ? '' : (rent ? usd(it.p) + '/mo' : usd(it.p)); }
   function psfText(it) { return it.q == null ? '' : usd2(it.q) + (rent ? ' per sq ft/mo' : ' per sq ft'); }
   function metaText(it) { return [priceText(it), psfText(it), fmtDate(it.d)].filter(Boolean).join(' · '); }
+  function subjText(it) {
+    var parts = [];
+    if (it.p != null) parts.push(rent ? 'Asking ' + usd(it.p) + '/mo' : 'List ' + usd(it.p));
+    if (it.q != null) parts.push(psfText(it));
+    if (it.d) parts.push('Listed ' + fmtDate(it.d));
+    return parts.join(' · ');
+  }
   var map = new maplibregl.Map({ container: 'map', style: 'https://tiles.openfreemap.org/styles/liberty', center: [data.s.x, data.s.y], zoom: 13, maxZoom: 16, attributionControl: { compact: false } });
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
   var rowsEl = document.getElementById('rows'), rows = [], markers = [], active = -1;
@@ -152,9 +159,9 @@ body{overflow:hidden}
   function popupNode(it) {
     var box = el('div');
     box.appendChild(el('p', 'pp-addr', it.subject ? 'Subject: ' + (it.a || 'Subject property') : (it.n + '. ' + (it.a || 'Comp ' + it.n))));
-    if (!it.subject) { var m = metaText(it); if (m) box.appendChild(el('p', 'pp-line', m)); }
+    var m = it.subject ? subjText(it) : metaText(it); if (m) box.appendChild(el('p', 'pp-line', m));
     var links = el('p', 'pp-links');
-    if (!it.subject && it.u && it.u.indexOf('https://www.zillow.com/') === 0) {
+    if (it.u && it.u.indexOf('https://www.zillow.com/') === 0) {
       var z = el('a', '', 'View on Zillow'); z.href = it.u; z.target = '_blank'; z.rel = 'noopener noreferrer'; links.appendChild(z);
     }
     if (it.a) {
@@ -176,7 +183,7 @@ body{overflow:hidden}
     var badge = el('span', 'badge' + (it.subject ? ' s' : ''), it.subject ? 'S' : String(it.n)); badge.setAttribute('aria-hidden', 'true');
     var t = el('span', 'rtext');
     t.appendChild(el('span', 'raddr', (it.subject ? 'Subject: ' : '') + (it.a || (it.subject ? 'Subject property' : 'Comp ' + it.n))));
-    if (!it.subject) { var mt = metaText(it); if (mt) t.appendChild(el('span', 'rmeta', mt)); }
+    { var mt = it.subject ? subjText(it) : metaText(it); if (mt) t.appendChild(el('span', 'rmeta', mt)); }
     b.appendChild(badge); b.appendChild(t); li.appendChild(b); rowsEl.appendChild(li); rows.push(b);
     b.addEventListener('click', function () {
       setActive(i, false);
