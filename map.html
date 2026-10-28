@@ -104,6 +104,7 @@ body{overflow:hidden}
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
   function str(v, n) { return v == null ? '' : String(v).slice(0, n); }
   function numOrNull(v) { return typeof v === 'number' && isFinite(v) ? v : null; }
+  function ymd(v) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(typeof v === 'string' ? v : ''); return m && +m[2] >= 1 && +m[2] <= 12 && +m[3] >= 1 && +m[3] <= 31 ? v : ''; }
   function validPt(y, x) { return typeof y === 'number' && typeof x === 'number' && isFinite(y) && isFinite(x) && Math.abs(y) <= 90 && Math.abs(x) <= 180; }
   function decode(hash) {
     try {
@@ -116,11 +117,11 @@ body{overflow:hidden}
       var comps = [];
       for (var k = 0; k < d.c.length && comps.length < MAX; k++) {
         var c = d.c[k]; if (!c || !validPt(c.y, c.x)) continue;
-        comps.push({ n: (typeof c.n === 'number' && isFinite(c.n) && c.n >= 1 && Math.floor(c.n) === c.n) ? c.n : k + 1, ord: k, a: str(c.a, 200), y: c.y, x: c.x, p: numOrNull(c.p), q: numOrNull(c.q), d: /^\d{4}-\d{2}-\d{2}$/.test(c.d || '') ? c.d : '', u: str(c.u, 400) });
+        comps.push({ n: (typeof c.n === 'number' && isFinite(c.n) && c.n >= 1 && Math.floor(c.n) === c.n) ? c.n : k + 1, ord: k, a: str(c.a, 200), y: c.y, x: c.x, p: numOrNull(c.p), q: numOrNull(c.q), d: ymd(c.d), u: str(c.u, 400) });
       }
       comps.sort(function (p, q) { return p.n - q.n || p.ord - q.ord; });
       if (!comps.length) return null;
-      return { t: d.t === 'rent' ? 'rent' : 'sale', s: { a: str(d.s.a, 200), y: d.s.y, x: d.s.x, p: numOrNull(d.s.p), q: numOrNull(d.s.q), d: /^\d{4}-\d{2}-\d{2}$/.test(d.s.d || '') ? d.s.d : '', u: str(d.s.u, 400) }, c: comps };
+      return { t: d.t === 'rent' ? 'rent' : 'sale', s: { a: str(d.s.a, 200), y: d.s.y, x: d.s.x, p: numOrNull(d.s.p), q: numOrNull(d.s.q), d: ymd(d.s.d), u: str(d.s.u, 400) }, c: comps };
     } catch (e) { return null; }
   }
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
