@@ -126,14 +126,14 @@ body{overflow:hidden}
   var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   function fmtDate(d) { if (!d) return ''; var p = d.split('-'); var mi = parseInt(p[1], 10) - 1; return (MONTHS[mi] || '') + ' ' + parseInt(p[2], 10) + ', ' + p[0]; }
   function usd(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
-  function usd2(n) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function usd2(n) { var d = Number.isInteger(n) ? 0 : 2; return '$' + n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: 2 }); }
   var data = decode(location.hash);
   var emptyEl = document.getElementById('empty');
   if (!data) { emptyEl.classList.add('show'); document.getElementById('panel').style.display = 'none'; return; }
   var rent = data.t === 'rent';
   document.title = (rent ? 'Rental comps map' : 'Sales comps map') + ' | Caza';
   document.getElementById('title').textContent = rent ? 'Rental comps' : 'Sales comps';
-  document.getElementById('sub').textContent = data.c.length + ' comp' + (data.c.length === 1 ? '' : 's') + ' near the subject';
+  document.getElementById('sub').textContent = data.c.length + ' comp' + (data.c.length === 1 ? '' : 's') + ' with a location';
   var items = [{ n: 0, subject: true, a: data.s.a, y: data.s.y, x: data.s.x }].concat(data.c);
   function priceText(it) { return it.p == null ? '' : (rent ? usd(it.p) + '/mo' : usd(it.p)); }
   function psfText(it) { return it.q == null ? '' : usd2(it.q) + (rent ? ' per sq ft/mo' : ' per sq ft'); }
