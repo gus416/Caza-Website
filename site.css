@@ -455,3 +455,26 @@ section[aria-labelledby="rents-h"] .feature-shot.tall{margin-left:0}
 .tool-nums>div:first-child{grid-column:1/-1}
 .tool-nums>div:first-child dd{font-size:40px}
 @media (max-width:560px){.tool-nums>div:first-child dd{font-size:34px}}
+
+/* Mobile polish 2026-10-28 */
+.card-m{display:none}
+@media (max-width:640px){
+  .map{display:none}
+  .post-cta .btn,.doc .btn{white-space:normal;text-align:center;line-height:1.25;max-width:100%}
+  .card-shot{overflow:visible;margin:0;padding:0 0 8px}
+  .card-shot img{display:none}
+  .card-m{display:block;background:#fff;border:1px solid #cfd8e3;border-radius:10px;padding:14px;color:var(--ink);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+  .card-m-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .card-m-badge{background:#b91c1c;color:#fff;font-weight:700;font-size:15px;line-height:1;padding:8px 13px;border-radius:999px}
+  .card-m-brand{font-size:12px;font-weight:700;color:#475569}
+  .card-m-stats{display:grid;grid-template-columns:auto auto;justify-content:start;gap:2px 22px;margin:10px 0 0;font-size:14.5px;color:#334155}
+  .card-m-stats span{white-space:nowrap}
+  .card-m-chip{display:inline-block;margin-top:10px;background:#fff4e5;border:1px solid #f6c789;color:#9a3412;font-size:13px;font-weight:600;padding:4px 9px;border-radius:5px}
+  .card-m-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  .card-m-btns span{display:flex;align-items:center;justify-content:center;min-height:44px;padding:0 8px;border:1.5px solid #64748b;border-radius:7px;font-size:15px;font-weight:600;color:var(--ink);text-align:center;background:#fff}
+  .card-m-btns .b-primary{grid-column:1/-1;background:#c2410c;border-color:#c2410c;color:#fff}
+  .plat figcaption{padding-bottom:40px}
+  .proof{flex-direction:row;flex-wrap:wrap;gap:8px;font-size:14px;margin-top:20px}
+  .proof>span{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.06);white-space:nowrap}
+  .proof>span::before,.proof>span+span::before{content:"";width:6px;height:6px;margin:0;border-radius:50%;background:var(--orange)}
+}
