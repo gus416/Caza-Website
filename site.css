@@ -478,3 +478,9 @@ section[aria-labelledby="rents-h"] .feature-shot.tall{margin-left:0}
   .proof>span{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.06);white-space:nowrap}
   .proof>span::before,.proof>span+span::before{content:"";width:6px;height:6px;margin:0;border-radius:50%;background:var(--orange)}
 }
+@media (max-width:640px){
+  .post table{font-size:13px}
+  .post th,.post td{padding:8px 6px 8px 0}
+  .post th:last-child,.post td:last-child{white-space:normal}
+  .post thead th{font-size:11px;letter-spacing:0}
+}
