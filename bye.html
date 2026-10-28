@@ -105,7 +105,7 @@
         <h2>Thank you.</h2>
         <p>Your answer was sent. If you change your mind, Caza is still on the <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=bye">Chrome Web Store</a>, and the <a href="/tools">free calculators</a> work without it.</p>
       </div>
-      <p class="fine" style="margin-top:22px">This form is voluntary. It stores your answer with Netlify Forms and asks for no personal data. See the <a href="/privacy">privacy policy</a>.</p>
+      <p class="fine" style="margin-top:22px">This form is voluntary and asks for no personal data. Your answer, including anything you type in the box, is stored with Netlify Forms. See the <a href="/privacy">privacy policy</a>.</p>
     </div>
   </div>
 </main>
@@ -143,7 +143,7 @@
   f.addEventListener('submit', function () {
     try {
       var r = f.querySelector('input[name="reason"]:checked');
-      if (typeof window.gtag === 'function') window.gtag('event', 'uninstall_feedback', { reason: r ? r.value : 'none', page_path: location.pathname });
+      if (typeof window.gtag === 'function') window.gtag('event', 'uninstall_feedback', { reason: r ? r.value : 'none', transport_type: 'beacon' });
     } catch (e) {}
   });
 })();
