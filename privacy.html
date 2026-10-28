@@ -76,12 +76,12 @@
 <li><strong>Google Maps links.</strong> When you click a Google Maps link in Caza, your browser opens a Google Maps search for that property's address. Google then receives the address and handles it under its own privacy policy. Nothing is sent unless you click.</li>
 <li><strong>Show all properties on map.</strong> When you click it, Caza opens usecaza.com/map in a new tab with the comps in the part of the link after the # sign. Browsers do not send that part to our server. Map tiles load from tiles.openfreemap.org, which sees your IP address and the map area you view. The map page has no analytics.</li>
 <li><strong>Chrome Sync marker.</strong> Caza stores one small marker, <code>caza_gf</code>, in Chrome Sync so that existing users keep their free status on their other devices. It holds no listing or personal information. Chrome Sync is run by Google under your Chrome settings.</li>
-<li><strong>Welcome and uninstall pages.</strong> When Caza is installed it opens usecaza.com/start, and when it is uninstalled it opens usecaza.com/bye. These are pages on this website, covered by Website analytics below. The uninstall survey uses Netlify Forms.</li>
+<li><strong>Welcome and uninstall pages.</strong> When Caza is installed it opens usecaza.com/start once (nothing opens on updates), and when it is uninstalled Chrome opens usecaza.com/bye. The link carries only Caza's version number, never listings, IDs or anything about your use. These are pages on this website, covered by Website analytics below. The uninstall survey uses Netlify Forms.</li>
 <li><strong>Usage counts.</strong> Off unless you turn them on. See Opt-in usage counts below.</li>
 </ul>
 
 <h2>What Caza stores, and where</h2>
-<p>Everything in the tables below stays on your device, except the Chrome Sync marker described under Network requests. Reset or remove the extension to delete it.</p>
+<p>Everything in the tables below stays on your device, except the Chrome Sync marker described under Network requests and, only if you turned them on, the usage counts as they are sent. Links you click are covered under Network requests. Reset or remove the extension to delete it.</p>
 <h3><code>chrome.storage.local</code> (until you remove the extension)</h3>
 <div class="table-wrap">
 <table>
@@ -89,10 +89,16 @@
 <tbody>
 <tr><td><code>zdr_weights</code></td><td>Your score weight sliders</td></tr>
 <tr><td><code>zdr_btn_pos</code></td><td>Where you dragged the Sort Listings button</td></tr>
-<tr><td><code>caza_counts_on</code>, <code>caza_counts_gen</code></td><td>Whether you turned usage counts on, and a version number for that choice</td></tr>
-<tr><td><code>caza_counts_id</code>, <code>caza_counts_q</code>, <code>caza_counts_day</code>, <code>caza_counts_last</code>, <code>caza_counts_sess</code></td><td>Only if you turn on usage counts: the random ID that links them, the counts waiting to be sent, and day and session markers. The ID and queue are deleted when you turn counts off</td></tr>
-<tr><td><code>caza_installed_at</code></td><td>The time Caza first ran (a number)</td></tr>
-<tr><td><code>caza_grandfathered</code>, <code>caza_grandfathered_at</code></td><td>Whether this install predates 2.8.0, and when that was recorded</td></tr>
+<tr><td><code>caza_installed_at</code></td><td>The time Caza was installed (a number)</td></tr>
+<tr><td><code>caza_install_ver</code></td><td>The Caza version that was installed (for example 2.9.0)</td></tr>
+<tr><td><code>caza_entitlement</code>, <code>caza_entitlement_at</code>, <code>caza_entitlement_from</code></td><td>Whether this install is a free-for-life early user ("legacy"), when that was recorded, and the version it was updated from (or "sync" when restored from the Chrome Sync backup)</td></tr>
+<tr><td><code>caza_grandfathered</code>, <code>caza_grandfathered_at</code></td><td>Left over from 2.7.1&ndash;2.8.x (whether the install predated 2.8.0); no longer written or read</td></tr>
+<tr><td><code>caza_ent</code></td><td>Your current plan status as Caza works it out (early user / trial / allowance / paid / unknown, trial end date, whether limits are switched on). Limits are off in 2.9.0</td></tr>
+<tr><td><code>caza_meter</code>, <code>caza_meter_shadow</code></td><td>This month's allowance meter: the month, the listing numbers you opened comps for this month, a report count, and whether the "1 free listing left" note was shown. The shadow copy counts the same way for everyone while limits are off</td></tr>
+<tr><td><code>caza_ent_paid</code>, <code>caza_upgrade_at</code></td><td>Reserved for payments (whether a payment was confirmed, when you last clicked Upgrade). Not used while payments are off</td></tr>
+<tr><td><code>caza_counts_on</code>, <code>caza_counts_gen</code>, <code>caza_counts_asked</code></td><td>Whether usage counts are on, a change counter, and whether you answered the ask card</td></tr>
+<tr><td><code>caza_counts_id</code>, <code>caza_counts_q</code>, <code>caza_counts_day</code>, <code>caza_counts_last</code></td><td>Only while usage counts are on: the random ID, the counts not yet sent (at most 200), which once-a-day counts were already recorded today, and when counts were last sent. Deleted when you turn usage counts off</td></tr>
+<tr><td><code>caza_dev</code></td><td>Developer test settings; only read by an unpacked development build, never set in the store version</td></tr>
 <tr><td><code>caza_onboarded</code></td><td>Whether you have seen the first-run card</td></tr>
 <tr><td><code>caza_seen_whatsnew</code></td><td>The version whose "What's new" card you have seen (for example 2.8.0)</td></tr>
 <tr><td><code>caza_tips_seen</code></td><td>Which one-time tips you have seen or closed (tip names with true/false only); "Tips &amp; tour" in the popup clears it</td></tr>
@@ -113,6 +119,7 @@
 <h3><code>chrome.storage.sync</code> (Chrome Sync)</h3>
 <p><code>caza_gf</code>, one small marker that keeps existing users' free status across their devices. It holds no listing data and nothing you typed.</p>
 <h3><code>chrome.storage.session</code> (cleared when you close the browser)</h3>
+<p><code>caza_counts_sess</code> (only while usage counts are on) holds the current session number and when it was last used.</p>
 <p><code>caza_inv_session</code> holds the rent, taxes, insurance, HOA, income and rehab figures you typed for a listing, keyed by the listing number, for at most 40 listings, so they survive moving between the listing and its comps.</p>
 <h3>This tab's session storage on zillow.com</h3>
 <p><code>caza_cd_min</code>, a single flag that remembers whether you minimized the comps drawer.</p>
@@ -122,7 +129,7 @@
 <li><code>storage</code>: to keep the settings above in your browser, and the one Chrome Sync marker.</li>
 <li>Access to <code>https://www.zillow.com/*</code>: to show Caza on Zillow pages and make the zillow.com requests described above.</li>
 </ul>
-<p>Caza does not use the <code>tabs</code> permission and cannot read any other website. Its background service worker records the first-run flags above when Caza is installed or updated, opens the welcome and uninstall pages described above, lets Caza use session-only storage when the browser starts, and sends the optional usage counts only if you turned them on. It does not request listing data.</p>
+<p>Caza does not use the <code>tabs</code> permission and cannot read any other website. Its background service worker records the install and plan status above when Caza is installed or updated, opens the welcome and uninstall pages described above, lets Caza use session-only storage when the browser starts, and sends the optional usage counts only if you turned them on. It does not request listing data.</p>
 
 <h2 id="usage-counts">Opt-in usage counts (version 2.9 and later)</h2>
 <p>Usage counts are off unless you turn them on, in the Caza popup or on a one-time card shown on Zillow. When on, Caza sends feature counts (which features were used) with a random ID to Google Analytics. It does not send addresses, prices, listing IDs or page links, and the ID is not your name. Turn them off at any time and the random ID is deleted from your browser.</p>
