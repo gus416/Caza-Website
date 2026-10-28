@@ -52,7 +52,7 @@
 <div class="wrap"><article class="doc">
 
 <div class="summary">
-<p><strong>Summary.</strong> The Caza Chrome extension runs entirely in your browser. It has no servers, no accounts, no analytics and no advertising. Nothing you do in the extension is sent to Caza or to any third party. The only network requests the extension causes are ordinary page loads from Zillow, described below. This website, usecaza.com, is separate and uses Google Analytics; see Website analytics below.</p>
+<p><strong>Summary.</strong> The Caza Chrome extension runs entirely in your browser. It has no servers, no accounts and no advertising, and no analytics unless you turn on the opt-in usage counts (version 2.9 and later; see below). Nothing you do in the extension is sent to Caza or to any third party. The only network requests the extension causes are ordinary page loads from Zillow, described below. This website, usecaza.com, is separate and uses Google Analytics; see Website analytics below.</p>
 </div>
 
 <p class="fine">This page mostly describes the Caza Chrome extension. The website, usecaza.com, uses analytics, described under <a href="#website-analytics">Website analytics</a> below.</p>
@@ -110,8 +110,12 @@
 </ul>
 <p>Caza does not use the <code>tabs</code> permission and cannot read any other website. Its background service worker only records the local first-run flags above when Caza is installed or updated, and lets Caza use session-only storage when the browser starts; it makes no network requests.</p>
 
+<h2 id="usage-counts">Opt-in usage counts (version 2.9 and later)</h2>
+<p>Usage counts are off unless you turn them on, in the Caza popup or on the one-time card. When on, Caza counts which features are used. It does not send addresses, listing IDs, prices or page links. The counts are linked by a random ID, not your name, and are sent to Google Analytics. Turn them off at any time and the random ID is deleted from your browser.</p>
+<p>If you uninstall, Caza opens a short, voluntary feedback page on this website. It asks for no personal data, and answers are stored with Netlify Forms.</p>
+
 <h2>Third parties</h2>
-<p>For the extension: none. The extension has no analytics, advertising, tracking or data sale. The "Rate Caza" button opens the Chrome Web Store review page only when you click it. Links in the rental comps drawer (the FTC's advice on rental listings, and official rent-cap sources for California, Santa Ana and Los Angeles) open those sites only when you click them.</p>
+<p>For the extension: none, apart from the opt-in usage counts above, which are off by default. The extension has no advertising, tracking or data sale. The "Rate Caza" button opens the Chrome Web Store review page only when you click it. Links in the rental comps drawer (the FTC's advice on rental listings, and official rent-cap sources for California, Santa Ana and Los Angeles) open those sites only when you click them.</p>
 <p><strong>Limited Use.</strong> Caza's use of information it reads from Zillow pages or that you type adheres to the <a href="https://developer.chrome.com/docs/webstore/program-policies/policies">Chrome Web Store User Data Policy</a>, including the Limited Use requirements. Caza uses this information only to provide its single purpose: showing buyer-demand scores, comps and investor numbers on Zillow. It does not transfer it to anyone, does not use or sell it for advertising, personalized or re-targeted ads, creditworthiness or lending, and no person at Caza can read it, because it never leaves your device.</p>
 
 <h2>Important disclaimers</h2>
