@@ -27,6 +27,7 @@ Listing agents, buyer's agents, real estate investors and brokers, landlords and
 - [Cap rate and cash flow check on a Zillow listing](https://usecaza.com/guides/cap-rate-cash-flow-zillow-listing): NOI, cap rate, cash flow, DSCR, cash-on-cash, worked example, common mistakes.
 - [How to see how many people saved a Zillow listing](https://usecaza.com/guides/how-to-see-zillow-saves): where favoriteCount lives, three ways to surface it, how to read it.
 - [How to spot a Zillow listing that will take a low offer](https://usecaza.com/guides/zillow-listings-that-take-low-offers): five stale-listing signals, when not to offer low, writing a below-asking offer backed by sales.
+- [How to tell if a Zillow listing is overpriced](https://usecaza.com/guides/is-this-listing-overpriced-zillow): matched sales, rebuilding the selling attempt from price history, cuts, saves, a rent check, worked example.
 - [What a price cut on a Zillow listing tells you](https://usecaza.com/guides/zillow-price-cut-meaning): size and timing of a cut, pairing it with saves, using it in an offer.
 - [How to estimate property tax and insurance on a Zillow listing](https://usecaza.com/guides/estimate-property-tax-insurance-zillow-listing): why the listed tax is the seller's bill, recomputing from your price, insurance estimate, plugging both into cash flow.
 - [What "days on market" means on Zillow](https://usecaza.com/guides/zillow-days-on-market-meaning): what resets the counter, reading the price history, negotiation.
