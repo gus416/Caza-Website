@@ -116,8 +116,9 @@ body{overflow:hidden}
       var comps = [];
       for (var k = 0; k < d.c.length && comps.length < MAX; k++) {
         var c = d.c[k]; if (!c || !validPt(c.y, c.x)) continue;
-        comps.push({ n: comps.length + 1, a: str(c.a, 200), y: c.y, x: c.x, p: numOrNull(c.p), q: numOrNull(c.q), d: /^\d{4}-\d{2}-\d{2}$/.test(c.d || '') ? c.d : '', u: str(c.u, 400) });
+        comps.push({ n: (typeof c.n === 'number' && isFinite(c.n) && c.n >= 1 && Math.floor(c.n) === c.n) ? c.n : k + 1, ord: k, a: str(c.a, 200), y: c.y, x: c.x, p: numOrNull(c.p), q: numOrNull(c.q), d: /^\d{4}-\d{2}-\d{2}$/.test(c.d || '') ? c.d : '', u: str(c.u, 400) });
       }
+      comps.sort(function (p, q) { return p.n - q.n || p.ord - q.ord; });
       if (!comps.length) return null;
       return { t: d.t === 'rent' ? 'rent' : 'sale', s: { a: str(d.s.a, 200), y: d.s.y, x: d.s.x }, c: comps };
     } catch (e) { return null; }
