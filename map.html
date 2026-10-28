@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comps map | Caza</title>
+<meta name="description" content="Every comp from Caza on one map, with each address, price, price per square foot and date. Opened from the Caza Chrome extension.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://usecaza.com/map">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261027c">
+<link rel="stylesheet" href="/vendor/maplibre-gl/5.24.0/maplibre-gl.css">
+<style>
+html,body{height:100%}
+body{overflow:hidden}
+.map-page{display:flex;flex-direction:column;height:100vh;height:100dvh}
+.map-bar{flex:none;height:52px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 var(--gutter)}
+.map-bar .logo{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:18px}
+.map-bar a.back-link{color:var(--on-navy);font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+.map-bar a.back-link:hover{color:#fff;text-decoration:underline}
+.map-app{flex:1;min-height:0;display:flex;position:relative}
+.panel{flex:none;width:340px;background:#fff;border-right:1px solid var(--rule);display:flex;flex-direction:column;min-height:0}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;border-bottom:1px solid var(--rule)}
+.panel-head h1{font-size:17px;letter-spacing:-0.01em;line-height:1.2}
+.panel-head .sub{font-size:13px;color:var(--sub);font-weight:500}
+.toggle{min-height:44px;min-width:44px;border:1px solid var(--rule);background:#fff;border-radius:8px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;color:var(--ink)}
+.rows{list-style:none;margin:0;padding:0;overflow-y:auto;flex:1}
+.row{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:0;border-bottom:1px solid var(--rule-soft);padding:12px 14px;font:inherit;color:var(--ink);cursor:pointer;min-height:56px}
+.row:hover{background:var(--vellum)}
+.row.active{background:var(--orange-tint);box-shadow:inset 3px 0 0 var(--orange)}
+.row:focus-visible{outline:2px solid var(--rust);outline-offset:-2px}
+.badge{flex:none;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:14px;display:inline-flex;align-items:center;justify-content:center}
+.badge.s{background:var(--orange);color:#fff}
+.rtext{min-width:0;display:flex;flex-direction:column;gap:2px}
+.raddr{font-weight:700;font-size:15px;line-height:1.3;overflow-wrap:anywhere}
+.rmeta{font-size:14px;color:var(--sub)}
+.map-wrap{flex:1;min-width:0;position:relative}
+#map{position:absolute;inset:0}
+.empty{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:24px;background:var(--vellum);z-index:5}
+.empty.show{display:flex}
+.empty div{max-width:420px;text-align:center}
+.empty h2{font-size:24px;margin-bottom:10px}
+.empty p{color:var(--sub)}
+.pin{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;border:2px solid #fff;box-shadow:0 2px 6px rgba(13,20,48,.45);font:700 14px/26px var(--f);text-align:center;cursor:pointer;padding:0}
+.pin.s{background:var(--orange);width:36px;height:36px;font-size:18px;line-height:32px}
+.pin.active{outline:3px solid var(--orange);outline-offset:2px}
+.maplibregl-popup-content{font-family:var(--f);padding:12px 14px;min-width:200px;max-width:260px}
+.pp-addr{font-weight:800;font-size:15px;margin:0 0 4px;overflow-wrap:anywhere;padding-right:14px}
+.pp-line{margin:0;font-size:14px;color:var(--sub)}
+.pp-links{margin:8px 0 0;display:flex;gap:12px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.show-panel{display:none}
+@media (min-width:761px){
+  .panel.collapsed{display:none}
+  .show-panel{position:absolute;left:10px;top:10px;z-index:4;display:none;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+  .show-panel.show{display:block}
+}
+@media (max-width:760px){
+  .map-app{flex-direction:column-reverse}
+  .panel{width:auto;border-right:0;border-top:1px solid var(--rule);height:42vh;height:42dvh}
+  .panel.collapsed{height:auto}
+  .panel.collapsed .rows{display:none}
+  .map-bar a.back-link{font-size:14px}
+}
+</style>
+</head>
+<body>
+<div class="map-page">
+  <header class="map-bar">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="28" height="28" alt="">Caza</a>
+    <a class="back-link" href="/">Back to usecaza.com</a>
+  </header>
+  <main class="map-app" id="main">
+    <aside class="panel" id="panel" aria-label="Comps list">
+      <div class="panel-head">
+        <div><h1 id="title">Comps map</h1><span class="sub" id="sub"></span></div>
+        <button class="toggle" id="toggle" type="button" aria-expanded="true" aria-controls="rows">Hide</button>
+      </div>
+      <ol class="rows" id="rows"></ol>
+    </aside>
+    <div class="map-wrap">
+      <div id="map" role="region" aria-label="Map of the subject and its comps"></div>
+      <button class="toggle show-panel" id="showpanel" type="button">List</button>
+      <div class="empty" id="empty" role="status">
+        <div>
+          <h2>No comps in this link.</h2>
+          <p>Open Sales comps in Caza and click &lsquo;See all on a map&rsquo;.</p>
+          <p style="margin-top:14px"><a href="/">Back to usecaza.com</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="/vendor/maplibre-gl/5.24.0/maplibre-gl.js"></script>
+<script>
+(function () {
+  'use strict';
+  var MAX = 25;
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+  function str(v, n) { return v == null ? '' : String(v).slice(0, n); }
+  function numOrNull(v) { return typeof v === 'number' && isFinite(v) ? v : null; }
+  function validPt(y, x) { return typeof y === 'number' && typeof x === 'number' && isFinite(y) && isFinite(x) && Math.abs(y) <= 90 && Math.abs(x) <= 180; }
+  function decode(hash) {
+    try {
+      var m = /^#?v1=([A-Za-z0-9_\-]+)/.exec(hash || ''); if (!m) return null;
+      var b = m[1].replace(/-/g, '+').replace(/_/g, '/'); while (b.length % 4) b += '=';
+      var bin = atob(b), bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      var d = JSON.parse(new TextDecoder('utf-8').decode(bytes));
+      if (!d || typeof d !== 'object' || !d.s || !validPt(d.s.y, d.s.x) || !Array.isArray(d.c)) return null;
+      var comps = [];
+      for (var k = 0; k < d.c.length && comps.length < MAX; k++) {
+        var c = d.c[k]; if (!c || !validPt(c.y, c.x)) continue;
+        comps.push({ n: comps.length + 1, a: str(c.a, 200), y: c.y, x: c.x, p: numOrNull(c.p), q: numOrNull(c.q), d: /^\d{4}-\d{2}-\d{2}$/.test(c.d || '') ? c.d : '', u: str(c.u, 400) });
+      }
+      if (!comps.length) return null;
+      return { t: d.t === 'rent' ? 'rent' : 'sale', s: { a: str(d.s.a, 200), y: d.s.y, x: d.s.x }, c: comps };
+    } catch (e) { return null; }
+  }
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function fmtDate(d) { if (!d) return ''; var p = d.split('-'); var mi = parseInt(p[1], 10) - 1; return (MONTHS[mi] || '') + ' ' + parseInt(p[2], 10) + ', ' + p[0]; }
+  function usd(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function usd2(n) { return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  var data = decode(location.hash);
+  var emptyEl = document.getElementById('empty');
+  if (!data) { emptyEl.classList.add('show'); document.getElementById('panel').style.display = 'none'; return; }
+  var rent = data.t === 'rent';
+  document.title = (rent ? 'Rental comps map' : 'Sales comps map') + ' | Caza';
+  document.getElementById('title').textContent = rent ? 'Rental comps' : 'Sales comps';
+  document.getElementById('sub').textContent = data.c.length + ' comp' + (data.c.length === 1 ? '' : 's') + ' near the subject';
+  var items = [{ n: 0, subject: true, a: data.s.a, y: data.s.y, x: data.s.x }].concat(data.c);
+  function priceText(it) { return it.p == null ? '' : (rent ? usd(it.p) + '/mo' : usd(it.p)); }
+  function psfText(it) { return it.q == null ? '' : usd2(it.q) + (rent ? ' per sq ft/mo' : ' per sq ft'); }
+  function metaText(it) { return [priceText(it), psfText(it), fmtDate(it.d)].filter(Boolean).join(' · '); }
+  var map = new maplibregl.Map({ container: 'map', style: 'https://tiles.openfreemap.org/styles/liberty', center: [data.s.x, data.s.y], zoom: 13, maxZoom: 16, attributionControl: { compact: false } });
+  map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+  var rowsEl = document.getElementById('rows'), rows = [], markers = [], active = -1;
+  function setActive(i, scroll) {
+    if (active > -1) { rows[active].classList.remove('active'); markers[active].getElement().classList.remove('active'); }
+    active = i;
+    if (i > -1) {
+      rows[i].classList.add('active'); markers[i].getElement().classList.add('active');
+      if (scroll) rows[i].scrollIntoView({ block: 'nearest' });
+    }
+  }
+  function popupNode(it) {
+    var box = el('div');
+    box.appendChild(el('p', 'pp-addr', it.subject ? 'Subject: ' + (it.a || 'Subject property') : (it.n + '. ' + (it.a || 'Comp ' + it.n))));
+    if (!it.subject) { var m = metaText(it); if (m) box.appendChild(el('p', 'pp-line', m)); }
+    var links = el('p', 'pp-links');
+    if (!it.subject && it.u && it.u.indexOf('https://www.zillow.com/') === 0) {
+      var z = el('a', '', 'View on Zillow'); z.href = it.u; z.target = '_blank'; z.rel = 'noopener noreferrer'; links.appendChild(z);
+    }
+    if (it.a) {
+      var g = el('a', '', 'Google Maps'); g.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(it.a); g.target = '_blank'; g.rel = 'noopener noreferrer'; links.appendChild(g);
+    }
+    if (links.childNodes.length) box.appendChild(links);
+    return box;
+  }
+  var bounds = new maplibregl.LngLatBounds();
+  items.forEach(function (it, i) {
+    var pin = el('button', 'pin' + (it.subject ? ' s' : ''), it.subject ? '★' : String(it.n));
+    pin.type = 'button'; pin.setAttribute('aria-label', it.subject ? 'Subject property' : 'Comp ' + it.n);
+    var popup = new maplibregl.Popup({ offset: 20, closeButton: true, maxWidth: '280px' }).setDOMContent(popupNode(it));
+    var mk = new maplibregl.Marker({ element: pin }).setLngLat([it.x, it.y]).setPopup(popup).addTo(map);
+    pin.addEventListener('click', function () { setActive(i, true); });
+    popup.on('close', function () { if (active === i) setActive(-1); });
+    markers.push(mk); bounds.extend([it.x, it.y]);
+    var li = el('li'); var b = el('button', 'row'); b.type = 'button';
+    var badge = el('span', 'badge' + (it.subject ? ' s' : ''), it.subject ? 'S' : String(it.n)); badge.setAttribute('aria-hidden', 'true');
+    var t = el('span', 'rtext');
+    t.appendChild(el('span', 'raddr', (it.subject ? 'Subject: ' : '') + (it.a || (it.subject ? 'Subject property' : 'Comp ' + it.n))));
+    if (!it.subject) { var mt = metaText(it); if (mt) t.appendChild(el('span', 'rmeta', mt)); }
+    b.appendChild(badge); b.appendChild(t); li.appendChild(b); rowsEl.appendChild(li); rows.push(b);
+    b.addEventListener('click', function () {
+      setActive(i, false);
+      map.flyTo({ center: [it.x, it.y], zoom: Math.max(Math.min(map.getZoom(), 16), 15) });
+      if (!popup.isOpen()) mk.togglePopup();
+      if (window.matchMedia && window.matchMedia('(max-width: 760px)').matches) { /* keep the list visible on phones */ }
+    });
+  });
+  function fit() {
+    if (items.length === 1) { map.jumpTo({ center: [data.s.x, data.s.y], zoom: 15 }); return; }
+    map.fitBounds(bounds, { padding: 60, maxZoom: 16, duration: 0 });
+  }
+  fit();
+  // Panel collapse (side list on desktop, bottom sheet on phones)
+  var panel = document.getElementById('panel'), tg = document.getElementById('toggle'), sp = document.getElementById('showpanel');
+  function setCollapsed(c) {
+    panel.classList.toggle('collapsed', c); tg.setAttribute('aria-expanded', c ? 'false' : 'true'); tg.textContent = c ? 'Show' : 'Hide';
+    sp.classList.toggle('show', c);
+    setTimeout(function () { map.resize(); }, 50);
+  }
+  tg.addEventListener('click', function () { setCollapsed(!panel.classList.contains('collapsed')); });
+  sp.addEventListener('click', function () { setCollapsed(false); });
+  window.addEventListener('resize', function () { map.resize(); });
+  window.addEventListener('hashchange', function () { location.reload(); });
+})();
+</script>
+</body>
+</html>
