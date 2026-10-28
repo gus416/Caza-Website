@@ -471,8 +471,8 @@ section[aria-labelledby="rents-h"] .feature-shot.tall{margin-left:0}
   .card-m-stats span{white-space:nowrap}
   .card-m-chip{display:inline-block;margin-top:10px;background:#fff4e5;border:1px solid #f6c789;color:#9a3412;font-size:13px;font-weight:600;padding:4px 9px;border-radius:5px}
   .card-m-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-  .card-m-btns span{display:flex;align-items:center;justify-content:center;min-height:44px;padding:0 8px;border:1.5px solid #64748b;border-radius:7px;font-size:15px;font-weight:600;color:var(--ink);text-align:center;background:#fff}
-  .card-m-btns .b-primary{grid-column:1/-1;background:#c2410c;border-color:#c2410c;color:#fff}
+  .card-m-btns span{display:flex;align-items:center;justify-content:center;min-height:44px;padding:0 4px;border:1.5px solid #64748b;border-radius:7px;font-size:14px;letter-spacing:-.01em;font-weight:600;color:var(--ink);text-align:center;background:#fff}
+  .card-m-btns .b-primary{grid-column:1/-1;font-size:15px;background:#c2410c;border-color:#c2410c;color:#fff}
   .plat figcaption{padding-bottom:40px}
   .proof{flex-direction:row;flex-wrap:wrap;gap:8px;font-size:14px;margin-top:20px}
   .proof>span{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.06);white-space:nowrap}
