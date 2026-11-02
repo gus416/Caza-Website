@@ -131,7 +131,7 @@
         <div class="tool-grid">
 <div class="tool-f"><label for="saves">Saves</label><input id="saves" name="saves" type="text" inputmode="numeric" placeholder="148" value="" autocomplete="off"><span class="hint">Not shown on the listing? <a href="/guides/how-to-see-zillow-saves">How to find saves and views</a>.</span></div>
 <div class="tool-f"><label for="views">Views</label><input id="views" name="views" type="text" inputmode="numeric" placeholder="2,360" value="" autocomplete="off"><span class="hint">How many times the listing was viewed on Zillow.</span></div>
-<div class="tool-f tool-wide"><label for="dom">Days on Zillow</label><input id="dom" name="dom" type="text" inputmode="numeric" placeholder="6" value="" autocomplete="off"><span class="hint">Shown next to saves and views. It can restart when a home is relisted, so check the price history if it looks short.</span></div>
+<div class="tool-f tool-wide"><label for="dom">Days on Zillow</label><input id="dom" name="dom" type="text" inputmode="numeric" placeholder="6" value="" autocomplete="off"><span class="hint">Days since the listing went up on Zillow. It can restart when a home is relisted, so check the price history if it looks short.</span></div>
         </div>
         <div class="tool-actions"><button class="btn" type="submit">Get the score</button></div>
         <div class="tool-out" id="out" role="status" aria-live="polite" hidden></div>
@@ -245,7 +245,7 @@
   function val(id) { return document.getElementById(id).value; }
   var form = document.getElementById('toolform'), out = document.getElementById('out');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function row(label, raw, pts, wt) { return '<tr><td>' + label + (raw == null ? ' <span class="fine">(not entered)</span>' : ' (' + n(raw) + ')') + '</td><td class="n">' + (pts == null ? '\u2014' : pts + ' pts') + '</td><td class="n">' + (pts == null ? '\u2014' : pct(wt)) + '</td></tr>'; }
+  function row(label, raw, pts, wt) { return '<tr><td>' + label + (raw == null ? ' <span class="fine">(not entered)</span>' : ' (' + n(raw) + ')') + '</td><td class="n">' + (pts == null ? 'n/a' : pts + ' pts') + '</td><td class="n">' + (pts == null ? 'n/a' : pct(wt)) + '</td></tr>'; }
   function build(r) {
     var h = '<div class="ds-score"><span class="ds-num">' + r.score + '</span><span class="ds-chip ' + r.heat.cls + '">' + r.heat.label + '</span></div>';
     h += '<table class="ds-tbl"><caption>Breakdown</caption><thead><tr><th scope="col">Signal</th><th scope="col" class="n">Points</th><th scope="col" class="n">Weight</th></tr></thead><tbody>' +
