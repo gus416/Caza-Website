@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KB6RLF3R7B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IS','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','G-KB6RLF3R7B',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demand Score calculator for Zillow listings | Caza</title>
+<meta name="description" content="Turn a Zillow listing’s saves, views and days on market into a 0 to 100 buyer Demand Score with the full breakdown. Free, nothing to install.">
+<link rel="canonical" href="https://usecaza.com/tools/demand-score-calculator">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/tools/demand-score-calculator">
+<meta property="og:title" content="Zillow Demand Score calculator">
+<meta property="og:description" content="Turn a Zillow listing’s saves, views and days on market into a 0 to 100 buyer Demand Score with the full breakdown. Free, nothing to install.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zillow Demand Score calculator">
+<meta name="twitter:description" content="Turn a Zillow listing’s saves, views and days on market into a 0 to 100 buyer Demand Score with the full breakdown. Free, nothing to install.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261028c">
+<style>
+.tool{max-width:760px;padding:48px 0 0}
+.tool-card{border:1px solid var(--rule);border-radius:12px;padding:24px;background:#fff}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.tool-f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tool-f label{font-weight:700;font-size:16px}
+.tool-f .opt{font-weight:500;color:var(--sub)}
+.tool-f input,.tool-f select{width:100%;min-height:48px;padding:10px 12px;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--lot);border-radius:7px}
+.tool-f input:focus-visible,.tool-f select:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.tool-f .hint{font-size:14px;color:var(--sub);line-height:1.4}
+.tool-wide{grid-column:1/-1}
+.tool-actions{margin-top:22px}
+.tool-actions .btn{min-height:48px;cursor:pointer;font-family:inherit}
+.tool-out{margin-top:24px;padding:22px;background:var(--vellum);border-radius:12px}
+.tool-out[hidden]{display:none}
+.tool-err{color:var(--rust-deep);font-weight:700;margin:0}
+.tool-nums{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin:0 0 18px}
+.tool-nums div{min-width:0}
+.tool-nums dt{font-size:14px;color:var(--sub);font-weight:600}
+.tool-nums dd{margin:2px 0 0;font-size:28px;font-weight:800;letter-spacing:-0.02em;overflow-wrap:anywhere}
+.tool-out p{margin:0 0 12px}
+.tool-out .fine{margin-top:6px}
+.tool-out .est{font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:.04em}
+@media (max-width:560px){.tool-grid,.tool-nums{grid-template-columns:1fr}.tool-card{padding:18px}.tool{padding-top:32px}.tool-nums dd{font-size:26px}}
+.ds-score{display:flex;align-items:center;gap:14px;margin:0 0 16px}
+.ds-num{font-size:52px;font-weight:800;letter-spacing:-0.03em;line-height:1}
+.ds-chip{display:inline-block;border-radius:6px;padding:6px 10px;font-weight:800;font-size:15px;color:#fff}
+.ds-hot{background:#B91C1C}.ds-warm{background:#C2410C}.ds-avg{background:#A16207}.ds-cool{background:#1D4ED8}.ds-slow{background:#475569}
+.ds-tbl{width:100%;border-collapse:collapse;margin:0 0 14px;font-size:16px}
+.ds-tbl th,.ds-tbl td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--rule)}
+.ds-tbl td.n,.ds-tbl th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ds-tbl caption{text-align:left;font-weight:700;padding:0 0 6px}
+.cta-box{margin-top:20px;padding:18px;border:1px solid var(--rule);border-radius:10px;background:#fff}
+.cta-box p{margin:0 0 12px}
+.formula td,.formula th{font-size:16px}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://usecaza.com/tools/demand-score-calculator#tool",
+   "url": "https://usecaza.com/tools/demand-score-calculator",
+   "name": "Zillow Demand Score calculator",
+   "description": "Turn a Zillow listing's saves, views and days on market into a 0 to 100 buyer Demand Score with the full breakdown.",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Any (web browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+   "publisher": {"@id": "https://usecaza.com/#org"}
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usecaza.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usecaza.com/tools"},
+    {"@type": "ListItem", "position": 3, "name": "Demand Score calculator", "item": "https://usecaza.com/tools/demand-score-calculator"}
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {"@type": "Question", "name": "How is the Caza Demand Score calculated?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Saves, views and days on market are each turned into 0 to 100 points. Saves use a log curve that reaches 100 at 400 saves, views a log curve that reaches 100 at 5,000 views, and days on market fall from 100 at day 0 to 0 at day 90. The score is the weighted average (saves 40%, days on market 35%, views 25%) plus a pace bonus of up to 10 points either way, based on saves plus 5% of views per day on market."}},
+    {"@type": "Question", "name": "Does a high Demand Score mean a home is worth more or will sell above asking?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. The score describes buyer activity on Zillow for that listing. It is not a price opinion, an appraisal or a forecast. Use it as a reason to look closer, together with nearby sales."}}
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-demand-score-calculator">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/tools">Tools</a> · For agents and buyers</p>
+    <h1>Demand Score calculator</h1>
+    <p class="lede">Enter a Zillow listing&rsquo;s saves, views and days on market. Get a 0 to 100 score for buyer activity, with the math shown.</p>
+  </div></div>
+
+  <div class="wrap">
+    <div class="tool">
+      <form class="tool-card" id="toolform" data-tool="demand-score-calculator" novalidate autocomplete="off">
+        <div class="tool-grid">
+<div class="tool-f"><label for="saves">Saves</label><input id="saves" name="saves" type="text" inputmode="numeric" placeholder="148" value="" autocomplete="off"><span class="hint">Not shown on the listing? <a href="/guides/how-to-see-zillow-saves">How to find saves and views</a>.</span></div>
+<div class="tool-f"><label for="views">Views</label><input id="views" name="views" type="text" inputmode="numeric" placeholder="2,360" value="" autocomplete="off"><span class="hint">How many times the listing was viewed on Zillow.</span></div>
+<div class="tool-f tool-wide"><label for="dom">Days on Zillow</label><input id="dom" name="dom" type="text" inputmode="numeric" placeholder="6" value="" autocomplete="off"><span class="hint">Shown next to saves and views. It can restart when a home is relisted, so check the price history if it looks short.</span></div>
+        </div>
+        <div class="tool-actions"><button class="btn" type="submit">Get the score</button></div>
+        <div class="tool-out" id="out" role="status" aria-live="polite" hidden></div>
+      </form>
+      <p class="fine">Same formula as the Caza extension. It describes buyer activity on Zillow, not the home&rsquo;s price. Nothing you enter leaves your browser.</p>
+    </div>
+
+    <article class="post post-page" style="padding-top:24px">
+      <h2>How the score works</h2>
+      <p>Each of the three numbers becomes 0 to 100 points. The score is a weighted average of those points, plus a small bonus or penalty for pace.</p>
+      <table class="ds-tbl formula">
+        <caption>The Caza Demand Score formula</caption>
+        <thead><tr><th scope="col">Signal</th><th scope="col">How it becomes points</th><th scope="col">Weight</th></tr></thead>
+        <tbody>
+          <tr><td>Saves</td><td>Log curve: 100 points at 400 saves. Early saves count the most.</td><td class="n">40%</td></tr>
+          <tr><td>Days on market</td><td>100 points on day 0, falling evenly to 0 at day 90.</td><td class="n">35%</td></tr>
+          <tr><td>Views</td><td>Log curve: 100 points at 5,000 views.</td><td class="n">25%</td></tr>
+          <tr><td>Pace bonus</td><td>Saves plus 5% of views, per day on market. About 5 a day adds nothing; faster adds up to 10 points, slower takes off up to 10.</td><td class="n">&plusmn;10</td></tr>
+        </tbody>
+      </table>
+      <p>If one number is missing, the score uses the other two and spreads the weight between them. Labels: 80 and up is Hot, 60 to 79 Warm, 40 to 59 Average, 20 to 39 Cool, under 20 Slow.</p>
+      <h2>What it tells you, and what it doesn&rsquo;t</h2>
+      <p>Saves are closer to intent than views: a save is someone still thinking about the home later. Days on market is the clock on the current selling attempt. Read together, they show whether buyers are leaning in or passing. A high score is a reason to move quickly and check nearby sales. A low score after weeks on the market is a reason to ask why. It is not a price opinion or a forecast of what a seller will accept.</p>
+      <p>More on each signal: <a href="/guides/how-to-see-zillow-saves">what Zillow saves mean</a>, <a href="/guides/zillow-days-on-market-meaning">what days on market really means</a>, and <a href="/guides/is-this-listing-overpriced-zillow">how to tell if a listing is overpriced</a>.</p>
+      <div class="post-cta">
+        <p><strong>Get this score on every Zillow listing automatically.</strong> Caza puts it on each search card, sorts the page by it, and adds nearby sales and investor numbers. Chrome on a computer, free right now.</p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-demand-score-calculator" class="btn">Add Caza to Chrome</a>
+      </div>
+      <p class="fine">Caza is independent and not affiliated with Zillow. The score describes listing activity and is not an appraisal.</p>
+    </article>
+    <a class="back" href="/tools">Back to all tools</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/privacy">Privacy</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script id="calc">
+(function (root) {
+  function num(v) {
+    if (v === null || v === undefined) return null;
+    var s = String(v).replace(/[,\s]/g, '').toLowerCase();
+    if (s === '') return null;
+    var mult = 1;
+    if (/k$/.test(s)) { mult = 1e3; s = s.slice(0, -1); }
+    if (!/^\d*\.?\d+$/.test(s)) return NaN;
+    return Math.round(parseFloat(s) * mult);
+  }
+  // Same functions as the Caza extension (content.js normDays / normFav / normViews / velocityBonus / calcScore / getHeat).
+  var W = { saves: 0.40, views: 0.25, dom: 0.35 };
+  function normDays(d) { if (d == null) return null; return Math.max(0, Math.min(100, Math.round(100 - (d / 90) * 100))); }
+  function normFav(f) { if (f == null) return null; if (f <= 0) return 0; return Math.min(100, Math.round((Math.log1p(f) / Math.log1p(400)) * 100)); }
+  function normViews(v) { if (v == null) return null; if (v <= 0) return 0; return Math.min(100, Math.round((Math.log1p(v) / Math.log1p(5000)) * 100)); }
+  function pace(dom, fav, pvc) {
+    if (dom == null || (fav == null && pvc == null)) return 0;
+    var perDay = ((fav || 0) + (pvc || 0) * 0.05) / Math.max(1, dom);
+    return Math.max(-10, Math.min(10, Math.round(((perDay - 5) / 45) * 10)));
+  }
+  function heat(s) {
+    if (s >= 80) return { label: 'Hot', cls: 'ds-hot' };
+    if (s >= 60) return { label: 'Warm', cls: 'ds-warm' };
+    if (s >= 40) return { label: 'Average', cls: 'ds-avg' };
+    if (s >= 20) return { label: 'Cool', cls: 'ds-cool' };
+    return { label: 'Slow', cls: 'ds-slow' };
+  }
+  function fail(field, msg) { return { ok: false, field: field, error: msg }; }
+  function calc(inp) {
+    var fav = num(inp.saves), pvc = num(inp.views), dom = num(inp.dom);
+    if (isNaN(fav)) return fail('saves', 'Enter saves as a whole number, for example 148.');
+    if (isNaN(pvc)) return fail('views', 'Enter views as a whole number, for example 2,360.');
+    if (isNaN(dom)) return fail('dom', 'Enter days on Zillow as a whole number, for example 6.');
+    if (fav == null && pvc == null) return fail('saves', 'Enter the saves or the views (ideally both).');
+    if ((fav != null && fav < 0) || (pvc != null && pvc < 0) || (dom != null && dom < 0)) return fail(fav < 0 ? 'saves' : pvc < 0 ? 'views' : 'dom', 'Numbers can\u2019t be negative.');
+    if (dom != null && dom > 3650) return fail('dom', 'Enter days on market under 3,650. For a listing off the market for years, there is no current score.');
+    var d = normDays(dom), f = normFav(fav), v = normViews(pvc), w = 0, t = 0;
+    if (d != null) { w += d * W.dom; t += W.dom; }
+    if (f != null) { w += f * W.saves; t += W.saves; }
+    if (v != null) { w += v * W.views; t += W.views; }
+    var base = Math.round(w / t), bonus = pace(dom, fav, pvc);
+    var score = Math.max(0, Math.min(100, base + bonus));
+    return { ok: true, fav: fav, pvc: pvc, dom: dom, ptsSaves: f, ptsViews: v, ptsDom: d, wSaves: f == null ? 0 : W.saves / t, wViews: v == null ? 0 : W.views / t, wDom: d == null ? 0 : W.dom / t,
+      base: base, bonus: bonus, score: score, heat: heat(score), savesPerDay: (fav != null && dom != null) ? fav / Math.max(1, dom) : null };
+  }
+  root.DemandCalc = { calc: calc, num: num };
+})(typeof window !== 'undefined' ? window : globalThis);
+</script>
+<script>
+(function () {
+  var C = window.DemandCalc;
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function n(x) { return Number(x).toLocaleString('en-US'); }
+  function pct(x) { return Math.round(x * 100) + '%'; }
+  function val(id) { return document.getElementById(id).value; }
+  var form = document.getElementById('toolform'), out = document.getElementById('out');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function row(label, raw, pts, wt) { return '<tr><td>' + label + (raw == null ? ' <span class="fine">(not entered)</span>' : ' (' + n(raw) + ')') + '</td><td class="n">' + (pts == null ? '\u2014' : pts + ' pts') + '</td><td class="n">' + (pts == null ? '\u2014' : pct(wt)) + '</td></tr>'; }
+  function build(r) {
+    var h = '<div class="ds-score"><span class="ds-num">' + r.score + '</span><span class="ds-chip ' + r.heat.cls + '">' + r.heat.label + '</span></div>';
+    h += '<table class="ds-tbl"><caption>Breakdown</caption><thead><tr><th scope="col">Signal</th><th scope="col" class="n">Points</th><th scope="col" class="n">Weight</th></tr></thead><tbody>' +
+      row('Saves', r.fav, r.ptsSaves, r.wSaves) + row('Days on market', r.dom, r.ptsDom, r.wDom) + row('Views', r.pvc, r.ptsViews, r.wViews) +
+      '<tr><td>Weighted average</td><td class="n">' + r.base + '</td><td></td></tr>' +
+      '<tr><td>Pace bonus</td><td class="n">' + (r.bonus > 0 ? '+' : '') + r.bonus + '</td><td></td></tr></tbody></table>';
+    if (r.dom != null && r.dom < 7) h += '<p>New listing: under a week on the market, so the score moves quickly as saves come in.</p>';
+    else if (r.savesPerDay != null) h += '<p>Saves pace: ' + (Math.round(r.savesPerDay * 10) / 10).toFixed(1) + ' a day.</p>';
+    if (r.dom == null) h += '<p class="fine">Without days on market there is no time component and no pace bonus. Add it for the full score.</p>';
+    h += '<div class="cta-box"><p><strong>Get this on every listing automatically.</strong> Caza reads saves, views and days on market for you, scores every home on a Zillow search and sorts the page by it.</p><a class="btn" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-demand-score-calculator">Add Caza to Chrome</a></div>';
+    return h;
+  }
+  function clearInvalid() { [].forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) { el.removeAttribute('aria-invalid'); }); }
+  function render(show) {
+    var r = C.calc({ saves: val('saves'), views: val('views'), dom: val('dom') });
+    clearInvalid();
+    if (!r.ok) {
+      if (!show) { out.hidden = true; return; }
+      out.hidden = false; out.innerHTML = '<p class="tool-err">' + esc(r.error) + '</p>';
+      var f = r.field && document.getElementById(r.field); if (f) { f.setAttribute('aria-invalid', 'true'); f.focus(); }
+      return;
+    }
+    out.hidden = false; out.innerHTML = build(r);
+    if (show) { if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); out.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' }); }
+  }
+  form.addEventListener('submit', function (e) { e.preventDefault(); render(true); });
+  form.addEventListener('input', function () { render(false); });
+})();
+</script>
+<script src="/m.js?v=20261027c" defer></script>
+<script src="/ga.js?v=20261027b" defer></script>
+</body>
+</html>
