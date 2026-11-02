@@ -38,7 +38,7 @@
    "headline": "How Caza works on a real listing: four example walkthroughs",
    "description": "Four example scenarios with sample data: a buyer's agent, a listing agent, an investor and a renter each use Caza on a Zillow listing.",
    "datePublished": "2026-10-23",
-   "dateModified": "2026-10-23",
+   "dateModified": "2026-11-02",
    "image": "https://usecaza.com/og-image.png",
    "inLanguage": "en-US",
    "author": {
@@ -175,7 +175,7 @@
       <p>By hand this is the Sold filter, a drawn boundary, sorting a dozen results by type and size, and dividing eight sale prices by eight square footages: a laptop job, and not one most agents will do from the couch at 8 pm. In Caza it is two clicks, and the rest is reading.</p>
 
       <figure class="ex-shot ex-shot-tall">
-        <img src="/img/sales-comps.webp" width="800" height="1192" loading="lazy" alt="Caza's Sales comps drawer for the sample listing: 8 comps, median $592,000 and $363 per square foot, the subject pinned as row one, and the three starred best matches at the top.">
+        <img src="/img/sales-comps.webp?v=20261102" width="800" height="1467" loading="lazy" alt="Caza's Sales comps drawer for the sample listing: 8 comps, median $592,000 and $363 per square foot, the subject pinned as row one, and the three starred best matches at the top, a Map and Zillow link on every comp, and a Show all properties on map button.">
         <figcaption>The Sales comps drawer for the same sample listing.</figcaption>
       </figure>
     </article>
@@ -223,18 +223,57 @@
       <h3>What they click, and what they see</h3>
       <ol class="ex-steps">
         <li><strong>Open the listing and click Sales comps.</strong> The drawer reads Zillow&rsquo;s Recently Sold page around the home: 8 single-family sales within 0.5 mi, last 12 months, median $592,000 and $363 per square foot. Condos and townhomes never enter a single-family set.</li>
-        <li><strong>Check the stars.</strong> Caza scores each sale 0 to 100 on distance, months since sale, size, bed and bath difference and year built (price is never part of the score) and stars the top three: 137 Cedar Ave (93), 100 Elm St (90) and 174 Birch Ln (89).</li>
+        <li><strong>Open any comp.</strong> Each address links to its Zillow listing, and a Map link opens it in Google Maps. Show all properties on map opens the subject and every comp on one map, with price, $/sqft and sale date in a side list.</li>
+        <li><strong>Check the stars.</strong> Caza scores each sale 0 to 100 on distance, months since sale, size, bed and bath difference and year built (price is never part of the score) and stars the top three: 100 Elm St (91), 137 Cedar Ave (89) and 174 Birch Ln (87).</li>
         <li><strong>Keep and remove.</strong> The agent clicks the check mark on 137 Cedar Ave to pin it to the top, since it is the sale the seller will remember. A comp that doesn&rsquo;t fit gets the &times;; it moves to an Excluded list the report still mentions, so nothing disappears quietly. If the set looks thin, Widen to 1 mi or Older sales: 24 mo adds more.</li>
         <li><strong>Click Print / Save PDF.</strong> The agent types their name and &ldquo;Your Brokerage &middot; (555) 010-0123&rdquo; into the Prepared by fields once; Caza saves them on the device for every report after this.</li>
       </ol>
 
       <figure class="ex-shot">
-        <img src="/img/comps-report.webp" width="1200" height="1523" loading="lazy" alt="Page one of the sample Caza comparable sales report for 418 Maple Ave: prepared by Your Name, Your Brokerage, (555) 010-0123; median sold $592,000; median $363 per square foot; a strip chart placing the subject among 8 comps; a distance sketch; and a table of the comps with match scores.">
+        <img src="/img/comps-report.webp?v=20261102" width="1200" height="1419" loading="lazy" alt="Page one of the sample Caza comparable sales report for 418 Maple Ave: prepared by Your Name, Your Brokerage, (555) 010-0123; median sold $592,000; median $363 per square foot; a strip chart placing the subject among 8 comps; a distance sketch; and a Show all properties on map button, and a table of the comps with match scores and clickable addresses.">
         <figcaption>The report, page one. Sample data; the name and phone are placeholders.</figcaption>
       </figure>
 
+      <figure class="ex-shot">
+        <img src="/img/map-comps.webp?v=20261102" width="1400" height="875" loading="lazy" alt="Caza's comps map for the sample listing: the subject at 418 Maple Ave and 8 numbered comps, with price, price per square foot and sale date for each in a side list.">
+        <figcaption>Show all properties on map. Sample data shown; the report's button and each Map link open the same view.</figcaption>
+      </figure>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "VideoObject",
+ "name": "Comps on a map, and a PDF you can click",
+ "description": "Every comp in Caza's Sales comps drawer links to Google Maps and to its Zillow listing, Show all properties on map puts the subject and every comp on one map, and the addresses and map links in the PDF report are clickable. Sample data. Not an appraisal.",
+ "thumbnailUrl": [
+  "https://usecaza.com/video/d6-map-poster.webp"
+ ],
+ "uploadDate": "2026-11-02",
+ "duration": "PT34S",
+ "contentUrl": "https://usecaza.com/video/d6-map-16x9.mp4",
+ "inLanguage": "en",
+ "publisher": {
+  "@type": "Organization",
+  "name": "Caza",
+  "url": "https://usecaza.com/",
+  "logo": {
+   "@type": "ImageObject",
+   "url": "https://usecaza.com/apple-touch-icon.png"
+  }
+ }
+}
+</script>
+<figure class="demo" id="demo-d6">
+  <video controls preload="none" playsinline width="1920" height="1080" poster="/video/d6-map-poster.webp" aria-label="Comps on a map, and a PDF you can click">
+    <source src="/video/d6-map-16x9.mp4" type="video/mp4">
+    <track kind="captions" src="/video/d6-map.vtt" srclang="en" label="English" default>
+    Your browser can't play this video. <a href="/video/d6-map-16x9.mp4">Download the MP4</a>.
+  </video>
+  <figcaption><span class="sample">Sample data</span> Map and Zillow links on every comp, all the comps on one map, and the clickable PDF, 34 seconds.</figcaption>
+</figure>
+
       <h3>What the report says</h3>
-      <p>One US Letter page. The header has the address and the agent&rsquo;s details. A snapshot shows median sold $592,000, median $363 per square foot, and sales between June and October 2026. A strip chart puts the subject at $363 among the eight comps, with a line of text underneath: 5th lowest of 9, 4 comps lower and 4 higher, list price about equal to the comps&rsquo; median. A schematic shows where each comp sits by distance. Then the table, with the three best comps marked and a reason line under each. The footer lists the filters used, anything set aside, how the match score works, and &ldquo;Not an appraisal.&rdquo;</p>
+      <p>One US Letter page, with clickable addresses, a Map link on every comp and the Show all properties on map button. The header has the address and the agent&rsquo;s details. A snapshot shows median sold $592,000, median $363 per square foot, and sales between May and October 2026. A strip chart puts the subject at $363 among the eight comps, with a line of text underneath: 5th lowest of 9, 4 comps lower and 4 higher, list price about equal to the comps&rsquo; median. A schematic shows where each comp sits by distance. Then the table, with the three best comps marked and a reason line under each. The footer lists the filters used, anything set aside, how the match score works, and &ldquo;Not an appraisal.&rdquo;</p>
 
       <h3>What they do next</h3>
       <p>Before Thursday the agent opens the MLS and checks the eight sales against it, adding any closing Zillow hasn&rsquo;t caught up on. In the meeting, the report does the talking: here are the sales, here is where we sit among them, here is why these three are the closest matches. The seller sees the agent&rsquo;s name on it, not a portal&rsquo;s. Comps print the same way for rentals, so a landlord client gets the same one-pager with asking rents.</p>

@@ -55,6 +55,16 @@
       <video:family_friendly>yes</video:family_friendly>
       <video:live>no</video:live>
     </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://usecaza.com/video/d6-map-poster.webp</video:thumbnail_loc>
+      <video:title>Comps on a map, and a PDF you can click</video:title>
+      <video:description>Every comp in Caza's Sales comps drawer links to Google Maps and to its Zillow listing, Show all properties on map puts the subject and every comp on one map, and the addresses and map links in the PDF report are clickable. Sample data. Not an appraisal.</video:description>
+      <video:content_loc>https://usecaza.com/video/d6-map-16x9.mp4</video:content_loc>
+      <video:duration>34</video:duration>
+      <video:publication_date>2026-11-02</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
   </url>
   <url>
     <loc>https://usecaza.com/guides/how-to-pull-comps-on-zillow</loc>
