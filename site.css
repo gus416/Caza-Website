@@ -474,9 +474,10 @@ section[aria-labelledby="rents-h"] .feature-shot.tall{margin-left:0}
   .card-m-btns span{display:flex;align-items:center;justify-content:center;min-height:44px;padding:0 4px;border:1.5px solid #64748b;border-radius:7px;font-size:14px;letter-spacing:-.01em;font-weight:600;color:var(--ink);text-align:center;background:#fff}
   .card-m-btns .b-primary{grid-column:1/-1;font-size:15px;background:#c2410c;border-color:#c2410c;color:#fff}
   .plat figcaption{padding-bottom:40px}
-  .proof{flex-direction:row;flex-wrap:wrap;gap:8px;font-size:14px;margin-top:20px}
-  .proof>span{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.06);white-space:nowrap}
-  .proof>span::before,.proof>span+span::before{content:"";width:6px;height:6px;margin:0;border-radius:50%;background:var(--orange)}
+  .proof{flex-direction:row;flex-wrap:nowrap;justify-content:center;gap:0;font-size:14px;margin-top:16px}
+  .proof>span{display:inline;padding:0;border:0;background:none;white-space:nowrap}
+  .proof>span+span::before{content:"\00B7";color:var(--orange);margin:0 9px;font-weight:800}
+  .proof-long{display:none}
 }
 @media (max-width:640px){
   .post table{font-size:13px}
@@ -484,3 +485,30 @@ section[aria-labelledby="rents-h"] .feature-shot.tall{margin-left:0}
   .post th:last-child,.post td:last-child{white-space:normal}
   .post thead th{font-size:11px;letter-spacing:0}
 }
+
+/* Nov 2: hero link to the Demand Score calculator (try without installing) */
+.hero-try{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:9px 14px 9px 10px;border:1px solid rgba(255,255,255,.28);border-radius:999px;color:#fff;font-weight:600;font-size:15px;text-decoration:none;line-height:1.2;transition:border-color .15s ease,background .15s ease}
+.hero-try:hover,.hero-try:focus-visible{border-color:var(--orange);background:rgba(255,111,12,.10);color:#fff}
+.hero-try:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.hero-try-k{background:var(--orange);color:var(--navy);border-radius:999px;padding:3px 8px;font-size:12px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+@media (max-width:820px){.hero-try{display:flex;justify-content:center;flex-wrap:wrap;text-align:center;border-radius:12px}}
+@media (max-width:380px){.proof{font-size:13px}.proof>span+span::before{margin:0 6px}}
+/* Nov 2: featured tool card on /tools (Demand Score calculator) */
+.tool-feature{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 28px;border:1px solid var(--rule);border-left:5px solid var(--orange);border-radius:12px;background:#fff;color:var(--ink);text-decoration:none}
+.tool-feature h2{font-size:26px;letter-spacing:-0.02em;margin:0 0 8px}
+.tool-feature p{margin:0;color:var(--sub);max-width:62ch}
+.tool-feature .kicker{margin:0 0 8px}
+.tool-feature:hover h2{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--orange)}
+.tool-feature-btn{flex:none;gap:8px}
+@media (max-width:760px){.tool-feature{flex-direction:column;align-items:stretch;padding:20px}.tool-feature-btn{width:100%}}
+/* Nov 2: tool cards with an icon and an "Open calculator" button */
+.tool-ic{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:var(--orange-tint);color:var(--rust);margin-bottom:14px;flex:none}
+.tool-ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tool-ic-lg{width:56px;height:56px;margin:0}.tool-ic-lg svg{width:30px;height:30px}
+.guides-home a.tool-card-link{display:flex;flex-direction:column}
+.guides-home a.tool-card-link>p:last-of-type{flex:1 0 auto;margin-bottom:16px}
+.tool-open{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border:1px solid var(--rust);border-radius:7px;color:var(--rust);font-weight:700;font-size:15px;line-height:1}
+.tool-card-link:hover .tool-open,.tool-card-link:focus-visible .tool-open{background:var(--rust);color:#fff}
+.tool-feature{justify-content:flex-start}.tool-feature-text{flex:1 1 auto}
+@media (max-width:760px){.tool-ic-lg{margin-bottom:4px}.tool-open{align-self:stretch;justify-content:center}}
+
