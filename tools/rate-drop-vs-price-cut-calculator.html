@@ -50,6 +50,7 @@
 .tool-out .fine{margin-top:6px}
 .tool-out .est{font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:.04em}
 @media (max-width:560px){.tool-grid,.tool-nums{grid-template-columns:1fr}.tool-card{padding:18px}.tool{padding-top:32px}.tool-nums dd{font-size:26px}}
+.ds-tbl{width:100%;border-collapse:collapse;margin:0 0 14px;font-size:16px}.ds-tbl th,.ds-tbl td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--rule)}.ds-tbl td.n,.ds-tbl th.n{text-align:right;font-variant-numeric:tabular-nums}.ds-tbl caption{text-align:left;font-weight:700;padding:0 0 6px}.formula-line{background:var(--vellum);border-radius:8px;padding:12px 14px}.faq h3{font-size:18px;margin:18px 0 6px}
 </style>
 <script type="application/ld+json">
 {
@@ -94,6 +95,35 @@
      "position": 3,
      "name": "Rate drop vs price cut calculator",
      "item": "https://usecaza.com/tools/rate-drop-vs-price-cut-calculator"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is a lower rate better than a price cut?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On the monthly payment, a half-point drop matches a price cut of roughly 5% when rates are around 6 to 7%. A price cut also lowers your down payment, property tax and loan balance, while a rate buydown only helps while you keep the loan."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much does a 0.5% lower mortgage rate save?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On a $520,000 30-year loan at 6.75%, dropping to 6.25% saves about $171 a month. Enter your own numbers above for your loan."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this include taxes and insurance?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It compares principal and interest only, on a fixed-rate loan. Your lender's quote will differ."
+     }
     }
    ]
   }
@@ -149,6 +179,29 @@
       <p>Payments come from the standard fixed-rate amortization formula. It covers principal and interest only, so property tax, insurance and mortgage insurance are left out, and your lender&rsquo;s quote will differ.</p>
       <h2>Using it in an offer</h2>
       <p>A seller who will not cut the price may still pay for a rate buydown, and the reverse is also true. Knowing the matching number helps you decide which to ask for. The <a href="/guides/zillow-price-cut-meaning">price-cut guide</a> explains what a cut says about a seller, the <a href="/guides/zillow-listings-that-take-low-offers">low-offers guide</a> covers how to write the offer, and the <a href="/guides/zillow-days-on-market-meaning">days-on-market guide</a> shows how long a listing has really been for sale.</p>
+<h2>The formula</h2>
+<p class="formula-line"><strong>Monthly payment = loan &times; r &divide; (1 &minus; (1 + r)<sup>&minus;n</sup>)</strong>, where r is the annual rate &divide; 12 and n is the number of monthly payments.</p>
+<p>The matching price cut is the percent that gives the same payment at your current rate: 1 &minus; (payment factor at the lower rate &divide; payment factor at the current rate). The down payment stays the same percent of the price.</p>
+<h2>Worked example</h2>
+<table class="ds-tbl"><caption>Example scenario &middot; sample numbers</caption>
+<tbody>
+<tr><td>Price, 20% down, 30-year fixed</td><td class="n">$650,000 (loan $520,000)</td></tr>
+<tr><td>Payment at 6.75%</td><td class="n">$3,373</td></tr>
+<tr><td>Payment at 6.25% (0.5-point drop)</td><td class="n">$3,202</td></tr>
+<tr><td>Monthly saving from the rate drop</td><td class="n">$171</td></tr>
+<tr><td>Price cut that saves the same</td><td class="n">5.07% ($32,952)</td></tr>
+<tr><td>A 3% cut ($19,500) instead saves</td><td class="n">$101 a month, about a 0.29-point rate drop</td></tr>
+</tbody></table>
+<p>Principal and interest only. Tax, insurance and mortgage insurance are left out.</p>
+<h2>FAQ</h2>
+<div class="faq">
+<h3>Is a lower rate better than a price cut?</h3>
+<p>On the monthly payment, a half-point drop matches a price cut of roughly 5% when rates are around 6 to 7%. A price cut also lowers your down payment, property tax and loan balance, while a rate buydown only helps while you keep the loan.</p>
+<h3>How much does a 0.5% lower mortgage rate save?</h3>
+<p>On a $520,000 30-year loan at 6.75%, dropping to 6.25% saves about $171 a month. Enter your own numbers above for your loan.</p>
+<h3>Does this include taxes and insurance?</h3>
+<p>No. It compares principal and interest only, on a fixed-rate loan. Your lender&rsquo;s quote will differ.</p>
+</div>
       <div class="post-cta">
         <p><strong>Caza shows days on market, price cuts and nearby sales on Zillow listings.</strong></p>
         <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-rate-drop-vs-price-cut-calculator" class="btn">Try Caza free</a>
