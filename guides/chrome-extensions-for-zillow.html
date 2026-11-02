@@ -27,13 +27,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css?v=20261028c">
 <style>
-.tbl-wrap{overflow-x:auto;margin:0 0 18px}
-.ext-tbl{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
-.ext-tbl caption{text-align:left;font-weight:700;padding:0 0 8px}
-.ext-tbl th,.ext-tbl td{text-align:left;vertical-align:top;padding:9px 8px;border-bottom:1px solid var(--rule)}
-.ext-tbl thead th{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--sub)}
-.ext-tbl th[scope=rowgroup]{background:var(--vellum);font-size:14px;font-weight:800}
-.ext-tbl td:first-child{font-weight:700;white-space:nowrap}
+.ext-list h3{font-size:19px;margin:26px 0 10px}
+.ext-list ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ext-list li{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;background:#fff}
+.ext-list li p{margin:0}
+.ext-list .ext-name{font-weight:800;font-size:17px;margin-bottom:4px}
+.ext-list .ext-price{margin-top:6px;font-size:14px;color:var(--sub)}
 .faq h3{font-size:18px;margin:18px 0 6px}
 </style>
 <script type="application/ld+json">
@@ -109,7 +108,7 @@
      "name": "Are Zillow Chrome extensions free?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Some are free, some have a free tier with a monthly limit, and some are paid only. The table above lists each one's pricing as shown on its store page or website in November 2026. Check the listing before you install, because pricing changes."
+      "text": "Some are free, some have a free tier with a monthly limit, and some are paid only. The list above shows each one's pricing as shown on its store page or website in November 2026. Check the listing before you install, because pricing changes."
      }
     },
     {
@@ -170,30 +169,34 @@
 <p>A Zillow listing shows the price, facts, tax history and price history. It doesn&rsquo;t show cash flow, matched sales comps you can print, a rent check, or saves on most listings. Extensions fill those gaps on the page you are already looking at, so you don&rsquo;t retype the listing into a spreadsheet.</p>
 
 <h2>Extensions by job</h2>
-<p>As listed on the Chrome Web Store or the maker&rsquo;s site on November 2, 2026. Prices and features change, so check the listing.</p>
-<div class="tbl-wrap">
-<table class="ext-tbl">
-<caption>Chrome extensions that work on Zillow listings</caption>
-<thead><tr><th scope="col">Extension</th><th scope="col">What it says it does</th><th scope="col">Price as listed</th></tr></thead>
-<tbody>
-<tr><th scope="rowgroup" colspan="3">Deal analysis and cash flow</th></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/fepafbpaipemnoijhhjgdnaececeneon" rel="nofollow noopener">Deal Snap REI</a></td><td>Rental, flip, BRRRR and wholesale analysis on Zillow listings.</td><td>Free for 5 new properties a month with a free account; Pro $9.99 a month or $108 a year</td></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/bajlcmilnjbcndbmpdijplgiejejgclf" rel="nofollow noopener">Zillow Deal Analyzer</a></td><td>Automatic analysis of Zillow listings; no sign-up required.</td><td>Not stated</td></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/gfijdoohaigncdbkbdgehhgmjandpgli" rel="nofollow noopener">DealSight</a></td><td>Adds cash flow and ROI to Zillow search results, sortable.</td><td>Not stated</td></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/jomnjjnnockgikphlcilnkngfcnhdmcm" rel="nofollow noopener">Deal Analyzer for Zillow</a></td><td>A, B or C deal grades on search cards.</td><td>Not stated</td></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/kpmfbegcokajgaglfidpbplkdllflhof" rel="nofollow noopener">Real Estate Profitability Analyzer</a></td><td>Profitability on single listing pages; no login.</td><td>Not stated</td></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/jaiphfmdngnfclmpfmjhfhffbcbhakea" rel="nofollow noopener">Brrrr analysis zillow extension</a></td><td>BRRRR and flip analysis with sold and rent comps on a map.</td><td>Not stated</td></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/ahdakkbakleblcmkkbolbagnlebmbheb" rel="nofollow noopener">Deal Docket</a></td><td>A toolbar button that underwrites the current property on its website; also Redfin and Realtor.com.</td><td>$49 a month, 7-day free trial, card and account required</td></tr>
-<tr><th scope="rowgroup" colspan="3">Comps reports</th></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/hfkemfeimjdhbdebinfjjfjcalppnngo" rel="nofollow noopener">CompDeck</a></td><td>Branded CMA PDFs from a listing page.</td><td>First 5 CMAs a month free with an account; Pro price not listed</td></tr>
-<tr><th scope="rowgroup" colspan="3">Rent estimates</th></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/mmnljflfmbdhcdmihmmiibkciliafokf" rel="nofollow noopener">EZ Rent Estimate</a></td><td>Rent estimates for listings.</td><td>In-app purchases; prices not listed</td></tr>
-<tr><th scope="rowgroup" colspan="3">Exports</th></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/mnfgmnnefohhlhgndoogankfonhafjga" rel="nofollow noopener">Zillow Property Analyzer</a></td><td>Exports Zillow properties to CSV (address, price, beds, baths, square feet).</td><td>Not stated</td></tr>
-<tr><th scope="rowgroup" colspan="3">Buyer activity, comps and investor numbers in one</th></tr>
-<tr><td><a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=guide-chrome-extensions-for-zillow">Caza</a> (made by us)</td><td>A 0 to 100 Demand Score from saves, views and days on market, sales comps, rental comps from active asking rents, investor numbers (cap rate, cash flow, DSCR) and a PDF comps report.</td><td>Free right now; no account</td></tr>
-</tbody>
-</table>
+<p>As described on each Chrome Web Store page or maker&rsquo;s site on November 2, 2026. Prices and features change, so check the listing.</p>
+<div class="ext-list">
+<h3>Deal analysis and cash flow</h3>
+<ul>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/fepafbpaipemnoijhhjgdnaececeneon" rel="nofollow noopener">Deal Snap REI</a></p><p>Rental, flip, BRRRR and wholesale analysis on Zillow listings.</p><p class="ext-price">Price: Free for 5 new properties a month with a free account; Pro $9.99 a month or $108 a year</p></li>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/bajlcmilnjbcndbmpdijplgiejejgclf" rel="nofollow noopener">Zillow Deal Analyzer</a></p><p>Automatic analysis of Zillow listings; no sign-up required.</p><p class="ext-price">Price: not stated on the listing</p></li>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/gfijdoohaigncdbkbdgehhgmjandpgli" rel="nofollow noopener">DealSight</a></p><p>Adds cash flow and ROI to Zillow search results, sortable.</p><p class="ext-price">Price: not stated on the listing</p></li>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/jomnjjnnockgikphlcilnkngfcnhdmcm" rel="nofollow noopener">Deal Analyzer for Zillow</a></p><p>A, B or C deal grades on search cards.</p><p class="ext-price">Price: not stated on the listing</p></li>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/kpmfbegcokajgaglfidpbplkdllflhof" rel="nofollow noopener">Real Estate Profitability Analyzer</a></p><p>Profitability on single listing pages; no login.</p><p class="ext-price">Price: not stated on the listing</p></li>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/jaiphfmdngnfclmpfmjhfhffbcbhakea" rel="nofollow noopener">Brrrr analysis zillow extension</a></p><p>BRRRR and flip analysis with sold and rent comps on a map.</p><p class="ext-price">Price: not stated on the listing</p></li>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/ahdakkbakleblcmkkbolbagnlebmbheb" rel="nofollow noopener">Deal Docket</a></p><p>A toolbar button that underwrites the current property on its website; also Redfin and Realtor.com.</p><p class="ext-price">Price: $49 a month, 7-day free trial, card and account required</p></li>
+</ul>
+<h3>Comps reports</h3>
+<ul>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/hfkemfeimjdhbdebinfjjfjcalppnngo" rel="nofollow noopener">CompDeck</a></p><p>Branded CMA PDFs from a listing page.</p><p class="ext-price">Price: First 5 CMAs a month free with an account; Pro price not listed</p></li>
+</ul>
+<h3>Rent estimates</h3>
+<ul>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/mmnljflfmbdhcdmihmmiibkciliafokf" rel="nofollow noopener">EZ Rent Estimate</a></p><p>Rent estimates for listings.</p><p class="ext-price">Price: In-app purchases; prices not listed</p></li>
+</ul>
+<h3>Exports</h3>
+<ul>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/mnfgmnnefohhlhgndoogankfonhafjga" rel="nofollow noopener">Zillow Property Analyzer</a></p><p>Exports Zillow properties to CSV (address, price, beds, baths, square feet).</p><p class="ext-price">Price: not stated on the listing</p></li>
+</ul>
+<h3>Buyer activity, comps and investor numbers in one</h3>
+<ul>
+<li><p class="ext-name"><a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=guide-chrome-extensions-for-zillow">Caza</a> (made by us)</p><p>A 0 to 100 Demand Score from saves, views and days on market, sales comps, rental comps from active asking rents, investor numbers (cap rate, cash flow, DSCR) and a PDF comps report.</p><p class="ext-price">Price: Free right now; no account</p></li>
+</ul>
 </div>
 
 <h2>How do you choose one?</h2>
@@ -211,7 +214,7 @@
 <h3>What do Chrome extensions for Zillow do?</h3>
 <p>They add information Zillow doesn&rsquo;t show on the listing, or turn it into analysis: cash flow and cap rate, nearby sales comps, rent estimates, buyer activity such as saves and views, and exports to a spreadsheet or PDF.</p>
 <h3>Are Zillow Chrome extensions free?</h3>
-<p>Some are free, some have a free tier with a monthly limit, and some are paid only. The table above lists each one&rsquo;s pricing as shown on its store page or website in November 2026. Check the listing before you install, because pricing changes.</p>
+<p>Some are free, some have a free tier with a monthly limit, and some are paid only. The list above shows each one&rsquo;s pricing as shown on its store page or website in November 2026. Check the listing before you install, because pricing changes.</p>
 <h3>Are Chrome extensions for Zillow safe to install?</h3>
 <p>Check three things on the store page: the permissions it asks for, the privacy policy, and whether you need an account. An extension that only reads the listing in your browser shares less than one that sends listing data to its own servers.</p>
 <h3>Do these extensions work on Redfin or Realtor.com?</h3>
