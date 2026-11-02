@@ -1,0 +1,34 @@
+# Tells Bing (and other IndexNow engines) about changed pages on every push to main.
+# Google has no ping: it uses sitemap.xml lastmod, plus "Request indexing" in Search Console for new pages.
+name: IndexNow
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Wait for Netlify to deploy
+        run: sleep 90
+      - name: Submit changed pages
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          KEY=$(ls *.txt | grep -E '^[0-9a-f]{32}\.txt$' | head -1 | sed 's/\.txt$//')
+          if git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            FILES=$(git diff --name-only --diff-filter=AMR "$BEFORE" "$AFTER" -- '*.html')
+          else
+            FILES=$(git ls-files '*.html')
+          fi
+          URLS=$(echo "$FILES" | grep -v -E '^(404|admin/|\.)' | sed -E 's#^index\.html$##; s#/index\.html$#/#; s#\.html$##' | sed 's#^#https://usecaza.com/#' | sort -u)
+          [ -z "$FILES" ] && { echo "No changed pages"; exit 0; }
+          echo "$URLS"
+          JSON=$(printf '%s\n' "$URLS" | python3 -c 'import json,sys;u=[l.strip() for l in sys.stdin if l.strip()];print(json.dumps({"host":"usecaza.com","key":sys.argv[1],"keyLocation":"https://usecaza.com/"+sys.argv[1]+".txt","urlList":u}))' "$KEY")
+          CODE=$(curl -s -o /dev/stderr -w '%{http_code}' -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$JSON")
+          echo "IndexNow HTTP $CODE"
+          [ "$CODE" = "200" ] || [ "$CODE" = "202" ]
