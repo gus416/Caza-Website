@@ -50,6 +50,7 @@
 .tool-out .fine{margin-top:6px}
 .tool-out .est{font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:.04em}
 @media (max-width:560px){.tool-grid,.tool-nums{grid-template-columns:1fr}.tool-card{padding:18px}.tool{padding-top:32px}.tool-nums dd{font-size:26px}}
+.ds-tbl{width:100%;border-collapse:collapse;margin:0 0 14px;font-size:16px}.ds-tbl th,.ds-tbl td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--rule)}.ds-tbl td.n,.ds-tbl th.n{text-align:right;font-variant-numeric:tabular-nums}.ds-tbl caption{text-align:left;font-weight:700;padding:0 0 6px}.formula-line{background:var(--vellum);border-radius:8px;padding:12px 14px}.faq h3{font-size:18px;margin:18px 0 6px}
 </style>
 <script type="application/ld+json">
 {
@@ -94,6 +95,35 @@
      "position": 3,
      "name": "Effective rent calculator",
      "item": "https://usecaza.com/tools/effective-rent-calculator"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is effective rent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The average monthly rent you actually pay over the lease after free weeks or concessions. Six weeks free on a 12-month lease at $2,400 works out to about $2,123 a month."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I compare effective rent or advertised rent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Effective rent plus required fees. That all-in number is what leaves your account each month on average."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Will my renewal be based on the effective rent?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Often not. Many landlords renew from the advertised rent, so ask before you sign."
+     }
     }
    ]
   }
@@ -153,6 +183,30 @@
       <p>Effective rent is the rent you actually pay across the lease, divided by its months. Add required monthly fees and you get the all-in monthly cost. Compare that figure, not the advertised rent, between apartments.</p>
       <h2>Is it a good price?</h2>
       <p>Once you have the all-in number, check it against similar listings. The <a href="/guides/real-monthly-cost-of-an-apartment">real monthly cost guide</a> walks through a worked example, <a href="/guides/how-to-tell-if-rent-is-fair">Is this rent fair?</a> shows how to compare with nearby listings, and the <a href="/guides/zillow-rental-comps-estimate-rent">rental comps guide</a> explains active asking rents and why they are not signed leases.</p>
+<h2>The formula</h2>
+<p class="formula-line"><strong>Effective rent = rent &times; (lease months &minus; free months) &divide; lease months</strong></p>
+<p>Free weeks are turned into months (weeks &times; 12 &divide; 52). A one-time concession is spread over the lease. <strong>All-in monthly cost = effective rent + required monthly fees</strong> such as parking, pet rent, trash, amenity fees and required utilities.</p>
+<h2>Worked example</h2>
+<table class="ds-tbl"><caption>Example scenario &middot; sample numbers</caption>
+<tbody>
+<tr><td>Advertised rent</td><td class="n">$2,400 a month</td></tr>
+<tr><td>Lease and offer</td><td class="n">12 months, 6 weeks free</td></tr>
+<tr><td>Free months (6 &times; 12 &divide; 52)</td><td class="n">1.38</td></tr>
+<tr><td>Effective rent ($2,400 &times; 10.62 &divide; 12)</td><td class="n">$2,123</td></tr>
+<tr><td>Required fees (parking $75, trash $25)</td><td class="n">$100</td></tr>
+<tr><td>All-in monthly cost</td><td class="n">$2,223</td></tr>
+<tr><td>Total over the lease</td><td class="n">$26,677</td></tr>
+</tbody></table>
+<p>Compare the all-in figure, not the advertised rent, between apartments. Check whether the renewal will be priced off the advertised rent.</p>
+<h2>FAQ</h2>
+<div class="faq">
+<h3>What is effective rent?</h3>
+<p>The average monthly rent you actually pay over the lease after free weeks or concessions. Six weeks free on a 12-month lease at $2,400 works out to about $2,123 a month.</p>
+<h3>Should I compare effective rent or advertised rent?</h3>
+<p>Effective rent plus required fees. That all-in number is what leaves your account each month on average.</p>
+<h3>Will my renewal be based on the effective rent?</h3>
+<p>Often not. Many landlords renew from the advertised rent, so ask before you sign.</p>
+</div>
       <div class="post-cta">
         <p><strong>Caza adds rental comps from active asking rents to Zillow listings.</strong></p>
         <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-effective-rent-calculator" class="btn">Try Caza free</a>

@@ -50,6 +50,7 @@
 .tool-out .fine{margin-top:6px}
 .tool-out .est{font-size:13px;font-weight:700;color:var(--rust);text-transform:uppercase;letter-spacing:.04em}
 @media (max-width:560px){.tool-grid,.tool-nums{grid-template-columns:1fr}.tool-card{padding:18px}.tool{padding-top:32px}.tool-nums dd{font-size:26px}}
+.ds-tbl{width:100%;border-collapse:collapse;margin:0 0 14px;font-size:16px}.ds-tbl th,.ds-tbl td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--rule)}.ds-tbl td.n,.ds-tbl th.n{text-align:right;font-variant-numeric:tabular-nums}.ds-tbl caption{text-align:left;font-weight:700;padding:0 0 6px}.formula-line{background:var(--vellum);border-radius:8px;padding:12px 14px}.faq h3{font-size:18px;margin:18px 0 6px}
 </style>
 <script type="application/ld+json">
 {
@@ -94,6 +95,35 @@
      "position": 3,
      "name": "Comps price per square foot calculator",
      "item": "https://usecaza.com/tools/comps-price-per-square-foot"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do you calculate price per square foot from comps?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Divide each comparable sale's price by its square feet, take the median of those numbers, and multiply by the subject home's square feet."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why use the median instead of the average?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "One unusual sale, such as a fully remodeled home, pulls the average much more than the median."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How many comps should I use?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Three to six close matches: same property type, similar size, nearby and sold recently. Three close matches beat ten loose ones."
+     }
     }
    ]
   }
@@ -150,6 +180,28 @@
       <p>Use comps of the same property type, nearby and sold recently. This tool does the arithmetic only. It does not adjust for condition, lot, age or date, so a rough range is the right way to read it.</p>
       <h2>Where to use it</h2>
       <p>The <a href="/guides/how-to-pull-comps-on-zillow">pull-comps guide</a> shows how to find matching sales on Zillow. The <a href="/guides/zillow-listings-that-take-low-offers">low-offers guide</a> uses sales to back a below-asking offer, and the <a href="/guides/zillow-price-cut-meaning">price-cut guide</a> shows how to read a cut against them.</p>
+<h2>The formula</h2>
+<p class="formula-line"><strong>Each comp: sale price &divide; square feet. Indicated price = median price per square foot &times; subject square feet.</strong></p>
+<p>The range uses the lowest and highest comp price per square foot times the subject&rsquo;s square feet. The median is used because one unusual sale moves it less than the average.</p>
+<h2>Worked example</h2>
+<table class="ds-tbl"><caption>Example scenario &middot; sample numbers, subject home 1,800 sq ft</caption>
+<thead><tr><th scope="col">Comp</th><th scope="col" class="n">Sale price</th><th scope="col" class="n">Sq ft</th><th scope="col" class="n">$/sq ft</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="n">$600,000</td><td class="n">1,750</td><td class="n">$343</td></tr>
+<tr><td>2</td><td class="n">$640,000</td><td class="n">1,900</td><td class="n">$337</td></tr>
+<tr><td>3</td><td class="n">$590,000</td><td class="n">1,650</td><td class="n">$358</td></tr>
+<tr><td>4</td><td class="n">$615,000</td><td class="n">1,820</td><td class="n">$338</td></tr>
+</tbody></table>
+<p>Median $340 per sq ft &times; 1,800 sq ft = about <strong>$612,700</strong>. Range from the lowest to the highest comp: about $606,300 to $643,600. This is arithmetic only, not an appraisal: it does not adjust for condition, lot, age or sale date.</p>
+<h2>FAQ</h2>
+<div class="faq">
+<h3>How do you calculate price per square foot from comps?</h3>
+<p>Divide each comparable sale&rsquo;s price by its square feet, take the median of those numbers, and multiply by the subject home&rsquo;s square feet.</p>
+<h3>Why use the median instead of the average?</h3>
+<p>One unusual sale, such as a fully remodeled home, pulls the average much more than the median.</p>
+<h3>How many comps should I use?</h3>
+<p>Three to six close matches: same property type, similar size, nearby and sold recently. Three close matches beat ten loose ones.</p>
+</div>
       <div class="post-cta">
         <p><strong>Caza pulls nearby sales of the same property type and shows the median price per square foot on the listing.</strong></p>
         <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-comps-price-per-square-foot" class="btn">Try Caza free</a>
