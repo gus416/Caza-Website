@@ -31,7 +31,7 @@
 .step{border:1px solid var(--rule);border-radius:12px;padding:22px;background:#fff;display:flex;flex-direction:column;gap:12px;min-width:0}
 .step-top{display:flex;align-items:center;gap:12px}
 .sn{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:none}
-.step h2{font-size:20px;letter-spacing:-0.01em;margin:0}
+.step h2,.step h3{font-size:20px;letter-spacing:-0.01em;margin:0}
 .step p{margin:0;color:var(--sub);font-size:16px}
 .step-art{background:var(--vellum);border-radius:10px;padding:16px;display:flex;align-items:center;justify-content:center;gap:12px;min-height:84px;color:var(--navy)}
 .step-art svg{width:40px;height:40px;flex:none}
@@ -57,6 +57,18 @@
 .bye .btn{min-height:48px;cursor:pointer;font-family:inherit}
 .bye form[hidden],.bye-thanks[hidden]{display:none}
 .bye-thanks h2{font-size:28px;margin:0 0 12px}
+.quick{display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;border:1px solid var(--rule);border-radius:14px;background:#fff;padding:28px;margin:0 0 40px}
+.quick h2{font-size:28px;letter-spacing:-0.02em;margin:0 0 10px}
+.quick p{margin:0 0 14px}
+.quick .btn{white-space:normal}
+.quick-alt{color:var(--sub);font-size:16px}
+.quick-note{color:var(--sub);font-size:15px;margin:0}
+.quick-vid{margin:0}
+.quick-vid video{width:100%;height:auto;border-radius:10px;border:1px solid var(--rule);display:block;background:var(--vellum)}
+.quick-vid figcaption{font-size:14px;color:var(--sub);margin-top:8px}
+.quick-vid .sample{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--rust);background:var(--orange-tint);border-radius:4px;padding:3px 7px;line-height:1.2;margin-right:6px}
+.steps-h{font-size:22px;letter-spacing:-0.01em;margin:0 0 16px}
+@media (max-width:900px){.quick{grid-template-columns:1fr;padding:20px}}
 </style>
 </head>
 <body>
@@ -80,17 +92,33 @@
   <div class="page-band"><div class="wrap page-head">
     <p class="kicker">Welcome</p>
     <h1>Caza is installed.</h1>
-    <p class="lede">Three steps and you will see it working on a real listing.</p>
+    <p class="lede">See it work on a real listing in about a minute.</p>
   </div></div>
   <div class="wrap page-pad">
+    <section class="quick" aria-labelledby="quick-h">
+      <div class="quick-text">
+        <h2 id="quick-h">Start here</h2>
+        <p>Open a live Zillow search. Every home gets a Demand Score. Click any home, then <strong>Sales comps</strong>.</p>
+        <p><a class="btn btn-lg" href="https://www.zillow.com/tampa-fl/">Open a live Zillow search &rarr;</a></p>
+        <p class="quick-alt">Or try <a href="https://www.zillow.com/orlando-fl/">Orlando</a>, or search your own US city.</p>
+        <p class="quick-note">Caza works on US listings on zillow.com, in Chrome on a computer.</p>
+      </div>
+      <figure class="quick-vid">
+        <video autoplay muted loop playsinline controls preload="metadata" width="1280" height="720" poster="/video/start-score-10s-poster.webp" aria-label="Ten-second clip: the Demand Score and the Sales comps button on a sample listing">
+          <source src="/video/start-score-10s.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="sample">Sample data</span> What you&rsquo;ll see on a listing, 10 seconds.</figcaption>
+      </figure>
+    </section>
+    <h2 class="steps-h">Step by step</h2>
     <ol class="steps">
       <li class="step">
-        <div class="step-top"><span class="sn">1</span><h2>Pin Caza</h2></div>
+        <div class="step-top"><span class="sn">1</span><h3>Pin Caza</h3></div>
         <div class="step-art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M10 4a2 2 0 1 1 4 0v1h3a1 1 0 0 1 1 1v3h-1a2 2 0 1 0 0 4h1v3a1 1 0 0 1-1 1h-3v-1a2 2 0 1 0-4 0v1H7a1 1 0 0 1-1-1v-3h1a2 2 0 1 0 0-4H6V6a1 1 0 0 1 1-1h3V4Z"/></svg><span class="arrow">&rarr;</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4l5 5-3 1-3 3 .5 4-1.5 1.5-3.5-3.5L5 19l-.5-.5 4-3.5L5 11.5 6.5 10l4 .5 3-3L15 4Z"/></svg></div>
         <p>Click the puzzle-piece icon in Chrome&rsquo;s toolbar, then the pin next to Caza so it stays in view.</p>
       </li>
       <li class="step">
-        <div class="step-top"><span class="sn">2</span><h2>Open a Zillow search</h2></div>
+        <div class="step-top"><span class="sn">2</span><h3>Open a Zillow search</h3></div>
         <div class="step-art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span class="arrow">&rarr;</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-5H9v5H5a1 1 0 0 1-1-1v-8Z"/></svg></div>
         <p>Try one of these, or search anywhere you like.</p>
         <div class="step-links">
@@ -99,7 +127,7 @@
         </div>
       </li>
       <li class="step">
-        <div class="step-top"><span class="sn">3</span><h2>Open any listing</h2></div>
+        <div class="step-top"><span class="sn">3</span><h3>Open any listing</h3></div>
         <div class="step-art" aria-hidden="true"><span class="pill">Sales comps</span></div>
         <p>On the listing, click <strong>Sales comps</strong> to see nearby sales of the same property type.</p>
       </li>
@@ -140,6 +168,7 @@
     <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
   </div>
 </footer>
+<script>(function(){try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){var v=document.querySelector('.quick-vid video');if(v){v.removeAttribute('autoplay');v.pause();v.setAttribute('controls','');}}}catch(e){}})();</script>
 <script src="/m.js?v=20261027c" defer></script>
 <script src="/ga.js?v=20261027b" defer></script>
 </body>
