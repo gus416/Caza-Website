@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css?v=20261028c">
+<link rel="stylesheet" href="/site.css?v=20261103a">
 <style>
 .tool{max-width:760px;padding:48px 0 0}
 .tool-card{border:1px solid var(--rule);border-radius:12px;padding:24px;background:#fff}
@@ -91,7 +91,7 @@
    "@type": "FAQPage",
    "mainEntity": [
     {"@type": "Question", "name": "How is the Caza Demand Score calculated?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Saves, views and days on market are each turned into 0 to 100 points. Saves use a log curve that reaches 100 at 400 saves, views a log curve that reaches 100 at 5,000 views, and days on market fall from 100 at day 0 to 0 at day 90. The score is the weighted average (saves 40%, days on market 35%, views 25%) plus a pace bonus of up to 10 points either way, based on saves plus 5% of views per day on market."}},
+     "acceptedAnswer": {"@type": "Answer", "text": "Saves, views and days on market are each turned into 0 to 100 points. Saves use a log curve that reaches 100 at 400 saves, views a log curve that reaches 100 at 5,000 views, and days on market fall from 100 at day 0 to 0 at day 90. The score is the weighted average (saves 40%, days on market 35%, views 25%) plus a pace bonus based on saves plus 5% of views per day on market: fast listings gain up to 10 points, and slow listings lose at most 1 point."}},
     {"@type": "Question", "name": "Does a high Demand Score mean a home is worth more or will sell above asking?",
      "acceptedAnswer": {"@type": "Answer", "text": "No. The score describes buyer activity on Zillow for that listing. It is not a price opinion, an appraisal or a forecast. Use it as a reason to look closer, together with nearby sales."}}
    ]
@@ -114,7 +114,7 @@
       <a href="/tools">Tools</a>
       <a href="/#faq">FAQ</a>
     </nav>
-    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-demand-score-calculator">Add to Chrome</a>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=tool-demand-score-calculator">Add to Chrome</a>
   </div>
 </header>
 
@@ -149,7 +149,7 @@
           <tr><td>Saves</td><td>Log curve: 100 points at 400 saves. Early saves count the most.</td><td class="n">40%</td></tr>
           <tr><td>Days on market</td><td>100 points on day 0, falling evenly to 0 at day 90.</td><td class="n">35%</td></tr>
           <tr><td>Views</td><td>Log curve: 100 points at 5,000 views.</td><td class="n">25%</td></tr>
-          <tr><td>Pace bonus</td><td>Saves plus 5% of views, per day on market. About 5 a day adds nothing; faster adds up to 10 points, slower takes off up to 10.</td><td class="n">&plusmn;10</td></tr>
+          <tr><td>Pace bonus</td><td>Saves plus 5% of views, per day on market. About 5 a day adds nothing; faster adds up to 10 points, slower takes off at most 1.</td><td class="n">&minus;1 to +10</td></tr>
         </tbody>
       </table>
       <p>If one number is missing, the score uses the other two and spreads the weight between them. Labels: 80 and up is Hot, 60 to 79 Warm, 40 to 59 Average, 20 to 39 Cool, under 20 Slow.</p>
@@ -158,7 +158,7 @@
       <p>More on each signal: <a href="/guides/how-to-see-zillow-saves">what Zillow saves mean</a>, <a href="/guides/zillow-days-on-market-meaning">what days on market really means</a>, and <a href="/guides/is-this-listing-overpriced-zillow">how to tell if a listing is overpriced</a>.</p>
       <div class="post-cta">
         <p><strong>Get this score on every Zillow listing automatically.</strong> Caza puts it on each search card, sorts the page by it, and adds nearby sales and investor numbers. Chrome on a computer, free right now.</p>
-        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-demand-score-calculator" class="btn">Add Caza to Chrome</a>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=tool-demand-score-calculator" class="btn">Add Caza to Chrome</a>
       </div>
       <p class="fine">Caza is independent and not affiliated with Zillow. The score describes listing activity and is not an appraisal.</p>
     </article>
@@ -180,7 +180,7 @@
       <a href="/blog#renters">For renters</a>
       <a href="/privacy">Privacy</a>
       <a href="mailto:gus@usecaza.com">Contact</a>
-      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=footer">Chrome Web Store</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=footer">Chrome Web Store</a>
     </nav>
   </div>
   <div class="wrap foot-legal">
@@ -255,7 +255,7 @@
     if (r.dom != null && r.dom < 7) h += '<p>New listing: under a week on the market, so the score moves quickly as saves come in.</p>';
     else if (r.savesPerDay != null) h += '<p>Saves pace: ' + (Math.round(r.savesPerDay * 10) / 10).toFixed(1) + ' a day.</p>';
     if (r.dom == null) h += '<p class="fine">Without days on market there is no time component and no pace bonus. Add it for the full score.</p>';
-    h += '<div class="cta-box"><p><strong>Get this on every listing automatically.</strong> Caza reads saves, views and days on market for you, scores every home on a Zillow search and sorts the page by it.</p><a class="btn" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=site&amp;utm_campaign=tool-demand-score-calculator">Add Caza to Chrome</a></div>';
+    h += '<div class="cta-box"><p><strong>Get this on every listing automatically.</strong> Caza reads saves, views and days on market for you, scores every home on a Zillow search and sorts the page by it.</p><a class="btn" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=tool-demand-score-calculator">Add Caza to Chrome</a></div>';
     return h;
   }
   function clearInvalid() { [].forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) { el.removeAttribute('aria-invalid'); }); }

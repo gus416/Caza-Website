@@ -269,7 +269,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
   .band{padding:80px 0}
 }
 @media (max-width:819px){
-  .leaders,.pin,.plat-label{display:none}
+  .leaders,.plat .pin,.plat-label{display:none}
   .plat{margin-top:44px;padding-top:0}
   .map{opacity:.55}
   .plat-stage{border:0;padding:0;display:flex;flex-direction:column;background:none}
