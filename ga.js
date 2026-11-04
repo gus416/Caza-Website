@@ -29,7 +29,7 @@
       return u.origin === location.origin ? u.pathname : u.hostname;
     } catch (e) { return ''; }
   }
-  var CTA = '.btn, .link, .callout a, .guides-home a, .examples-home a, .index a, a.back, .post-cta a';
+  var CTA = '.btn, .link, .callout a, .guides-home a, .examples-home a, .index a, .start-row a, .comps-by-hand a, a.back, .post-cta a';
   function onClick(e) {
     try {
       var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
@@ -47,7 +47,7 @@
         var area = a.closest('.foot-nav') ? 'footer' : (window.innerWidth <= 820 ? 'mobile' : 'header');
         send('nav_click', { page_path: path(), nav_item: clean(a.textContent) || (a.getAttribute('aria-label') || 'logo'), nav_area: area });
       } else if (a.matches(CTA) || a.closest('.callout, .guides-home, .examples-home, .index, .post-cta') || /^all (guides|calculators|four walkthroughs)/i.test(clean(a.textContent))) {
-        var h = a.querySelector('h3');
+        var h = a.querySelector('h3, strong');
         send('cta_click', { page_path: path(), cta_text: clean(h ? h.textContent : a.textContent), link_url: hash ? path() + href : target(a), link_location: where });
       } else if (a.closest('article, .post') && /^\/(guides|tools)\//.test(target(a)) && target(a) !== path().replace(/\.html$/, '')) {
         send('internal_link', { page_path: path(), from_slug: slug(), to_path: target(a) });

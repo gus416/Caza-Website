@@ -307,7 +307,7 @@
       <a href="/blog#tools" data-aud="tools">Tools</a>
     </nav>
 
-    <section class="start-here" aria-labelledby="start-h">
+    <section class="start-here" id="start" aria-labelledby="start-h">
       <h2 id="start-h">Start here</h2>
       <div class="start-row">
         <a href="/guides/how-to-pull-comps-on-zillow"><span class="meta">For agents</span><strong>How to pull comps on Zillow</strong></a>
@@ -473,10 +473,12 @@
 (function(){
   var tabs=Array.prototype.slice.call(document.querySelectorAll('.aud a[data-aud]'));
   var secs=Array.prototype.slice.call(document.querySelectorAll('.aud-sec'));
+  var start=document.querySelector('.start-here');
   if(!tabs.length||!secs.length)return;
   var keys=tabs.map(function(t){return t.getAttribute('data-aud');});
   function apply(k){
     secs.forEach(function(s){s.hidden=(k!=='all'&&s.id!==k);});
+    if(start)start.hidden=(k!=='all');
     tabs.forEach(function(t){
       var on=t.getAttribute('data-aud')===k;
       if(on)t.setAttribute('aria-current','true');else t.removeAttribute('aria-current');
@@ -524,6 +526,6 @@
   </div>
 </footer>
 <script src="/m.js?v=20261027c" defer></script>
-<script src="/ga.js?v=20261027b" defer></script>
+<script src="/ga.js?v=20261104a" defer></script>
 </body>
 </html>
