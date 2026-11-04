@@ -512,3 +512,13 @@ section[aria-labelledby="rents-h"] .feature-shot.tall{margin-left:0}
 .tool-feature{justify-content:flex-start}.tool-feature-text{flex:1 1 auto}
 @media (max-width:760px){.tool-ic-lg{margin-bottom:4px}.tool-open{align-self:stretch;justify-content:center}}
 
+.cta-early{margin:-4px 0 22px}
+.start-here{margin-top:36px}
+.start-here h2{font-size:22px;margin-bottom:12px}
+.start-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.start-row a{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);text-decoration:none}
+.start-row a:hover strong{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--orange)}
+.start-row .meta{font-size:14px;color:var(--sub)}
+.start-row strong{font-size:17px;line-height:1.3}
+.comps-by-hand{margin:0 0 24px}
+@media (max-width:760px){.start-row{grid-template-columns:1fr}.cta-early .btn{display:flex;width:100%;white-space:normal}}
