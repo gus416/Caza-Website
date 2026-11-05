@@ -1,6 +1,6 @@
 # Caza
 
-> Caza is a free Chrome extension that adds a 0–100 buyer Demand Score, nearby sales comps, rental comps (active asking rents), investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report to Zillow listings. The extension runs in the browser: no account, no Caza servers, and no background upload of listing data. (This website, usecaza.com, uses Google Analytics.) Free right now. Independent; not affiliated with or endorsed by Zillow Group.
+> Caza is a Chrome extension, free right now, that adds a 0–100 buyer Demand Score, nearby sales comps, rental comps (active asking rents), investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report to Zillow listings. The extension runs in the browser: no account, no Caza servers, and no background upload of listing data. (This website, usecaza.com, uses Google Analytics.) Free right now. Independent; not affiliated with or endorsed by Zillow Group.
 
 Site: https://usecaza.com/ · Install: https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk · Contact: gus@usecaza.com
 
