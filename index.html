@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site.css?v=20261104a">
+<link rel="stylesheet" href="/site.css?v=20261110a">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -347,8 +347,11 @@
           <li>Listing agent and phone in the hover card</li>
         </ul>
       </div>
-      <div class="feature-shot">
-        <img src="/img/search-tooltip.webp" width="1400" height="460" loading="lazy" alt="A Zillow search result with Caza's hover card: Hot, price dropped 4% five days ago, 270 saves, 3,793 views, 9 days on market, $363 per square foot, built 1998, and a View Sales Comps button.">
+      <div class="feature-shot shot-score">
+        <picture>
+          <source media="(max-width: 819px)" srcset="/img/search-tooltip-phone.webp?v=20261110a" width="478" height="357">
+          <img class="shot-phone shot-phone-score" src="/img/search-tooltip.webp" width="1400" height="460" loading="lazy" alt="A Zillow search result with Caza's hover card: Hot, Demand Score 100, price dropped 4% five days ago, 270 saves, 3,793 views, 9 days on market, $363 per square foot, built 1998, saves pace 30 a day, and a View Sales Comps button.">
+        </picture>
       </div>
     </article>
   </div>
@@ -368,8 +371,12 @@
         <img src="/img/comps-report.webp?v=20261102" width="1200" height="1419" loading="lazy" alt="Page one of a Caza comparable sales report for 418 Maple Ave: median sold $592,000, median $363 per square foot, a chart placing the subject among 8 comps, a Show all properties on map button, and a table of the comps with clickable addresses and map links.">
       </div>
     </div>
-    <figure class="feature-shot" style="margin:24px 0 32px">
-      <img src="/img/map-comps.webp?v=20261102b" width="1400" height="875" loading="lazy" alt="Caza's comps map on usecaza.com: the subject listing and 8 numbered comps with price, price per square foot and sale date in a side list. Sample data shown.">
+    <figure class="feature-shot shot-map" style="margin:24px 0 32px">
+      <img class="shot-map-desk" src="/img/map-comps.webp?v=20261102b" width="1400" height="875" loading="lazy" alt="Caza's comps map on usecaza.com: the subject listing and 8 numbered comps with price, price per square foot and sale date in a side list. Sample data shown.">
+      <div class="shot-map-stack">
+        <img src="/img/map-comps-list.webp?v=20261110a" width="340" height="792" loading="lazy" alt="Caza's comps list: the subject listing and 8 comps with price, price per square foot and sale date. Sample data shown.">
+        <a href="/img/map-comps-pins.webp?v=20261110a" aria-label="Open the comps map full size"><img src="/img/map-comps-pins.webp?v=20261110a" width="1060" height="823" loading="lazy" alt="The same comps on the map: numbered pins 1 to 8 and the subject marker. Sample data shown."></a>
+      </div>
       <figcaption class="fine">Show all properties on map, with sample data. The map opens in a new tab.</figcaption>
     </figure>
     <p class="fine comps-by-hand">Doing it by hand? See <a href="/guides/how-to-pull-comps-on-zillow">how to pull comps on Zillow</a>, or use <a href="/guides/zillow-rental-comps-estimate-rent">rental comps</a> to estimate rent.</p>
