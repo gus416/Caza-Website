@@ -294,14 +294,14 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
   .moment-drawer img{max-height:none;height:auto;object-fit:unset}
   .feature-shot:not(.tall) img.shot-phone,
   .ex-shot img.shot-phone{min-width:0;width:100%;max-width:100%;height:auto}
-  img.shot-phone-score{aspect-ratio:484/368}
+  img.shot-phone-score{aspect-ratio:478/357}
   .feature-wide .feature-shot.shot-score{background:none;padding:0;border-radius:0}
   .feature-shot img.shot-phone-score{border:0;border-radius:0;background:transparent;box-shadow:none}
   .shot-map-desk{display:none}
   .shot-map-stack{display:block}
   .feature-shot:not(.tall) .shot-map-stack img,
   .ex-shot .shot-map-stack img{display:block;min-width:0;width:100%;max-width:100%;height:auto}
-  .shot-map-stack img+img{margin-top:12px}
+  .shot-map-stack img+img{margin-top:8px}
   .moment-report{width:100%;border-radius:6px 6px 0 0}
   .moment-report img{max-height:300px;object-fit:cover;object-position:top}
   .moment-cols{grid-template-columns:1fr;gap:40px}
