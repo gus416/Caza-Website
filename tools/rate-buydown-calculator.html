@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KB6RLF3R7B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IS','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','G-KB6RLF3R7B',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate buydown calculator: 2-1, 1-0, and points | Caza</title>
+<meta name="description" content="Compare a baseline loan with a temporary 2-1, a 1-0, and discount points. Type the quoted rate yourself. Hypothetical principal and interest only.">
+<link rel="canonical" href="https://usecaza.com/tools/rate-buydown-calculator">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/tools/rate-buydown-calculator">
+<meta property="og:title" content="Rate buydown calculator: 2-1, 1-0, and points">
+<meta property="og:description" content="Compare a baseline loan with a temporary 2-1, a 1-0, and discount points. Type the quoted rate yourself. Hypothetical principal and interest only.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CazaRealEstate">
+<meta name="twitter:title" content="Rate buydown calculator: 2-1, 1-0, and points">
+<meta name="twitter:description" content="Compare a baseline loan with a temporary 2-1, a 1-0, and discount points. Type the quoted rate yourself. Hypothetical principal and interest only.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261104a">
+<style>
+.tool{max-width:1040px;padding:48px 0 0}
+.tool-card{border:1px solid var(--rule);border-radius:12px;padding:24px;background:#fff}
+.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 20px}
+.tool-f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tool-f label,.choice legend{font-weight:700;font-size:16px}
+.tool-f .opt{font-weight:500;color:var(--sub)}
+.tool-f input,.tool-f select{width:100%;min-height:48px;padding:10px 12px;font:inherit;font-size:17px;color:var(--ink);background:#fff;border:1px solid var(--lot);border-radius:7px}
+.tool-f input:focus-visible,.tool-f select:focus-visible,.choice input:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+.tool-f .hint, .choice .hint{font-size:14px;color:var(--sub);line-height:1.4}
+.tool-wide{grid-column:1/-1}
+.choice{border:0;margin:0;padding:0;min-width:0}
+.choice .opts{display:flex;flex-wrap:wrap;gap:8px}
+.choice label{display:flex;align-items:flex-start;gap:8px;min-height:44px;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:#fff;font-weight:600}
+.choice input{width:1.15rem;height:1.15rem;margin-top:2px;accent-color:var(--navy)}
+.tool-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.tool-actions .btn{min-height:48px;cursor:pointer;font-family:inherit}
+.tool-actions .btn-ghost{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+.tool-actions .btn-ghost:hover{background:var(--vellum);color:var(--navy)}
+.banner{margin:0 0 16px;padding:12px 14px;background:var(--orange-tint);border-radius:8px;font-weight:600}
+.tool-err{color:var(--rust-deep);font-weight:700;margin:14px 0 0}
+.tool-err:empty{display:none}
+.bd-h{font-size:22px;margin:8px 0 8px}
+.summary{font-size:18px;margin:0 0 16px}
+.bars{display:grid;grid-template-columns:11rem minmax(0,1fr) 15rem;gap:8px 12px;align-items:center;margin:0 0 18px}
+.bar-kicker{grid-column:1/-1}
+.bar-row{display:contents}
+.bar-name{font-weight:700}
+.bar-kicker{margin:0 0 8px;font-weight:700}
+.track{display:block;height:14px;background:var(--vellum);border-radius:99px;overflow:hidden}
+.track-na{background:transparent;border:1px dashed var(--rule)}
+.fill{display:block;height:100%;background:var(--navy);border-radius:99px}
+.fill.a{background:var(--orange)}
+.fill.b{background:var(--rust)}
+.fill.c{background:#1d4e89}
+.bar-val{display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-variant-numeric:tabular-nums;font-weight:700;text-align:right}
+.bar-delta{font-size:13px;font-weight:600;color:var(--sub);white-space:normal}
+.table-scroll{display:block;width:100%;max-width:100%;overflow-x:auto;margin:0 0 16px}
+.bd-tbl{width:100%;border-collapse:collapse;font-size:15px}
+.bd-tbl caption{caption-side:top;text-align:left;font-weight:700;padding:0 0 8px}
+.bd-tbl th,.bd-tbl td{text-align:left;vertical-align:top;padding:8px 10px 8px 0;border-bottom:1px solid var(--rule)}
+.bd-tbl td{font-variant-numeric:tabular-nums}
+.bd-tbl thead th{font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--sub)}
+.notes{margin:0 0 8px;padding-left:1.15rem}
+.notes li{margin:0 0 8px}
+@media (max-width:760px){
+  .tool{padding-top:32px}
+  .tool-card{padding:18px}
+  .tool-grid{grid-template-columns:1fr}
+  .bars{grid-template-columns:1fr}
+  .bar-row{display:grid;grid-template-columns:1fr;gap:4px;margin-bottom:8px}
+  .bar-val{align-items:flex-start;text-align:left;flex-direction:row;flex-wrap:wrap;gap:8px}
+  .bd-tbl caption{display:block;width:100%;max-width:100%;white-space:normal;box-sizing:border-box}
+  .bd-tbl thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .bd-tbl,.bd-tbl tbody,.bd-tbl tr,.bd-tbl th,.bd-tbl td{display:block;width:auto}
+  .bd-tbl tr{padding:10px 0;border-bottom:1px solid var(--rule)}
+  .bd-tbl th[scope="row"]{border:0;padding:0 0 6px;font-size:16px}
+  .bd-tbl td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0;text-align:right}
+  .bd-tbl td::before{content:attr(data-label);font-weight:600;color:var(--sub);text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:.02em}
+}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "@id": "https://usecaza.com/tools/rate-buydown-calculator#tool",
+   "url": "https://usecaza.com/tools/rate-buydown-calculator",
+   "name": "Rate buydown calculator",
+   "description": "Compare a baseline loan with a temporary 2-1, a 1-0, and discount points. Type the quoted rate yourself. Hypothetical principal and interest only.",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Any (web browser)",
+   "browserRequirements": "Requires JavaScript",
+   "isAccessibleForFree": true,
+   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+   "publisher": {"@id": "https://usecaza.com/#org"}
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usecaza.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://usecaza.com/tools"},
+    {"@type": "ListItem", "position": 3, "name": "Rate buydown calculator", "item": "https://usecaza.com/tools/rate-buydown-calculator"}
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does a 2-1 buydown lower the note rate?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. The note rate and the monthly note payment stay the same. A temporary buydown is a subsidy of that payment. This calculator does not change the amortization on a temporary plan."}
+    },
+    {
+     "@type": "Question",
+     "name": "Will one point always lower the rate by 0.25%?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. You type the quoted rate separately. The default 6.25% is the guide's labeled assumption, not a conversion from the point."}
+    },
+    {
+     "@type": "Question",
+     "name": "If I pay for the temporary subsidy myself, do I save money?",
+     "acceptedAnswer": {"@type": "Answer", "text": "You move your own money into the buydown account and receive it back as lower payments. That is not interest savings. If you pay the loan off early, this calculator does not assume a cash refund of what is left, and it does not count it as lost either. The buydown agreement decides what happens to unused funds."}
+    },
+    {
+     "@type": "Question",
+     "name": "Does a seller-paid subsidy mean the buydown is free?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. This tool only shows the payment math if someone else pays. It does not mean a seller, builder, or lender will offer it, and sellers often price concessions into the purchase price."}
+    },
+    {
+     "@type": "Question",
+     "name": "Does this include taxes, insurance, or mortgage insurance?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. Principal and interest only."}
+    },
+    {
+     "@type": "Question",
+     "name": "Can I use these results for an investment property or a 5-unit building?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Fannie Mae temporary buydowns are not eligible on investment property, and Freddie Mac's product page lists investment-property mortgages as ineligible. This tool compares 1 to 4 unit residential payment math. It does not apply to buildings with 5 or more units. Your lender and loan program decide eligibility, and temporary plans are generally qualified at the full note rate."}
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=tool-rate-buydown-calculator">Add to Chrome</a>
+  </div>
+</header>
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/tools">Tools</a> · For buyers</p>
+    <h1>Rate buydown calculator</h1>
+    <p class="lede">Compare a baseline payment with a temporary 2-1, a temporary 1-0, and discount points. Type the quoted rate yourself. The points do not pick a rate.</p>
+  </div></div>
+  <div class="wrap">
+    <div class="tool">
+      <form class="tool-card" id="toolform" data-tool="rate-buydown-calculator" novalidate autocomplete="off">
+        <p class="banner" id="prefill">Prefilled with the guide’s hypothetical example: $320,000 loan, 6.50% note rate, 30 years, 1 point ($3,200), and an assumed 6.25% quote. Not a current lender quote.</p>
+        <div class="tool-grid">
+          <fieldset class="choice tool-wide">
+            <legend>Loan size</legend>
+            <div class="opts">
+              <label><input type="radio" name="mode" value="loan" checked> Loan amount</label>
+              <label><input type="radio" name="mode" value="price"> Price and down payment</label>
+            </div>
+          </fieldset>
+          <div class="tool-f" id="loan-wrap">
+            <label for="loan">Loan amount</label>
+            <input id="loan" name="loan" type="text" inputmode="decimal" value="320000" aria-describedby="loan-hint">
+            <span class="hint" id="loan-hint">Dollars. 320k is accepted. This is the amount borrowed, not the price.</span>
+          </div>
+          <div class="tool-f" id="price-wrap" hidden>
+            <label for="price">Home price</label>
+            <input id="price" name="price" type="text" inputmode="decimal" value="400000" aria-describedby="price-hint" disabled>
+            <span class="hint" id="price-hint">Used only when “Price and down payment” is selected.</span>
+          </div>
+          <div class="tool-f" id="down-wrap" hidden>
+            <label for="down">Down payment</label>
+            <input id="down" name="down" type="text" inputmode="decimal" value="80000" aria-describedby="down-hint" disabled>
+            <span class="hint" id="down-hint">Dollars, not a percent. The loan is price minus this amount.</span>
+          </div>
+          <div class="tool-f">
+            <label for="note">Note rate (annual %)</label>
+            <input id="note" name="note" type="text" inputmode="decimal" value="6.50" aria-describedby="note-hint">
+            <span class="hint" id="note-hint">The permanent rate on the note. A temporary buydown does not change it.</span>
+          </div>
+          <div class="tool-f">
+            <label for="term">Loan term</label>
+            <input id="term" name="term" type="text" inputmode="numeric" value="30" aria-describedby="term-hint">
+          </div>
+          <div class="tool-f">
+            <label for="termunit">Term unit</label>
+            <select id="termunit" name="termunit" aria-describedby="term-hint">
+              <option value="years" selected>Years</option>
+              <option value="months">Months</option>
+            </select>
+            <span class="hint" id="term-hint">30 years is 360 monthly payments.</span>
+          </div>
+          <div class="tool-f">
+            <label for="quoted">Quoted rate after points (annual %)</label>
+            <input id="quoted" name="quoted" type="text" inputmode="decimal" value="6.25" aria-describedby="quoted-hint">
+            <span class="hint" id="quoted-hint">Type the rate the lender quoted. 6.25% here is an assumption for the example, not a points-to-rate formula.</span>
+          </div>
+          <div class="tool-f">
+            <label for="points">Discount points</label>
+            <input id="points" name="points" type="text" inputmode="decimal" value="1" aria-describedby="points-hint">
+            <span class="hint" id="points-hint">One point costs 1% of the loan amount. Points do not set the quoted rate.</span>
+          </div>
+          <div class="tool-f">
+            <label for="fee">Other upfront fee ($)</label>
+            <input id="fee" name="fee" type="text" inputmode="decimal" value="0" aria-describedby="fee-hint">
+            <span class="hint" id="fee-hint">Added to the points cost. Use 0 if the points are the only upfront fee.</span>
+          </div>
+          <div class="tool-f">
+            <label for="horizon">Holding period (months)</label>
+            <input id="horizon" name="horizon" type="text" inputmode="numeric" value="60" aria-describedby="horizon-hint">
+            <span class="hint" id="horizon-hint">Months you keep this loan, not years. 0 means no payments yet. 60 months is 5 years. It cannot run past the term. This is payment cash flow, not a payoff.</span>
+          </div>
+          <fieldset class="choice tool-wide" aria-describedby="payer-hint">
+            <legend>Who pays the temporary subsidy?</legend>
+            <div class="opts">
+              <label><input type="radio" name="payer" value="buyer" checked> Buyer</label>
+              <label><input type="radio" name="payer" value="seller"> Seller, builder, or lender</label>
+            </div>
+            <p class="hint" id="payer-hint">Buyer-funded money is a deposit you get back as lower payments, not interest savings. Someone else paying it is not automatic, and it is not free.</p>
+          </fieldset>
+          <fieldset class="choice tool-wide" aria-describedby="points-payer-hint">
+            <legend>Who pays the discount points and fee?</legend>
+            <div class="opts">
+              <label><input type="radio" name="pointsPayer" value="buyer" checked> Buyer</label>
+              <label><input type="radio" name="pointsPayer" value="seller"> Seller, builder, or lender</label>
+            </div>
+            <p class="hint" id="points-payer-hint">Counted separately from the temporary subsidy. Seller-paid points are not automatically free and are not an eligibility finding.</p>
+          </fieldset>
+        </div>
+        <div class="tool-actions">
+          <button class="btn" type="submit">Compare</button>
+          <button class="btn btn-ghost" type="button" id="reset">Reset to guide example</button>
+        </div>
+        <p class="tool-err" id="form-error" role="alert"></p>
+        <div id="out">
+          <h2 class="bd-h" id="result-title" tabindex="-1">Comparison</h2>
+          <p class="summary" id="summary"></p>
+          <div id="details"></div>
+        </div>
+      </form>
+      <p class="fine">Hypothetical principal and interest only. Excludes property taxes, insurance, mortgage insurance, and HOA dues. Nothing you enter leaves your browser. Not a lender quote, a loan approval, or a promise you can refinance.</p>
+    </div>
+
+    <article class="post post-page" style="padding-top:28px">
+      <h2>What this compares</h2>
+      <p>Four ways to pay the same loan. The baseline is the note, with no buydown. A temporary 2-1 and a temporary 1-0 keep that note and use a subsidy account to cover part of the payment. Discount points are different: the loan actually has the lower rate you type in, and it amortizes at that quoted rate.</p>
+      <p>Monthly payments use the standard fully amortizing formula, <strong>payment = loan × r ÷ (1 − (1 + r)<sup>−n</sup>)</strong>, where r is the annual rate divided by 12 and n is the number of monthly payments. At a 0% rate the payment is the loan divided by the number of months. Each payment is rounded half-up to the cent, and a temporary subsidy is the difference of those rounded payments. On the guide’s example that cent-rounded convention is a 2-1 subsidy of $7,283.16 and a 1-0 subsidy of $2,468.40. Rounding the unrounded difference first is $7,282.92, and quantizing the exact unrounded total once is $7,283.01. The 1-0 is $2,468.40 here, versus $2,468.31 quantized once. This tool uses the cent-rounded monthly convention only. A real buydown agreement can still differ by a few cents. If you hold the loan for the whole term, the comparison still counts a full rounded payment every month, including the last one. That is not the adjusted final payment a servicer uses to make the balance zero, and it is not an exact payoff.</p>
+      <h2>Temporary plans do not change the loan</h2>
+      <p>On a 2-1, the year-1 payment is calculated as if the rate were 2 percentage points lower, and year 2 as if it were 1 point lower. On a 1-0, only the first 12 payments use a rate 1 point lower. That calculation rate is not the note rate. The note rate, the monthly amount you owe on the note, and the way the balance pays down all stay on the original note. If a calculation rate would be negative, that plan is marked unavailable. The calculator does not quietly use 0% instead.</p>
+      <p>If you fund the subsidy yourself, you are moving your own cash from closing into those earlier payments. Over the buydown, the lower payments add up to the deposit. That is not a reduction in interest. If the holding period ends before the subsidy is used up, the remainder is unapplied. This page does not call that remainder a loss, and it does not call it a refund. The buydown agreement decides what happens at payoff.</p>
+      <p>If you mark the subsidy as paid by a seller, builder, or lender, the buyer’s upfront cash for that subsidy is $0 in the comparison. That is only the arithmetic. It does not mean anyone has offered to pay it. Seller credits are often built into the price. The <a href="/guides/cash-to-close-zillow-listing">cash-to-close guide</a> is the separate question of what you bring to closing.</p>
+      <h2>Points need a quoted rate</h2>
+      <p>One discount point costs 1% of the loan amount. How much rate that point buys is not fixed. The CFPB’s own example uses a $400,000 loan and a 0.25% reduction, then says another lender might give more or less for the same point. The 6.25% default is that same kind of labeled assumption on the guide’s $320,000 example. Change it to the rate on your Loan Estimate. The <a href="/guides/how-mortgage-rate-buydowns-work">rate buydown guide</a> walks through the example this tool starts with. The <a href="/tools/rate-drop-vs-price-cut-calculator">rate drop vs. price cut calculator</a> answers a different question and does not model buydown funding.</p>
+      <h2>What this tool can’t tell you</h2>
+      <ul>
+        <li>Your lender’s actual rate, points price, or whether you qualify. Temporary buydowns in the Fannie Mae rules, and fixed-rate loans on Freddie Mac’s product page, are qualified at the full note rate.</li>
+        <li>Whether a temporary buydown is allowed. Fannie Mae’s rules do not allow them on investment property. Freddie Mac’s product page also lists investment-property mortgages as ineligible and says it is not a substitute for the Seller/Servicer Guide. This tool does not restate Freddie’s numeric limits.</li>
+        <li>Loans on buildings with 5 or more units. The comparison is 1–4 unit residential payment math.</li>
+        <li>FHA, VA, and USDA rules. They differ. Ask the lender which program this loan is.</li>
+        <li>Taxes, insurance, mortgage insurance, HOA dues, a future refinance, or the equity you would have at payoff.</li>
+      </ul>
+      <h2 id="faq">FAQ</h2>
+      <div class="gfaq">
+        <h3>Does a 2-1 buydown lower the note rate?</h3>
+        <p>No. The note rate and the monthly note payment stay the same. A temporary buydown is a subsidy of that payment. This calculator does not change the amortization on a temporary plan.</p>
+        <h3>Will one point always lower the rate by 0.25%?</h3>
+        <p>No. You type the quoted rate separately. The default 6.25% is the guide’s labeled assumption, not a conversion from the point.</p>
+        <h3>If I pay for the temporary subsidy myself, do I save money?</h3>
+        <p>You move your own money into the buydown account and receive it back as lower payments. That is not interest savings. If you pay the loan off early, this calculator does not assume a cash refund of what is left, and it does not count it as lost either. The buydown agreement decides what happens to unused funds.</p>
+        <h3>Does a seller-paid subsidy mean the buydown is free?</h3>
+        <p>No. This tool only shows the payment math if someone else pays. It does not mean a seller, builder, or lender will offer it, and sellers often price concessions into the purchase price.</p>
+        <h3>Does this include taxes, insurance, or mortgage insurance?</h3>
+        <p>No. Principal and interest only.</p>
+        <h3>Can I use these results for an investment property or a 5-unit building?</h3>
+        <p>Fannie Mae temporary buydowns are not eligible on investment property, and Freddie Mac’s product page lists investment-property mortgages as ineligible. This tool compares 1–4 unit residential payment math. It does not apply to buildings with 5 or more units. Your lender and loan program decide eligibility, and temporary plans are generally qualified at the full note rate.</p>
+      </div>
+      <h2>Sources</h2>
+      <p>The rules behind the labels are the same ones cited on the <a href="/guides/how-mortgage-rate-buydowns-work#sources-h">rate buydown guide</a>, accessed Nov. 9, 2026. The main ones:</p>
+      <ul>
+        <li><a href="https://www.consumerfinance.gov/ask-cfpb/how-should-i-use-lender-credits-and-points-also-called-discount-points-en-136/">CFPB, lender credits and discount points</a> (last reviewed Oct. 19, 2023). One point is 1% of the loan. The rate reduction depends on the lender, the loan, and the market.</li>
+        <li><a href="https://www.consumerfinance.gov/data-research/research-reports/data-spotlight-trends-in-discount-points-amid-rising-interest-rates/">CFPB, trends in discount points</a> (Apr. 5, 2024; page last modified Aug. 22, 2024). There is no fixed points-to-rate value.</li>
+        <li><a href="https://www.consumerfinance.gov/ask-cfpb/on-a-mortgage-whats-the-difference-between-my-principal-and-interest-payment-and-my-total-monthly-payment-en-1941/">CFPB, principal and interest versus the total monthly payment</a> (last reviewed Aug. 28, 2023).</li>
+        <li><a href="https://selling-guide.fanniemae.com/sel/b2-1.4-04/temporary-interest-rate-buydowns">Fannie Mae Selling Guide B2-1.4-04, Temporary Interest Rate Buydowns</a> (08/07/2024).</li>
+        <li><a href="https://selling-guide.fanniemae.com/sel/b3-4.1-02/interested-party-contributions-ipcs">Fannie Mae Selling Guide B3-4.1-02, Interested Party Contributions</a> (05/07/2025).</li>
+        <li><a href="https://sf.freddiemac.com/working-with-us/origination-underwriting/mortgage-products/mortgages-with-temporary-subsidy-buydown-plans">Freddie Mac, mortgages with temporary subsidy buydown plans</a>. That page says it is not a substitute for the Seller/Servicer Guide. Guide sections 4204.3 and 5501.6 were not used as numeric limits here.</li>
+      </ul>
+      <p>Caza is not affiliated with or endorsed by the CFPB, Fannie Mae, or Freddie Mac. This is general information, not financial, legal, tax, or lending advice.</p>
+      <div class="post-cta">
+        <p><strong>Caza is a free Chrome extension right now</strong> for demand, comps, and investor numbers on Zillow listings.</p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=tool-rate-buydown-calculator" class="btn">Try Caza free</a>
+      </div>
+    </article>
+    <a class="back" href="/tools">Back to all tools</a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script src="/tools/rate-buydown-calculator.js"></script>
+<script>
+(function () {
+  var C = window.BuydownCalc;
+  var form = document.getElementById('toolform');
+  var err = document.getElementById('form-error');
+  var summary = document.getElementById('summary');
+  var details = document.getElementById('details');
+  var title = document.getElementById('result-title');
+  var termHint = document.getElementById('term-hint');
+  var defaults = { loan: '320000', price: '400000', down: '80000', note: '6.50', term: '30', termunit: 'years', quoted: '6.25', points: '1', fee: '0', horizon: '60', mode: 'loan', payer: 'buyer' };
+
+  function val(id) { return document.getElementById(id).value; }
+  function checked(name) { var el = form.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function usd(cents) { return C.usd(cents); }
+  function pct(n) { return (Math.round(n * 1000) / 1000).toString().replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '') + '%'; }
+
+  function read() {
+    return {
+      mode: checked('mode'),
+      loan: val('loan'),
+      price: val('price'),
+      down: val('down'),
+      noteRate: val('note'),
+      term: val('term'),
+      termUnit: val('termunit'),
+      quotedRate: val('quoted'),
+      points: val('points'),
+      fee: val('fee'),
+      horizonMonths: val('horizon'),
+      payer: checked('payer'),
+      pointsPayer: checked('pointsPayer')
+    };
+  }
+
+  function setMode(mode) {
+    var priceMode = mode === 'price';
+    document.getElementById('loan-wrap').hidden = priceMode;
+    document.getElementById('price-wrap').hidden = !priceMode;
+    document.getElementById('down-wrap').hidden = !priceMode;
+    document.getElementById('loan').disabled = priceMode;
+    document.getElementById('price').disabled = !priceMode;
+    document.getElementById('down').disabled = !priceMode;
+  }
+
+  function termSentence() {
+    var unit = val('termunit');
+    var raw = val('term').trim();
+    if (!/^\d+$/.test(raw)) {
+      termHint.textContent = unit === 'years' ? 'Enter whole years. 30 years is 360 monthly payments.' : 'Enter a whole number of months.';
+      return;
+    }
+    var n = Number(raw);
+    termHint.textContent = unit === 'years'
+      ? (n + (n === 1 ? ' year is ' : ' years is ') + (n * 12) + ' monthly payments.')
+      : ('The term is ' + n + (n === 1 ? ' monthly payment.' : ' monthly payments.'));
+  }
+
+  function clearInvalid() {
+    [].forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) {
+      el.removeAttribute('aria-invalid');
+      el.removeAttribute('aria-errormessage');
+      if ('hint' in el.dataset) {
+        if (el.dataset.hint) el.setAttribute('aria-describedby', el.dataset.hint);
+        else el.removeAttribute('aria-describedby');
+      }
+    });
+  }
+
+  function moneyCell(cents) { return usd(cents); }
+
+  function planCell(plan, cents) {
+    if (!plan.available) return 'Not available';
+    if (cents === null || cents === undefined) return 'No payment in this term';
+    return moneyCell(cents);
+  }
+
+  function breakText(plan, r) {
+    if (!plan.available) return 'Not available';
+    if (plan.id === 'baseline') return 'No buydown cost';
+    var b = plan.breakEven;
+    if (!b) return '';
+    if (plan.id === 'permanent') {
+      if (b.kind === 'seller-funded') return 'Someone else is selected to pay the points. That is not automatically free, and it is not a points-to-rate quote.';
+      if (b.kind === 'already-covered') return 'No buyer upfront cost, so there is nothing to recover. Month 0. This is not a discount-point quote.';
+      if (b.kind === 'na') return 'No payment change and no upfront cost.';
+      if (b.kind === 'never') return 'Never. The rounded payment is not lower, so the upfront cost is not recovered from principal and interest.';
+      if (b.kind === 'after-term') return 'Not within this ' + r.termMonths + '-month term. Simple break-even is about ' + b.aboutMonths + ' months; the first whole month would be month ' + b.month + ', after maturity.';
+      return 'About ' + b.aboutMonths + ' months. The first whole month the payment savings cover the cost is month ' + b.month + ' (' + usd(b.month * plan.monthlySavingsCents) + ', ' + usd(b.surplusAtMonthCents) + ' past the cost). After month ' + (b.month - 1) + ', ' + usd(b.shortfallBeforeCents) + ' is still unrecovered. Payment cash flow only.';
+    }
+    if (b.kind === 'no-buyer-deposit') return 'No buyer deposit in this selection. Lower payments are not a promise that someone else will pay.';
+    if (b.kind === 'no-change') return 'No subsidy at these rounded payments.';
+    return 'Month ' + b.month + '. The deposit is back as lower payments by then, dollar for dollar. That is not interest savings.';
+  }
+
+  function render(r, opts) {
+    opts = opts || {};
+    var moveFocus = !!opts.moveFocus;
+    var announceError = !!opts.announceError;
+    clearInvalid();
+    if (!r.ok) {
+      summary.textContent = '';
+      details.innerHTML = '';
+      if (announceError) err.textContent = r.error;
+      var field = r.field && document.getElementById(r.field);
+      if (field && !field.disabled) {
+        if (!('hint' in field.dataset)) field.dataset.hint = field.getAttribute('aria-describedby') || '';
+        field.setAttribute('aria-invalid', 'true');
+        field.setAttribute('aria-errormessage', 'form-error');
+        field.setAttribute('aria-describedby', (field.dataset.hint ? field.dataset.hint + ' ' : '') + 'form-error');
+        if (moveFocus) field.focus();
+      }
+      return;
+    }
+    err.textContent = '';
+
+    var y1max = 0;
+    r.plans.forEach(function (p) {
+      if (p.available && p.buyerY1Cents) y1max = Math.max(y1max, p.buyerY1Cents);
+    });
+    var fills = ['', 'a', 'b', 'c'];
+    var bars = r.plans.map(function (p, i) {
+      if (!p.available || p.buyerY1Cents === null || p.buyerY1Cents === undefined) {
+        return '<div class="bar-row"><span class="bar-name">' + esc(p.name) + '</span><span class="track track-na" aria-hidden="true"></span><span class="bar-val">Not available</span></div>';
+      }
+      var width = y1max ? Math.max(4, Math.round(p.buyerY1Cents / y1max * 100)) : 0;
+      var diff = r.baseline.notePaymentCents - p.buyerY1Cents;
+      var delta = p.id === 'baseline' ? 'Full note payment' : (diff > 0 ? usd(diff) + ' below the note payment' : (diff < 0 ? usd(-diff) + ' above the note payment' : 'Same as the note payment'));
+      return '<div class="bar-row"><span class="bar-name">' + esc(p.name) + '</span><span class="track" aria-hidden="true"><span class="fill ' + fills[i] + '" style="width:' + width + '%"></span></span><span class="bar-val">' + usd(p.buyerY1Cents) + '<span class="bar-delta">' + esc(delta) + '</span></span></div>';
+    }).join('');
+
+    function row(label, pick) {
+      return '<tr><th scope="row">' + esc(label) + '</th>' + r.plans.map(function (p) {
+        return '<td data-label="' + esc(p.name) + '">' + pick(p) + '</td>';
+      }).join('') + '</tr>';
+    }
+    var head = '<tr><th scope="col">Comparison</th>' + r.plans.map(function (p) {
+      return '<th scope="col">' + esc(p.name) + '</th>';
+    }).join('') + '</tr>';
+    var periodRows = '';
+    var labels = [];
+    r.plans.forEach(function (p) { if (p.rows) p.rows.forEach(function (rr) { if (labels.indexOf(rr.label) === -1) labels.push(rr.label); }); });
+    labels.forEach(function (label) {
+      periodRows += row(label + ' buyer P&I', function (p) {
+        if (!p.available) return 'Not available';
+        var found = (p.rows || []).filter(function (rr) { return rr.label === label; })[0];
+        return found ? usd(found.cents) : 'No payment in this term';
+      });
+    });
+
+    var payerLine = r.payer === 'buyer'
+      ? 'Buyer. A self-funded subsidy is your own money moved into earlier payments, not interest savings.'
+      : 'Seller, builder, or lender in this selection only. That is not a promise anyone will pay it, and it is not automatically free.';
+
+    var html = '<div class="bars" role="group" aria-labelledby="bar-kicker"><p class="bar-kicker" id="bar-kicker">Year 1 buyer principal and interest</p>' + bars + '</div>';
+    var cap = 'Principal and interest only, rounded half-up to the cent. Selected holding period: ' + r.horizonMonths + ' months. Loan term: ' + r.termMonths + ' monthly payments.';
+    if (r.horizonMonths === 0) cap += ' No payments are counted yet.';
+    html += '<div class="table-scroll" tabindex="0" role="region" aria-label="Buydown comparison table.">';
+    html += '<table class="bd-tbl"><caption>' + esc(cap) + '</caption><thead>' + head + '</thead><tbody>';
+    html += periodRows;
+    html += row('Monthly P&I difference vs the note', function (p) {
+      if (!p.available) return 'Not available';
+      if (p.id === 'permanent') {
+        if (p.monthlySavingsCents > 0) return usd(p.monthlySavingsCents) + ' lower';
+        if (p.monthlySavingsCents < 0) return usd(Math.abs(p.monthlySavingsCents)) + ' higher';
+        return '$0.00';
+      }
+      if (p.id === 'baseline') return '$0.00';
+      return 'Subsidy only, not interest savings';
+    });
+    html += row('Note obligation every month', function (p) {
+      if (!p.available) return 'Not available';
+      return usd(p.notePaymentCents) + (p.id === 'permanent' ? ' at the quoted rate' : ' at the note rate');
+    });
+    html += row('Rate that sets the buyer payment', function (p) {
+      if (!p.available) return esc(p.reason);
+      if (p.id === 'temp21') return 'Calculated at ' + pct(p.calcRateY1) + ', then ' + pct(p.calcRateY2) + '. Note rate stays ' + pct(p.noteRate) + '.';
+      if (p.id === 'temp10') return 'First 12 payments calculated at ' + pct(p.calcRateY1) + '. Note rate stays ' + pct(r.noteRate) + '.';
+      if (p.id === 'permanent') return pct(p.noteRate) + ' quoted. The loan amortizes at this rate.';
+      return pct(p.noteRate) + ' note rate.';
+    });
+    html += row('Upfront cost at closing (subsidy or points)', function (p) {
+      if (!p.available) return 'Not available';
+      if (p.id === 'temp21' || p.id === 'temp10') return p.hasSubsidy ? usd(p.totalSubsidyCents) : 'None';
+      if (p.id === 'permanent') return usd(r.permanentUpfrontCents) + ' points and fees';
+      return '$0.00';
+    });
+    html += row('Buyer upfront counted here', function (p) {
+      if (!p.available) return 'Not available';
+      return usd(p.upfrontCents);
+    });
+    html += row('Lower payments received over the holding period', function (p) {
+      if (!p.available) return 'Not available';
+      if (p.id === 'permanent' && p.monthlySavingsCents < 0) return 'None. Payment is ' + usd(Math.abs(p.monthlySavingsCents)) + ' higher each month.';
+      return usd(p.cumulativePaymentSavingsCents);
+    });
+    html += row('Upfront-adjusted payment cash flow', function (p) {
+      if (!p.available) return 'Not available';
+      return usd(p.upfrontAdjustedCents);
+    });
+    html += row('Simple break-even', function (p) { return esc(breakText(p, r)); });
+    html += '</tbody></table></div>';
+
+    var notes = [];
+    notes.push('Convention: each monthly principal-and-interest payment is rounded half-up to the cent, then the subsidy is the difference of those rounded payments. Totals add the cents. On the guide example that is a 2-1 subsidy of $7,283.16, not $7,282.92 or $7,283.01. The 1-0 is $2,468.40 here, versus $2,468.31 quantized once.');
+    notes.push('Temporary lower payments are fund subsidies. The note rate, the monthly note obligation, and the amortization do not change. Loan interest on a temporary plan is the same as the baseline. Qualification uses the note payment, ' + usd(r.qualificationPaymentCents) + ', not the subsidized payment.');
+    notes.push(payerLine);
+    if (r.pointsPayer === 'seller' && r.permanent.grossUpfrontCents > 0) {
+      notes.push('Discount points of ' + usd(r.permanent.grossUpfrontCents) + ' are not counted as buyer cash in this selection. That concession is not automatically free, may be traded in the price, and is not an eligibility or contribution-cap finding.');
+    }
+    if (r.atMaturity) {
+      notes.push('This holding period is the full term, but every month is still the same rounded payment, including the last one. A servicer adjusts the final payment so the balance clears. These totals do not make that adjustment and are not an exact payoff.');
+      if (r.guideExample) notes.push('On this guide example, 360 full payments of $2,022.62 overshoot a closed-form payoff by about $2.57. The last payment that clears the note is about $2,020.05, not another full $2,022.62. The assumed 6.25% loan has a larger residual. No negative balance is shown as a credit.');
+    }
+    if (r.temp21.available && r.temp21.unappliedCents > 0) {
+      notes.push(r.payer === 'buyer'
+        ? usd(r.temp21.unappliedCents) + ' of the 2-1 deposit is not applied during this holding period. It is not counted as money you lost, and it is not counted as a cash refund.'
+        : usd(r.temp21.unappliedCents) + ' of the 2-1 subsidy is not applied during this holding period. It is not added to the buyer as cash.');
+    }
+    if (r.temp10.available && r.temp10.unappliedCents > 0) {
+      notes.push(r.payer === 'buyer'
+        ? usd(r.temp10.unappliedCents) + ' of the 1-0 deposit is not applied yet. Same rule: not a loss and not a refund in this result.'
+        : usd(r.temp10.unappliedCents) + ' of the 1-0 subsidy is not applied yet and is not added to the buyer as cash.');
+    }
+    notes.push('Upfront-adjusted figures are payment cash flow only. Unused temporary funds are neither refunded nor forfeited here; the buydown agreement controls. This is not remaining equity, not a payoff quote, and not a refinance.');
+    if (r.temp21.available && r.temp21.zeroCalcRate || r.temp10.available && r.temp10.zeroCalcRate) {
+      notes.push('A calculation rate of 0% is the note rate minus the buydown points, not a floor substituted for a negative rate.');
+    }
+    html += '<ul class="notes">' + notes.map(function (n) { return '<li>' + esc(n) + '</li>'; }).join('') + '</ul>';
+    if (!r.temp21.available) html += '<p><strong>2-1:</strong> ' + esc(r.temp21.reason) + '</p>';
+    if (!r.temp10.available) html += '<p><strong>1-0:</strong> ' + esc(r.temp10.reason) + '</p>';
+    if (!r.permanent.isBuydown) html += '<p><strong>Points:</strong> ' + esc(r.permanent.reason) + '</p>';
+
+    var lead;
+    if (r.guideExample && r.payer === 'buyer' && r.pointsPayer === 'buyer') {
+      lead = 'Illustration, not a lender quote. On the guide’s example, the note payment is $2,022.62. A buyer-funded 2-1 deposits $7,283.16 and receives that same amount back as lower payments by month 24. That is not interest savings. One point costs $3,200. The assumed 6.25% quote saves $52.32 a month. Simple break-even is about 61.2 months, and the first whole month that covers the cost is month 62.';
+    } else if (r.guideExample && r.payer === 'buyer') {
+      lead = 'Illustration, not a lender quote. On the guide’s example, the note payment is $2,022.62. A buyer-funded 2-1 deposits $7,283.16 and receives that same amount back as lower payments by month 24. That is not interest savings. The $3,200 in points is marked as paid by someone else in this selection. That is not automatically free, and the assumed 6.25% quote is not a points-to-rate conversion.';
+    } else if (r.guideExample) {
+      lead = 'Illustration, not a lender quote. If someone else pays the $7,283.16 subsidy, the year-1 buyer payment is $1,621.39 instead of $2,022.62. The note rate stays 6.50%. This is not a promise that a seller or lender will pay, and it is not automatically free.';
+    } else if (!r.temp21.available && !r.temp10.available) {
+      lead = 'Hypothetical, not a lender quote. Temporary plans are not available on these inputs; see the notes below.';
+    } else if (r.payer === 'buyer') {
+      lead = 'Hypothetical, not a lender quote. Buyer-funded temporary subsidies are your own cash moved into earlier payments. The note rate on those plans stays ' + pct(r.noteRate) + '.';
+    } else {
+      lead = 'Hypothetical, not a lender quote. Seller or lender funding is selected only for the arithmetic. It does not mean the subsidy is offered or free. The note rate on a temporary plan stays ' + pct(r.noteRate) + '.';
+    }
+    summary.textContent = lead;
+    details.innerHTML = html;
+    if (moveFocus) title.focus();
+  }
+
+  function go(opts) {
+    termSentence();
+    render(C.calc(read()), opts || {});
+  }
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); go({ moveFocus: true, announceError: true }); });
+  form.addEventListener('input', function () { go({ moveFocus: false, announceError: false }); });
+  form.addEventListener('change', function (e) {
+    if (e.target.name === 'mode') setMode(e.target.value);
+    go({ moveFocus: false, announceError: true });
+  });
+  form.addEventListener('focusout', function (e) {
+    if (e.target && e.target.matches && e.target.matches('input, select')) go({ moveFocus: false, announceError: true });
+  });
+  document.getElementById('reset').addEventListener('click', function () {
+    Object.keys(defaults).forEach(function (key) {
+      var el = document.getElementById(key);
+      if (el && (el.tagName === 'INPUT' || el.tagName === 'SELECT') && el.type !== 'radio') el.value = defaults[key];
+    });
+    form.querySelector('input[name="mode"][value="loan"]').checked = true;
+    form.querySelector('input[name="payer"][value="buyer"]').checked = true;
+    form.querySelector('input[name="pointsPayer"][value="buyer"]').checked = true;
+    setMode('loan');
+    go({ moveFocus: false, announceError: false });
+    document.getElementById('loan').focus();
+  });
+
+  setMode('loan');
+  go({ moveFocus: false, announceError: false });
+})();
+</script>
+<script src="/m.js?v=20261027c" defer></script>
+<script src="/ga.js?v=20261104a" defer></script>
+</body>
+</html>
