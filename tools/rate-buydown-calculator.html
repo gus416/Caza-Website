@@ -51,15 +51,18 @@
 .tool-err:empty{display:none}
 .bd-h{font-size:22px;margin:8px 0 8px}
 .summary{font-size:18px;margin:0 0 16px}
-.bars{display:grid;gap:10px;margin:0 0 18px}
-.bar-row{display:grid;grid-template-columns:minmax(7rem,11rem) 1fr auto;gap:10px;align-items:center}
+.bars{display:grid;grid-template-columns:11rem minmax(0,1fr) 15rem;gap:8px 12px;align-items:center;margin:0 0 18px}
+.bar-kicker{grid-column:1/-1}
+.bar-row{display:contents}
 .bar-name{font-weight:700}
-.track{height:14px;background:var(--vellum);border-radius:99px;overflow:hidden}
-.fill{height:100%;background:var(--navy);border-radius:99px}
+.bar-kicker{margin:0 0 8px;font-weight:700}
+.track{display:block;height:14px;background:var(--vellum);border-radius:99px;overflow:hidden}
+.fill{display:block;height:100%;background:var(--navy);border-radius:99px}
 .fill.a{background:var(--orange)}
 .fill.b{background:var(--rust)}
 .fill.c{background:#1d4e89}
-.bar-val{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.bar-val{display:flex;flex-direction:column;align-items:flex-end;gap:2px;font-variant-numeric:tabular-nums;font-weight:700;text-align:right}
+.bar-delta{font-size:13px;font-weight:600;color:var(--sub);white-space:normal}
 .table-scroll{display:block;width:100%;max-width:100%;overflow-x:auto;margin:0 0 16px}
 .bd-tbl{width:100%;border-collapse:collapse;font-size:15px}
 .bd-tbl caption{caption-side:top;text-align:left;font-weight:700;padding:0 0 8px}
@@ -72,8 +75,10 @@
   .tool{padding-top:32px}
   .tool-card{padding:18px}
   .tool-grid{grid-template-columns:1fr}
-  .bar-row{grid-template-columns:1fr auto}
-  .bar-name{grid-column:1/-1}
+  .bars{grid-template-columns:1fr}
+  .bar-row{display:grid;grid-template-columns:1fr;gap:4px;margin-bottom:8px}
+  .bar-val{align-items:flex-start;text-align:left;flex-direction:row;flex-wrap:wrap;gap:8px}
+  .bd-tbl caption{display:block;width:100%;max-width:100%;white-space:normal;box-sizing:border-box}
   .bd-tbl thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
   .bd-tbl,.bd-tbl tbody,.bd-tbl tr,.bd-tbl th,.bd-tbl td{display:block;width:auto}
   .bd-tbl tr{padding:10px 0;border-bottom:1px solid var(--rule)}
@@ -451,9 +456,13 @@
     });
     var fills = ['', 'a', 'b', 'c'];
     var bars = r.plans.map(function (p, i) {
-      if (!p.available) return '<div class="bar-row"><span class="bar-name">' + esc(p.name) + '</span><span class="bar-val">Not available</span></div>';
+      if (!p.available || p.buyerY1Cents === null || p.buyerY1Cents === undefined) {
+        return '<div class="bar-row"><span class="bar-name">' + esc(p.name) + '</span><span class="bar-val">Not available</span></div>';
+      }
       var width = y1max ? Math.max(4, Math.round(p.buyerY1Cents / y1max * 100)) : 0;
-      return '<div class="bar-row"><span class="bar-name">' + esc(p.name) + '</span><span class="track"><span class="fill ' + fills[i] + '" style="width:' + width + '%"></span></span><span class="bar-val">' + usd(p.buyerY1Cents) + '</span></div>';
+      var diff = r.baseline.notePaymentCents - p.buyerY1Cents;
+      var delta = p.id === 'baseline' ? 'Full note payment' : (diff > 0 ? usd(diff) + ' below the note payment' : (diff < 0 ? usd(-diff) + ' above the note payment' : 'Same as the note payment'));
+      return '<div class="bar-row"><span class="bar-name">' + esc(p.name) + '</span><span class="track" aria-hidden="true"><span class="fill ' + fills[i] + '" style="width:' + width + '%"></span></span><span class="bar-val">' + usd(p.buyerY1Cents) + '<span class="bar-delta">' + esc(delta) + '</span></span></div>';
     }).join('');
 
     function row(label, pick) {
@@ -479,9 +488,11 @@
       ? 'Buyer. A self-funded subsidy is your own money moved into earlier payments, not interest savings.'
       : 'Seller, builder, or lender in this selection only. That is not a promise anyone will pay it, and it is not automatically free.';
 
-    var html = '<div class="bars" aria-hidden="true">' + bars + '</div>';
-    html += '<div class="table-scroll" tabindex="0" role="region" aria-label="Buydown comparison table. Scroll horizontally if needed.">';
-    html += '<table class="bd-tbl"><caption>Principal and interest only, rounded half-up to the cent. Holding period: ' + r.monthsCounted + ' of ' + r.horizonMonths + ' months' + (r.horizonPastTerm ? ' (the term ends first)' : '') + '.</caption><thead>' + head + '</thead><tbody>';
+    var html = '<div class="bars" aria-labelledby="bar-kicker"><p class="bar-kicker" id="bar-kicker">Year 1 buyer principal and interest</p>' + bars + '</div>';
+    var cap = 'Principal and interest only, rounded half-up to the cent. Selected holding period: ' + r.horizonMonths + ' months. Loan term: ' + r.termMonths + ' monthly payments.';
+    if (r.horizonMonths === 0) cap += ' No payments are counted yet.';
+    html += '<div class="table-scroll" tabindex="0" role="region" aria-label="Buydown comparison table.">';
+    html += '<table class="bd-tbl"><caption>' + esc(cap) + '</caption><thead>' + head + '</thead><tbody>';
     html += periodRows;
     html += row('Monthly P&I difference vs the note', function (p) {
       if (!p.available) return 'Not available';
