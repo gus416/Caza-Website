@@ -68,4 +68,4 @@ Short screen recordings on sample data (not customer listings), captioned, embed
 - Price: free.
 - Data source: the public Zillow page in the user's browser plus Zillow's Recently Sold and rentals searches. Rents shown are asking rents for active listings.
 - Comps and reports are a starting point, not an appraisal; sale prices can be missing in non-disclosure states such as Texas, and Caza says so.
-- Chrome Web Store listing name: "Caza: Real Estate Comps, Demand Score & Investor Numbers for Zillow". Current version 2.10.1.
+- Chrome Web Store listing name: "Caza: Real Estate Comps, Demand Score & Investor Numbers for Zillow". Current version 2.10.2.
