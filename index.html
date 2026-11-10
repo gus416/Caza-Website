@@ -5,8 +5,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IS','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','G-KB6RLF3R7B',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Caza: demand, comps and investor numbers for Zillow listings</title>
-<meta name="description" content="A Chrome extension that adds buyer demand, sales comps, asking rents and investor numbers to Zillow listings, plus a comps PDF with your name. Free right now.">
+<title>Caza: comps and a Demand Score for Zillow listings</title>
+<meta name="description" content="A Chrome extension that adds a Demand Score, sales comps, asking rents and investor numbers to Zillow listings, plus a comps PDF with your name. Free.">
 <link rel="canonical" href="https://usecaza.com/">
 <meta name="theme-color" content="#0D1430">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -14,14 +14,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Caza">
 <meta property="og:url" content="https://usecaza.com/">
-<meta property="og:title" content="Caza: the numbers behind every Zillow listing">
-<meta property="og:description" content="Buyer demand, sales comps, asking rents and investor numbers on the Zillow listings you already browse. A Chrome extension, free right now.">
+<meta property="og:title" content="Caza: comps and a Demand Score for Zillow listings">
+<meta property="og:description" content="Buyer demand, sales comps, asking rents and investor numbers on the Zillow listings you already browse. A free Chrome extension.">
 <meta property="og:image" content="https://usecaza.com/og-image.png">
 <meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@CazaRealEstate">
-<meta name="twitter:title" content="Caza: the numbers behind every Zillow listing">
-<meta name="twitter:description" content="Buyer demand, sales comps, asking rents and investor numbers on the Zillow listings you already browse. A Chrome extension, free right now.">
+<meta name="twitter:title" content="Caza: comps and a Demand Score for Zillow listings">
+<meta name="twitter:description" content="Buyer demand, sales comps, asking rents and investor numbers on the Zillow listings you already browse. A free Chrome extension.">
 <meta name="twitter:image" content="https://usecaza.com/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,7 @@
    "@id": "https://usecaza.com/#website",
    "url": "https://usecaza.com/",
    "name": "Caza",
-   "description": "A Chrome extension, free right now, that adds a Demand Score, sales comps, rental comps and investor numbers to Zillow listings.",
+   "description": "A free Chrome extension that adds a Demand Score, sales comps, rental comps and investor numbers to Zillow listings.",
    "publisher": {
     "@id": "https://usecaza.com/#org"
    },
@@ -62,14 +62,14 @@
    "@type": "SoftwareApplication",
    "@id": "https://usecaza.com/#app",
    "name": "Caza",
-   "alternateName": "Caza: Real Estate Comps, Demand Score & Investor Numbers",
+   "alternateName": "Caza: Real Estate Comps, Demand Score & Investor Numbers for Zillow",
    "url": "https://usecaza.com/",
-   "description": "Caza is a Chrome extension for Zillow, free right now. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report. No account, no Caza servers.",
+   "description": "Caza is a free Chrome extension for Zillow. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report. No account, no Caza servers.",
    "applicationCategory": "BrowserApplication",
    "applicationSubCategory": "Real estate",
    "operatingSystem": "Chrome (desktop)",
    "browserRequirements": "Requires Google Chrome on desktop",
-   "softwareVersion": "2.9.1",
+   "softwareVersion": "2.10.1",
    "isAccessibleForFree": true,
    "installUrl": "https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk",
    "downloadUrl": "https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk",
@@ -110,7 +110,7 @@
      "name": "What is Caza?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Caza is a Chrome extension for Zillow, free right now. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, and investor numbers such as cap rate, cash flow and DSCR. It also prints a PDF comps report. It runs in your browser with no account and no Caza servers."
+      "text": "Caza is a free Chrome extension for Zillow. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, and investor numbers such as cap rate, cash flow and DSCR. It also prints a PDF comps report. It runs in your browser with no account and no Caza servers."
      }
     },
     {
@@ -134,7 +134,7 @@
      "name": "What does it cost?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Caza is free right now."
+      "text": "Caza is free."
      }
     },
     {
@@ -223,12 +223,12 @@
   <div class="wrap hero-head">
     <h1>The numbers behind every Zillow listing.</h1>
     <div class="hero-side">
-      <p class="lede">A Chrome extension that adds buyer demand, sales comps, asking rents and investor math to the listings you already browse, then puts it all in a report with your name on it.</p>
+      <p class="lede">A Chrome extension that adds a Demand Score, sales comps, asking rents and investor math to the listings you already browse, then puts it all in a report with your name on it.</p>
       <div class="hero-cta">
         <a class="btn btn-lg btn-orange" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=home">Add to Chrome</a>
         <a class="link link-light" href="#features">See what it adds</a>
       </div>
-      <p class="proof"><span>Free right now</span><span><span class="proof-long">Works on </span>Chrome desktop</span><span>No account</span></p>
+      <p class="proof"><span>Free</span><span><span class="proof-long">Works on </span>Chrome desktop</span><span>No account</span></p>
       <a class="hero-try" href="/tools/demand-score-calculator"><span class="hero-try-k">No install</span> Try the Demand Score on any listing <span aria-hidden="true">&rarr;</span></a>
     </div>
   </div>
@@ -333,7 +333,7 @@
   <div class="wrap">
     <div class="section-intro">
       <h2 id="features-h" class="section-h">What Caza adds to a listing</h2>
-      <p class="section-lede">Caza is a Chrome extension for Zillow, free right now. Open any listing and it adds four things on the page you're already looking at: a Demand Score, sales comps, rental comps and investor numbers. No tabs to switch, nothing to export.</p>
+      <p class="section-lede">Caza is a free Chrome extension for Zillow. Open any listing and it adds four things on the page you're already looking at: a Demand Score, sales comps, rental comps and investor numbers. No tabs to switch, nothing to export.</p>
     </div>
 
     <article class="feature feature-wide">
@@ -378,7 +378,7 @@
         <h3>The drawer</h3>
         <p>Click Sales comps and Caza reads Zillow's own Recently Sold search around the home. Your listing stays pinned as row one, the closest matches are starred, and every sale says how it compares.</p>
         <ul class="specs">
-          <li>Condos, houses, 2–4 units and 5+ units never mixed</li>
+          <li>Condos, houses, 2–4 units and 5+ units kept separate</li>
           <li>Widen to a mile or add older sales in one click</li>
           <li>Add a sale Caza left out, or drop one that doesn't fit</li>
           <li>Every comp links to Google Maps and to its Zillow listing</li>
@@ -404,7 +404,7 @@
         <p>From a for-sale listing or a rental, Caza pulls similar active rentals nearby, matched on bedrooms and property type, and shows the typical range. These are asking rents for active listings, not signed leases.</p>
         <ul class="specs">
           <li>Send the median, or one comp, to the investor numbers</li>
-          <li>Compare my rent, in the toolbar popup, for your own unit</li>
+          <li>Find rents for a unit, in the toolbar popup, for your own unit</li>
           <li>California listings note where rent caps may apply</li>
         </ul>
       </div>
@@ -417,11 +417,12 @@
       <div class="feature-text">
         <p class="kicker">Investor numbers</p>
         <h3>The math, with every input labeled</h3>
-        <p>Cap rate and monthly cash flow on homes; price per unit, GRM and cap rate on multifamily. Taxes and insurance start from state estimates you can edit, and every figure says where it came from.</p>
+        <p>Cap rate and monthly cash flow on homes; price per unit, GRM and cap rate on multifamily. Taxes start from the listing's tax history when Zillow shows it, with a note that a new owner's bill can differ, or from a county or state estimate. Insurance is an estimate you can edit, and Caza adds a Verify HOA coverage note when the listing says the HOA fee includes insurance or the building. Every figure says where it came from.</p>
         <ul class="specs">
           <li>Debt coverage and cash-on-cash return</li>
           <li>Your down payment, rate and term, saved as defaults</li>
           <li>Interest-only loans; multifamily income never uses the Rent Zestimate</li>
+          <li>Saved assumption profiles, and a rent for each unit on multifamily</li>
         </ul>
       </div>
       <div class="feature-shot">
@@ -525,7 +526,7 @@
     </dl>
     <div class="privacy-note">
       <h3>Private by design</h3>
-      <p>The extension has no account and no Caza servers, and it never uploads listing data in the background. Its settings stay in your browser. It loads pages from zillow.com; a few optional or click-only exceptions are listed in the policy. This website uses Google Analytics. <a href="/privacy">Read the privacy policy</a>.</p>
+      <p>The extension has no account and no Caza servers. It reads Zillow pages in your browser and does not send listing data to Caza. If you turn on rental comps inside Investor numbers, it also loads Zillow rentals searches in the background. Its settings stay in your browser. It loads pages from zillow.com; a few optional or click-only exceptions are listed in the policy, and usage counts go to Google Analytics only if you turn them on. This website uses Google Analytics. <a href="/privacy">Read the privacy policy</a>.</p>
     </div>
   </div>
 </section>
@@ -573,7 +574,7 @@
     <div class="faq">
       <details>
         <summary>What is Caza?</summary>
-        <p>Caza is a Chrome extension for Zillow, free right now. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, and investor numbers such as cap rate, cash flow and DSCR. It also prints a PDF comps report. It runs in your browser with no account and no Caza servers.</p>
+        <p>Caza is a free Chrome extension for Zillow. On a listing it adds a 0–100 Demand Score built from saves, views and days on market, nearby sales comps, rental comps from active asking rents, and investor numbers such as cap rate, cash flow and DSCR. It also prints a PDF comps report. It runs in your browser with no account and no Caza servers.</p>
       </details>
       <details>
         <summary>Which listings does Caza work on?</summary>
@@ -585,7 +586,7 @@
       </details>
       <details>
         <summary>What does it cost?</summary>
-        <p>Caza is free right now.</p>
+        <p>Caza is free.</p>
       </details>
       <details>
         <summary>How is the Demand Score calculated?</summary>
@@ -624,7 +625,7 @@
     <h2>Open a listing.<br>Get the numbers.</h2>
     <div class="closing-side">
       <a class="btn btn-lg btn-orange" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=closing">Add to Chrome</a>
-      <p class="proof"><span>Free right now</span><span><span class="proof-long">Works on </span>Chrome desktop</span><span>No account</span></p>
+      <p class="proof"><span>Free</span><span><span class="proof-long">Works on </span>Chrome desktop</span><span>No account</span></p>
     </div>
   </div>
 </section>

@@ -1,6 +1,6 @@
 # Caza
 
-> Caza is a Chrome extension, free right now, that adds a 0–100 buyer Demand Score, nearby sales comps, rental comps (active asking rents), investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report to Zillow listings. The extension runs in the browser: no account, no Caza servers, and no background upload of listing data. (This website, usecaza.com, uses Google Analytics.) Free right now. Independent; not affiliated with or endorsed by Zillow Group.
+> Caza is a free Chrome extension that adds a 0–100 buyer Demand Score, nearby sales comps, rental comps (active asking rents), investor numbers (cap rate, cash flow, DSCR, cash-on-cash) and a PDF comps report to Zillow listings. The extension runs in the browser with no account and no Caza servers. It reads Zillow pages there and does not send listing data to Caza; if you turn on rental comps inside Investor numbers, it also loads Zillow rentals searches in the background. (This website, usecaza.com, uses Google Analytics.) Free. Independent; not affiliated with or endorsed by Zillow Group.
 
 Site: https://usecaza.com/ · Install: https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk · Contact: gus@usecaza.com
 
@@ -51,7 +51,7 @@ Listing agents, buyer's agents, real estate investors and brokers, landlords and
 - [Is this rent fair? Compare an apartment's rent with similar Zillow listings](https://usecaza.com/guides/how-to-tell-if-rent-is-fair): match beds, baths, size and building type, active asking rents, effective rent after concessions, median and count.
 - [The real monthly cost of an apartment](https://usecaza.com/guides/real-monthly-cost-of-an-apartment): required monthly fees, effective rent formula for "weeks free", worked example with sample numbers.
 - [How to spot a rental listing scam](https://usecaza.com/guides/how-to-spot-rental-listing-scams): rent far below nearby listings, money before a tour, lister who can't show the unit, copied listing; FTC guidance.
-- [Privacy policy and terms](https://usecaza.com/privacy): the extension has no accounts, advertising or Caza servers and never uploads listing data in the background; click-only exceptions (Google Maps links, the usecaza.com/map page) and opt-in usage counts are listed; the website uses Google Analytics with Google Signals and ad personalization off.
+- [Privacy policy and terms](https://usecaza.com/privacy): the extension has no accounts, advertising or Caza servers and does not send listing data to Caza (an optional setting also loads Zillow rentals searches in the background); click-only exceptions (Google Maps links, the usecaza.com/map page) and opt-in usage counts are listed; the website uses Google Analytics with Google Signals and ad personalization off.
 
 ## Demo videos
 
@@ -65,7 +65,7 @@ Short screen recordings on sample data (not customer listings), captioned, embed
 
 ## Facts to cite accurately
 
-- Price: free right now. Do not describe it as permanently free.
+- Price: free.
 - Data source: the public Zillow page in the user's browser plus Zillow's Recently Sold and rentals searches. Rents shown are asking rents for active listings.
 - Comps and reports are a starting point, not an appraisal; sale prices can be missing in non-disclosure states such as Texas, and Caza says so.
-- Chrome Web Store listing name: "Caza: Real Estate Comps, Demand Score & Investor Numbers". Current version 2.9.1.
+- Chrome Web Store listing name: "Caza: Real Estate Comps, Demand Score & Investor Numbers for Zillow". Current version 2.10.1.
