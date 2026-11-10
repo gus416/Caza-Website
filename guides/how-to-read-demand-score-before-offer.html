@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KB6RLF3R7B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IS','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','G-KB6RLF3R7B',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Read a Demand Score Before an Offer | Caza Guides</title>
+<meta name="description" content="What a 0–100 Demand Score is built from, how to read the breakdown behind the number, and what it can't tell you before you make an offer.">
+<link rel="canonical" href="https://usecaza.com/guides/how-to-read-demand-score-before-offer">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/guides/how-to-read-demand-score-before-offer">
+<meta property="og:title" content="How to read a Demand Score before you make an offer">
+<meta property="og:description" content="What a 0–100 Demand Score is built from, how to read the breakdown behind the number, and what it can't tell you before you make an offer.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CazaRealEstate">
+<meta name="twitter:title" content="How to read a Demand Score before you make an offer">
+<meta name="twitter:description" content="What a 0–100 Demand Score is built from, how to read the breakdown behind the number, and what it can't tell you before you make an offer.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261104a">
+<style>
+.gfaq h3{font-size:18px;margin:18px 0 6px}
+a.fn{font-weight:700;text-decoration:none;white-space:nowrap}
+a.fn sup{font-size:.75em;line-height:0}
+a.fn.fn-next sup::before{content:", "}
+.post-page h2,.post-page h3{scroll-margin-top:24px}
+.post-page .table-scroll{display:block;width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 22px;overscroll-behavior-x:contain}
+.post-page .table-scroll table{width:100%;min-width:100%;margin:0}
+.post-page .table-scroll.wide table{min-width:40rem}
+.post-page .table-scroll th,.post-page .table-scroll td{white-space:normal;text-align:left;padding:10px 16px 10px 0;vertical-align:top}
+.post-page .table-scroll th:last-child,.post-page .table-scroll td:last-child{text-align:left;white-space:normal;padding-right:2px}
+.post-page .table-scroll .num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.post-page .table-scroll tr.total th,.post-page .table-scroll tr.total td{font-weight:700}
+.post-page .table-scroll th.num{text-align:right;white-space:normal}
+.post-page .table-scroll td.num:last-child{white-space:nowrap;text-align:right}
+.post-page .table-scroll caption{caption-side:top;text-align:left;font-size:15px;font-weight:600;color:var(--ink);padding:0 0 8px}
+@media (max-width:760px){
+  .post-page .table-scroll.wide{overflow:visible}
+  .post-page .table-scroll.wide table{min-width:0;width:100%}
+  .post-page .table-scroll.wide thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .post-page .table-scroll.wide tr{display:block;border-bottom:1px solid var(--rule);padding:8px 0 10px}
+  .post-page .table-scroll.wide th,.post-page .table-scroll.wide td{display:flex;justify-content:space-between;align-items:baseline;gap:16px;width:auto;border:0;padding:4px 0;text-align:left;white-space:normal}
+  .post-page .table-scroll.wide th:last-child,.post-page .table-scroll.wide td:last-child{text-align:right;white-space:normal;padding-right:0}
+  .post-page .table-scroll.wide th[scope="row"]{display:block;font-size:16px;padding-bottom:6px}
+  .post-page .table-scroll.wide td[data-label]{flex-wrap:wrap}
+  .post-page .table-scroll.wide td[data-label]::before{content:attr(data-label);flex:1 1 8rem;font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--sub);text-align:left}
+  .post-page .table-scroll.wide .num{margin-left:auto;text-align:right;white-space:nowrap}
+  .post-page .table-scroll.wide caption{display:block;width:auto;max-width:100%}
+}
+.sources{margin-top:8px}
+.sources ol{margin-left:22px}
+.sources li{overflow-wrap:anywhere}
+.sources .fn-back{display:inline-block;margin-top:4px}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://usecaza.com/#org",
+   "name": "Caza",
+   "url": "https://usecaza.com/"
+  },
+  {
+   "@type": "Article",
+   "inLanguage": "en-US",
+   "image": "https://usecaza.com/og-image.png",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://usecaza.com/#org",
+    "name": "Caza",
+    "url": "https://usecaza.com/"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://usecaza.com/blog#blog",
+    "name": "Caza Guides",
+    "url": "https://usecaza.com/blog"
+   },
+   "datePublished": "2026-11-10",
+   "dateModified": "2026-11-10",
+   "@id": "https://usecaza.com/guides/how-to-read-demand-score-before-offer#article",
+   "url": "https://usecaza.com/guides/how-to-read-demand-score-before-offer",
+   "mainEntityOfPage": "https://usecaza.com/guides/how-to-read-demand-score-before-offer",
+   "headline": "How to read a Demand Score before you make an offer",
+   "description": "What a 0–100 Demand Score is built from, how to read the breakdown behind the number, and what it can't tell you before you make an offer.",
+   "wordCount": 1821,
+   "articleSection": "For buyers and buyer's agents",
+   "keywords": "Demand Score, Zillow saves, Zillow page views, days on market, offer strategy"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://usecaza.com/blog"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How to read a Demand Score before you make an offer",
+     "item": "https://usecaza.com/guides/how-to-read-demand-score-before-offer"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is a Demand Score the same as a price estimate?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It's built only from saves, views and days on market, plus a pace bonus. Price, condition and nearby sales aren't inputs."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does a price cut raise or lower the score?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Neither, directly. Caza shows the cut next to the score, but the formula doesn't use it. A cut can still change buyer activity over the following days, and that would show up in saves and views."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does a listing show no score?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Caza won't show a score when Zillow hides both saves and views, or when the listing is sold or off market. Some listings only load their counts on the listing page itself, so the search card says \"Score on listing page\" until you open it."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I work out the score without Caza?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Copy the saves, views and days from the listing into the free Demand Score calculator. It uses the same formula and shows the breakdown."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does a high Demand Score mean I should offer over asking?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The score describes buyer activity, not value. Compare the price with recent sales, and use the score for timing and how closely to look, not for the number you write."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-how-to-read-demand-score-before-offer">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/blog">Guides</a> · For buyers and buyer&rsquo;s agents</p>
+    <h1>How to read a Demand Score before you make an offer</h1>
+    <p class="lede">What goes into the 0–100 score, how to read the breakdown behind it, and what to check before the number shapes your offer.</p>
+  </div></div>
+
+  <div class="wrap">
+    <article class="post post-page">
+      <div class="post-meta"><span class="tag">For buyers and buyer&rsquo;s agents</span><span id="read-time">8 min read</span><span>Last updated <time datetime="2026-11-10">November 10, 2026</time></span></div>
+
+<h2 id="short-answer">Short answer</h2>
+
+<p>A Demand Score is a 0–100 summary of buyer activity on one Zillow listing, built from saves, page views and days on market. It is not a price opinion, an appraisal or a forecast of what a seller will accept. Open the breakdown, check for a days-on-market reset, and compare the price with recent sales before offering.</p>
+
+<p>Before you lean on it for an offer:</p>
+<ol>
+  <li><strong>Open the breakdown, not just the number.</strong> Two listings with the same label can get there in very different ways.</li>
+  <li><strong>Check the days on market.</strong> Days on Zillow can reset when a home is relisted, which makes a listing look fresher than it is.<a class="fn" href="#fn5" id="fnref5-1" aria-label="Source 5, Caza guide, days on market on Zillow"><sup>5</sup></a></li>
+  <li><strong>Look at what the score leaves out.</strong> Price cuts, back-on-market status, condition and recent sales aren't in the number. Check them separately.</li>
+</ol>
+
+<h2 id="what-it-measures">1. What does a Demand Score measure?</h2>
+
+<p>A Demand Score measures buyer activity on one listing (saves, page views and days on market), not the home's value or condition.</p>
+
+<p>Zillow's own guide for agents defines the three inputs. Total saves "is the number of times users have saved your listing." Total page views is "the total number of times your Showcase listing has been viewed since it went live, including repeat page views by the same unique user." And "Days on Zillow" is "the number of days a property has been listed for sale, up until it goes pending."<a class="fn" href="#fn1" id="fnref1-1" aria-label="Source 1, Zillow Showcase Getting Started Guide, Performance"><sup>1</sup></a> (Those definitions come from Zillow's Showcase dashboard guide. Zillow shows the same three counts on most standard listings too, but some listings hide them.<a class="fn" href="#fn3" id="fnref3-1" aria-label="Source 3, Caza guide, how to see Zillow saves"><sup>3</sup></a>)</p>
+
+<p>Caza turns each input into 0 to 100 points and takes a weighted average:<a class="fn" href="#fn4" id="fnref4-1" aria-label="Source 4, Caza Demand Score calculator"><sup>4</sup></a><a class="fn fn-next" href="#fn6" id="fnref6-1" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a></p>
+
+<div class="table-scroll">
+<table>
+  <thead><tr><th scope="col">Input</th><th scope="col">How it becomes points</th><th scope="col" class="num">Default weight or effect</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Saves</th><td>Log curve: early saves count most, 400 saves = 100 points</td><td class="num">40%</td></tr>
+    <tr><th scope="row">Days on market</th><td>Straight line: day 0 = 100 points, day 90 or later = 0</td><td class="num">35%</td></tr>
+    <tr><th scope="row">Page views</th><td>Log curve, 5,000 views = 100 points</td><td class="num">25%</td></tr>
+    <tr><th scope="row">Pace bonus</th><td>Saves plus 5% of views, per day on market. About 5 a day adds nothing; faster adds up to 10 points, slower takes off at most 1.</td><td class="num">−1 to +10 points</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>You can change the three weights with sliders in the Caza popup. They always add up to 100%.<a class="fn" href="#fn6" id="fnref6-2" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a> If only one of saves or views is missing, the score uses the other inputs and spreads the weight across them.<a class="fn" href="#fn4" id="fnref4-2" aria-label="Source 4, Caza Demand Score calculator"><sup>4</sup></a><a class="fn fn-next" href="#fn6" id="fnref6-3" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a></p>
+
+<p><strong>What's not in the number:</strong> the price, the home's condition, nearby sales, price cuts, and whether the home has been back on market. Caza shows price cuts next to the score, and a "Back on market" flag when Zillow's listing status says so, but neither one changes the score.<a class="fn" href="#fn6" id="fnref6-4" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a> It also says nothing about who the buyers are or whether anyone has toured.</p>
+
+<p>When Zillow hides both saves and views, Caza shows no score at all instead of a guess. The same goes for sold and off-market listings.<a class="fn" href="#fn6" id="fnref6-5" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a></p>
+
+<h2 id="labels">2. What do the Hot through Slow labels mean?</h2>
+
+<p>The labels are fixed cutoffs in Caza's formula. They aren't based on your local market, price range or season, so use them to sort similar homes in the same search, not as a verdict.</p>
+
+<p>The number comes with a label:<a class="fn" href="#fn4" id="fnref4-3" aria-label="Source 4, Caza Demand Score calculator"><sup>4</sup></a><a class="fn fn-next" href="#fn6" id="fnref6-6" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a></p>
+
+<div class="table-scroll">
+<table>
+  <thead><tr><th scope="col">Score</th><th scope="col">Label</th></tr></thead>
+  <tbody>
+    <tr><td class="num">80–100</td><td>Hot</td></tr>
+    <tr><td class="num">60–79</td><td>Warm</td></tr>
+    <tr><td class="num">40–59</td><td>Average</td></tr>
+    <tr><td class="num">20–39</td><td>Cool</td></tr>
+    <tr><td class="num">0–19</td><td>Slow</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>A "Warm" home in a slow market might be one of the most active listings in your search. In a fast market, the same number might be middle of the pack.</p>
+
+<p>Raw counts need the same local context. See <a href="/guides/how-to-see-zillow-saves">how to see Zillow saves</a> for how to compare saves per day across similar listings.</p>
+
+<h2 id="breakdown">3. How do you read the breakdown behind the number?</h2>
+
+<p>Open the breakdown on the score chip and read the inputs, not just the number.</p>
+
+<p>On a listing page, hover over the score chip in Caza's panel. The breakdown shows each input's points and weight, the pace bonus, and a short "How the score works" note.<a class="fn" href="#fn6" id="fnref6-7" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a> On a search results card, hovering over the badge shows the saves, views, days on market, any price cut, and the saves pace.<a class="fn" href="#fn6" id="fnref6-8" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a></p>
+
+<p>A few patterns are worth noticing. None of them proves anything on its own:</p>
+<ul>
+  <li><strong>Many views, few saves.</strong> People are clicking on the listing but not keeping it. Possible reasons include eye-catching photos, a price that draws curious clicks, or something in the listing that turns buyers off. It's a reason to ask questions, not a conclusion.</li>
+  <li><strong>Steady saves, fewer views.</strong> Fewer people are looking, but the ones who look are keeping it. That can mean narrower but more serious interest. It can also mean a niche home or a small market.</li>
+  <li><strong>Strong saves and views, but a long time on market.</strong> Interest without a sale. Ask the listing agent whether an earlier deal fell through, and check the price history.</li>
+  <li><strong>A high score driven by very few days.</strong> In the first week, the days-on-market part is close to its maximum and the pace bonus is easy to earn, so the score leans heavily on time. Caza labels these "New listing" instead of showing a saves pace.<a class="fn" href="#fn6" id="fnref6-9" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a> Give it a few days before you read much into it.</li>
+</ul>
+
+<h3 id="worked-example">A worked example (hypothetical)</h3>
+
+<p>These listings and numbers are <strong>made up to show how the formula works</strong>. They aren't typical, and they aren't data from any real listing. Scores use Caza's default weights.<a class="fn" href="#fn4" id="fnref4-4" aria-label="Source 4, Caza Demand Score calculator"><sup>4</sup></a><a class="fn fn-next" href="#fn6" id="fnref6-10" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a></p>
+
+<div class="table-scroll wide">
+<table>
+  <caption>Hypothetical listings, default weights</caption>
+  <thead><tr><th scope="col">Listing</th><th scope="col" class="num">Days on market</th><th scope="col" class="num">Saves</th><th scope="col" class="num">Views</th><th scope="col" class="num">Days pts</th><th scope="col" class="num">Saves pts</th><th scope="col" class="num">Views pts</th><th scope="col" class="num">Pace</th><th scope="col" class="num">Score</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">A</th><td data-label="Days on market" class="num">21</td><td data-label="Saves" class="num">60</td><td data-label="Views" class="num">1,500</td><td data-label="Days pts" class="num">77</td><td data-label="Saves pts" class="num">69</td><td data-label="Views pts" class="num">86</td><td data-label="Pace" class="num">0</td><td data-label="Score" class="num"><strong>76 · Warm</strong></td></tr>
+    <tr><th scope="row">B</th><td data-label="Days on market" class="num">21</td><td data-label="Saves" class="num">8</td><td data-label="Views" class="num">2,000</td><td data-label="Days pts" class="num">77</td><td data-label="Saves pts" class="num">37</td><td data-label="Views pts" class="num">89</td><td data-label="Pace" class="num">0</td><td data-label="Score" class="num"><strong>64 · Warm</strong></td></tr>
+    <tr><th scope="row">C</th><td data-label="Days on market" class="num">63</td><td data-label="Saves" class="num">15</td><td data-label="Views" class="num">900</td><td data-label="Days pts" class="num">30</td><td data-label="Saves pts" class="num">46</td><td data-label="Views pts" class="num">80</td><td data-label="Pace" class="num">−1</td><td data-label="Score" class="num"><strong>48 · Average</strong></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>A and B have both been listed for three weeks, and both are "Warm." But A has about 2.9 saves a day and B about 0.4. B's score is held up by views and by the days-on-market part. Reading only the label, you'd treat them the same. The breakdown says they aren't.</p>
+
+<p>C has been on the market three times as long, and its days points have dropped to 30. That alone is a reason to open the price history. Has it been cut? Was it pending and then back on market? Did the days counter reset at some point?<a class="fn" href="#fn5" id="fnref5-2" aria-label="Source 5, Caza guide, days on market on Zillow"><sup>5</sup></a></p>
+
+<p>You can try your own numbers in the free <a href="/tools/demand-score-calculator">Demand Score calculator</a>.</p>
+
+<h2 id="before-an-offer">4. How should you use a Demand Score before an offer?</h2>
+
+<p>The score can help you decide <strong>which homes to look at closely, and how quickly</strong>. It can't tell you what to offer. A sensible order:</p>
+<ol>
+  <li><strong>Check the days.</strong> Open the price history and rebuild the current selling attempt. A relist can restart Days on Zillow.<a class="fn" href="#fn5" id="fnref5-3" aria-label="Source 5, Caza guide, days on market on Zillow"><sup>5</sup></a> If the real time on market is longer, the score is overstating freshness.</li>
+  <li><strong>Check the flags.</strong> Look for a price cut (how big, how recent) and a "Back on market" flag. Caza shows both but doesn't score them.<a class="fn" href="#fn6" id="fnref6-11" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a> For what a cut can tell you, see <a href="/guides/zillow-price-cut-meaning">what a price cut on a Zillow listing tells you</a>. Zillow's listing doesn't say why a home came back on market. Ask the listing agent.</li>
+  <li><strong>Check the price against sales, not activity.</strong> Demand describes interest. Value comes from comparable sales. See <a href="/guides/how-to-pull-comps-on-zillow">how to pull comps on Zillow</a> and <a href="/guides/is-this-listing-overpriced-zillow">how to tell if a listing is overpriced</a>. Later, if you finance the purchase, the lender's appraisal lets you "see how the price you agreed to pay compares to similar and recent property sales in your area."<a class="fn" href="#fn2" id="fnref2-1" aria-label="Source 2, CFPB, Your home loan toolkit"><sup>2</sup></a></li>
+  <li><strong>Check the house.</strong> The CFPB says a home inspector "should tell you whether the home you want to buy is in good condition and whether you are buying a 'money pit' of expensive repairs," and advises: "Get your inspection before you are finally committed to buy the home."<a class="fn" href="#fn2" id="fnref2-2" aria-label="Source 2, CFPB, Your home loan toolkit"><sup>2</sup></a> No activity score replaces that.</li>
+  <li><strong>Then decide on timing and terms with your agent.</strong> High, rising activity on a fairly priced home is a reason not to wait around. Low activity after weeks on the market, especially with cuts, is a reason to ask what the seller would consider. See <a href="/guides/zillow-listings-that-take-low-offers">how to spot a listing that will take a low offer</a>. Either way, the outcome isn't guaranteed.</li>
+</ol>
+
+<h2 id="limits">What this guide can't tell you</h2>
+<ul>
+  <li>What a specific seller will accept, or whether you'll win a bidding situation</li>
+  <li>Whether there are other offers, or whether anyone has toured the home</li>
+  <li>Why a listing went back on market or was relisted</li>
+  <li>Whether a home is fairly priced (that takes recent comparable sales, and an appraisal if you're financing)</li>
+  <li>The home's condition (that takes an inspection)</li>
+  <li>How Zillow counts views and saves internally beyond its public definitions, or why some listings hide them</li>
+  <li>How your local market compares with Caza's fixed Hot-to-Slow cutoffs</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<div class="gfaq">
+  <h3 id="faq-price-estimate">Is a Demand Score the same as a price estimate?</h3>
+  <p>No. It's built only from saves, views and days on market, plus a pace bonus. Price, condition and nearby sales aren't inputs.<a class="fn" href="#fn4" id="fnref4-5" aria-label="Source 4, Caza Demand Score calculator"><sup>4</sup></a><a class="fn fn-next" href="#fn6" id="fnref6-12" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a></p>
+  <h3 id="faq-price-cut">Does a price cut raise or lower the score?</h3>
+  <p>Neither, directly. Caza shows the cut next to the score, but the formula doesn't use it.<a class="fn" href="#fn6" id="fnref6-13" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a> A cut can still change buyer activity over the following days, and that would show up in saves and views.</p>
+  <h3 id="faq-no-score">Why does a listing show no score?</h3>
+  <p>Caza won't show a score when Zillow hides both saves and views, or when the listing is sold or off market. Some listings only load their counts on the listing page itself, so the search card says "Score on listing page" until you open it.<a class="fn" href="#fn6" id="fnref6-14" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a></p>
+  <h3 id="faq-without-caza">Can I work out the score without Caza?</h3>
+  <p>Yes. Copy the saves, views and days from the listing into the free <a href="/tools/demand-score-calculator">Demand Score calculator</a>. It uses the same formula and shows the breakdown.<a class="fn" href="#fn4" id="fnref4-6" aria-label="Source 4, Caza Demand Score calculator"><sup>4</sup></a></p>
+  <h3 id="faq-over-asking">Does a high Demand Score mean I should offer over asking?</h3>
+  <p>No. The score describes buyer activity, not value. Compare the price with recent sales, and use the score for timing and how closely to look, not for the number you write.</p>
+</div>
+
+<h2 id="related">Related on Caza</h2>
+<ul>
+  <li><a href="/guides/zillow-days-on-market-meaning">What "days on market" means on Zillow</a></li>
+  <li><a href="/guides/sort-zillow-by-saves-views-price-cuts">Can you sort Zillow by saves, views or price cuts?</a></li>
+  <li><a href="/guides/how-to-see-zillow-saves">How to see how many people saved a Zillow listing</a></li>
+</ul>
+<p>You don't need Caza for any of this. Each listing's counts and price history, plus a spreadsheet or the free calculator, will do it. Caza does the same thing faster: it puts the score, its breakdown, price cuts and a back-on-market flag on Zillow listings and search results, and can sort a results page by Demand Score, most saves, most views, most days on market or most price drops.<a class="fn" href="#fn6" id="fnref6-15" aria-label="Source 6, Caza Chrome extension 2.10.2"><sup>6</sup></a> It's a free Chrome extension right now, with no account.</p>
+<p>Caza is not affiliated with or endorsed by Zillow. This guide is general information, not legal, financial or real estate advice, and nothing here promises a particular deal or outcome.</p>
+
+<section class="sources" aria-labelledby="sources-h">
+  <h2 id="sources-h">Sources</h2>
+  <ol>
+    <li id="fn1">Zillow, <a href="https://grow.zillow.com/agents/showcase-getting-started-guide/performance">"Zillow Showcase Getting Started Guide | Performance."</a> No publication date shown. Accessed Nov. 10, 2026. <a class="fn-back" href="#fnref1-1">Back to text</a></li>
+    <li id="fn2">Consumer Financial Protection Bureau, <a href="https://files.consumerfinance.gov/f/documents/cfpb_your-home-loan-toolkit_print_2026-08.pdf"><em>Your home loan toolkit: A step-by-step guide</em></a>, pp. 16–17 ("Home inspector and home appraiser"). Last updated July 2026. Accessed Nov. 10, 2026. <a class="fn-back" href="#fnref2-1">Back to text</a></li>
+    <li id="fn3">Caza, <a href="/guides/how-to-see-zillow-saves">"How to see how many people saved a Zillow listing."</a> Updated November 2026. <a class="fn-back" href="#fnref3-1">Back to text</a></li>
+    <li id="fn4">Caza, <a href="/tools/demand-score-calculator">"Demand Score calculator."</a> Same formula as the Caza extension. <a class="fn-back" href="#fnref4-1">Back to text</a></li>
+    <li id="fn5">Caza, <a href="/guides/zillow-days-on-market-meaning">"What does 'days on market' actually mean on Zillow?"</a> <a class="fn-back" href="#fnref5-1">Back to text</a></li>
+    <li id="fn6">Caza Chrome extension, version 2.10.2, as shipped (scoring, labels, hover breakdown, price-cut and back-on-market flags, weight sliders, sort menu). Reviewed by Caza Nov. 10, 2026. Available on the <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk">Chrome Web Store</a>. <a class="fn-back" href="#fnref6-1">Back to text</a></li>
+  </ol>
+</section>
+
+      <div class="related">
+        <h3>Related guides</h3>
+        <p><a href="/tools/demand-score-calculator">Demand Score calculator</a></p>
+        <p><a href="/blog">All guides</a> &middot; <a href="/tools">Free calculators</a></p>
+      </div>
+    </article>
+    <a class="back" href="/blog">Back to all guides</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script src="/m.js?v=20261027c" defer></script>
+<script src="/ga.js?v=20261104a" defer></script>
+</body>
+</html>
