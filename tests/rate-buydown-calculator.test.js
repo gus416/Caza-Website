@@ -283,6 +283,52 @@ test('seller-paid points are not buyer cash and are not a zero-cost quote', () =
   assert.equal(r.temp21.upfrontCents, 728316);
 });
 
+test('D13 loan amounts are normalized to cents before the payment', () => {
+  const bumped = calc(example({ loan: '320000.005' }));
+  assert.equal(bumped.ok, true);
+  assert.equal(bumped.loan, 320000.01);
+  const dust = calc(example({ loan: '0.004' }));
+  assert.equal(dust.ok, false);
+  assert.equal(dust.field, 'loan');
+  const priced = calc(example({
+    mode: 'price',
+    price: '400000.10',
+    down: '0.20',
+    horizonMonths: '12',
+    quotedRate: '6.5',
+    points: '0',
+    fee: '0'
+  }));
+  assert.equal(priced.ok, true);
+  assert.equal(priced.loan, calcApi.roundHalfUpCents(400000.10 - 0.20) / 100);
+  assert.ok(priced.loan > 0);
+  assert.equal(priced.loan * 100, Math.round(priced.loan * 100));
+  const exact = calc(example({ loan: '320000' }));
+  assert.equal(exact.loan, 320000);
+  assert.equal(exact.baseline.notePaymentCents, 202262);
+});
+
+test('D14 a one-month term is labeled Month 1', () => {
+  const one = calc(example({
+    term: '1',
+    termUnit: 'months',
+    horizonMonths: '1',
+    quotedRate: '6.5',
+    points: '0',
+    fee: '0'
+  }));
+  assert.equal(one.ok, true);
+  assert.equal(one.baseline.rows[0].label, 'Month 1');
+  assert.equal(one.baseline.rows.some((row) => String(row.label).indexOf('1–1') !== -1), false);
+});
+
+test('D15 horizon above 1200 names the term cap', () => {
+  const huge = calc(example({ horizonMonths: '1201' }));
+  assert.equal(huge.ok, false);
+  assert.equal(huge.code, 'INVALID_HORIZON');
+  assert.match(huge.error, /from 0 months up to the loan term/);
+});
+
 test('half-up cent rounding matches the oracle across a rate grid', () => {
   const cases = [];
   [100000, 320000, 555556].forEach((principal) => {
@@ -300,4 +346,72 @@ test('half-up cent rounding matches the oracle across a rate grid', () => {
   assert.equal(calcApi.roundHalfUpCents(1.015), 102);
   assert.equal(calcApi.roundHalfUpCents(0.004), 0);
   assert.equal(calcApi.roundHalfUpCents(0.005), 1);
+});
+
+test('D1 D2 and D16 rendered rows and summary', () => {
+  const script = [
+    'from playwright.sync_api import sync_playwright',
+    'from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler',
+    'import json, threading',
+    'class H(SimpleHTTPRequestHandler):',
+    '    def __init__(self, *a, **k):',
+    '        super().__init__(*a, directory="/workspace", **k)',
+    '    def log_message(self, *a):',
+    '        return',
+    'httpd = ThreadingHTTPServer(("127.0.0.1", 0), H)',
+    'port = httpd.server_address[1]',
+    'threading.Thread(target=httpd.serve_forever, daemon=True).start()',
+    'url = "http://127.0.0.1:%d/tools/rate-buydown-calculator.html" % port',
+    'def check(page):',
+    '    rows = page.locator(".bar-row")',
+    '    n = rows.count()',
+    '    kids = []',
+    '    names = []',
+    '    tracks = []',
+    '    for i in range(n):',
+    '        row = rows.nth(i)',
+    '        kids.append(row.locator(":scope > *").count())',
+    '        names.append(row.locator(".bar-name").evaluate("el => el.offsetLeft"))',
+    '        tracks.append(row.locator(".track").evaluate("el => Math.round(el.getBoundingClientRect().left)"))',
+    '    return {"n": n, "kids": kids, "names": names, "tracks": tracks}',
+    'with sync_playwright() as p:',
+    '    b = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox", "--disable-dev-shm-usage"])',
+    '    page = b.new_page(viewport={"width": 1280, "height": 900})',
+    '    page.goto(url, wait_until="networkidle")',
+    '    page.fill("#note", "0")',
+    '    page.fill("#quoted", "0")',
+    '    page.fill("#points", "0")',
+    '    page.fill("#fee", "0")',
+    '    page.dispatch_event("#fee", "input")',
+    '    page.wait_for_timeout(150)',
+    '    zero = check(page)',
+    '    zero_lead = page.locator("#summary").inner_text()',
+    '    page.click("#reset")',
+    '    page.wait_for_timeout(100)',
+    '    page.select_option("#termunit", "months")',
+    '    page.fill("#term", "18")',
+    '    page.fill("#horizon", "18")',
+    '    page.dispatch_event("#horizon", "input")',
+    '    page.wait_for_timeout(150)',
+    '    short = check(page)',
+    '    page.click("#reset")',
+    '    page.wait_for_timeout(100)',
+    '    page.locator("input[name=pointsPayer][value=seller]").check()',
+    '    page.wait_for_timeout(150)',
+    '    seller = page.locator("#summary").inner_text()',
+    '    b.close()',
+    'print(json.dumps({"zero": zero, "zero_lead": zero_lead, "short": short, "seller": seller}))'
+  ].join('\n');
+  const run = spawnSync('python3', ['-c', script], { encoding: 'utf8' });
+  assert.equal(run.status, 0, run.stderr || run.stdout);
+  const out = JSON.parse(run.stdout);
+  [out.zero, out.short].forEach((block) => {
+    assert.equal(block.n, 4);
+    assert.deepEqual(block.kids, [3, 3, 3, 3]);
+    assert.equal(new Set(block.names).size, 1);
+    assert.equal(new Set(block.tracks).size, 1);
+  });
+  assert.match(out.zero_lead, /Temporary plans are not available on these inputs/);
+  assert.match(out.seller, /marked as paid by someone else/);
+  assert.doesNotMatch(out.seller, /first whole month that covers the cost is month 62/);
 });

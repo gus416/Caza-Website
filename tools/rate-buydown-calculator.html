@@ -57,6 +57,7 @@
 .bar-name{font-weight:700}
 .bar-kicker{margin:0 0 8px;font-weight:700}
 .track{display:block;height:14px;background:var(--vellum);border-radius:99px;overflow:hidden}
+.track-na{background:transparent;border:1px dashed var(--rule)}
 .fill{display:block;height:100%;background:var(--navy);border-radius:99px}
 .fill.a{background:var(--orange)}
 .fill.b{background:var(--rust)}
@@ -128,7 +129,7 @@
     {
      "@type": "Question",
      "name": "If I pay for the temporary subsidy myself, do I save money?",
-     "acceptedAnswer": {"@type": "Answer", "text": "You move your own money into the buydown account and receive it back as lower payments. That is not interest savings. If you pay the loan off early, this calculator does not assume a cash refund of what is left."}
+     "acceptedAnswer": {"@type": "Answer", "text": "You move your own money into the buydown account and receive it back as lower payments. That is not interest savings. If you pay the loan off early, this calculator does not assume a cash refund of what is left, and it does not count it as lost either. The buydown agreement decides what happens to unused funds."}
     },
     {
      "@type": "Question",
@@ -237,7 +238,7 @@
             <input id="horizon" name="horizon" type="text" inputmode="numeric" value="60" aria-describedby="horizon-hint">
             <span class="hint" id="horizon-hint">Months you keep this loan, not years. 0 means no payments yet. 60 months is 5 years. It cannot run past the term. This is payment cash flow, not a payoff.</span>
           </div>
-          <fieldset class="choice tool-wide">
+          <fieldset class="choice tool-wide" aria-describedby="payer-hint">
             <legend>Who pays the temporary subsidy?</legend>
             <div class="opts">
               <label><input type="radio" name="payer" value="buyer" checked> Buyer</label>
@@ -245,7 +246,7 @@
             </div>
             <p class="hint" id="payer-hint">Buyer-funded money is a deposit you get back as lower payments, not interest savings. Someone else paying it is not automatic, and it is not free.</p>
           </fieldset>
-          <fieldset class="choice tool-wide">
+          <fieldset class="choice tool-wide" aria-describedby="points-payer-hint">
             <legend>Who pays the discount points and fee?</legend>
             <div class="opts">
               <label><input type="radio" name="pointsPayer" value="buyer" checked> Buyer</label>
@@ -258,10 +259,10 @@
           <button class="btn" type="submit">Compare</button>
           <button class="btn btn-ghost" type="button" id="reset">Reset to guide example</button>
         </div>
-        <p class="tool-err" id="form-error" role="alert" aria-live="assertive"></p>
+        <p class="tool-err" id="form-error" role="alert"></p>
         <div id="out">
           <h2 class="bd-h" id="result-title" tabindex="-1">Comparison</h2>
-          <p class="summary" id="summary" aria-live="polite"></p>
+          <p class="summary" id="summary"></p>
           <div id="details"></div>
         </div>
       </form>
@@ -271,10 +272,10 @@
     <article class="post post-page" style="padding-top:28px">
       <h2>What this compares</h2>
       <p>Four ways to pay the same loan. The baseline is the note, with no buydown. A temporary 2-1 and a temporary 1-0 keep that note and use a subsidy account to cover part of the payment. Discount points are different: the loan actually has the lower rate you type in, and it amortizes at that quoted rate.</p>
-      <p>Monthly payments use the standard fully amortizing formula, <strong>payment = loan × r ÷ (1 − (1 + r)<sup>−n</sup>)</strong>, where r is the annual rate divided by 12 and n is the number of monthly payments. At a 0% rate the payment is the loan divided by the number of months. Each payment is rounded half-up to the cent, and a temporary subsidy is the difference of those rounded payments. On the guide’s example that cent-rounded convention is a 2-1 subsidy of $7,283.16 and a 1-0 subsidy of $2,468.40. Rounding the unrounded difference first is $7,282.92, and quantizing the exact unrounded total once is $7,283.01. This tool uses the cent-rounded monthly convention only. A real buydown agreement can still differ by a few cents. If you hold the loan for the whole term, the comparison still counts a full rounded payment every month, including the last one. That is not the adjusted final payment a servicer uses to make the balance zero, and it is not an exact payoff.</p>
+      <p>Monthly payments use the standard fully amortizing formula, <strong>payment = loan × r ÷ (1 − (1 + r)<sup>−n</sup>)</strong>, where r is the annual rate divided by 12 and n is the number of monthly payments. At a 0% rate the payment is the loan divided by the number of months. Each payment is rounded half-up to the cent, and a temporary subsidy is the difference of those rounded payments. On the guide’s example that cent-rounded convention is a 2-1 subsidy of $7,283.16 and a 1-0 subsidy of $2,468.40. Rounding the unrounded difference first is $7,282.92, and quantizing the exact unrounded total once is $7,283.01. The 1-0 is $2,468.40 here, versus $2,468.31 quantized once. This tool uses the cent-rounded monthly convention only. A real buydown agreement can still differ by a few cents. If you hold the loan for the whole term, the comparison still counts a full rounded payment every month, including the last one. That is not the adjusted final payment a servicer uses to make the balance zero, and it is not an exact payoff.</p>
       <h2>Temporary plans do not change the loan</h2>
       <p>On a 2-1, the year-1 payment is calculated as if the rate were 2 percentage points lower, and year 2 as if it were 1 point lower. On a 1-0, only the first 12 payments use a rate 1 point lower. That calculation rate is not the note rate. The note rate, the monthly amount you owe on the note, and the way the balance pays down all stay on the original note. If a calculation rate would be negative, that plan is marked unavailable. The calculator does not quietly use 0% instead.</p>
-      <p>If you fund the subsidy yourself, you are moving your own cash from closing into those earlier payments. Over the buydown, the payment savings add up to the deposit. That is not a reduction in interest. If the holding period ends before the subsidy is used up, the remainder is unapplied. This page does not call that remainder a loss, and it does not call it a refund. The buydown agreement decides what happens at payoff.</p>
+      <p>If you fund the subsidy yourself, you are moving your own cash from closing into those earlier payments. Over the buydown, the lower payments add up to the deposit. That is not a reduction in interest. If the holding period ends before the subsidy is used up, the remainder is unapplied. This page does not call that remainder a loss, and it does not call it a refund. The buydown agreement decides what happens at payoff.</p>
       <p>If you mark the subsidy as paid by a seller, builder, or lender, the buyer’s upfront cash for that subsidy is $0 in the comparison. That is only the arithmetic. It does not mean anyone has offered to pay it. Seller credits are often built into the price. The <a href="/guides/cash-to-close-zillow-listing">cash-to-close guide</a> is the separate question of what you bring to closing.</p>
       <h2>Points need a quoted rate</h2>
       <p>One discount point costs 1% of the loan amount. How much rate that point buys is not fixed. The CFPB’s own example uses a $400,000 loan and a 0.25% reduction, then says another lender might give more or less for the same point. The 6.25% default is that same kind of labeled assumption on the guide’s $320,000 example. Change it to the rate on your Loan Estimate. The <a href="/guides/how-mortgage-rate-buydowns-work">rate buydown guide</a> walks through the example this tool starts with. The <a href="/tools/rate-drop-vs-price-cut-calculator">rate drop vs. price cut calculator</a> answers a different question and does not model buydown funding.</p>
@@ -293,7 +294,7 @@
         <h3>Will one point always lower the rate by 0.25%?</h3>
         <p>No. You type the quoted rate separately. The default 6.25% is the guide’s labeled assumption, not a conversion from the point.</p>
         <h3>If I pay for the temporary subsidy myself, do I save money?</h3>
-        <p>You move your own money into the buydown account and receive it back as lower payments. That is not interest savings. If you pay the loan off early, this calculator does not assume a cash refund of what is left.</p>
+        <p>You move your own money into the buydown account and receive it back as lower payments. That is not interest savings. If you pay the loan off early, this calculator does not assume a cash refund of what is left, and it does not count it as lost either. The buydown agreement decides what happens to unused funds.</p>
         <h3>Does a seller-paid subsidy mean the buydown is free?</h3>
         <p>No. This tool only shows the payment math if someone else pays. It does not mean a seller, builder, or lender will offer it, and sellers often price concessions into the purchase price.</p>
         <h3>Does this include taxes, insurance, or mortgage insurance?</h3>
@@ -405,6 +406,10 @@
     [].forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) {
       el.removeAttribute('aria-invalid');
       el.removeAttribute('aria-errormessage');
+      if ('hint' in el.dataset) {
+        if (el.dataset.hint) el.setAttribute('aria-describedby', el.dataset.hint);
+        else el.removeAttribute('aria-describedby');
+      }
     });
   }
 
@@ -434,21 +439,26 @@
     return 'Month ' + b.month + '. The deposit is back as lower payments by then, dollar for dollar. That is not interest savings.';
   }
 
-  function render(r, moveFocus) {
+  function render(r, opts) {
+    opts = opts || {};
+    var moveFocus = !!opts.moveFocus;
+    var announceError = !!opts.announceError;
     clearInvalid();
-    err.textContent = '';
     if (!r.ok) {
       summary.textContent = '';
       details.innerHTML = '';
-      err.textContent = r.error;
+      if (announceError) err.textContent = r.error;
       var field = r.field && document.getElementById(r.field);
       if (field && !field.disabled) {
+        if (!('hint' in field.dataset)) field.dataset.hint = field.getAttribute('aria-describedby') || '';
         field.setAttribute('aria-invalid', 'true');
         field.setAttribute('aria-errormessage', 'form-error');
+        field.setAttribute('aria-describedby', (field.dataset.hint ? field.dataset.hint + ' ' : '') + 'form-error');
         if (moveFocus) field.focus();
       }
       return;
     }
+    err.textContent = '';
 
     var y1max = 0;
     r.plans.forEach(function (p) {
@@ -457,7 +467,7 @@
     var fills = ['', 'a', 'b', 'c'];
     var bars = r.plans.map(function (p, i) {
       if (!p.available || p.buyerY1Cents === null || p.buyerY1Cents === undefined) {
-        return '<div class="bar-row"><span class="bar-name">' + esc(p.name) + '</span><span class="bar-val">Not available</span></div>';
+        return '<div class="bar-row"><span class="bar-name">' + esc(p.name) + '</span><span class="track track-na" aria-hidden="true"></span><span class="bar-val">Not available</span></div>';
       }
       var width = y1max ? Math.max(4, Math.round(p.buyerY1Cents / y1max * 100)) : 0;
       var diff = r.baseline.notePaymentCents - p.buyerY1Cents;
@@ -488,7 +498,7 @@
       ? 'Buyer. A self-funded subsidy is your own money moved into earlier payments, not interest savings.'
       : 'Seller, builder, or lender in this selection only. That is not a promise anyone will pay it, and it is not automatically free.';
 
-    var html = '<div class="bars" aria-labelledby="bar-kicker"><p class="bar-kicker" id="bar-kicker">Year 1 buyer principal and interest</p>' + bars + '</div>';
+    var html = '<div class="bars" role="group" aria-labelledby="bar-kicker"><p class="bar-kicker" id="bar-kicker">Year 1 buyer principal and interest</p>' + bars + '</div>';
     var cap = 'Principal and interest only, rounded half-up to the cent. Selected holding period: ' + r.horizonMonths + ' months. Loan term: ' + r.termMonths + ' monthly payments.';
     if (r.horizonMonths === 0) cap += ' No payments are counted yet.';
     html += '<div class="table-scroll" tabindex="0" role="region" aria-label="Buydown comparison table.">';
@@ -515,7 +525,7 @@
       if (p.id === 'permanent') return pct(p.noteRate) + ' quoted. The loan amortizes at this rate.';
       return pct(p.noteRate) + ' note rate.';
     });
-    html += row('Subsidy to fund at closing', function (p) {
+    html += row('Upfront cost at closing (subsidy or points)', function (p) {
       if (!p.available) return 'Not available';
       if (p.id === 'temp21' || p.id === 'temp10') return p.hasSubsidy ? usd(p.totalSubsidyCents) : 'None';
       if (p.id === 'permanent') return usd(r.permanentUpfrontCents) + ' points and fees';
@@ -525,7 +535,7 @@
       if (!p.available) return 'Not available';
       return usd(p.upfrontCents);
     });
-    html += row('Payment savings over the holding period', function (p) {
+    html += row('Lower payments received over the holding period', function (p) {
       if (!p.available) return 'Not available';
       if (p.id === 'permanent' && p.monthlySavingsCents < 0) return 'None. Payment is ' + usd(Math.abs(p.monthlySavingsCents)) + ' higher each month.';
       return usd(p.cumulativePaymentSavingsCents);
@@ -538,7 +548,7 @@
     html += '</tbody></table></div>';
 
     var notes = [];
-    notes.push('Convention: each monthly principal-and-interest payment is rounded half-up to the cent, then the subsidy is the difference of those rounded payments. Totals add the cents. On the guide example that is a 2-1 subsidy of $7,283.16, not $7,282.92 or $7,283.01.');
+    notes.push('Convention: each monthly principal-and-interest payment is rounded half-up to the cent, then the subsidy is the difference of those rounded payments. Totals add the cents. On the guide example that is a 2-1 subsidy of $7,283.16, not $7,282.92 or $7,283.01. The 1-0 is $2,468.40 here, versus $2,468.31 quantized once.');
     notes.push('Temporary lower payments are fund subsidies. The note rate, the monthly note obligation, and the amortization do not change. Loan interest on a temporary plan is the same as the baseline. Qualification uses the note payment, ' + usd(r.qualificationPaymentCents) + ', not the subsidized payment.');
     notes.push(payerLine);
     if (r.pointsPayer === 'seller' && r.permanent.grossUpfrontCents > 0) {
@@ -568,10 +578,14 @@
     if (!r.permanent.isBuydown) html += '<p><strong>Points:</strong> ' + esc(r.permanent.reason) + '</p>';
 
     var lead;
-    if (r.guideExample && r.payer === 'buyer') {
-      lead = 'Illustration, not a lender quote. On the guide’s example, the note payment is $2,022.62. A buyer-funded 2-1 deposits $7,283.16 and receives that same amount back as lower payments by month 24. That is not interest savings. One point costs $3,200. The assumed 6.25% quote saves $52.32 a month, about 61.2 months, and the first whole month that covers the cost is month 62.';
+    if (r.guideExample && r.payer === 'buyer' && r.pointsPayer === 'buyer') {
+      lead = 'Illustration, not a lender quote. On the guide’s example, the note payment is $2,022.62. A buyer-funded 2-1 deposits $7,283.16 and receives that same amount back as lower payments by month 24. That is not interest savings. One point costs $3,200. The assumed 6.25% quote saves $52.32 a month. Simple break-even is about 61.2 months, and the first whole month that covers the cost is month 62.';
+    } else if (r.guideExample && r.payer === 'buyer') {
+      lead = 'Illustration, not a lender quote. On the guide’s example, the note payment is $2,022.62. A buyer-funded 2-1 deposits $7,283.16 and receives that same amount back as lower payments by month 24. That is not interest savings. The $3,200 in points is marked as paid by someone else in this selection. That is not automatically free, and the assumed 6.25% quote is not a points-to-rate conversion.';
     } else if (r.guideExample) {
       lead = 'Illustration, not a lender quote. If someone else pays the $7,283.16 subsidy, the year-1 buyer payment is $1,621.39 instead of $2,022.62. The note rate stays 6.50%. This is not a promise that a seller or lender will pay, and it is not automatically free.';
+    } else if (!r.temp21.available && !r.temp10.available) {
+      lead = 'Hypothetical, not a lender quote. Temporary plans are not available on these inputs; see the notes below.';
     } else if (r.payer === 'buyer') {
       lead = 'Hypothetical, not a lender quote. Buyer-funded temporary subsidies are your own cash moved into earlier payments. The note rate on those plans stays ' + pct(r.noteRate) + '.';
     } else {
@@ -582,20 +596,19 @@
     if (moveFocus) title.focus();
   }
 
-  function go(moveFocus) {
+  function go(opts) {
     termSentence();
-    render(C.calc(read()), moveFocus);
+    render(C.calc(read()), opts || {});
   }
 
-  form.addEventListener('submit', function (e) { e.preventDefault(); go(true); });
-  form.addEventListener('input', function () { go(false); });
+  form.addEventListener('submit', function (e) { e.preventDefault(); go({ moveFocus: true, announceError: true }); });
+  form.addEventListener('input', function () { go({ moveFocus: false, announceError: false }); });
   form.addEventListener('change', function (e) {
-    if (e.target.name === 'mode') {
-      setMode(e.target.value);
-      var next = document.getElementById(e.target.value === 'price' ? 'price' : 'loan');
-      if (next) next.focus();
-    }
-    go(false);
+    if (e.target.name === 'mode') setMode(e.target.value);
+    go({ moveFocus: false, announceError: true });
+  });
+  form.addEventListener('focusout', function (e) {
+    if (e.target && e.target.matches && e.target.matches('input, select')) go({ moveFocus: false, announceError: true });
   });
   document.getElementById('reset').addEventListener('click', function () {
     Object.keys(defaults).forEach(function (key) {
@@ -606,12 +619,12 @@
     form.querySelector('input[name="payer"][value="buyer"]').checked = true;
     form.querySelector('input[name="pointsPayer"][value="buyer"]').checked = true;
     setMode('loan');
-    go(false);
+    go({ moveFocus: false, announceError: false });
     document.getElementById('loan').focus();
   });
 
   setMode('loan');
-  go(false);
+  go({ moveFocus: false, announceError: false });
 })();
 </script>
 <script src="/m.js?v=20261027c" defer></script>

@@ -158,7 +158,7 @@
     if (mode === 'loan') {
       var loanParsed = money(inp.loan, 'loan amount', '320,000 or 320k', { suffix: true });
       if (!loanParsed.ok) return moneyError(loanParsed, 'loan', 'loan amount', '320,000 or 320k');
-      loan = loanParsed.value;
+      loan = roundHalfUpCents(loanParsed.value) / 100;
     } else {
       var priceParsed = money(inp.price, 'price', '400,000', { suffix: true });
       if (!priceParsed.ok) return moneyError(priceParsed, 'price', 'home price', '400,000');
@@ -171,7 +171,7 @@
       if (down < 0) return fail('down', 'The down payment can’t be negative.');
       if (down > price) return fail('down', 'The down payment can’t be more than the price.');
       if (down === price) return fail('down', 'That down payment leaves a loan of $0. Enter a down payment below the price.');
-      loan = price - down;
+      loan = roundHalfUpCents(price - down) / 100;
     }
     if (!(loan > 0)) return fail(mode === 'loan' ? 'loan' : 'down', 'Enter a loan amount above $0.');
     if (loan > MAX_LOAN) return fail(mode === 'loan' ? 'loan' : 'price', 'Enter a loan amount of $100 million or less.');
@@ -217,7 +217,7 @@
     var horizonParsed = wholeNumber(inp.horizonMonths, 'horizon', 'holding period in months', '60');
     if (!horizonParsed.ok) return horizonParsed;
     if (horizonParsed.value > MAX_HORIZON) {
-      return fail('horizon', 'Enter a holding period from 0 to 1,200 months.', 'INVALID_HORIZON');
+      return fail('horizon', 'Enter a holding period from 0 months up to the loan term.', 'INVALID_HORIZON');
     }
     var horizonMonths = horizonParsed.value;
     if (horizonMonths > termMonths) {
@@ -238,8 +238,8 @@
     function periodLabel(start, end) {
       if (termMonths < start) return null;
       var last = Math.min(end, termMonths);
-      if (start === 1 && last === termMonths && termMonths < end) return 'Months 1–' + termMonths + ' (entire term)';
       if (last === start) return 'Month ' + start;
+      if (start === 1 && last === termMonths && termMonths < end) return 'Months 1–' + termMonths + ' (entire term)';
       return 'Months ' + start + '–' + last;
     }
 
