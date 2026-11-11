@@ -6,7 +6,7 @@
   if (!mq || !mq.matches) return;
   var url = 'https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&utm_medium=mobile-share&utm_campaign=send-to-desktop';
   var title = 'Caza for Chrome';
-  var text = 'Open this on your computer to add Caza to Chrome (free):';
+  var text = 'Open this on your computer to add Caza to Chrome:';
   var mail = 'mailto:?subject=' + encodeURIComponent(title + ' (open on your computer)') +
              '&body=' + encodeURIComponent(text + '\n' + url);
   function send(e) {
