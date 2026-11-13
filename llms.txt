@@ -6,7 +6,7 @@ Site: https://usecaza.com/ · Install: https://chromewebstore.google.com/detail/
 
 ## What it does on a Zillow listing
 
-- Demand Score (0–100) from the listing's saves, page views and days on market, with price cuts and back-on-market listings flagged; sort a search page by score, saves, views, days on market or price drops.
+- Demand Score (0–100) from the listing's saves, page views and days on market, with price cuts flagged; sort a search page by score, saves, views, days on market or price drops.
 - Sales comps: runs Zillow's own Recently Sold search around the home, keeps condos, houses, 2–4 unit and 5+ unit buildings apart, stars the closest matches, shows median sold price and price per square foot. Widen radius, add older sales, add or drop a comp.
 - Rental comps: similar active rentals nearby matched on bedrooms and property type, typical range and median. Starts within 1 mi with a 0.5 / 1 / 2 / 3 mi control; the listing itself and other units in its building are never comps; for-rent search result cards have View Rental Comps. Labeled as asking rents, not signed leases.
 - Investor numbers: cap rate, monthly cash flow, DSCR, cash-on-cash; price per unit and GRM on multifamily. Taxes and insurance start from state estimates you can edit; every input is tagged Reported, Zillow est., Assumed, Estimate (state avg) or Yours.
