@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KB6RLF3R7B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IS','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','G-KB6RLF3R7B',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Pull Comps for New Construction on Zillow | Caza Guides</title>
+<meta name="description" content="New builds need different comps: rebuild the price from base, upgrades and lot premium, account for builder incentives, and mix resales with builder sales.">
+<link rel="canonical" href="https://usecaza.com/guides/new-construction-comps-zillow">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/guides/new-construction-comps-zillow">
+<meta property="og:title" content="How to pull comps for new construction on Zillow">
+<meta property="og:description" content="New builds need different comps: rebuild the price from base, upgrades and lot premium, account for builder incentives, and mix resales with builder sales.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CazaRealEstate">
+<meta name="twitter:title" content="How to pull comps for new construction on Zillow">
+<meta name="twitter:description" content="New builds need different comps: rebuild the price from base, upgrades and lot premium, account for builder incentives, and mix resales with builder sales.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261104a">
+<style>
+.gfaq h3{font-size:18px;margin:18px 0 6px}
+a.fn{font-weight:700;text-decoration:none;white-space:nowrap}
+a.fn sup{font-size:.75em;line-height:0}
+a.fn.fn-next sup::before{content:", "}
+.post-page h2,.post-page h3{scroll-margin-top:24px}
+.post-page .table-scroll{display:block;width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 22px;overscroll-behavior-x:contain}
+.post-page .table-scroll table{width:100%;min-width:100%;margin:0}
+.post-page .table-scroll.wide table{min-width:40rem}
+.post-page .table-scroll th,.post-page .table-scroll td{white-space:normal;text-align:left;padding:10px 16px 10px 0;vertical-align:top}
+.post-page .table-scroll th:last-child,.post-page .table-scroll td:last-child{text-align:left;white-space:normal;padding-right:2px}
+.post-page .table-scroll .num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.post-page .table-scroll tr.total th,.post-page .table-scroll tr.total td{font-weight:700}
+.post-page .table-scroll th.num{text-align:right;white-space:normal}
+.post-page .table-scroll td.num:last-child{white-space:nowrap;text-align:right}
+.post-page .table-scroll caption{caption-side:top;text-align:left;font-size:15px;font-weight:600;color:var(--ink);padding:0 0 8px}
+@media (max-width:760px){
+  .post-page .table-scroll.wide{overflow:visible}
+  .post-page .table-scroll.wide table{min-width:0;width:100%}
+  .post-page .table-scroll.wide thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .post-page .table-scroll.wide tr{display:block;border-bottom:1px solid var(--rule);padding:8px 0 10px}
+  .post-page .table-scroll.wide th,.post-page .table-scroll.wide td{display:flex;justify-content:space-between;align-items:baseline;gap:16px;width:auto;border:0;padding:4px 0;text-align:left;white-space:normal}
+  .post-page .table-scroll.wide th:last-child,.post-page .table-scroll.wide td:last-child{text-align:right;white-space:normal;padding-right:0}
+  .post-page .table-scroll.wide th[scope="row"]{display:block;font-size:16px;padding-bottom:6px}
+  .post-page .table-scroll.wide td[data-label]{flex-wrap:wrap}
+  .post-page .table-scroll.wide td[data-label]::before{content:attr(data-label);flex:1 1 8rem;font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--sub);text-align:left}
+  .post-page .table-scroll.wide .num{margin-left:auto;text-align:right;white-space:nowrap}
+  .post-page .table-scroll.wide caption{display:block;width:auto;max-width:100%}
+}
+.sources{margin-top:8px}
+.sources ol{margin-left:22px}
+.sources li{overflow-wrap:anywhere}
+.sources .fn-back{display:inline-block;margin-top:4px}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://usecaza.com/#org",
+   "name": "Caza",
+   "url": "https://usecaza.com/"
+  },
+  {
+   "@type": "Article",
+   "inLanguage": "en-US",
+   "image": "https://usecaza.com/og-image.png",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://usecaza.com/#org",
+    "name": "Caza",
+    "url": "https://usecaza.com/"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://usecaza.com/blog#blog",
+    "name": "Caza Guides",
+    "url": "https://usecaza.com/blog"
+   },
+   "datePublished": "2026-11-13",
+   "dateModified": "2026-11-13",
+   "@id": "https://usecaza.com/guides/new-construction-comps-zillow#article",
+   "url": "https://usecaza.com/guides/new-construction-comps-zillow",
+   "mainEntityOfPage": "https://usecaza.com/guides/new-construction-comps-zillow",
+   "headline": "How to pull comps for new construction on Zillow",
+   "description": "New builds need different comps: rebuild the price from base, upgrades and lot premium, account for builder incentives, and mix resales with builder sales.",
+   "wordCount": 2818,
+   "articleSection": "For buyers and agents",
+   "keywords": "new construction comps, Zillow comps, builder incentives, lot premium, new construction appraisal, price per square foot"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://usecaza.com/blog"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How to pull comps for new construction on Zillow",
+     "item": "https://usecaza.com/guides/new-construction-comps-zillow"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Can I use the builder’s base price as a comp?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. A base price is an asking price for a plan before options, upgrades and lot premium. Comps are closed sales. Rebuild the full contract price for the home you’re looking at and compare that with what similar homes actually sold for."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do builder incentives lower the value of a comp?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "They can. Under Fannie Mae’s rules, an appraiser adjusts a comp with sales or financing concessions to reflect the market’s reaction to them, which isn’t always the full dollar amount. Fannie Mae doesn’t allow positive adjustments for concessions."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Are resales in the same subdivision better comps than builder sales?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For appraisals on loans Fannie Mae buys, a resale inside the subdivision is preferred when it is verifiable and doesn’t involve the subject builder. Use both kinds, plus at least one sale from outside the subdivision."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why can’t I find recent sales in a new community on Zillow?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Builder sales may not yet be in public records or the MLS, and Zillow has carried new-construction listings that don’t come from an MLS. Ask the builder, an agent with MLS access, or your county’s records."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need a different appraisal for new construction?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not a different kind, but extra comparable-sales rules apply under Fannie Mae’s Selling Guide when the home is in a new subdivision. Other loan programs have their own rules; ask your lender. If the home isn’t finished yet, ask your lender whether the appraisal will be made subject to completion and what that means for your closing."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-new-construction-comps-zillow">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/blog">Guides</a> · For buyers and agents</p>
+    <h1>How to pull comps for new construction on Zillow</h1>
+    <p class="lede">What changes when the home is brand new: base price versus upgrades and lot premiums, builder incentives, resales versus builder sales, thin sold data, and how appraisers handle it.</p>
+  </div></div>
+
+  <div class="wrap">
+    <article class="post post-page">
+      <div class="post-meta"><span class="tag">For buyers and agents</span><span id="read-time">12 min read</span><span>Last updated <time datetime="2026-11-13">November 13, 2026</time></span></div>
+
+<h2 id="short-answer">Short answer</h2>
+
+<p>Pull comps for a new build the same way you would for any home, then fix three things. Compare the full contract price (base price plus options, upgrades and lot premium), not the advertised base price. Find out what each builder sale included in incentives. And look at resales inside the subdivision as well as sales outside it, the mix Fannie Mae asks appraisers to use.<a class="fn" href="#fn2" id="fnref2-1" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></p>
+
+<p>Before you start:</p>
+<ol>
+  <li><strong>Learn the basic method first.</strong> Sold filter, a drawn boundary, matching rules and median price per square foot are covered in <a href="/guides/how-to-pull-comps-on-zillow">how to pull comps on Zillow</a>.<a class="fn" href="#fn1" id="fnref1-1" aria-label="Source 1, Caza guide, how to pull comps on Zillow"><sup>1</sup></a> This guide covers only what&rsquo;s different for a new build.</li>
+  <li><strong>Expect gaps.</strong> Builder sales may not show up yet in the usual data sources.<a class="fn" href="#fn2" id="fnref2-2" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a> A short list of comps in a new subdivision doesn&rsquo;t mean you did it wrong.</li>
+  <li><strong>Treat it as a first read.</strong> It&rsquo;s not an appraisal, and it doesn&rsquo;t tell you what a builder will accept.</li>
+</ol>
+
+<h2 id="whats-different">1. What&rsquo;s different about comps for a new build?</h2>
+
+<p>Four things change when the subject is new construction:</p>
+<ul>
+  <li><strong>The price is a menu.</strong> The number on a plan or community listing may be a starting price before the options, upgrades and lot choice that make up the real contract price.</li>
+  <li><strong>The builder may be paying part of the buyer&rsquo;s costs.</strong> Closing-cost credits and rate buydowns don&rsquo;t show up in a sale price, but they change what that price means.<a class="fn" href="#fn3" id="fnref3-1" aria-label="Source 3, Fannie Mae Selling Guide B4-1.3-09, Adjustments to Comparable Sales"><sup>3</sup></a><a class="fn fn-next" href="#fn4" id="fnref4-1" aria-label="Source 4, Fannie Mae Selling Guide B3-4.1-02, Interested Party Contributions"><sup>4</sup></a></li>
+  <li><strong>Your best comps may be the builder&rsquo;s own sales.</strong> Fannie Mae calls a subdivision &ldquo;new&rdquo; when &ldquo;there are limited or no resales or the builder or developer is involved in the marketing or sale of the properties.&rdquo;<a class="fn" href="#fn2" id="fnref2-3" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a> So some of the closest comps may be sales by the same company that wants your contract.</li>
+  <li><strong>The sold data may lag.</strong> Fannie Mae says builder sales &ldquo;may not yet be available through typical data sources (for example, public records or multiple listing services).&rdquo;<a class="fn" href="#fn2" id="fnref2-4" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a> Zillow has also carried new-construction listings that don&rsquo;t come from an MLS.<a class="fn" href="#fn7" id="fnref7-1" aria-label="Source 7, Zillow Group press release, Zillow and Redfin partnership"><sup>7</sup></a> So the sales you can see on Zillow&rsquo;s Sold map may be incomplete for a new community.</li>
+</ul>
+
+<p>None of that changes the basic steps. It changes which numbers you can trust.</p>
+
+<h2 id="which-price">2. Which price should you compare: base price, upgrades or lot premium?</h2>
+
+<p>Compare the full contract price, not the base price. Rebuild it from the parts.</p>
+
+<p>Ask the builder&rsquo;s sales office for these line items, in writing, for the home you&rsquo;re looking at:</p>
+<ul>
+  <li><strong>Base price</strong> for the plan (floor plan) itself</li>
+  <li><strong>Structural options</strong> such as an added room, an extended garage or a covered patio</li>
+  <li><strong>Design upgrades</strong> such as flooring, cabinets, counters and appliances</li>
+  <li><strong>Lot premium</strong> for a particular homesite (a corner, a view, a larger lot or a cul-de-sac)</li>
+  <li><strong>Incentives</strong> the builder is offering, and what each one is tied to</li>
+</ul>
+
+<p>Then do the same for each comp, as far as you can. For a resale, the sale price already includes whatever options, upgrades and lot the first buyer chose. For another builder&rsquo;s new home, you&rsquo;ll need to know what was included before you compare.</p>
+
+<p>Fannie Mae requires an appraiser using builder sales from competing projects that aren&rsquo;t yet in the usual data sources to include &ldquo;discussion and analysis of sales concessions and upgrades for the subject property relative to concessions and upgrades for each builder sale.&rdquo;<a class="fn" href="#fn2" id="fnref2-5" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a> You can use the same lens: line up what each sale included, not just what it cost.</p>
+
+<h3 id="worked-example">A worked example (hypothetical)</h3>
+
+<p>These numbers are <strong>made up to show the arithmetic</strong>. They aren&rsquo;t typical, and they aren&rsquo;t data from any real builder or listing.</p>
+
+<div class="table-scroll">
+<table>
+  <caption>Hypothetical new build, 2,400 square feet</caption>
+  <thead><tr><th scope="col">Line item</th><th scope="col" class="num">Amount</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Base price for the plan</th><td class="num">$450,000</td></tr>
+    <tr><th scope="row">Structural options</th><td class="num">$18,000</td></tr>
+    <tr><th scope="row">Design upgrades</th><td class="num">$27,000</td></tr>
+    <tr><th scope="row">Lot premium</th><td class="num">$15,000</td></tr>
+    <tr class="total"><th scope="row">Contract price</th><td class="num">$510,000</td></tr>
+    <tr><th scope="row">Builder closing-cost credit</th><td class="num">$10,000</td></tr>
+    <tr><th scope="row">Builder-paid rate buydown</th><td class="num">$12,000</td></tr>
+  </tbody>
+</table>
+</div>
+
+<ul>
+  <li>On the base price: $450,000 &divide; 2,400 = <strong>$187.50 per square foot</strong></li>
+  <li>On the contract price: $510,000 &divide; 2,400 = <strong>$212.50 per square foot</strong></li>
+  <li>On the contract price minus both incentives: $488,000 &divide; 2,400 = <strong>about $203.33 per square foot</strong></li>
+</ul>
+
+<p>The same house produces three different per-foot numbers depending on which price you use. If you compare the $187.50 base figure with resales nearby, the new build will look cheaper than it is. Whatever price you choose, use the same basis for the subject and for every comp.</p>
+
+<p>The last line is only a way to see the size of the incentives. It isn&rsquo;t how an appraiser adjusts for them (see section 3).</p>
+
+<p>The two incentives total $22,000, about 4.3% of the $510,000 price. On a principal residence at more than 90% LTV, that package would be over Fannie Mae&rsquo;s 3% limit ($15,300 here, if the home appraises at or above the price); see section 3.</p>
+
+<h2 id="incentives">3. How do builder incentives change the comparison?</h2>
+
+<p>A sale price on its own doesn&rsquo;t say whether the builder paid some of the buyer&rsquo;s costs. Two homes that sold for the same price can be different deals.</p>
+
+<p><strong>What counts.</strong> Fannie Mae&rsquo;s examples of sales or financing concessions include &ldquo;interest rate buydowns or other below-market rate financing,&rdquo; &ldquo;loan discount points,&rdquo; and &ldquo;closing costs customarily paid by the buyer,&rdquo; among others.<a class="fn" href="#fn3" id="fnref3-2" aria-label="Source 3, Fannie Mae Selling Guide B4-1.3-09, Adjustments to Comparable Sales"><sup>3</sup></a> It lists &ldquo;the builder or developer&rdquo; as an interested party to a sale.<a class="fn" href="#fn4" id="fnref4-2" aria-label="Source 4, Fannie Mae Selling Guide B3-4.1-02, Interested Party Contributions"><sup>4</sup></a> The CFPB says discount points &ldquo;are typically paid by the borrower, but they can be paid by the home seller or a third-party, such as a homebuilder.&rdquo;<a class="fn" href="#fn6" id="fnref6-1" aria-label="Source 6, CFPB, trends in discount points"><sup>6</sup></a></p>
+
+<p><strong>How an appraiser treats them.</strong> Under Fannie Mae&rsquo;s rules, a comparable sale with concessions &ldquo;must be adjusted to reflect the impact, if any, on the sales price of the comparables based on the market at the time of sale.&rdquo;<a class="fn" href="#fn3" id="fnref3-3" aria-label="Source 3, Fannie Mae Selling Guide B4-1.3-09, Adjustments to Comparable Sales"><sup>3</sup></a> The adjustment should approximate the market&rsquo;s reaction, and Fannie Mae says dollar-for-dollar deductions equal to the seller&rsquo;s cost, &ldquo;as a strict cash equivalency approach would dictate, are not appropriate,&rdquo; unless the appraiser finds the market&rsquo;s reaction is the full amount.<a class="fn" href="#fn3" id="fnref3-4" aria-label="Source 3, Fannie Mae Selling Guide B4-1.3-09, Adjustments to Comparable Sales"><sup>3</sup></a> Fannie Mae also says &ldquo;Positive adjustments for sales or financing concessions are not acceptable.&rdquo;<a class="fn" href="#fn3" id="fnref3-5" aria-label="Source 3, Fannie Mae Selling Guide B4-1.3-09, Adjustments to Comparable Sales"><sup>3</sup></a></p>
+
+<p><strong>Limits on your own loan.</strong> Fannie Mae caps financing concessions from interested parties on the home you&rsquo;re buying, by occupancy and loan-to-value. The cap is a percentage of the lower of the sales price or appraised value. For a principal residence or second home, it is 3% when the LTV/CLTV is over 90%, 6% from 75.01% to 90%, and 9% at 75% or less; for an investment property it&rsquo;s 2%.<a class="fn" href="#fn4" id="fnref4-3" aria-label="Source 4, Fannie Mae Selling Guide B3-4.1-02, Interested Party Contributions"><sup>4</sup></a> If an interested party funds a temporary or permanent buydown, &ldquo;the cost of that subsidy must be included in the IPC calculation.&rdquo;<a class="fn" href="#fn4" id="fnref4-4" aria-label="Source 4, Fannie Mae Selling Guide B3-4.1-02, Interested Party Contributions"><sup>4</sup></a> Amounts over the limit are treated as sales concessions and &ldquo;must be deducted from the property&rsquo;s sales price&rdquo; when the lender calculates your loan-to-value.<a class="fn" href="#fn4" id="fnref4-5" aria-label="Source 4, Fannie Mae Selling Guide B3-4.1-02, Interested Party Contributions"><sup>4</sup></a> That doesn&rsquo;t lower what you pay; it can lower how much you can borrow. Financing concessions also can&rsquo;t be more than your closing costs; Fannie Mae treats any excess as a sales concession too.<a class="fn" href="#fn4" id="fnref4-6" aria-label="Source 4, Fannie Mae Selling Guide B3-4.1-02, Interested Party Contributions"><sup>4</sup></a> Those are Fannie Mae&rsquo;s rules. Other loan programs have their own. Ask your lender which rules apply to your loan.</p>
+
+<p>What to do with this when you pull comps:</p>
+<ul>
+  <li>For each builder sale you use, ask what incentives the buyer received. The sale record on Zillow won&rsquo;t say.</li>
+  <li>For your own deal, compare the incentive package with a lower price. A buydown helps only while you keep that loan. See <a href="/guides/how-mortgage-rate-buydowns-work">how mortgage rate buydowns work</a> and the free <a href="/tools/rate-drop-vs-price-cut-calculator">rate drop vs. price cut calculator</a>.</li>
+</ul>
+
+<h2 id="resales-vs-builder-sales">4. Should you use resales in the subdivision or other builders&rsquo; new homes?</h2>
+
+<p>Use both, and keep track of which is which.</p>
+
+<p>Fannie Mae&rsquo;s rule for appraisals in a new subdivision, condo project or PUD is a useful checklist. The appraiser must compare the home &ldquo;to other properties in the same market area and to properties within the subject condo project, subdivision, or PUD.&rdquo;<a class="fn" href="#fn2" id="fnref2-6" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a> That means:</p>
+<ul>
+  <li>&ldquo;At least one settled comparable sale from the subject condo project, subdivision, or PUD. (A resale is preferable if it is verifiable and does not involve the subject builder or developer).&rdquo;<a class="fn" href="#fn2" id="fnref2-7" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></li>
+  <li>&ldquo;At least one settled comparable sale from outside the subject condo project, subdivision, or PUD.&rdquo;<a class="fn" href="#fn2" id="fnref2-8" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></li>
+  <li>A third sale that can come from either.<a class="fn" href="#fn2" id="fnref2-9" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></li>
+</ul>
+
+<p>Fannie Mae says the comparison &ldquo;should help demonstrate market acceptance of new developments and the properties within them.&rdquo;<a class="fn" href="#fn2" id="fnref2-10" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></p>
+
+<p><strong>Why a resale is worth finding.</strong> A resale inside the subdivision shows what a buyer paid when the builder wasn&rsquo;t the seller. That takes the builder&rsquo;s incentives and sales office out of that sale (a resale seller can still pay concessions, so ask about those too).</p>
+
+<p><strong>How to spot one on Zillow.</strong> Draw your boundary around the subdivision on the Sold map, as in the <a href="/guides/how-to-pull-comps-on-zillow">basic method</a>.<a class="fn" href="#fn1" id="fnref1-2" aria-label="Source 1, Caza guide, how to pull comps on Zillow"><sup>1</sup></a> Then open each sold home&rsquo;s price history. A home that shows an earlier sale before its latest one has changed hands at least twice, so the latest sale may be a resale. A home with only one sale on record may be the builder&rsquo;s original sale, but a price history can be incomplete, so confirm it. Check the year built against the subdivision&rsquo;s other homes too.</p>
+
+<p><strong>Other builders&rsquo; new homes nearby.</strong> These show what you&rsquo;d pay for a comparable new home from a competitor. They come with the same base-price and incentive questions, so rebuild their prices the same way.</p>
+
+<p><strong>Older homes outside the subdivision.</strong> These show what the wider market pays, but the age gap matters. Keep the property type the same, and expect condition and features to differ a lot.</p>
+
+<h2 id="thin-sold-data">5. Why might sold data for new builds be thin on Zillow?</h2>
+
+<p>For new construction, the Sold map may show fewer sales than actually closed, or show them later.</p>
+
+<p>Two sourced reasons:</p>
+<ul>
+  <li>Fannie Mae tells appraisers they &ldquo;may need to rely solely on the builder&rdquo; for a sale inside a new subdivision, &ldquo;as this data may not yet be available through typical data sources (for example, public records or multiple listing services),&rdquo; and allows them to verify it from the builder&rsquo;s settlement statement.<a class="fn" href="#fn2" id="fnref2-11" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></li>
+  <li>Zillow has carried new-construction listings that don&rsquo;t come from an MLS. When Zillow and Redfin announced their partnership in 2023, they said &ldquo;Redfin will source non-MLS new-construction listings exclusively from Zillow.&rdquo;<a class="fn" href="#fn7" id="fnref7-2" aria-label="Source 7, Zillow Group press release, Zillow and Redfin partnership"><sup>7</sup></a></li>
+</ul>
+
+<p>Zillow doesn&rsquo;t publish, on a page we could read, how or when it records sale prices for homes a builder sold without an MLS listing. So check it yourself: if far more homes in a community look finished and occupied than the Sold map shows as sold, the sold record is probably incomplete. Ask the builder or an agent for the missing sales. Price disclosure also varies by state; see the <a href="/guides/how-to-pull-comps-on-zillow">basic guide</a> on non-disclosure states.<a class="fn" href="#fn1" id="fnref1-3" aria-label="Source 1, Caza guide, how to pull comps on Zillow"><sup>1</sup></a></p>
+
+<p>Where to look when Zillow comes up short:</p>
+<ul>
+  <li><strong>The builder&rsquo;s sales office.</strong> Ask for recent closed prices in the community, with what was included. They may or may not share them.</li>
+  <li><strong>A buyer&rsquo;s agent with MLS access.</strong> The MLS may have sales that haven&rsquo;t reached Zillow, and agents can see more detail.</li>
+  <li><strong>County records.</strong> Your county&rsquo;s recorder or assessor may show recorded sales, depending on your state.</li>
+  <li><strong>Pending sales, with care.</strong> Pending isn&rsquo;t sold. Fannie Mae allows pending sales inside a new project only in specific cases, alongside settled sales from outside it.<a class="fn" href="#fn2" id="fnref2-12" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></li>
+</ul>
+
+<h2 id="appraisal">6. How do appraisers value new construction?</h2>
+
+<p>If you&rsquo;re financing with a loan Fannie Mae will buy, the appraiser has to follow the comparable-sales rules above. A few more points from Fannie Mae&rsquo;s Selling Guide:</p>
+<ul>
+  <li><strong>At least three closed comps.</strong> &ldquo;A minimum of three closed comparables must be reported in the sales comparison approach.&rdquo;<a class="fn" href="#fn2" id="fnref2-13" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></li>
+  <li><strong>Recent, but not at any cost.</strong> &ldquo;Comparable sales that have closed within the last 12 months should be used in the appraisal; however, the best and most appropriate comparable sales may not always be the most recent sales.&rdquo;<a class="fn" href="#fn2" id="fnref2-14" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></li>
+  <li><strong>No made-up comps.</strong> &ldquo;In no instance may the appraiser create comparable sales by combining vacant land sales with the contract purchase price of a home (improvements only).&rdquo;<a class="fn" href="#fn2" id="fnref2-15" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></li>
+  <li><strong>Square footage by a standard.</strong> For single-family houses, appraisers must generally use the ANSI Z765-2021 standard &ldquo;when measuring, calculating and reporting the above- and below-grade square footage(s).&rdquo;<a class="fn" href="#fn5" id="fnref5-1" aria-label="Source 5, Fannie Mae Selling Guide B4-1.3-05, Improvements Section"><sup>5</sup></a> A builder&rsquo;s plan listing may not say which method produced the square footage shown, so ask the builder.</li>
+</ul>
+
+<p>FHA, VA and other loan programs have their own appraisal rules, and this guide doesn&rsquo;t cover them. Ask your lender which rules apply to your loan.</p>
+
+<h2 id="price-per-square-foot">7. What are the price-per-square-foot traps with new builds?</h2>
+
+<p>Price per square foot is still the quickest way to compare, but new construction adds traps:</p>
+<ul>
+  <li><strong>Base price versus contract price.</strong> As the example in section 2 shows, the same house gives different per-foot figures depending on which price you divide.</li>
+  <li><strong>Lot premiums add price without adding square feet.</strong> A lot premium raises the per-foot figure even though the house is the same size.</li>
+  <li><strong>Upgrades do the same.</strong> Design upgrades raise the price of the same floor area.</li>
+  <li><strong>Incentives hide in the price.</strong> A sale with a large builder credit and one without can show the same per-foot figure for different deals.</li>
+  <li><strong>Age gaps.</strong> Comparing a brand-new home with resales from decades ago mixes in condition and features. The basic guide&rsquo;s matching rules still apply.<a class="fn" href="#fn1" id="fnref1-4" aria-label="Source 1, Caza guide, how to pull comps on Zillow"><sup>1</sup></a></li>
+  <li><strong>Different measurements.</strong> A builder&rsquo;s marketing square footage and an appraiser&rsquo;s ANSI measurement aren&rsquo;t necessarily the same number.<a class="fn" href="#fn5" id="fnref5-2" aria-label="Source 5, Fannie Mae Selling Guide B4-1.3-05, Improvements Section"><sup>5</sup></a></li>
+</ul>
+
+<p>You can run your own comps through the free <a href="/tools/comps-price-per-square-foot">comps price per square foot calculator</a>. Use the same price basis for every row.</p>
+
+<h2 id="limits">What this guide can&rsquo;t tell you</h2>
+<ul>
+  <li>What a builder will accept, or which incentives they&rsquo;ll offer you</li>
+  <li>What incentives a past buyer received, unless the builder or an agent tells you</li>
+  <li>How Zillow records sales for homes a builder sold without an MLS listing</li>
+  <li>What an appraisal will come in at, or the rules for FHA, VA and other non-Fannie Mae loans</li>
+  <li>Whether a particular option, upgrade or lot premium is worth what it costs</li>
+  <li>The home&rsquo;s construction quality (that takes an inspection, even on a new home)</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<div class="gfaq">
+  <h3 id="faq-base-price">Can I use the builder&rsquo;s base price as a comp?</h3>
+  <p>No. A base price is an asking price for a plan before options, upgrades and lot premium. Comps are closed sales. Rebuild the full contract price for the home you&rsquo;re looking at and compare that with what similar homes actually sold for.</p>
+  <h3 id="faq-incentives">Do builder incentives lower the value of a comp?</h3>
+  <p>They can. Under Fannie Mae&rsquo;s rules, an appraiser adjusts a comp with sales or financing concessions to reflect the market&rsquo;s reaction to them, which isn&rsquo;t always the full dollar amount. Fannie Mae doesn&rsquo;t allow positive adjustments for concessions.<a class="fn" href="#fn3" id="fnref3-6" aria-label="Source 3, Fannie Mae Selling Guide B4-1.3-09, Adjustments to Comparable Sales"><sup>3</sup></a></p>
+  <h3 id="faq-resales">Are resales in the same subdivision better comps than builder sales?</h3>
+  <p>For appraisals on loans Fannie Mae buys, a resale inside the subdivision is preferred when it is verifiable and doesn&rsquo;t involve the subject builder. Use both kinds, plus at least one sale from outside the subdivision.<a class="fn" href="#fn2" id="fnref2-16" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a></p>
+  <h3 id="faq-missing-sales">Why can&rsquo;t I find recent sales in a new community on Zillow?</h3>
+  <p>Builder sales may not yet be in public records or the MLS, and Zillow has carried new-construction listings that don&rsquo;t come from an MLS.<a class="fn" href="#fn2" id="fnref2-17" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a><a class="fn fn-next" href="#fn7" id="fnref7-3" aria-label="Source 7, Zillow Group press release, Zillow and Redfin partnership"><sup>7</sup></a> Ask the builder, an agent with MLS access, or your county&rsquo;s records.</p>
+  <h3 id="faq-appraisal">Do I need a different appraisal for new construction?</h3>
+  <p>Not a different kind, but extra comparable-sales rules apply under Fannie Mae&rsquo;s Selling Guide when the home is in a new subdivision.<a class="fn" href="#fn2" id="fnref2-18" aria-label="Source 2, Fannie Mae Selling Guide B4-1.3-08, Comparable Sales"><sup>2</sup></a> Other loan programs have their own rules; ask your lender. If the home isn&rsquo;t finished yet, ask your lender whether the appraisal will be made subject to completion and what that means for your closing.</p>
+</div>
+
+<h2 id="related">Related on Caza</h2>
+<ul>
+  <li><a href="/guides/how-to-pull-comps-on-zillow">How to pull comps on Zillow (without the MLS)</a></li>
+  <li><a href="/guides/how-to-see-zillow-comps-on-a-map">How to see Zillow comps on a map</a></li>
+  <li><a href="/guides/is-this-listing-overpriced-zillow">How to tell if a Zillow listing is overpriced</a></li>
+  <li><a href="/guides/how-mortgage-rate-buydowns-work">How do mortgage rate buydowns work?</a></li>
+</ul>
+<p>You don&rsquo;t need Caza for any of this. Zillow&rsquo;s Sold map, each home&rsquo;s price history, and the builder&rsquo;s line items will do it. Caza does the search part faster: on a Zillow listing (not tested on builder community or plan pages), Sales comps runs Zillow&rsquo;s Recently Sold search around the home, keeps property types apart, and for single-family homes scores each sale on distance, months since sale, size, beds and baths, and, when the sale&rsquo;s year built is known, the year-built gap. Zillow&rsquo;s sold results often leave year built out until you use Get details, so check each comp&rsquo;s age yourself. You can widen the distance, include older sales, or remove a comp that doesn&rsquo;t fit.<a class="fn" href="#fn8" id="fnref8-1" aria-label="Source 8, Caza Chrome extension 2.11.0"><sup>8</sup></a> For single-family homes it doesn&rsquo;t check whether a sale is in the same subdivision, and it can&rsquo;t see builder incentives, so those two checks are still yours.<a class="fn" href="#fn8" id="fnref8-2" aria-label="Source 8, Caza Chrome extension 2.11.0"><sup>8</sup></a> Caza is a Chrome extension. The Demand Score, sorting and hover cards work without a membership; the free tier includes 3 sales comps reports and 3 rental comps reports a month, and unlimited reports are $11.99 a month or $99 a year (<a href="/pricing">pricing</a>).</p>
+<p>Caza is not affiliated with or endorsed by Zillow, Fannie Mae or the CFPB. This guide is general information, not legal, financial, lending or real estate advice, and nothing here promises a particular deal, appraisal or outcome.</p>
+
+<section class="sources" aria-labelledby="sources-h">
+  <h2 id="sources-h">Sources</h2>
+  <ol>
+    <li id="fn1">Caza, <a href="/guides/how-to-pull-comps-on-zillow">&ldquo;How to pull comps on Zillow (without the MLS).&rdquo;</a> Updated November 2026. <a class="fn-back" href="#fnref1-1">Back to text</a></li>
+    <li id="fn2">Fannie Mae, <a href="https://selling-guide.fanniemae.com/sel/b4-1.3-08/comparable-sales"><em>Selling Guide</em>, B4-1.3-08, &ldquo;Comparable Sales&rdquo;</a> (06/04/2025). Guide published Nov. 4, 2026. Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref2-1">Back to text</a></li>
+    <li id="fn3">Fannie Mae, <a href="https://selling-guide.fanniemae.com/sel/b4-1.3-09/adjustments-comparable-sales"><em>Selling Guide</em>, B4-1.3-09, &ldquo;Adjustments to Comparable Sales&rdquo;</a> (06/04/2025). Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref3-1">Back to text</a></li>
+    <li id="fn4">Fannie Mae, <a href="https://selling-guide.fanniemae.com/sel/b3-4.1-02/interested-party-contributions-ipcs"><em>Selling Guide</em>, B3-4.1-02, &ldquo;Interested Party Contributions (IPCs)&rdquo;</a> (05/07/2025). Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref4-1">Back to text</a></li>
+    <li id="fn5">Fannie Mae, <a href="https://selling-guide.fanniemae.com/sel/b4-1.3-05/improvements-section-appraisal-report"><em>Selling Guide</em>, B4-1.3-05, &ldquo;Improvements Section of the Appraisal Report&rdquo;</a> (06/04/2025). Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref5-1">Back to text</a></li>
+    <li id="fn6">Consumer Financial Protection Bureau, <a href="https://www.consumerfinance.gov/data-research/research-reports/data-spotlight-trends-in-discount-points-amid-rising-interest-rates/">&ldquo;Data Spotlight: Trends in discount points amid rising interest rates.&rdquo;</a> Apr. 5, 2024; page last modified Aug. 22, 2024. Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref6-1">Back to text</a></li>
+    <li id="fn7">Zillow Group, <a href="https://zillow.mediaroom.com/2023-08-01-Zillow-and-Redfin-announce-partnership-to-help-buyers-and-home-builders-connect">&ldquo;Zillow and Redfin announce partnership to help buyers and home builders connect.&rdquo;</a> Aug. 1, 2023. Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref7-1">Back to text</a></li>
+    <li id="fn8">Caza Chrome extension, version 2.11.0, as shipped (Sales comps search, property-type separation, similarity scoring, widen-distance and older-sales controls, remove a comp). Reviewed by Caza Nov. 13, 2026. Available on the <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk">Chrome Web Store</a>. <a class="fn-back" href="#fnref8-1">Back to text</a></li>
+  </ol>
+</section>
+
+      <div class="post-cta">
+        <p><strong>Caza pulls sold comps around a Zillow listing and lets you widen, add older sales or remove a comp.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-new-construction-comps-zillow" class="btn">Try Caza</a>
+      </div>
+      <div class="related">
+        <h3>Related guides</h3>
+        <p><a href="/tools/comps-price-per-square-foot">Comps price per square foot calculator</a></p>
+        <p><a href="/blog">All guides</a> &middot; <a href="/tools">Free calculators</a></p>
+      </div>
+    </article>
+    <a class="back" href="/blog">Back to all guides</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms of sale</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script src="/m.js?v=20261027c" defer></script>
+<script src="/ga.js?v=20261104a" defer></script>
+</body>
+</html>
