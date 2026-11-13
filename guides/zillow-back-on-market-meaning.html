@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KB6RLF3R7B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IS','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','G-KB6RLF3R7B',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What does “back on market” mean on Zillow? | Caza Guides</title>
+<meta name="description" content="Back on market means a home is for sale again after it went under contract or off market. How to read the price history, and what to ask.">
+<link rel="canonical" href="https://usecaza.com/guides/zillow-back-on-market-meaning">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/guides/zillow-back-on-market-meaning">
+<meta property="og:title" content="What does “back on market” mean on a Zillow listing?">
+<meta property="og:description" content="Back on market means a home is for sale again after it went under contract or off market. How to read the price history, and what to ask.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CazaRealEstate">
+<meta name="twitter:title" content="What does “back on market” mean on a Zillow listing?">
+<meta name="twitter:description" content="Back on market means a home is for sale again after it went under contract or off market. How to read the price history, and what to ask.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261104a">
+<style>
+.gfaq h3{font-size:18px;margin:18px 0 6px}
+a.fn{font-weight:700;text-decoration:none;white-space:nowrap}
+a.fn sup{font-size:.75em;line-height:0}
+a.fn.fn-next sup::before{content:", "}
+.post-page h2,.post-page h3{scroll-margin-top:24px}
+.post-page .table-scroll{display:block;width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 22px;overscroll-behavior-x:contain}
+.post-page .table-scroll table{width:100%;min-width:100%;margin:0}
+.post-page .table-scroll.wide table{min-width:40rem}
+.post-page .table-scroll th,.post-page .table-scroll td{white-space:normal;text-align:left;padding:10px 16px 10px 0;vertical-align:top}
+.post-page .table-scroll th:last-child,.post-page .table-scroll td:last-child{text-align:left;white-space:normal;padding-right:2px}
+.post-page .table-scroll .num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.post-page .table-scroll tr.total th,.post-page .table-scroll tr.total td{font-weight:700}
+.post-page .table-scroll th.num{text-align:right;white-space:normal}
+.post-page .table-scroll td.num:last-child{white-space:nowrap;text-align:right}
+.post-page .table-scroll caption{caption-side:top;text-align:left;font-size:15px;font-weight:600;color:var(--ink);padding:0 0 8px}
+@media (max-width:760px){
+  .post-page .table-scroll.wide{overflow:visible}
+  .post-page .table-scroll.wide table{min-width:0;width:100%}
+  .post-page .table-scroll.wide thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .post-page .table-scroll.wide tr{display:block;border-bottom:1px solid var(--rule);padding:8px 0 10px}
+  .post-page .table-scroll.wide th,.post-page .table-scroll.wide td{display:flex;justify-content:space-between;align-items:baseline;gap:16px;width:auto;border:0;padding:4px 0;text-align:left;white-space:normal}
+  .post-page .table-scroll.wide th:last-child,.post-page .table-scroll.wide td:last-child{text-align:right;white-space:normal;padding-right:0}
+  .post-page .table-scroll.wide th[scope="row"]{display:block;font-size:16px;padding-bottom:6px}
+  .post-page .table-scroll.wide td[data-label]{flex-wrap:wrap}
+  .post-page .table-scroll.wide td[data-label]::before{content:attr(data-label);flex:1 1 8rem;font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--sub);text-align:left}
+  .post-page .table-scroll.wide .num{margin-left:auto;text-align:right;white-space:nowrap}
+  .post-page .table-scroll.wide caption{display:block;width:auto;max-width:100%}
+}
+.sources{margin-top:8px}
+.sources ol{margin-left:22px}
+.sources li{overflow-wrap:anywhere}
+.sources .fn-back{display:inline-block;margin-top:4px}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://usecaza.com/#org",
+   "name": "Caza",
+   "url": "https://usecaza.com/"
+  },
+  {
+   "@type": "Article",
+   "inLanguage": "en-US",
+   "image": "https://usecaza.com/og-image.png",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://usecaza.com/#org",
+    "name": "Caza",
+    "url": "https://usecaza.com/"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://usecaza.com/blog#blog",
+    "name": "Caza Guides",
+    "url": "https://usecaza.com/blog"
+   },
+   "datePublished": "2026-11-13",
+   "dateModified": "2026-11-13",
+   "@id": "https://usecaza.com/guides/zillow-back-on-market-meaning#article",
+   "url": "https://usecaza.com/guides/zillow-back-on-market-meaning",
+   "mainEntityOfPage": "https://usecaza.com/guides/zillow-back-on-market-meaning",
+   "headline": "What does “back on market” mean on a Zillow listing?",
+   "description": "Back on market means a home is for sale again after it went under contract or off market. How to read the price history, and what to ask.",
+   "wordCount": 2151,
+   "articleSection": "For buyers and buyer's agents",
+   "keywords": "back on market, Zillow, pending, contingent, days on market, price history"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://usecaza.com/blog"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "What does “back on market” mean on a Zillow listing?",
+     "item": "https://usecaza.com/guides/zillow-back-on-market-meaning"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does back on market mean something is wrong with the house?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not necessarily. Deals can end for reasons on the buyer’s side, like a loan or a home the buyer needed to sell. Ask why, and get your own inspection."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is back on market the same as a new listing?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It’s the same home returning after a deal ended or after time off the market. The price history can show the earlier pending period. Depending on MLS rules, the days-on-market count may or may not carry over."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can I offer less on a back-on-market home?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can offer what you think it’s worth. Base it on recent sales, not the label. “How to spot a Zillow listing that will take a low offer” covers the other signals."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What’s the difference between contingent and pending?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on the MLS. In one, “contingent” means an offer is accepted but the home is still shown and backup offers are taken, while “pending” means no more showings or backup offers. Ask your agent how your local MLS uses them."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does the days-on-market count reset when a home comes back?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It depends on the MLS and the listing source. One MLS carries days over unless there’s a gap of more than 61 days, another unless there’s a break of 31 days or longer, and a third requires 30 full days off market and a new listing. If the same listing is returned to active after a contract ends, one MLS says its count picks up from the last day on market; the reset rules apply when a home is relisted after time off the market. Trust the price history over the counter, and ask your agent for the local cumulative-days rule."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-zillow-back-on-market-meaning">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/blog">Guides</a> · For buyers and buyer&rsquo;s agents</p>
+    <h1>What does &ldquo;back on market&rdquo; mean on a Zillow listing?</h1>
+    <p class="lede">What can happen before a listing comes back, what the listing can and can&rsquo;t tell you, and the questions to ask before you write an offer.</p>
+  </div></div>
+
+  <div class="wrap">
+    <article class="post post-page">
+      <div class="post-meta"><span class="tag">For buyers and buyer&rsquo;s agents</span><span id="read-time">9 min read</span><span>Last updated <time datetime="2026-11-13">November 13, 2026</time></span></div>
+
+<h2 id="short-answer">Short answer</h2>
+
+<p>Back on market means a home that had stopped being available is for sale again. One way it happens: the seller accepted an offer, the home went pending or contingent, and the contract ended before closing. The label doesn&rsquo;t say why. Read the price history and ask the listing agent before you write an offer.</p>
+
+<p>Two more things to know:</p>
+<ol>
+  <li><strong>Status names and cumulative-days rules are set by each local MLS, and they differ.</strong> The day count Zillow shows is Zillow&rsquo;s own and may not match the MLS&rsquo;s.<a class="fn" href="#fn2" id="fnref2-1" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a><a class="fn fn-next" href="#fn3" id="fnref3-1" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a><a class="fn fn-next" href="#fn4" id="fnref4-1" aria-label="Source 4, Bright MLS, Cumulative Days On Market"><sup>4</sup></a><a class="fn fn-next" href="#fn5" id="fnref5-1" aria-label="Source 5, RESO Data Dictionary, Cumulative Days On Market"><sup>5</sup></a></li>
+  <li><strong>Back on market isn&rsquo;t automatically good or bad.</strong> It&rsquo;s a reason to look closer.</li>
+</ol>
+
+<h2 id="what-happened">1. What happened before a listing came back on market?</h2>
+
+<p>The basic path of a sale is: listed &rarr; offer accepted &rarr; under contract &rarr; closed. A contract can include contingencies, such as a satisfactory appraisal or inspection.<a class="fn" href="#fn1" id="fnref1-1" aria-label="Source 1, Minnesota Attorney General, Sample Buyer's Contingency"><sup>1</sup></a> A listing comes back when that chain breaks after an offer was accepted, or when a home that was taken off the market is listed again.<a class="fn" href="#fn3" id="fnref3-2" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a></p>
+
+<p>On the MLS side, the in-between statuses vary. In status rules that a Texas Realtor association (MetroTex) published for its MLS (file dated May 2020), for example:<a class="fn" href="#fn2" id="fnref2-2" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a></p>
+<ul>
+  <li><strong>Active Contingent:</strong> &ldquo;Seller has accepted an offer but has requested that the property remain available for showings and Seller will entertain backup offers.&rdquo;</li>
+  <li><strong>Pending:</strong> the property has an offer with no contingencies, kick-outs or options, and &ldquo;the seller requests no further showings and does not want to entertain backup offers.&rdquo;</li>
+</ul>
+
+<p>A St. Louis&ndash;area MLS describes &ldquo;Pending&rdquo; as an accepted contract where the seller has told the agent &ldquo;to cease marketing and/or showing the property, while normal contractual conditions are fulfilled (e.g., inspections, financing, etc.)&rdquo;<a class="fn" href="#fn3" id="fnref3-3" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a> When a contract like that ends, the agent can return the listing to &ldquo;Active.&rdquo;<a class="fn" href="#fn3" id="fnref3-4" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a> The MetroTex document&rsquo;s list of flags for the agent-facing search results screen includes a &ldquo;B&rdquo; next to the MLS number, defined only as &ldquo;Indicates the listing is back on market,&rdquo; and it says those flags &ldquo;will appear for 5 days.&rdquo;<a class="fn" href="#fn2" id="fnref2-3" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a> Other MLSs may do it differently.</p>
+
+<p>We couldn&rsquo;t confirm from Zillow&rsquo;s own help pages how it defines &ldquo;back on market&rdquo; or where the label appears, so this guide doesn&rsquo;t describe Zillow&rsquo;s wording. Here is what we can say. Zillow&rsquo;s listing data includes a status text, and the Caza extension looks for &ldquo;back on market&rdquo; in that text to set its back-on-market flag.<a class="fn" href="#fn7" id="fnref7-1" aria-label="Source 7, Caza Chrome extension 2.11.0"><sup>7</sup></a> You don&rsquo;t have to rely on the label at all: the price history on the listing can show when a home went pending and when it was listed again (<a href="#price-history">section 3</a>).<a class="fn" href="#fn6" id="fnref6-1" aria-label="Source 6, Caza guide, days on market on Zillow"><sup>6</sup></a></p>
+
+<h2 id="why-deals-fall-through">2. Why do deals fall through?</h2>
+
+<p>There&rsquo;s no single reason, and the Zillow label doesn&rsquo;t say which one it was. This guide doesn&rsquo;t rank them or say how often each happens.</p>
+
+<p>A buyer&rsquo;s offer can be conditional. A sample buyer&rsquo;s contingency published by the Minnesota Attorney General&rsquo;s Office makes the purchase depend on a &ldquo;satisfactory appraisal valuing the property at an amount not less than the purchase price&rdquo; and a home inspection report that the house is &ldquo;structurally sound and in good repair.&rdquo; If a contingency isn&rsquo;t satisfied within the time the form provides, the form lets the agreement &ldquo;become null and void at the option of and upon written notice by Buyer,&rdquo; with earnest money refunded.<a class="fn" href="#fn1" id="fnref1-2" aria-label="Source 1, Minnesota Attorney General, Sample Buyer's Contingency"><sup>1</sup></a> Real contracts vary by state and by the forms used.</p>
+
+<p>So the possibilities include:</p>
+<ul>
+  <li><strong>Inspection.</strong> The inspection report didn&rsquo;t satisfy the buyer&rsquo;s contingency, and the buyer chose to end the contract.<a class="fn" href="#fn1" id="fnref1-3" aria-label="Source 1, Minnesota Attorney General, Sample Buyer's Contingency"><sup>1</sup></a></li>
+  <li><strong>Appraisal.</strong> The appraisal came in under the purchase price, and the deal didn&rsquo;t go ahead at that price.<a class="fn" href="#fn1" id="fnref1-4" aria-label="Source 1, Minnesota Attorney General, Sample Buyer's Contingency"><sup>1</sup></a></li>
+  <li><strong>The buyer&rsquo;s loan.</strong> The financing didn&rsquo;t come through. One MLS lists financing, alongside inspections, among the &ldquo;normal contractual conditions&rdquo; that are fulfilled while a home is pending.<a class="fn" href="#fn3" id="fnref3-5" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a></li>
+  <li><strong>The buyer&rsquo;s other home.</strong> The offer depended on the buyer selling a home they already own. The MetroTex document has a separate status for an offer &ldquo;contingent upon the sale of another property by buyer.&rdquo;<a class="fn" href="#fn2" id="fnref2-4" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a></li>
+  <li><strong>Something else in the contract.</strong> The sample Minnesota form leaves blank lines for other conditions the parties add.<a class="fn" href="#fn1" id="fnref1-5" aria-label="Source 1, Minnesota Attorney General, Sample Buyer's Contingency"><sup>1</sup></a></li>
+</ul>
+
+<p>Only some of these say anything about the house. You can&rsquo;t tell which one it was from the listing alone.</p>
+
+<h2 id="price-history">3. How do you read the price history?</h2>
+
+<p>Open <strong>Price history</strong> on the Zillow listing page. It&rsquo;s the best public record of what happened, and it&rsquo;s the same place the <a href="/guides/zillow-days-on-market-meaning">days on market guide</a> uses to rebuild a selling attempt: find when the current attempt began and note any pending stretches since then.<a class="fn" href="#fn6" id="fnref6-2" aria-label="Source 6, Caza guide, days on market on Zillow"><sup>6</sup></a></p>
+
+<p>Look for:</p>
+<ul>
+  <li><strong>When it went pending (or contingent) and when it came back.</strong> The time in between is how long the deal lasted. The listing doesn&rsquo;t say why it ended, and contract deadlines (for example, the date an inspection report is due in the sample form above<a class="fn" href="#fn1" id="fnref1-6" aria-label="Source 1, Minnesota Attorney General, Sample Buyer's Contingency"><sup>1</sup></a>) differ from deal to deal. Use the length as a prompt for questions, not a conclusion.</li>
+  <li><strong>Whether it has happened more than once.</strong> A home that has gone under contract and come back several times is worth a direct question: what keeps ending the deals?</li>
+  <li><strong>Price changes around the relist.</strong> A cut right after coming back may mean the seller learned something from an appraisal, an inspection, or the market. See <a href="/guides/zillow-price-cut-meaning">what a price cut on a Zillow listing tells you</a>.</li>
+  <li><strong>The days-on-market number.</strong> Days on Zillow can reset when a home is relisted, depending on the listing source and how it was relisted.<a class="fn" href="#fn6" id="fnref6-3" aria-label="Source 6, Caza guide, days on market on Zillow"><sup>6</sup></a> MLS rules for cumulative days on market differ too. One MLS sums days across listings &ldquo;when there are 61 days or less between the end of one listing and the start of another.&rdquo;<a class="fn" href="#fn4" id="fnref4-2" aria-label="Source 4, Bright MLS, Cumulative Days On Market"><sup>4</sup></a> Another counts a &ldquo;substantial break&rdquo; as 31 days or longer in cancelled, expired or sold status, and says its own day counts &ldquo;are not shared with 3rd party sites such as REALTOR.com or Zillow.&rdquo;<a class="fn" href="#fn2" id="fnref2-5" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a> A third requires a listing to stay off market &ldquo;a FULL 30 calendar days&rdquo; and come back &ldquo;as a NEW listing&rdquo; before cumulative days reset, and says its day counts &ldquo;do not accrue while the listing is in &lsquo;Pending&rsquo; status.&rdquo;<a class="fn" href="#fn3" id="fnref3-6" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a> The industry data standard defines cumulative days on market &ldquo;as defined by the MLS business rules.&rdquo;<a class="fn" href="#fn5" id="fnref5-2" aria-label="Source 5, RESO Data Dictionary, Cumulative Days On Market"><sup>5</sup></a> Trust the price history over the counter, and ask your agent for the MLS&rsquo;s cumulative days on market.</li>
+</ul>
+
+<h2 id="opportunity-or-caution">4. When is back on market an opportunity, and when should you be careful?</h2>
+
+<p>Back on market isn&rsquo;t automatically good or bad. It&rsquo;s a reason to look closer, then ask the listing agent why the last contract ended.</p>
+
+<p><strong>Reasons it can work in your favor</strong></p>
+<ul>
+  <li>The seller already expected to sell, and may be ready to move faster.</li>
+  <li>If the earlier buyer&rsquo;s reason had nothing to do with the house, you get a second chance at a home you might have missed.</li>
+  <li>If an inspection already happened, the seller may know about issues and may be willing to share or address them. Ask. Still get your own inspection.</li>
+</ul>
+
+<p><strong>Reasons to be careful</strong></p>
+<ul>
+  <li>The earlier buyer may have found a real problem. If a seller knows about defects, disclosure rules in your state may apply. Ask your agent what the seller has to disclose. This guide can&rsquo;t tell you.</li>
+  <li>If the last deal ended over the appraisal, your lender&rsquo;s appraisal could come in low too.</li>
+  <li>Repeated fall-throughs are a pattern to ask about.</li>
+</ul>
+
+<p><strong>Questions to ask the listing agent (through your agent, if you have one)</strong></p>
+<ol>
+  <li>Why did the last contract end?</li>
+  <li>Was an inspection done? Will the seller share the report, or any repair estimates?</li>
+  <li>Did an appraisal come in? Was it below the contract price?</li>
+  <li>Has the price or any term changed since the relist?</li>
+  <li>Is the seller open to a quick close, and what terms matter most to them?</li>
+</ol>
+
+<h2 id="example">5. A hypothetical example</h2>
+
+<p>These dates and prices are <strong>made up to show the idea</strong>. They aren&rsquo;t data from any real listing. Two listings in the same neighborhood both show &ldquo;back on market.&rdquo;</p>
+
+<div class="table-scroll">
+<table>
+  <caption>Hypothetical listings</caption>
+  <thead><tr><th scope="col"></th><th scope="col">House A</th><th scope="col">House B</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Listed</th><td>March 1, $500,000</td><td>March 1, $500,000</td></tr>
+    <tr><th scope="row">Went pending</th><td>March 8</td><td>March 5</td></tr>
+    <tr><th scope="row">Back on market</th><td>March 15</td><td>April 20</td></tr>
+    <tr><th scope="row">Price since</th><td>No change</td><td>Cut to $480,000 on April 22</td></tr>
+    <tr><th scope="row">Earlier fall-throughs in price history</th><td>None</td><td>One (a prior listing last year)</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Neither listing tells you why, but they point to different questions. House A&rsquo;s deal lasted 7 days (March 8 to March 15): ask whether an inspection was done and what it found. House B&rsquo;s lasted 46 days (March 5 to April 20), was followed by a $20,000 cut (4%), and the price history shows an earlier deal that also ended: ask about the appraisal, the loan, and why deals keep ending. Either way, get your own inspection and compare the price with recent sales. See <a href="/guides/how-to-pull-comps-on-zillow">how to pull comps on Zillow</a>.</p>
+
+<h2 id="limits">What this guide can&rsquo;t tell you</h2>
+<ul>
+  <li>Why a specific deal fell through. Only the parties and their agents know, and they may not say.</li>
+  <li>How often deals fall through in your market. This guide doesn&rsquo;t cite a rate.</li>
+  <li>Your local MLS&rsquo;s status names, or how it counts days on market after a relist.</li>
+  <li>Exactly how and where Zillow labels a returned listing. We couldn&rsquo;t confirm it from Zillow&rsquo;s own pages.</li>
+  <li>What a seller is legally required to disclose in your state.</li>
+  <li>Whether a particular home is a good deal.</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<div class="gfaq">
+  <h3 id="faq-something-wrong">Does back on market mean something is wrong with the house?</h3>
+  <p>Not necessarily. Deals can end for reasons on the buyer&rsquo;s side, like a loan or a home the buyer needed to sell. Ask why, and get your own inspection.<a class="fn" href="#fn2" id="fnref2-6" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a><a class="fn fn-next" href="#fn3" id="fnref3-7" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a></p>
+  <h3 id="faq-new-listing">Is back on market the same as a new listing?</h3>
+  <p>No. It&rsquo;s the same home returning after a deal ended or after time off the market. The price history can show the earlier pending period. Depending on MLS rules, the days-on-market count may or may not carry over.<a class="fn" href="#fn2" id="fnref2-7" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a><a class="fn fn-next" href="#fn3" id="fnref3-8" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a><a class="fn fn-next" href="#fn4" id="fnref4-3" aria-label="Source 4, Bright MLS, Cumulative Days On Market"><sup>4</sup></a></p>
+  <h3 id="faq-offer-less">Can I offer less on a back-on-market home?</h3>
+  <p>You can offer what you think it&rsquo;s worth. Base it on recent sales, not the label. &ldquo;<a href="/guides/zillow-listings-that-take-low-offers">How to spot a Zillow listing that will take a low offer</a>&rdquo; covers the other signals.</p>
+  <h3 id="faq-contingent-pending">What&rsquo;s the difference between contingent and pending?</h3>
+  <p>It depends on the MLS. In one, &ldquo;contingent&rdquo; means an offer is accepted but the home is still shown and backup offers are taken, while &ldquo;pending&rdquo; means no more showings or backup offers.<a class="fn" href="#fn2" id="fnref2-8" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a> Ask your agent how your local MLS uses them.</p>
+  <h3 id="faq-dom-reset">Does the days-on-market count reset when a home comes back?</h3>
+  <p>It depends on the MLS and the listing source. One MLS carries days over unless there&rsquo;s a gap of more than 61 days, another unless there&rsquo;s a break of 31 days or longer, and a third requires 30 full days off market and a new listing. If the same listing is returned to active after a contract ends, one MLS says its count picks up from the last day on market; the reset rules apply when a home is relisted after time off the market. Trust the price history over the counter, and ask your agent for the local cumulative-days rule.<a class="fn" href="#fn2" id="fnref2-9" aria-label="Source 2, MetroTex MLS Status Definitions"><sup>2</sup></a><a class="fn fn-next" href="#fn3" id="fnref3-9" aria-label="Source 3, MARIS MLS Status Guide and FAQ"><sup>3</sup></a><a class="fn fn-next" href="#fn4" id="fnref4-4" aria-label="Source 4, Bright MLS, Cumulative Days On Market"><sup>4</sup></a><a class="fn fn-next" href="#fn5" id="fnref5-3" aria-label="Source 5, RESO Data Dictionary, Cumulative Days On Market"><sup>5</sup></a></p>
+</div>
+
+<h2 id="related">Related on Caza</h2>
+<ul>
+  <li><a href="/guides/zillow-days-on-market-meaning">What &ldquo;days on market&rdquo; means on Zillow</a></li>
+  <li><a href="/guides/how-to-see-zillow-saves">How to see how many people saved a Zillow listing</a></li>
+  <li><a href="/guides/sort-zillow-by-saves-views-price-cuts">Can you sort Zillow by saves, views or price cuts?</a></li>
+</ul>
+<p>You don&rsquo;t need Caza for any of this. The price history and a conversation with the listing agent cover it.</p>
+<p>Caza is a Chrome extension that reads the Zillow listing in your browser and does part of this faster. When the status text in Zillow&rsquo;s listing data, or an open-house note on the listing, says a home is back on market, Caza shows a &ldquo;Back on Market&rdquo; line when you hover the Demand Score badge on a search card, and a &ldquo;Back on market&rdquo; flag on the listing page panel. We haven&rsquo;t measured how often Zillow&rsquo;s data carries it, so a missing flag doesn&rsquo;t mean a home never came back. It flags only listings Zillow&rsquo;s data marks as not bank-owned. The flag is a label only. It doesn&rsquo;t change the 0&ndash;100 Demand Score, which comes from saves, views and days on market (see <a href="/guides/how-to-read-demand-score-before-offer">how to read a Demand Score before you make an offer</a>). Price cuts are shown only if they happened during the current listing.<a class="fn" href="#fn7" id="fnref7-2" aria-label="Source 7, Caza Chrome extension 2.11.0"><sup>7</sup></a></p>
+<p>One caution: the score uses Zillow&rsquo;s days-on-market number, so if Zillow&rsquo;s counter restarted at the relist, the score treats the home as freshly listed, and price cuts made before the relist aren&rsquo;t shown, because Caza uses that same counter to decide what counts as the current listing.<a class="fn" href="#fn7" id="fnref7-3" aria-label="Source 7, Caza Chrome extension 2.11.0"><sup>7</sup></a> Check the price history.</p>
+<p>The Demand Score, sorting and hover cards work without a membership. The free tier includes 3 sales comps reports and 3 rental comps reports a month; unlimited reports are $11.99 a month or $99 a year (see <a href="/pricing">pricing</a>).</p>
+
+<p>Caza is not affiliated with or endorsed by Zillow. This guide is general information, not legal, financial or real estate advice, and nothing here promises a particular outcome.</p>
+
+<section class="sources" aria-labelledby="sources-h">
+  <h2 id="sources-h">Sources</h2>
+  <ol>
+    <li id="fn1">Minnesota Attorney General&rsquo;s Office, <a href="https://www.ag.state.mn.us/CONSUMER/Handbooks/HmBuyers/PDF/BuyerContingency.pdf">&ldquo;Sample Buyer&rsquo;s Contingency&rdquo;</a> (PDF, from the Home Buyer&rsquo;s Handbook). No date shown. Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref1-1">Back to text</a></li>
+    <li id="fn2">MetroTex Association of REALTORS&reg;, <a href="https://www.mymetrotex.com/wp-content/uploads/2021/03/MLS-Status-Definition-and-Purge-rules5-2020.pdf">&ldquo;MLS Status Definitions&rdquo;</a> (file dated May 2020; may be superseded). Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref2-1">Back to text</a></li>
+    <li id="fn3">MARIS MLS, <a href="https://marismls.com/mls-status-guide">&ldquo;MLS Status Guide and FAQ.&rdquo;</a> Last updated Sept. 15, 2026. Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref3-1">Back to text</a></li>
+    <li id="fn4">Bright MLS, <a href="https://help.brightmls.com/help/content/17415.htm">&ldquo;Cumulative Days On Market&rdquo;</a> (Help topic 17415). No date shown. Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref4-1">Back to text</a></li>
+    <li id="fn5">Real Estate Standards Organization (RESO), <a href="https://dd.reso.org/DD2.0/Property/CumulativeDaysOnMarket/">Data Dictionary 2.0, &ldquo;Cumulative Days On Market.&rdquo;</a> Accessed Nov. 13, 2026. <a class="fn-back" href="#fnref5-1">Back to text</a></li>
+    <li id="fn6">Caza, <a href="/guides/zillow-days-on-market-meaning">&ldquo;What does &lsquo;days on market&rsquo; actually mean on Zillow?&rdquo;</a> <a class="fn-back" href="#fnref6-1">Back to text</a></li>
+    <li id="fn7">Caza Chrome extension, version 2.11.0, as shipped (back-on-market flag, search-card hover, listing panel, Demand Score inputs, price-cut window). Reviewed by Caza Nov. 13, 2026. Available on the <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk">Chrome Web Store</a>. <a class="fn-back" href="#fnref7-1">Back to text</a></li>
+  </ol>
+</section>
+
+      <div class="post-cta">
+        <p><strong>Caza shows saves, views, days on market and price cuts on Zillow.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-zillow-back-on-market-meaning" class="btn">Try Caza</a>
+      </div>
+      <div class="related">
+        <h3>Related guides</h3>
+        <p><a href="/guides/zillow-price-cut-meaning">What a price cut on a Zillow listing tells you</a></p>
+        <p><a href="/blog">All guides</a> &middot; <a href="/tools">Free calculators</a></p>
+      </div>
+    </article>
+    <a class="back" href="/blog">Back to all guides</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms of sale</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script src="/m.js?v=20261027c" defer></script>
+<script src="/ga.js?v=20261104a" defer></script>
+</body>
+</html>
