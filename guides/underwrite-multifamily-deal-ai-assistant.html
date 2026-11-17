@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KB6RLF3R7B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IS','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','G-KB6RLF3R7B',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Underwrite a Multifamily Deal With AI | Caza Guides</title>
+<meta name="description" content="An 8-step workflow from a Zillow listing to a draft offer: Caza's demand and comps, sold and rent comps, tax at your price, and a second AI review.">
+<link rel="canonical" href="https://usecaza.com/guides/underwrite-multifamily-deal-ai-assistant">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/guides/underwrite-multifamily-deal-ai-assistant">
+<meta property="og:title" content="How to underwrite a multifamily deal with an AI assistant">
+<meta property="og:description" content="An 8-step workflow from a Zillow listing to a draft offer: Caza's demand and comps, sold and rent comps, tax at your price, and a second AI review.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CazaRealEstate">
+<meta name="twitter:title" content="How to underwrite a multifamily deal with an AI assistant">
+<meta name="twitter:description" content="An 8-step workflow from a Zillow listing to a draft offer: Caza's demand and comps, sold and rent comps, tax at your price, and a second AI review.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261113a">
+<style>
+.gfaq h3{font-size:18px;margin:18px 0 6px}
+a.fn{font-weight:700;text-decoration:none;white-space:nowrap}
+a.fn sup{font-size:.75em;line-height:0}
+a.fn.fn-next sup::before{content:", "}
+.post-page h2,.post-page h3{scroll-margin-top:24px}
+.post-page .table-scroll{display:block;width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 22px;overscroll-behavior-x:contain}
+.post-page .table-scroll table{width:100%;min-width:100%;margin:0}
+.post-page .table-scroll.wide table{min-width:40rem}
+.post-page .table-scroll th,.post-page .table-scroll td{white-space:normal;text-align:left;padding:10px 16px 10px 0;vertical-align:top}
+.post-page .table-scroll th:last-child,.post-page .table-scroll td:last-child{text-align:left;white-space:normal;padding-right:2px}
+.post-page .table-scroll .num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.post-page .table-scroll tr.total th,.post-page .table-scroll tr.total td{font-weight:700}
+.post-page .table-scroll th.num{text-align:right;white-space:normal}
+.post-page .table-scroll td.num:last-child{white-space:nowrap;text-align:right}
+.post-page .table-scroll caption{caption-side:top;text-align:left;font-size:15px;font-weight:600;color:var(--ink);padding:0 0 8px}
+@media (max-width:760px){
+  .post-page .table-scroll.wide{overflow:visible}
+  .post-page .table-scroll.wide table{min-width:0;width:100%}
+  .post-page .table-scroll.wide thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .post-page .table-scroll.wide tr{display:block;border-bottom:1px solid var(--rule);padding:8px 0 10px}
+  .post-page .table-scroll.wide th,.post-page .table-scroll.wide td{display:flex;justify-content:space-between;align-items:baseline;gap:16px;width:auto;border:0;padding:4px 0;text-align:left;white-space:normal}
+  .post-page .table-scroll.wide th:last-child,.post-page .table-scroll.wide td:last-child{text-align:right;white-space:normal;padding-right:0}
+  .post-page .table-scroll.wide th[scope="row"]{display:block;font-size:16px;padding-bottom:6px}
+  .post-page .table-scroll.wide td[data-label]{flex-wrap:wrap}
+  .post-page .table-scroll.wide td[data-label]::before{content:attr(data-label);flex:1 1 8rem;font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--sub);text-align:left}
+  .post-page .table-scroll.wide .num{margin-left:auto;text-align:right;white-space:nowrap}
+  .post-page .table-scroll.wide caption{display:block;width:auto;max-width:100%}
+}
+.sources{margin-top:8px}
+.sources ol{margin-left:22px}
+.sources li{overflow-wrap:anywhere}
+.sources .fn-back{display:inline-block;margin-top:4px}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://usecaza.com/#org",
+   "name": "Caza",
+   "url": "https://usecaza.com/"
+  },
+  {
+   "@type": "Article",
+   "inLanguage": "en-US",
+   "image": "https://usecaza.com/og-image.png",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://usecaza.com/#org",
+    "name": "Caza",
+    "url": "https://usecaza.com/"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://usecaza.com/blog#blog",
+    "name": "Caza Guides",
+    "url": "https://usecaza.com/blog"
+   },
+   "datePublished": "2026-11-17",
+   "dateModified": "2026-11-17",
+   "@id": "https://usecaza.com/guides/underwrite-multifamily-deal-ai-assistant#article",
+   "url": "https://usecaza.com/guides/underwrite-multifamily-deal-ai-assistant",
+   "mainEntityOfPage": "https://usecaza.com/guides/underwrite-multifamily-deal-ai-assistant",
+   "headline": "How to underwrite a multifamily deal with an AI assistant",
+   "description": "An 8-step workflow from a Zillow listing to a draft offer: Caza's demand and comps, sold and rent comps, tax at your price, and a second AI review.",
+   "wordCount": 1879,
+   "articleSection": "For agents and investors",
+   "keywords": "multifamily underwriting, AI underwriting, underwriting workbook, sold comps, rent comps, property tax reassessment, Demand Score, draft offer"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://usecaza.com/blog"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How to underwrite a multifamily deal with an AI assistant",
+     "item": "https://usecaza.com/guides/underwrite-multifamily-deal-ai-assistant"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Does the AI send the offer?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The assistant would draft the offer on your standard terms. A licensed agent would review it, sign it and email it to the listing agent. Caza doesn’t send offers either."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is this an appraisal?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It’s a first draft of numbers for a licensed person to check. It is not an appraisal, a valuation, or brokerage, legal, tax or financial advice."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why run a second AI review?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Because the first pass makes mistakes. On the first real run, on four listings on November 12, 2026, the review pass caught four: a wrong repairs base, a pending sale counted as a comp, a false positive-leverage claim and overstated market rents."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why use sold comps instead of asking prices?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An asking price is what a seller hopes to get. A sold price is what a buyer actually paid. A pending sale hasn’t closed, so it isn’t a sold comp either."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why recompute the tax at the offer price?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The tax on a listing is the seller’s bill. In many counties and states, a sale can lead to a reassessment, so your bill can be different. Check your county’s rules."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need Caza for this?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The workflow works without it. Caza covers the listing-page part of step 2: the Demand Score, its breakdown, the price-cut flag, and sales and rental comps."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-underwrite-multifamily-deal-ai-assistant">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/blog">Guides</a> · For agents and investors</p>
+    <h1>How to underwrite a multifamily deal with an AI assistant</h1>
+    <p class="lede">An eight-step workflow from a Zillow listing to a draft offer: what the AI does, what Caza does, and what a licensed person still has to check.</p>
+  </div></div>
+
+  <div class="wrap">
+    <article class="post post-page">
+      <div class="post-meta"><span class="tag">For agents and investors</span><span id="read-time">9 min read</span><span>Last updated <time datetime="2026-11-17">November 17, 2026</time></span></div>
+
+<h2 id="short-answer">Short answer</h2>
+
+<p>You&rsquo;d send an AI assistant a Zillow listing and the price you&rsquo;d consider paying. It would read the listing&rsquo;s demand and comps with Caza, add public sold and rent comps, recompute the property tax at your price, and build an underwriting workbook. A second AI pass would check that work. The assistant would then draft an offer. You&rsquo;d review it, sign it and send it yourself.</p>
+
+<p>This is the workflow as designed, written as a setup guide. Its first real run was on four listings on November 12, 2026 (see <a href="#second-review">step 6</a>). No offer has been sent through it yet.</p>
+
+<p>The AI&rsquo;s output is a first draft of numbers that a licensed person checks. It is not an appraisal, a valuation, or brokerage, legal, tax or financial advice.</p>
+
+<h2 id="pick-a-listing">Step 1: Which listing, and what do you send the assistant?</h2>
+
+<p>Send the assistant two things: a Zillow listing link and a target price, the price you&rsquo;d consider offering.</p>
+
+<p>The target price matters later. Step 4 would recompute the tax at that price, and the offer draft in step 7 would start from it, unless the underwriting changes your mind.</p>
+
+<p><strong>Here&rsquo;s how to set this up.</strong> Write the request the same way every time, so the assistant runs the same steps in the same order. For example: &ldquo;Underwrite this listing at my target price. Follow steps 2 through 7. Draft the offer, but don&rsquo;t send anything.&rdquo;</p>
+
+<h2 id="demand-and-comps">Step 2: How does the assistant read Caza&rsquo;s comps and Demand Score?</h2>
+
+<p>The assistant would open the listing in Chrome with the Caza extension installed and read what Caza shows on the listing page:<a class="fn" href="#fn1" id="fnref1-1" aria-label="Source 1, Caza Chrome extension 2.11.0"><sup>1</sup></a></p>
+<ul>
+  <li><strong>The Demand Score and its label.</strong> A 0–100 summary of buyer activity on the listing.</li>
+  <li><strong>Saves, views and days on market</strong>, in the same row as the score.</li>
+  <li><strong>The point breakdown.</strong> Hovering over the score shows each input&rsquo;s points and weight, plus the pace bonus.</li>
+  <li><strong>The price-cut flag.</strong> Caza flags the latest price cut with its size and how many days ago it happened.</li>
+</ul>
+
+<p>It would also read Zillow&rsquo;s own &ldquo;likely to sell faster&rdquo; percentage from the same page, when Zillow shows one.</p>
+
+<p>Then it would read Caza&rsquo;s comps. <strong>Sales comps</strong> runs Zillow&rsquo;s Recently Sold search around the listing and keeps property types apart: a 2–4 unit building is never compared with a 5+ unit building, and the other way around.<a class="fn" href="#fn1" id="fnref1-2" aria-label="Source 1, Caza Chrome extension 2.11.0"><sup>1</sup></a> <strong>Rental comps</strong> shows asking rents for similar active rentals nearby.<a class="fn" href="#fn1" id="fnref1-3" aria-label="Source 1, Caza Chrome extension 2.11.0"><sup>1</sup></a> Those are asking rents, not signed leases, and Caza labels them that way.</p>
+
+<p>Have the assistant copy all of it into the workbook: the score, label, counts, breakdown, price-cut flag and both comp lists.</p>
+
+<p>A Demand Score describes buyer activity, not value. Use it to decide how closely to look and how quickly to move, not what to pay. See <a href="/guides/how-to-read-demand-score-before-offer">how to read a Demand Score before you make an offer</a>.</p>
+
+<h2 id="public-comps">Step 3: Why add public solds and rent comps?</h2>
+
+<p>Caza&rsquo;s comps are a starting set. Next, the assistant would combine them with sold comps and rent comps from other public sources, so the numbers don&rsquo;t rest on one search.</p>
+
+<p>Give it three rules in writing:</p>
+<ul>
+  <li><strong>Solds beat asking prices.</strong> An asking price is what a seller hopes to get. A sold price is what a buyer actually paid. Price the building from solds.</li>
+  <li><strong>Pending isn&rsquo;t sold.</strong> A pending sale has an accepted offer but hasn&rsquo;t closed. The price may not be public yet, and the deal can still fall through. Keep pending sales out of the sold comps. If you want them, list them separately.</li>
+  <li><strong>Label every rent.</strong> Say where each rent came from: an asking rent from an active rental, or a rent the listing reports for a unit. An asking rent is what a landlord hopes to get. What tenants actually sign can be different.</li>
+</ul>
+
+<p>The basic methods are in <a href="/guides/how-to-pull-comps-on-zillow">how to pull comps on Zillow</a> and <a href="/guides/zillow-rental-comps-estimate-rent">how to estimate rent with rental comps</a>.</p>
+
+<h2 id="tax-at-offer-price">Step 4: How do you reassess the tax at your offer price?</h2>
+
+<p>The tax shown on a listing is the seller&rsquo;s bill, based on the seller&rsquo;s assessment. In many counties and states, a sale can lead to a reassessment, so the buyer&rsquo;s bill can be different. Check how your county handles it.</p>
+
+<p>The assistant would then pull the county&rsquo;s actual tax rate and the property&rsquo;s current assessments, and recompute the tax at your offer price.</p>
+
+<p>Ask it to show both figures in the workbook: the seller&rsquo;s current bill and the tax recomputed at your price. The underwriting should use the recomputed one. See <a href="/guides/estimate-property-tax-insurance-zillow-listing">how to estimate property tax and insurance on a Zillow listing</a>, or try the <a href="/tools/property-tax-after-you-buy">property tax after you buy</a> estimator.</p>
+
+<h2 id="ai-underwriting">Step 5: What does the AI put into the underwriting workbook?</h2>
+
+<p>Everything from steps 2 to 4 would go into one underwriting workbook. One AI pass would build the numbers from it: for example, income from the rents, expenses with the recomputed tax, repairs, financing, and the returns that follow.</p>
+
+<p><strong>Here&rsquo;s how to set this up.</strong></p>
+<ul>
+  <li><strong>Use your own template.</strong> Same tabs and layout on every deal, so you always know where to look.</li>
+  <li><strong>Tag every input with its source</strong>: the listing, a Caza comp, a public sold or rent comp, the county, or an assumption.</li>
+  <li><strong>Keep assumptions visible.</strong> Anything the assistant assumed should be easy to find and change.</li>
+</ul>
+
+<p>Treat what comes out as a first draft. For what the main measures mean (net operating income, cap rate, cash flow, debt coverage), see <a href="/guides/cap-rate-cash-flow-zillow-listing">how to run a quick cap rate and cash flow check</a>.</p>
+
+<h2 id="second-review">Step 6: Why does AI underwriting need a second review?</h2>
+
+<p>Because the first pass makes mistakes, and they can look reasonable on the page.</p>
+
+<p>A second AI pass would read the finished workbook as a reviewer. Tell it to check each number against its source, and each claim against the numbers.</p>
+
+<p>The first real run was on November 12, 2026, on four listings. The review pass caught four errors:</p>
+<ul>
+  <li><strong>A wrong repairs base.</strong> The repairs estimate was built on the wrong base figure.</li>
+  <li><strong>A pending sale counted as a comp.</strong> A deal that hadn&rsquo;t closed was treated as a sale.</li>
+  <li><strong>A false positive-leverage claim.</strong> Positive leverage means the property earns more than the debt costs, so borrowing raises the return on your cash. When it doesn&rsquo;t, borrowing pulls that return down. The workbook claimed positive leverage the numbers didn&rsquo;t support. See <a href="/guides/is-6-percent-cap-rate-good-7-percent-mortgage">how to check positive leverage</a>.</li>
+  <li><strong>Overstated market rents.</strong> The rents used were higher than the evidence supported.</li>
+</ul>
+
+<p>Two lessons from that run: AI underwriting needs a second check, and solds beat asking prices.</p>
+
+<p><strong>Here&rsquo;s how to set this up.</strong> Run the review as a separate pass, and tell it its job is to find mistakes. Give it a checklist:</p>
+<ul>
+  <li>Is every sold comp actually sold and closed? Are pending sales out?</li>
+  <li>Is every rent labeled, and is any rent higher than its comps support?</li>
+  <li>Is the tax recomputed at the offer price, not copied from the listing?</li>
+  <li>Is the repairs line built on the right base?</li>
+  <li>Does every claim in the summary (positive leverage, for example) match the numbers?</li>
+</ul>
+
+<p>The second pass doesn&rsquo;t replace you. Read what it found, then check the workbook yourself.</p>
+
+<h2 id="draft-offer">Step 7: How does the AI draft the offer?</h2>
+
+<p>If you decide to go ahead, the assistant would draft the offer on your standard terms. It would be a draft for you to review, nothing more. The assistant wouldn&rsquo;t send it, and Caza doesn&rsquo;t send offers.</p>
+
+<p><strong>Here&rsquo;s how to set this up.</strong> Give the assistant your standard terms in writing. Ask it to list anything it couldn&rsquo;t fill in and anything that differs from those terms, so you see it before you read the rest.</p>
+
+<h2 id="review-and-send">Step 8: What does the agent check before signing and sending?</h2>
+
+<p>You&rsquo;d read the draft offer against the reviewed workbook. Check the price, the terms and every detail the assistant filled in. Fix what&rsquo;s wrong.</p>
+
+<p>Then you&rsquo;d sign it and email it to the listing agent yourself. Offers are always drafted for a human to review and send.</p>
+
+<p>So far, no offers have been sent through this workflow.</p>
+
+<h2 id="where-caza-fits">Where does Caza fit, and do you need it?</h2>
+
+<p>The workflow works without Caza. You or the assistant can read the saves, views and days on market from the Zillow page and pull comps another way. Caza covers the listing-page part of step 2: the Demand Score, its breakdown, the price-cut flag, Sales comps and Rental comps.<a class="fn" href="#fn1" id="fnref1-4" aria-label="Source 1, Caza Chrome extension 2.11.0"><sup>1</sup></a></p>
+
+<p>The free plan includes 3 sales comps reports and 3 rental comps reports a month. On a new install, running comps reports on more than 3 listings a month would need the paid plan.</p>
+
+<p>Caza doesn&rsquo;t do the underwriting, the tax pull, the workbook or the offer. Those are the assistant&rsquo;s steps and yours.</p>
+
+<h2 id="limits">What this guide can&rsquo;t tell you</h2>
+<ul>
+  <li>Whether a particular deal is a good investment</li>
+  <li>What a property is worth (that takes an appraisal, not an AI workbook)</li>
+  <li>How your county reassesses after a sale</li>
+  <li>What a seller will accept</li>
+  <li>Whether the AI&rsquo;s numbers are right on any given deal (that takes your own check)</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<div class="gfaq">
+  <h3 id="faq-send-offer">Does the AI send the offer?</h3>
+  <p>No. The assistant would draft the offer on your standard terms. A licensed agent would review it, sign it and email it to the listing agent. Caza doesn&rsquo;t send offers either.</p>
+  <h3 id="faq-appraisal">Is this an appraisal?</h3>
+  <p>No. It&rsquo;s a first draft of numbers for a licensed person to check. It is not an appraisal, a valuation, or brokerage, legal, tax or financial advice.</p>
+  <h3 id="faq-second-review">Why run a second AI review?</h3>
+  <p>Because the first pass makes mistakes. On the first real run, on four listings on November 12, 2026, the review pass caught four: a wrong repairs base, a pending sale counted as a comp, a false positive-leverage claim and overstated market rents.</p>
+  <h3 id="faq-solds">Why use sold comps instead of asking prices?</h3>
+  <p>An asking price is what a seller hopes to get. A sold price is what a buyer actually paid. A pending sale hasn&rsquo;t closed, so it isn&rsquo;t a sold comp either.</p>
+  <h3 id="faq-tax">Why recompute the tax at the offer price?</h3>
+  <p>The tax on a listing is the seller&rsquo;s bill. In many counties and states, a sale can lead to a reassessment, so your bill can be different. Check your county&rsquo;s rules.</p>
+  <h3 id="faq-need-caza">Do I need Caza for this?</h3>
+  <p>No. The workflow works without it. Caza covers the listing-page part of step 2: the Demand Score, its breakdown, the price-cut flag, and sales and rental comps.</p>
+</div>
+
+<h2 id="related">Related on Caza</h2>
+<ul>
+  <li><a href="/guides/how-to-read-demand-score-before-offer">How to read a Demand Score before you make an offer</a></li>
+  <li><a href="/guides/how-to-pull-comps-on-zillow">How to pull comps on Zillow (without the MLS)</a></li>
+  <li><a href="/guides/zillow-rental-comps-estimate-rent">How to estimate rent with rental comps on Zillow</a></li>
+  <li><a href="/guides/estimate-property-tax-insurance-zillow-listing">How to estimate property tax and insurance on a Zillow listing</a></li>
+  <li><a href="/guides/cap-rate-cash-flow-zillow-listing">How to run a quick cap rate and cash flow check on a Zillow listing</a></li>
+</ul>
+<p>Caza is a Chrome extension. The Demand Score, sorting and hover cards work without a membership. The free plan includes 3 sales comps reports and 3 rental comps reports a month, and unlimited reports are $11.99 a month or $99 a year (<a href="/pricing">pricing</a>).</p>
+<p>Caza is not affiliated with or endorsed by Zillow. This guide is general information, not legal, tax, financial or real estate advice, and nothing here promises a particular deal or outcome.</p>
+
+<section class="sources" aria-labelledby="sources-h">
+  <h2 id="sources-h">Sources</h2>
+  <ol>
+    <li id="fn1">Caza Chrome extension, version 2.11.0, as shipped (Demand Score panel, score breakdown, price-cut flag, Sales comps property-type separation, Rental comps asking rents). Reviewed by Caza Nov. 14, 2026. Available on the <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-underwrite-multifamily-deal-ai-assistant">Chrome Web Store</a>. <a class="fn-back" href="#fnref1-1">Back to text</a></li>
+  </ol>
+</section>
+
+      <div class="post-cta">
+        <p><strong>Caza puts the Demand Score, its breakdown, the price-cut flag and sales and rental comps on a Zillow listing.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-underwrite-multifamily-deal-ai-assistant" class="btn">Try Caza</a>
+      </div>
+      <div class="related">
+        <h3>Related guides</h3>
+        <p><a href="/tools/property-tax-after-you-buy">Property tax after you buy estimator</a></p>
+        <p><a href="/blog">All guides</a> &middot; <a href="/tools">Free calculators</a></p>
+      </div>
+    </article>
+    <a class="back" href="/blog">Back to all guides</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms of sale</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script src="/m.js?v=20261027c" defer></script>
+<script src="/ga.js?v=20261104a" defer></script>
+</body>
+</html>
