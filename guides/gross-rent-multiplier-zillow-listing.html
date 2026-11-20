@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KB6RLF3R7B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',region:['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IS','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});gtag('js',new Date());gtag('config','G-KB6RLF3R7B',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Gross Rent Multiplier (GRM) on a Listing | Caza Guides</title>
+<meta name="description" content="GRM is price divided by annual gross rent. How to work it out on a listing, monthly vs annual GRM, which rent to use, and what the number leaves out.">
+<link rel="canonical" href="https://usecaza.com/guides/gross-rent-multiplier-zillow-listing">
+<meta name="theme-color" content="#0D1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Caza">
+<meta property="og:url" content="https://usecaza.com/guides/gross-rent-multiplier-zillow-listing">
+<meta property="og:title" content="How to calculate gross rent multiplier (GRM) on a listing">
+<meta property="og:description" content="GRM is price divided by annual gross rent. How to work it out on a listing, monthly vs annual GRM, which rent to use, and what the number leaves out.">
+<meta property="og:image" content="https://usecaza.com/og-image.png">
+<meta property="og:image:alt" content="Caza: demand, comps and investor numbers for Zillow listings">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CazaRealEstate">
+<meta name="twitter:title" content="How to calculate gross rent multiplier (GRM) on a listing">
+<meta name="twitter:description" content="GRM is price divided by annual gross rent. How to work it out on a listing, monthly vs annual GRM, which rent to use, and what the number leaves out.">
+<meta name="twitter:image" content="https://usecaza.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css?v=20261113a">
+<style>
+.gfaq h3{font-size:18px;margin:18px 0 6px}
+a.fn{font-weight:700;text-decoration:none;white-space:nowrap}
+a.fn sup{font-size:.75em;line-height:0}
+a.fn.fn-next sup::before{content:", "}
+.post-page h2,.post-page h3{scroll-margin-top:24px}
+.post-page .table-scroll{display:block;width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 22px;overscroll-behavior-x:contain}
+.post-page .table-scroll table{width:100%;min-width:100%;margin:0}
+.post-page .table-scroll.wide table{min-width:40rem}
+.post-page .table-scroll th,.post-page .table-scroll td{white-space:normal;text-align:left;padding:10px 16px 10px 0;vertical-align:top}
+.post-page .table-scroll th:last-child,.post-page .table-scroll td:last-child{text-align:left;white-space:normal;padding-right:2px}
+.post-page .table-scroll .num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.post-page .table-scroll tr.total th,.post-page .table-scroll tr.total td{font-weight:700}
+.post-page .table-scroll th.num{text-align:right;white-space:normal}
+.post-page .table-scroll td.num:last-child{white-space:nowrap;text-align:right}
+.post-page .table-scroll caption{caption-side:top;text-align:left;font-size:15px;font-weight:600;color:var(--ink);padding:0 0 8px}
+@media (max-width:760px){
+  .post-page .table-scroll.wide{overflow:visible}
+  .post-page .table-scroll.wide table{min-width:0;width:100%}
+  .post-page .table-scroll.wide thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .post-page .table-scroll.wide tr{display:block;border-bottom:1px solid var(--rule);padding:8px 0 10px}
+  .post-page .table-scroll.wide th,.post-page .table-scroll.wide td{display:flex;justify-content:space-between;align-items:baseline;gap:16px;width:auto;border:0;padding:4px 0;text-align:left;white-space:normal}
+  .post-page .table-scroll.wide th:last-child,.post-page .table-scroll.wide td:last-child{text-align:right;white-space:normal;padding-right:0}
+  .post-page .table-scroll.wide th[scope="row"]{display:block;font-size:16px;padding-bottom:6px}
+  .post-page .table-scroll.wide td[data-label]{flex-wrap:wrap}
+  .post-page .table-scroll.wide td[data-label]::before{content:attr(data-label);flex:1 1 8rem;font-size:13px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--sub);text-align:left}
+  .post-page .table-scroll.wide .num{margin-left:auto;text-align:right;white-space:nowrap}
+  .post-page .table-scroll.wide caption{display:block;width:auto;max-width:100%}
+}
+.sources{margin-top:8px}
+.sources ol{margin-left:22px}
+.sources li{overflow-wrap:anywhere}
+.sources .fn-back{display:inline-block;margin-top:4px}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://usecaza.com/#org",
+   "name": "Caza",
+   "url": "https://usecaza.com/"
+  },
+  {
+   "@type": "Article",
+   "inLanguage": "en-US",
+   "image": "https://usecaza.com/og-image.png",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://usecaza.com/#org",
+    "name": "Caza",
+    "url": "https://usecaza.com/"
+   },
+   "publisher": {
+    "@id": "https://usecaza.com/#org"
+   },
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://usecaza.com/blog#blog",
+    "name": "Caza Guides",
+    "url": "https://usecaza.com/blog"
+   },
+   "datePublished": "2026-11-20",
+   "dateModified": "2026-11-20",
+   "@id": "https://usecaza.com/guides/gross-rent-multiplier-zillow-listing#article",
+   "url": "https://usecaza.com/guides/gross-rent-multiplier-zillow-listing",
+   "mainEntityOfPage": "https://usecaza.com/guides/gross-rent-multiplier-zillow-listing",
+   "headline": "How to calculate gross rent multiplier (GRM) on a listing",
+   "description": "GRM is price divided by annual gross rent. How to work it out on a listing, monthly vs annual GRM, which rent to use, and what the number leaves out.",
+   "wordCount": 1708,
+   "articleSection": "For investors",
+   "keywords": "gross rent multiplier, GRM, how to calculate GRM, monthly vs annual GRM, GRM Zillow listing, rental property screening"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://usecaza.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://usecaza.com/blog"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How to calculate gross rent multiplier (GRM) on a listing",
+     "item": "https://usecaza.com/guides/gross-rent-multiplier-zillow-listing"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do you calculate gross rent multiplier?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Divide the price by the property’s gross rent for a year, before any expenses. In a hypothetical example, a $450,000 duplex renting for $4,000 a month has $48,000 of annual rent, so its GRM is $450,000 ÷ $48,000, about 9.4."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why do some GRMs look like 9 and others like 110?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Some people divide by annual rent and some by monthly rent. The monthly version is 12 times the annual one for the same property. Check which one you’re looking at before you compare."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is a lower GRM always better?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. A lower GRM means you pay less for each dollar of gross rent, but GRM ignores vacancy, operating expenses, taxes, insurance and financing. A property with a lower GRM can still earn less after expenses."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a good GRM?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is no single good number. GRM is only meaningful next to the GRMs of similar properties nearby, worked out the same way, and it’s a quick screen, not a verdict on a deal."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Caza calculate GRM?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "On 2–4 unit and 5+ unit listings, Caza’s Investor numbers shows a GRM tile: price divided by annual gross rent. The rent comes from income reported on the listing, rents you type, or rental comps (asking rents), and the tile is tagged with which one. If there’s no income to work from, the tile asks you to add rent. The tile doesn’t appear on single-family homes, condos or townhomes."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="logo" href="/" aria-label="Caza home"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-gross-rent-multiplier-zillow-listing">Add to Chrome</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-band"><div class="wrap page-head">
+    <p class="kicker"><a href="/blog">Guides</a> · For investors</p>
+    <h1>How to calculate gross rent multiplier (GRM) on a listing</h1>
+    <p class="lede">Price divided by annual gross rent: how to work it out, why some GRMs are 12 times bigger than others, which rent to use, and what the number can&rsquo;t see.</p>
+  </div></div>
+
+  <div class="wrap">
+    <article class="post post-page">
+      <div class="post-meta"><span class="tag">For investors</span><span id="read-time">7 min read</span><span>Last updated <time datetime="2026-11-20">November 20, 2026</time></span></div>
+
+<h2 id="short-answer">Short answer</h2>
+
+<p>Gross rent multiplier (GRM) is the price divided by a year of gross rent, before any expenses. A lower GRM means you pay less for each dollar of rent, and that&rsquo;s all it tells you. It ignores vacancy, operating costs, taxes, insurance and your loan, and there&rsquo;s no universal &ldquo;good&rdquo; GRM. Compare it only with similar nearby properties, worked out the same way, then check cap rate and cash flow.</p>
+
+<p>On a listing:</p>
+<ol>
+  <li><strong>Get the annual gross rent.</strong> Add up every unit&rsquo;s monthly rent and multiply by 12.</li>
+  <li><strong>Divide the asking price by it.</strong> That&rsquo;s the GRM.</li>
+  <li><strong>Check the rent and the period.</strong> Current rent or projected? Monthly or annual? Either one can change the answer a lot.</li>
+</ol>
+
+<h2 id="what-is-grm">1. What is gross rent multiplier?</h2>
+
+<p>It&rsquo;s a ratio from the income approach to value that appraisers and assessors use. Maine Revenue Services&rsquo; assessor training manual puts it simply: &ldquo;The GRM for a single property is calculated by dividing the sale price by the gross rent.&rdquo;<a class="fn" href="#fn1" id="fnref1-1" aria-label="Source 1, Maine Revenue Services, PT103 Valuation of Real Estate"><sup>1</sup></a> The California State Board of Equalization&rsquo;s appraisal course describes the gross income multiplier as sale price divided by gross income, based on &ldquo;gross annual income from all sources,&rdquo; and says &ldquo;The GRM [Gross Rent Multiplier] is the same concept, but uses only rental income&rdquo; (it usually leaves out other income). The course adds that appraisers commonly use it on smaller residential properties.<a class="fn" href="#fn2" id="fnref2-1" aria-label="Source 2, California State Board of Equalization, Lesson 9, Multipliers"><sup>2</sup></a></p>
+
+<p>This guide uses the annual version (section 2 covers the monthly one):</p>
+<p><strong>GRM = asking price ÷ annual gross rent</strong></p>
+
+<p>The Maine manual adds that for investors, a property&rsquo;s GRM &ldquo;represents a rough estimate of the length of time to pay off the investment, so the lower a GRM is, the better,&rdquo; and it frames that comparison as &ldquo;All else being equal.&rdquo;<a class="fn" href="#fn1" id="fnref1-2" aria-label="Source 1, Maine Revenue Services, PT103 Valuation of Real Estate"><sup>1</sup></a> Read that loosely: it counts gross rent, with nothing taken out for expenses, vacancy or loan interest, so it is not a real payback period. And all else is rarely equal, as the example below shows.</p>
+
+<p>GRM is close kin to the 1% rule, which also compares only price and rent. For that screen, see <a href="/guides/one-percent-rule-zillow-listing">how to check the 1% rule on a Zillow listing</a>.</p>
+
+<h2 id="monthly-vs-annual">2. Is GRM based on monthly or annual rent?</h2>
+
+<p>Both are in use, which is easy to trip over. Maine&rsquo;s manual uses monthly rent (&ldquo;The GRM is multiplied by monthly rent&rdquo;) and calls the annual version a gross income multiplier.<a class="fn" href="#fn1" id="fnref1-3" aria-label="Source 1, Maine Revenue Services, PT103 Valuation of Real Estate"><sup>1</sup></a> California&rsquo;s course works from annual income and notes that &ldquo;other multipliers may sometimes be used, such as those using monthly income.&rdquo;<a class="fn" href="#fn2" id="fnref2-2" aria-label="Source 2, California State Board of Equalization, Lesson 9, Multipliers"><sup>2</sup></a></p>
+
+<p>For the same property, the monthly figure is exactly 12 times the annual one. <strong>Hypothetical example:</strong> a $450,000 duplex renting for $4,000 a month in total.</p>
+<ul>
+  <li>Annual: $450,000 ÷ $48,000 = <strong>about 9.4</strong></li>
+  <li>Monthly: $450,000 ÷ $4,000 = <strong>112.5</strong></li>
+</ul>
+
+<p>Neither is wrong. The mistake is comparing one with the other: a &ldquo;110 GRM&rdquo; and your 9.4 may simply be two different periods. This guide and Caza both use annual rent.</p>
+
+<h2 id="which-rent">3. Which rent should you use?</h2>
+
+<p>Use the rent the property collects now, and check it against nearby rentals. If a unit is vacant or owner-occupied, there&rsquo;s no current rent for it; use a rent from rental comps for that unit and label the GRM as estimated.</p>
+<ul>
+  <li><strong>Current (actual) rent</strong> is what tenants pay today. It&rsquo;s the honest &ldquo;as-is&rdquo; GRM.</li>
+  <li><strong>Projected, market or pro forma rent</strong> is what the seller says the units could bring. It makes the GRM look lower. In the hypothetical duplex, if the listing claims &ldquo;market rents of $4,600 a month,&rdquo; the GRM drops to $450,000 ÷ $55,200 = <strong>about 8.2</strong>, with no change to the building.</li>
+</ul>
+
+<p>If the listing gives both, work out both and label them. Then test the rent against <a href="/guides/zillow-rental-comps-estimate-rent">rental comps</a>: similar nearby units with the same bedrooms and type, priced unit type by unit type. Rental listings show asking rents, not signed leases.</p>
+
+<h2 id="what-grm-ignores">4. What does GRM leave out?</h2>
+
+<p>Almost everything between the rent and your bank account:</p>
+<ul>
+  <li><strong>Vacancy and collection loss.</strong> A year of gross rent has no allowance for empty months or unpaid rent.</li>
+  <li><strong>Operating expenses:</strong> repairs, management, owner-paid utilities, HOA dues.</li>
+  <li><strong>Property tax and insurance.</strong> These can differ a lot between two similar buildings. See <a href="/guides/estimate-property-tax-insurance-zillow-listing">how to estimate property tax and insurance on a Zillow listing</a>.</li>
+  <li><strong>Financing.</strong> Your rate, down payment and loan payment don&rsquo;t appear anywhere in it.</li>
+</ul>
+
+<p>The training material says the same. Maine&rsquo;s manual says the method &ldquo;ignores some items affecting value, such as vacancy loss, operating income, and capitalization.&rdquo;<a class="fn" href="#fn1" id="fnref1-4" aria-label="Source 1, Maine Revenue Services, PT103 Valuation of Real Estate"><sup>1</sup></a> California&rsquo;s course says a gross multiplier works on income &ldquo;before allowing for property related expenses,&rdquo; and warns that &ldquo;Properties that are very similar physically can have very different operating expense ratios.&rdquo;<a class="fn" href="#fn2" id="fnref2-3" aria-label="Source 2, California State Board of Equalization, Lesson 9, Multipliers"><sup>2</sup></a></p>
+
+<h3 id="example">Hypothetical example: the lower GRM earns less</h3>
+
+<p>These two duplexes and every number below are <strong>made up to show the arithmetic</strong>, not typical costs or real listings. Both are in the same area, a few blocks apart, and rent for $4,000 a month in total. Duplex A is older, its owner pays water, sewer, trash and heat, and it sits across a tax-district line with a higher rate. Duplex B&rsquo;s tenants pay their own utilities.</p>
+
+<div class="table-scroll">
+<table>
+  <caption>Hypothetical example: two duplexes, annual figures</caption>
+  <thead><tr><th scope="col">Item</th><th scope="col" class="num">Duplex A</th><th scope="col" class="num">Duplex B</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Asking price</th><td class="num">$450,000</td><td class="num">$480,000</td></tr>
+    <tr><th scope="row">Annual gross rent ($4,000 × 12)</th><td class="num">$48,000</td><td class="num">$48,000</td></tr>
+    <tr class="total"><th scope="row">GRM (annual)</th><td class="num">9.4</td><td class="num">10.0</td></tr>
+    <tr><th scope="row">Vacancy allowance</th><td class="num">$2,400</td><td class="num">$2,400</td></tr>
+    <tr><th scope="row">Property tax</th><td class="num">$7,200</td><td class="num">$6,000</td></tr>
+    <tr><th scope="row">Insurance</th><td class="num">$2,400</td><td class="num">$1,800</td></tr>
+    <tr><th scope="row">Owner-paid utilities</th><td class="num">$4,800</td><td class="num">$0</td></tr>
+    <tr><th scope="row">Repairs and maintenance</th><td class="num">$4,800</td><td class="num">$2,400</td></tr>
+    <tr><th scope="row">Management</th><td class="num">$3,840</td><td class="num">$3,840</td></tr>
+    <tr><th scope="row">Total vacancy and expenses</th><td class="num">$25,440</td><td class="num">$16,440</td></tr>
+    <tr class="total"><th scope="row">Net operating income (NOI)</th><td class="num">$22,560</td><td class="num">$31,560</td></tr>
+    <tr><th scope="row">Cap rate (NOI ÷ price)</th><td class="num">5.0%</td><td class="num">6.6%</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>On GRM alone, A looks better: 9.4 against 10.0, and $30,000 cheaper for the same rent. After vacancy and expenses, A keeps $9,000 a year less than B. GRM can&rsquo;t see the utilities, the tax district or the older building&rsquo;s repairs.</p>
+
+<p>That&rsquo;s why GRM is a first screen, not a decision. For NOI, cap rate and cash flow with your own loan, follow <a href="/guides/cap-rate-cash-flow-zillow-listing">how to run a quick cap rate and cash flow check on a Zillow listing</a>.</p>
+
+<h2 id="good-grm">5. What is a good GRM?</h2>
+
+<p>There isn&rsquo;t one number that&rsquo;s good everywhere. A GRM only means something next to the GRMs of similar properties nearby, calculated the same way.</p>
+
+<p>Appraisal training is strict about this. California&rsquo;s course says the properties a multiplier comes from &ldquo;must be closely comparable to the subject property,&rdquo; and lists what has to match: &ldquo;remaining economic life, use, expense ratios, amount of vacancy, risk, tax rates, and other units of comparison.&rdquo;<a class="fn" href="#fn2" id="fnref2-4" aria-label="Source 2, California State Board of Equalization, Lesson 9, Multipliers"><sup>2</sup></a></p>
+
+<p>In practice: compare duplexes with duplexes in the same area, annual with annual, current rent with current rent, and watch for different expense pictures (who pays utilities, building age, tax rate).</p>
+
+<p>A local GRM range needs sold prices and the rents those buildings had when they sold. A sold listing may not show that rent, so ask a local agent or appraiser, and treat any number you hear as a rough guide.</p>
+
+<h2 id="limits">What this guide can&rsquo;t tell you</h2>
+<ul>
+  <li>What GRM range is normal in your market (that takes local sales with known rents)</li>
+  <li>Whether a listing&rsquo;s stated rents are real (ask for leases and a rent roll)</li>
+  <li>The property&rsquo;s real expenses, or whether it will make money for you</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+<div class="gfaq">
+  <h3 id="faq-calculate">How do you calculate gross rent multiplier?</h3>
+  <p>Divide the price by the property&rsquo;s gross rent for a year, before any expenses. In a hypothetical example, a $450,000 duplex renting for $4,000 a month has $48,000 of annual rent, so its GRM is $450,000 ÷ $48,000, about 9.4.</p>
+  <h3 id="faq-monthly">Why do some GRMs look like 9 and others like 110?</h3>
+  <p>Some people divide by annual rent and some by monthly rent. The monthly version is 12 times the annual one for the same property. Check which one you&rsquo;re looking at before you compare.<a class="fn" href="#fn1" id="fnref1-5" aria-label="Source 1, Maine Revenue Services, PT103 Valuation of Real Estate"><sup>1</sup></a><a class="fn fn-next" href="#fn2" id="fnref2-5" aria-label="Source 2, California State Board of Equalization, Lesson 9, Multipliers"><sup>2</sup></a></p>
+  <h3 id="faq-lower">Is a lower GRM always better?</h3>
+  <p>No. A lower GRM means you pay less for each dollar of gross rent, but GRM ignores vacancy, operating expenses, taxes, insurance and financing. A property with a lower GRM can still earn less after expenses.</p>
+  <h3 id="faq-good">What is a good GRM?</h3>
+  <p>There is no single good number. GRM is only meaningful next to the GRMs of similar properties nearby, worked out the same way, and it&rsquo;s a quick screen, not a verdict on a deal.</p>
+  <h3 id="faq-caza">Does Caza calculate GRM?</h3>
+  <p>On 2&ndash;4 unit and 5+ unit listings, Caza&rsquo;s Investor numbers shows a GRM tile: price divided by annual gross rent. The rent comes from income reported on the listing, rents you type, or rental comps (asking rents), and the tile is tagged with which one. If there&rsquo;s no income to work from, the tile asks you to add rent. The tile doesn&rsquo;t appear on single-family homes, condos or townhomes.<a class="fn" href="#fn3" id="fnref3-1" aria-label="Source 3, Caza Chrome extension 2.11.0"><sup>3</sup></a></p>
+</div>
+
+<h2 id="related">Related on Caza</h2>
+<ul>
+  <li><a href="/guides/one-percent-rule-zillow-listing">How to check the 1% rule on a Zillow listing</a></li>
+  <li><a href="/guides/zillow-rental-comps-estimate-rent">How to estimate rent for a listing with rental comps on Zillow</a></li>
+  <li><a href="/guides/cap-rate-cash-flow-zillow-listing">How to run a quick cap rate and cash flow check on a Zillow listing</a></li>
+</ul>
+<p>You don&rsquo;t need Caza for any of this. A GRM is one division. On 2&ndash;4 unit and 5+ unit Zillow listings, Caza&rsquo;s Investor numbers shows a GRM tile (&ldquo;price ÷ annual gross rent&rdquo;) next to cap rate, tagged Reported, Yours or Rental comps (asking), with a Pro forma tag added when the reported income is projected, so you can see which rent it used. When a description gives both current and projected rents, it uses the current ones when they cover every unit. The tile never uses the Rent Zestimate for a building&rsquo;s income, and if the income gives an annual GRM outside 3 to 30, it shows a dash instead of a number, so check the rent and work it out by hand. If there&rsquo;s no income to work from, the tile asks you to add rent.<a class="fn" href="#fn3" id="fnref3-2" aria-label="Source 3, Caza Chrome extension 2.11.0"><sup>3</sup></a> It doesn&rsquo;t tell you what GRM is normal in your area. Caza is a Chrome extension. The Demand Score, sorting, hover cards and Investor numbers work without a membership; the free plan includes 3 sales comps reports and 3 rental comps reports a month, and unlimited reports are $11.99 a month or $99 a year (<a href="/pricing">pricing</a>).</p>
+<p>Caza is not affiliated with or endorsed by Zillow. It is also not affiliated with or endorsed by the California State Board of Equalization or Maine Revenue Services. GRM is a rule of thumb for a quick screen, not a prediction of income, expenses or returns. This guide is general information, not appraisal, legal, tax, lending or financial advice; verify rents, taxes, insurance and costs locally.</p>
+
+<section class="sources" aria-labelledby="sources-h">
+  <h2 id="sources-h">Sources</h2>
+  <ol>
+    <li id="fn1">Maine Revenue Services, Property Tax Division, <a href="https://www1.maine.gov/revenue/sites/maine.gov.revenue/files/inline-files/pt103_text.pdf"><em>PT103 Valuation of Real Estate</em></a>, Chapter 6, &ldquo;Gross Rent Multiplier,&rdquo; pp. 108&ndash;109. Revised February 2026. Accessed Nov. 17, 2026. <a class="fn-back" href="#fnref1-1">Back to text</a></li>
+    <li id="fn2">California State Board of Equalization, <a href="https://www.boe.ca.gov/info/iav/lesson9.htm">&ldquo;Lesson 9 &mdash; Multipliers: Derivation and Valuation,&rdquo; <em>The Income Approach to Value</em></a> (self-paced appraisal training). No publication date shown. Accessed Nov. 17, 2026. <a class="fn-back" href="#fnref2-1">Back to text</a></li>
+    <li id="fn3">Caza Chrome extension, version 2.11.0, as shipped (Investor numbers GRM tile, income sources and tags, current versus projected rents, property types). Reviewed by Caza Nov. 17, 2026. Available on the <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk">Chrome Web Store</a>. <a class="fn-back" href="#fnref3-1">Back to text</a></li>
+  </ol>
+</section>
+
+      <div class="post-cta">
+        <p><strong>On multifamily Zillow listings, Caza shows a GRM tile next to cap rate, tagged with where the rent came from.</strong></p>
+        <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=guide-gross-rent-multiplier-zillow-listing" class="btn">Try Caza</a>
+      </div>
+      <div class="related">
+        <h3>Related guides</h3>
+        <p><a href="/guides/cap-rate-cash-flow-zillow-listing">Cap rate and cash flow check on a Zillow listing</a></p>
+        <p><a href="/blog">All guides</a> &middot; <a href="/tools">Free calculators</a></p>
+      </div>
+    </article>
+    <a class="back" href="/blog">Back to all guides</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <a class="logo" href="/"><img src="/logo.svg" width="30" height="30" alt="">Caza</a>
+      <p>Demand, comps and investor numbers for Zillow listings. A Chrome extension.</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#features">Features</a>
+      <a href="/examples">Examples</a>
+      <a href="/blog">Guides</a>
+      <a href="/tools">Tools</a>
+      <a href="/blog#renters">For renters</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms of sale</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="mailto:gus@usecaza.com">Contact</a>
+      <a href="https://chromewebstore.google.com/detail/oojoopmelbnbddhjmemdggbkeflhjnpk?utm_source=usecaza&amp;utm_medium=referral&amp;utm_campaign=footer">Chrome Web Store</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <p>© 2026 Caza. Caza is independent and is not affiliated with or endorsed by Zillow Group, Inc. Screens show sample data.</p>
+  </div>
+</footer>
+<script src="/m.js?v=20261027c" defer></script>
+<script src="/ga.js?v=20261104a" defer></script>
+</body>
+</html>
